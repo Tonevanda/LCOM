@@ -7,7 +7,10 @@
 #include "draw/draw.h"
 #include "config.h"
 
+
 extern SystemState systemState;
+extern uint8_t scancode;
+extern uint8_t mouseBytes[3];
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -23,8 +26,7 @@ int main(int argc, char *argv[]) {
 
   // handles control over to LCF
   // [LCF handles command line arguments and invokes the right function]
-  if (lcf_start(argc, argv))
-    return 1;
+  if (lcf_start(argc, argv))return 1;
 
   // LCF clean up tasks
   // [must be the last statement before return]
@@ -34,7 +36,7 @@ int main(int argc, char *argv[]) {
 }
 
 int setup(){
-
+  
   if (timer_set_frequency(TIMER_SEL0, GAME_FPS) != 0) return 1;
   if (set_frame_buffers(VIDEO_MODE) != 0) return 1;
   if (set_graphic_mode(VIDEO_MODE) != 0) return 1;
@@ -53,7 +55,7 @@ int setup(){
 
 int turnoff(){
 
-  if (vg_exit() != 0) return 1;
+  if (vg_exit() != 0) return 1; 
 
   destroy_sprites();
 
@@ -67,35 +69,55 @@ int turnoff(){
 }
 
 int (proj_main_loop)(int argc, char *argv[]) {
-
+  printf("test");
+  
   if(setup() != 0) return 1;
-
+  
+  test();
+  
   int ipc_status;
   message msg;
+  draw_test();
   while (systemState == RUNNING) {
     if (driver_receive(ANY, &msg, &ipc_status) != 0) {
       printf("Error");
       continue;
     }
-
+  //print_xpm((xpm_map_t)plus_xpm, 100, 100,secondary_frame_buffer);
     if (is_ipc_notify(ipc_status)) {
       switch(_ENDPOINT_P(msg.m_source)) {
         case HARDWARE: 
           if (msg.m_notify.interrupts & TIMER_MASK){
+            //destroy_sprites(&secondary_frame_buffer,frame_buffer_size);
             update_timer_state();
           }    
-          if (msg.m_notify.interrupts & KEYBOARD_MASK){
+          else if (msg.m_notify.interrupts & KEYBOARD_MASK){
+            printf("test");
+            kbc_ih();
+            kbd_print_scancode(!(scancode & MAKE_CODE), 1, &scancode);
             //update_keyboard_state();
           }
-          if (msg.m_notify.interrupts & MOUSE_MASK){
-            update_mouse_state();
+          else if (msg.m_notify.interrupts & MOUSE_MASK){
+            systemState = EXIT;
+            /*
+            count=0;
+            mouse_ih();
+            bite_to_pack(&pp);
+            if (packetCount==3){
+              mouse_print_packet(&pp);
+              packetCount=0;
+            }
+            */
+            //swap_buffers();
+            //update_mouse_state();
           }    
-          //if (msg.m_notify.interrupts & RTC_MASK) update_rtc_state();
+          //else if (msg.m_notify.interrupts & RTC_MASK) update_rtc_state();
         }
     }
   }
-
+  
+  //sleep(3);
   if(turnoff() != 0) return 1;
-
+  
   return 0;
 }

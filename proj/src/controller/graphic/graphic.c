@@ -128,3 +128,16 @@ uint32_t (B)(uint32_t first){
   return ((1 << mode_info.BlueMaskSize) - 1) & (first >> mode_info.BlueFieldPosition);
 }
 
+int (print_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y,uint8_t * buffer) {
+
+  xpm_image_t img;
+  uint32_t *sprite = (uint32_t*) xpm_load(xpm, XPM_8_8_8_8, &img);
+  
+  for(int Yindx=0;Yindx<img.height;Yindx++){
+    for(int Xindx=0;Xindx<img.width;Xindx++){
+      if(draw_pixel(x+Xindx, y+Yindx,*sprite, buffer)){return 1;}
+      sprite++;
+    }
+  }
+  return 0;
+}

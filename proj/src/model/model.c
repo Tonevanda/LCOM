@@ -7,11 +7,16 @@ extern vbe_mode_info_t mode_info;
 extern MouseInfo mouse_info;
 
 int timer_interrupts = 0;
+Sprite *plus;
 
 void setup_sprites() {
+    plus = create_sprite_xpm((xpm_map_t) plus_xpm);
+
 }
 
 void destroy_sprites() {
+    destroy_sprite(plus);
+
 }
 
 void update_timer_state() {

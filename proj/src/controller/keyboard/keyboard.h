@@ -4,7 +4,7 @@
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
 #include "i8042.h"
-#include "KBC.h"
+#include "KBC_Keyboard.h"
 
 #define KEYBOARD_MASK BIT(1)
 

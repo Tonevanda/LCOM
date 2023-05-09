@@ -8,7 +8,7 @@ PROG=proj
 .PATH: ${.CURDIR}/model/
 .PATH: ${.CURDIR}/draw/
 
-SRCS = main.c timer.c utils.c KBC.c keyboard.c graphic.c mouse.c draw.c model.c sprite.c
+SRCS = main.c timer.c utils.c KBC_Mouse.c keyboard.c graphic.c mouse.c draw.c model.c sprite.c KBC_Keyboard.c
 
 CFLAGS += -pedantic -D_LCOM_OPTIMIZED_ -O2
 

@@ -22,7 +22,7 @@ int (mouse_unsubscribe_int)(){
 }
 
 void (mouse_ih)(){
-    read_KBC_output(KBC_WRITE_CMD, &currentByte, 1);
+    read_KBC_Mouse_output(KBC_WRITE_CMD, &currentByte, 1);
 }
 
 void (mouse_sync_bytes)(){
@@ -56,14 +56,14 @@ int (mouse_write)(uint8_t command)
   do {
     attemps--;
     // Ativar do modo D4 do i8042
-    if (write_KBC_command(0x64, 0xD4))
+    if (write_KBC_Mouse_command(0x64, 0xD4))
       return 1;
     // O comando para o rato é escrito na porta 0x60
-    if (write_KBC_command(0x60, command))
+    if (write_KBC_Mouse_command(0x60, command))
       return 1;
     tickdelay(micros_to_ticks(20000));
     // Ler a resposta do rato pela porta 0x60
-    if (read_KBC_output(0x60, &mouse_response, 1))
+    if (read_KBC_Mouse_output(0x60, &mouse_response, 1))
       return 1;
   } while (mouse_response != 0xFA && attemps);       
 

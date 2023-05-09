@@ -4,7 +4,7 @@
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
 #include "i8042.h"
-#include "KBC.h"
+#include "KBC_Mouse.h"
 
 #define MOUSE_MASK BIT(2)
 
