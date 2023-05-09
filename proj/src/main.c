@@ -3,6 +3,7 @@
 #include "controller/graphic/graphic.h"
 #include "controller/keyboard/keyboard.h"
 #include "controller/mouse/mouse.h"
+//#include "controller/rtc/rtc.h"
 #include "model/model.h"
 #include "draw/draw.h"
 #include "config.h"
@@ -18,11 +19,11 @@ int main(int argc, char *argv[]) {
 
   // enables to log function invocations that are being "wrapped" by LCF
   // [comment this out if you don't want/need it]
-  lcf_trace_calls("/home/lcom/labs/lab5/trace.txt");
+  lcf_trace_calls("/home/lcom/labs/proj/src/trace.txt");
 
   // enables to save the output of printf function calls on a file
   // [comment this out if you don't want/need it]
-  lcf_log_output("/home/lcom/labs/lab5/output.txt");
+  lcf_log_output("/home/lcom/labs/proj/src/output.txt");
 
   // handles control over to LCF
   // [LCF handles command line arguments and invokes the right function]
@@ -69,15 +70,14 @@ int turnoff(){
 }
 
 int (proj_main_loop)(int argc, char *argv[]) {
-  printf("test");
   
   if(setup() != 0) return 1;
   
-  test();
-  
+  draw_test();
+
   int ipc_status;
   message msg;
-  draw_test();
+  
   while (systemState == RUNNING) {
     if (driver_receive(ANY, &msg, &ipc_status) != 0) {
       printf("Error");
@@ -91,27 +91,15 @@ int (proj_main_loop)(int argc, char *argv[]) {
             //destroy_sprites(&secondary_frame_buffer,frame_buffer_size);
             update_timer_state();
           }    
-          else if (msg.m_notify.interrupts & KEYBOARD_MASK){
-            printf("test");
-            kbc_ih();
+          if (msg.m_notify.interrupts & KEYBOARD_MASK){
+            update_keyboard_state();
             kbd_print_scancode(!(scancode & MAKE_CODE), 1, &scancode);
-            //update_keyboard_state();
           }
-          else if (msg.m_notify.interrupts & MOUSE_MASK){
-            systemState = EXIT;
-            /*
-            count=0;
-            mouse_ih();
-            bite_to_pack(&pp);
-            if (packetCount==3){
-              mouse_print_packet(&pp);
-              packetCount=0;
-            }
-            */
-            //swap_buffers();
-            //update_mouse_state();
+          if (msg.m_notify.interrupts & MOUSE_MASK){
+            //systemState = EXIT;
+            update_mouse_state();
           }    
-          //else if (msg.m_notify.interrupts & RTC_MASK) update_rtc_state();
+          //if (msg.m_notify.interrupts & RTC_MASK) update_rtc_state();
         }
     }
   }

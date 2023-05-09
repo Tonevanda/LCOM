@@ -3,14 +3,17 @@
 
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
-#include "controller/mouse/KBC_Mouse.h"
+#include "controller/keyboard/KBC_Keyboard.h"
 #include "controller/mouse/mouse.h"
 #include "controller/graphic/graphic.h"
-#include "model/sprite.h"
 //#include "controller/rtc/rtc.h"
+
 #include "draw/draw.h"
+#include "model/sprite.h"
 #include "config.h"
+
 #include "xpms/plus.xpm"
+#include "xpms/mouse.xpm"
 
 typedef enum {
     RUNNING,
@@ -22,5 +25,6 @@ void destroy_sprites();
 void destroy_sprites();
 void update_timer_state();
 void update_mouse_state();
+void update_keyboard_state();
 
 #endif

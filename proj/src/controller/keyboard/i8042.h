@@ -25,4 +25,6 @@ uint32_t count;
 #define WAIT_KBC        20000
 #define MAX_ATTEMPS     10
 
+#define Q_KEY           16
+
 #endif /* _LCOM_I8042_H_ */

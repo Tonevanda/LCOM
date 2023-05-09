@@ -15,6 +15,4 @@ int (timer_unsubscribe_interrupts)();
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st);
 
-void (timer_int_handler)();
-
 #endif

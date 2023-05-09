@@ -4,7 +4,6 @@
 #include "timer.h"
 
 int hook_id = 0;
-int timerCount = 0;
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   if(TIMER_FREQ < freq || freq < 19) return 1;
@@ -41,11 +40,6 @@ int (timer_unsubscribe_int)() {
   if(sys_irqrmpolicy(&hook_id) != 0) return 1;
 
   return 0;
-}
-
-void (timer_int_handler)() {
-  /* Thus all timer_int_handler() needs to do is to increment a global counter variable */
-  timerCount++;
 }
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {

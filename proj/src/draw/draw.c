@@ -1,9 +1,15 @@
 #include "draw.h"
 
-
+uint8_t *main_frame_buffer;
+uint8_t *secondary_frame_buffer;
+uint8_t *drawing_frame_buffer;
+uint32_t frame_buffer_size;
 extern int timer_interrupts;
 extern vbe_mode_info_t mode_info;
-extern Sprite* plus;
+extern MouseInfo mouse_info;
+
+extern Sprite *mouse;
+extern Sprite *plus;
 
 void swap_buffers() {
     memcpy(main_frame_buffer, secondary_frame_buffer, frame_buffer_size);
@@ -11,7 +17,12 @@ void swap_buffers() {
 }
 
 void draw_test(){
+    draw_mouse();
     draw_sprite_xpm(plus, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);  
+}
+
+void draw_mouse() {
+    draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
 }
 
 int set_frame_buffers(uint16_t mode) {
@@ -36,14 +47,9 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
     for (int h = 0 ; h < height ; h++) {
       for (int w = 0 ; w < width ; w++) {
         current_color = sprite->colors[w + h*width];
-        if (current_color == 0x00FFFFFE) continue;
-        if (draw_pixel(x + w, y + h, current_color, main_frame_buffer) != 0) return 1;
+        if (current_color == 0xFFFFFE) continue;
+        if (draw_pixel(x + w, y + h, current_color, drawing_frame_buffer) != 0) return 1;
       }
     }
     return 0; 
-}
-
-void test(){
-    //draw_rectangle(10,10,100,100,70090,main_frame_buffer);
-    //draw_rectangle(100,100,50,50,70090,secondary_frame_buffer);
 }

@@ -7,16 +7,18 @@ extern vbe_mode_info_t mode_info;
 extern MouseInfo mouse_info;
 
 int timer_interrupts = 0;
+
 Sprite *plus;
+Sprite *mouse;
 
 void setup_sprites() {
+    mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
     plus = create_sprite_xpm((xpm_map_t) plus_xpm);
-
 }
 
 void destroy_sprites() {
+    destroy_sprite(mouse);
     destroy_sprite(plus);
-
 }
 
 void update_timer_state() {
@@ -33,4 +35,17 @@ void update_mouse_state() {
         //draw_new_frame();
         byteIndex = 0;
     }
+}
+
+void update_keyboard_state(){
+    (kbc_ih)();
+    switch (scancode) {
+        case Q_KEY:{
+            systemState = EXIT;
+            break;
+        }
+        default:
+            break;
+    }
+    draw_test();
 }
