@@ -10,20 +10,25 @@ int timer_interrupts = 0;
 
 Sprite *plus;
 Sprite *mouse;
+//Sprite *meme;
 
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
     plus = create_sprite_xpm((xpm_map_t) plus_xpm);
+    //meme = create_sprite_xpm((xpm_map_t) memexd);
 }
 
 void destroy_sprites() {
     destroy_sprite(mouse);
     destroy_sprite(plus);
+    //destroy_sprite(meme);
 }
 
 void update_timer_state() {
     if (DOUBLE_BUFFER) swap_buffers();
+    draw_test();
     timer_interrupts++;
+    //debug_timer();
 }
 
 void update_mouse_state() {
@@ -47,5 +52,11 @@ void update_keyboard_state(){
         default:
             break;
     }
-    draw_test();
+    //draw_test();
+}
+
+void debug_timer(){
+    if(timer_interrupts%60==0){
+        printf(" %d /n",timer_interrupts/60);
+    }
 }

@@ -10,6 +10,7 @@ extern MouseInfo mouse_info;
 
 extern Sprite *mouse;
 extern Sprite *plus;
+extern Sprite *meme;
 
 void swap_buffers() {
     memcpy(main_frame_buffer, secondary_frame_buffer, frame_buffer_size);
@@ -17,12 +18,18 @@ void swap_buffers() {
 }
 
 void draw_test(){
+    memset(drawing_frame_buffer,0,frame_buffer_size);
     draw_mouse();
-    draw_sprite_xpm(plus, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);  
+    //draw_meme();
+    //draw_sprite_xpm(plus, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);  
 }
 
 void draw_mouse() {
     draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
+}
+
+void draw_meme(){
+    //draw_sprite_xpm(meme, 0, 0);
 }
 
 int set_frame_buffers(uint16_t mode) {

@@ -14,6 +14,7 @@
 
 #include "xpms/plus.xpm"
 #include "xpms/mouse.xpm"
+//#include "xpms/meme.xpm"
 
 typedef enum {
     RUNNING,
@@ -26,5 +27,5 @@ void destroy_sprites();
 void update_timer_state();
 void update_mouse_state();
 void update_keyboard_state();
-
+void debug_timer();
 #endif
