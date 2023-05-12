@@ -12,6 +12,7 @@
 extern SystemState systemState;
 extern uint8_t scancode;
 extern uint8_t mouseBytes[3];
+extern MouseInfo mouse_info;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -98,6 +99,9 @@ int (proj_main_loop)(int argc, char *argv[]) {
           if (msg.m_notify.interrupts & MOUSE_MASK){
             //systemState = EXIT;
             update_mouse_state();
+            if(mouse_info.x<45 && mouse_info.y<45){
+              systemState = EXIT;    
+            }
           }    
           //if (msg.m_notify.interrupts & RTC_MASK) update_rtc_state();
         }

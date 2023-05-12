@@ -17,5 +17,5 @@ int set_frame_buffers(uint16_t mode);
 int draw_sprite_xpm(Sprite *sprite, int x, int y);
 void draw_test();
 void draw_mouse();
-void draw_meme();
+void draw_x();
 #endif

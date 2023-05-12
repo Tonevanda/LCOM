@@ -14,7 +14,7 @@
 
 #include "xpms/plus.xpm"
 #include "xpms/mouse.xpm"
-//#include "xpms/meme.xpm"
+#include "xpms/x.xpm"
 
 typedef enum {
     RUNNING,
