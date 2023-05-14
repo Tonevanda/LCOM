@@ -44,7 +44,7 @@ int setup(){
   if (set_graphic_mode(VIDEO_MODE) != 0) return 1;
 
   setup_sprites();
-
+  setup_backround();
   if (timer_subscribe_interrupts() != 0) return 1;
   if (keyboard_subscribe_interrupts() != 0) return 1;
   if (mouse_subscribe_int() != 0) return 1;
@@ -98,11 +98,8 @@ int (proj_main_loop)(int argc, char *argv[]) {
           }
           if (msg.m_notify.interrupts & MOUSE_MASK){
             //systemState = EXIT;
-            update_mouse_state();
-            if(mouse_info.x<45 && mouse_info.y<45){
-              //systemState = EXIT;  
-              printf("exit");  
-            }
+            update_mouse_state();  
+            
           }    
           //if (msg.m_notify.interrupts & RTC_MASK) update_rtc_state();
         }

@@ -19,4 +19,5 @@ void draw_test();
 void draw_mouse();
 void draw_x();
 void draw_title();
+int prepare_backround(Sprite *sprite, int x, int y);
 #endif

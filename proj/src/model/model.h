@@ -16,11 +16,19 @@
 #include "xpms/mouse.xpm"
 #include "xpms/x.xpm"
 #include "xpms/title.xpm"
+#include "xpms/player1.xpm"
+#include "xpms/player2.xpm"
 
 typedef enum {
     RUNNING,
     EXIT,
-} SystemState;
+}SystemState;
+
+typedef enum{
+  Title,
+  Player,
+  AI,
+}State;
 
 void setup_sprites();
 void destroy_sprites();
@@ -29,4 +37,6 @@ void update_timer_state();
 void update_mouse_state();
 void update_keyboard_state();
 void debug_timer();
+void setup_backround();
+void update_mouse_actions_title();
 #endif
