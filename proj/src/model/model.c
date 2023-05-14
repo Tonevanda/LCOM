@@ -11,20 +11,24 @@ int timer_interrupts = 0;
 Sprite *plus;
 Sprite *mouse;
 Sprite *XIco;
+Sprite *t;
 
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
     plus = create_sprite_xpm((xpm_map_t) plus_xpm);
     XIco = create_sprite_xpm((xpm_map_t) X);
+    t = create_sprite_xpm((xpm_map_t) title);
 }
 
 void destroy_sprites() {
     destroy_sprite(mouse);
     destroy_sprite(plus);
     destroy_sprite(XIco);
+    destroy_sprite(t);
 }
 
 void update_timer_state() {
+
     draw_test();
     if (DOUBLE_BUFFER) swap_buffers();
     timer_interrupts++;

@@ -18,4 +18,5 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y);
 void draw_test();
 void draw_mouse();
 void draw_x();
+void draw_title();
 #endif

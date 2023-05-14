@@ -11,6 +11,7 @@ extern MouseInfo mouse_info;
 extern Sprite *mouse;
 extern Sprite *plus;
 extern Sprite *XIco;
+extern Sprite *t;
 
 void swap_buffers() {
     memcpy(main_frame_buffer, secondary_frame_buffer, frame_buffer_size);
@@ -19,8 +20,9 @@ void swap_buffers() {
 
 void draw_test(){
     memset(drawing_frame_buffer,0,frame_buffer_size);
-    draw_mouse();
     draw_x();
+    draw_title();
+    draw_mouse();
     //draw_sprite_xpm(plus, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);  
 }
 
@@ -30,6 +32,10 @@ void draw_mouse() {
 
 void draw_x(){
     draw_sprite_xpm(XIco, 0, 0);
+}
+
+void draw_title(){
+    draw_sprite_xpm(t, 300, 300);
 }
 
 int set_frame_buffers(uint16_t mode) {
@@ -57,7 +63,7 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
         //printf(" %d ",current_color);
         if (current_color == 0xFFFFFE) {
             //printf("x: %d ,y: %d ",x+w,y+w);
-            draw_pixel(x + w, y + h, 0x000000, drawing_frame_buffer);
+            //draw_pixel(x + w, y + h, 0xFF0000, drawing_frame_buffer);
             continue;
             }
         else if (draw_pixel(x + w, y + h, current_color, drawing_frame_buffer) != 0) return 1;

@@ -100,7 +100,8 @@ int (proj_main_loop)(int argc, char *argv[]) {
             //systemState = EXIT;
             update_mouse_state();
             if(mouse_info.x<45 && mouse_info.y<45){
-              systemState = EXIT;    
+              //systemState = EXIT;  
+              printf("exit");  
             }
           }    
           //if (msg.m_notify.interrupts & RTC_MASK) update_rtc_state();
