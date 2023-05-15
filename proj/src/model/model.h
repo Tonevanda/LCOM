@@ -18,6 +18,7 @@
 #include "xpms/title.xpm"
 #include "xpms/player1.xpm"
 #include "xpms/player2.xpm"
+#include "xpms/board.xpm"
 
 typedef enum {
     RUNNING,

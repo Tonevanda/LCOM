@@ -60,7 +60,6 @@ int (mouse_write)(uint8_t command)
       return 1;
     // O comando para o rato é escrito na porta 0x60
     if (write_KBC_Mouse_command(0x60, command))
-      return 1;
     tickdelay(micros_to_ticks(20000));
     // Ler a resposta do rato pela porta 0x60
     if (read_KBC_Mouse_output(0x60, &mouse_response, 1))

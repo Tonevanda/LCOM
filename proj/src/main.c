@@ -74,7 +74,6 @@ int (proj_main_loop)(int argc, char *argv[]) {
   
   if(setup() != 0) return 1;
   
-  draw_test();
 
   int ipc_status;
   message msg;

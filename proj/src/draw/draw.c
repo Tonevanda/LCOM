@@ -4,6 +4,7 @@ uint8_t *main_frame_buffer;
 uint8_t *secondary_frame_buffer;
 uint8_t *drawing_frame_buffer;
 uint8_t *title_screen_backround_buffer;
+uint8_t *game_board_backround_buffer;
 uint32_t frame_buffer_size;
 
 extern int timer_interrupts;
@@ -24,12 +25,21 @@ void swap_buffers() {
     //if (timer_interrupts % GAME_FREQUENCY == 0) display_real_time();
 }
 
-void draw_test(){
+void draw_title_screen(){
     //memset(drawing_frame_buffer,0,frame_buffer_size);
     memcpy(drawing_frame_buffer,title_screen_backround_buffer,frame_buffer_size);
 
-    //draw_x();
-    draw_title();
+    draw_title_selection();
+
+    draw_mouse();
+    //draw_sprite_xpm(plus, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);  
+}
+
+void draw_game_screen(){
+    //memset(drawing_frame_buffer,0,frame_buffer_size);
+    memcpy(drawing_frame_buffer,game_board_backround_buffer,frame_buffer_size);
+
+    //draw_title_slection();
 
     draw_mouse();
     //draw_sprite_xpm(plus, mode_info.XResolution/2 - 100, mode_info.YResolution/2 - 100);  
@@ -43,7 +53,7 @@ void draw_x(){
     draw_sprite_xpm(XIco, 0, 0);
 }
 
-void draw_title(){    
+void draw_title_selection(){    
     if (selected==1){
         draw_sprite_xpm(player1, 300, 300);
     }
@@ -59,7 +69,7 @@ int set_frame_buffers(uint16_t mode) {
     secondary_frame_buffer = (uint8_t *) malloc(frame_buffer_size);
     drawing_frame_buffer = (uint8_t *) malloc(frame_buffer_size);
     title_screen_backround_buffer=(uint8_t *) malloc(frame_buffer_size);
-
+    game_board_backround_buffer=(uint8_t *) malloc(frame_buffer_size);
     return 0;
 }
 
@@ -85,7 +95,7 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
     return 0; 
 }
 
-int prepare_backround(Sprite *sprite, int x, int y) { 
+int prepare_backround(Sprite *sprite, int x, int y,uint8_t* buffer) { 
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
     uint32_t current_color;
@@ -98,7 +108,7 @@ int prepare_backround(Sprite *sprite, int x, int y) {
             //draw_pixel(x + w, y + h, 0xFF0000, drawing_frame_buffer);
             continue;
             }
-        else if (draw_pixel(x + w, y + h, current_color, title_screen_backround_buffer) != 0) return 1;
+        else if (draw_pixel(x + w, y + h, current_color, buffer) != 0) return 1;
       }
     }
     return 0; 
