@@ -12,6 +12,17 @@
 
 
 
+struct slot
+{
+    bool hasBoat;
+    bool probed;
+    int len;
+    bool vert;
+    
+};
+void draw_boats();
+void draw_selected();
+void draw_boat(int index);
 void swap_buffers();
 int set_frame_buffers(uint16_t mode);
 int draw_sprite_xpm(Sprite *sprite, int x, int y);
@@ -19,6 +30,7 @@ void draw_title_screen();
 void draw_mouse();
 void draw_x();
 void draw_title_selection();
+void draw_reticle();
 void draw_game_screen();
 int prepare_backround(Sprite *sprite, int x, int y,uint8_t* buffer);
 #endif

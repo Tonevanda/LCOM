@@ -19,6 +19,7 @@
 #include "xpms/player1.xpm"
 #include "xpms/player2.xpm"
 #include "xpms/board.xpm"
+#include "xpms/frame.xpm"
 
 typedef enum {
     RUNNING,
@@ -40,4 +41,5 @@ void update_keyboard_state();
 void debug_timer();
 void setup_backround();
 void update_mouse_actions_title();
+void update_mouse_actions_player();
 #endif
