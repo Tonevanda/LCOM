@@ -17,16 +17,26 @@ struct slot
     bool hasBoat;
     bool probed;
     int len;
-    bool vert;
-    
+    int pos;
+    /*
+    1:left
+    2:middle horizontal
+    3:right
+    4:up
+    5:middle vertical
+    6:down
+    */
 };
+
 void draw_boats();
 void draw_selected();
-void draw_boat(int index);
+void draw_boat(int x,int y,Sprite *sprite);
 void swap_buffers();
+
 int set_frame_buffers(uint16_t mode);
 int draw_sprite_xpm(Sprite *sprite, int x, int y);
 void draw_title_screen();
+void draw_enemy();
 void draw_mouse();
 void draw_x();
 void draw_title_selection();

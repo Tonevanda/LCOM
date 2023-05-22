@@ -17,6 +17,12 @@ extern Sprite *t;
 extern Sprite *player1;
 extern Sprite *player2;
 extern Sprite *frame;
+extern Sprite *boat_down;
+extern Sprite *boat_up;
+extern Sprite *boat_middle_vert;
+extern Sprite *boat_left;
+extern Sprite *boat_right;
+extern Sprite *boat_middle_hor;
 
 int selected=0;
 int original_board_x=402; 
@@ -55,215 +61,278 @@ void draw_game_screen(){
      
 }
 
-void draw_boats(){
+void draw_enemy(){
+    memcpy(drawing_frame_buffer,game_board_backround_buffer,frame_buffer_size);
+    draw_mouse();
     for(int temp=1;temp<66;temp++){
-        if(player_board[temp].hasBoat){
-            draw_boat(temp);
+        if(enemy_board[temp].hasBoat){
+            int x = (temp-1)%8;
+            int y = (temp-1)/8;
+            switch (enemy_board[temp].pos)
+            {
+            case 1:
+                draw_boat(x,y,boat_left);
+                break;
+            case 2:
+                draw_boat(x,y,boat_middle_hor);
+                break;
+            case 3:
+                draw_boat(x,y,boat_right);
+                break;
+            case 4:
+                draw_boat(x,y,boat_up);
+                break;
+            case 5:
+                draw_boat(x,y,boat_middle_vert);
+                break;
+            case 6:
+                draw_boat(x,y,boat_down);
+            break;
+            }
         }
     }
 }
 
-void draw_boat(int index){
+void draw_boats(){
+    for(int temp=1;temp<66;temp++){
+        if(player_board[temp].hasBoat){
+            int x = (temp-1)%8;
+            int y = (temp-1)/8;
+            switch (player_board[temp].pos)
+            {
+            case 1:
+                draw_boat(x,y,boat_left);
+                break;
+            case 2:
+                draw_boat(x,y,boat_middle_hor);
+                break;
+            case 3:
+                draw_boat(x,y,boat_right);
+                break;
+            case 4:
+                draw_boat(x,y,boat_up);
+                break;
+            case 5:
+                draw_boat(x,y,boat_middle_vert);
+                break;
+            case 6:
+                draw_boat(x,y,boat_down);
+            break;
+            }
+        }
+    }
+}
+
+void draw_boat(int x,int y,Sprite *sprite){
+    draw_sprite_xpm(sprite, original_board_x+((x)*50), original_board_y+((y)*50));
+    /*
     switch (index)
     {
     case 1:
-        draw_sprite_xpm(frame, original_board_x, original_board_y);
+        draw_sprite_xpm(sprite, original_board_x, original_board_y);
         break;
     case 2:
-        draw_sprite_xpm(frame, original_board_x+50, original_board_y);
+        draw_sprite_xpm(sprite, original_board_x+50, original_board_y);
         break;
     case 3:
-        draw_sprite_xpm(frame, original_board_x+100, original_board_y);
+        draw_sprite_xpm(sprite, original_board_x+100, original_board_y);
         break;
     case 4:
-        draw_sprite_xpm(frame, original_board_x+150, original_board_y);
+        draw_sprite_xpm(sprite, original_board_x+150, original_board_y);
         break;
     case 5:
-        draw_sprite_xpm(frame, original_board_x+200, original_board_y);
+        draw_sprite_xpm(sprite, original_board_x+200, original_board_y);
         break;
     case 6:
-        draw_sprite_xpm(frame, original_board_x+250, original_board_y);
+        draw_sprite_xpm(sprite, original_board_x+250, original_board_y);
         break;
     case 7:
-        draw_sprite_xpm(frame, original_board_x+300, original_board_y);
+        draw_sprite_xpm(sprite, original_board_x+300, original_board_y);
         break;
     case 8:
-        draw_sprite_xpm(frame, original_board_x+350, original_board_y);
+        draw_sprite_xpm(sprite, original_board_x+350, original_board_y);
         break;
     case 9:
-        draw_sprite_xpm(frame, original_board_x, original_board_y+50);
+        draw_sprite_xpm(sprite, original_board_x, original_board_y+50);
         break;
     case 10:
-        draw_sprite_xpm(frame, original_board_x+50, original_board_y+50);
+        draw_sprite_xpm(sprite, original_board_x+50, original_board_y+50);
         break;
     case 11:
-        draw_sprite_xpm(frame, original_board_x+100, original_board_y+50);
+        draw_sprite_xpm(sprite, original_board_x+100, original_board_y+50);
         break;
     case 12:
-        draw_sprite_xpm(frame, original_board_x+150, original_board_y+50);
+        draw_sprite_xpm(sprite, original_board_x+150, original_board_y+50);
         break;
     case 13:
-        draw_sprite_xpm(frame, original_board_x+200, original_board_y+50);
+        draw_sprite_xpm(sprite, original_board_x+200, original_board_y+50);
         break;
     case 14:
-        draw_sprite_xpm(frame, original_board_x+250, original_board_y+50);
+        draw_sprite_xpm(sprite, original_board_x+250, original_board_y+50);
         break;
     case 15:
-        draw_sprite_xpm(frame, original_board_x+300, original_board_y+50);
+        draw_sprite_xpm(sprite, original_board_x+300, original_board_y+50);
         break;
     case 16:
-        draw_sprite_xpm(frame, original_board_x+350, original_board_y+50);
+        draw_sprite_xpm(sprite, original_board_x+350, original_board_y+50);
         break;
     case 17:
-        draw_sprite_xpm(frame, original_board_x, original_board_y+100);
+        draw_sprite_xpm(sprite, original_board_x, original_board_y+100);
         break;
     case 18:
-        draw_sprite_xpm(frame, original_board_x+50, original_board_y+100);
+        draw_sprite_xpm(sprite, original_board_x+50, original_board_y+100);
         break;
     case 19:
-        draw_sprite_xpm(frame, original_board_x+100, original_board_y+100);
+        draw_sprite_xpm(sprite, original_board_x+100, original_board_y+100);
         break;
     case 20:
-        draw_sprite_xpm(frame, original_board_x+150, original_board_y+100);
+        draw_sprite_xpm(sprite, original_board_x+150, original_board_y+100);
         break;
     case 21:
-        draw_sprite_xpm(frame, original_board_x+200, original_board_y+100);
+        draw_sprite_xpm(sprite, original_board_x+200, original_board_y+100);
         break;
     case 22:
-        draw_sprite_xpm(frame, original_board_x+250, original_board_y+100);
+        draw_sprite_xpm(sprite, original_board_x+250, original_board_y+100);
         break;
     case 23:
-        draw_sprite_xpm(frame, original_board_x+300, original_board_y+100);
+        draw_sprite_xpm(sprite, original_board_x+300, original_board_y+100);
         break;
     case 24:
-        draw_sprite_xpm(frame, original_board_x+350, original_board_y+100);
+        draw_sprite_xpm(sprite, original_board_x+350, original_board_y+100);
         break;
     case 25:
-        draw_sprite_xpm(frame, original_board_x, original_board_y+150);
+        draw_sprite_xpm(sprite, original_board_x, original_board_y+150);
         break;
     case 26:
-        draw_sprite_xpm(frame, original_board_x+50, original_board_y+150);
+        draw_sprite_xpm(sprite, original_board_x+50, original_board_y+150);
         break;
     case 27:
-        draw_sprite_xpm(frame, original_board_x+100, original_board_y+150);
+        draw_sprite_xpm(sprite, original_board_x+100, original_board_y+150);
         break;
     case 28:
-        draw_sprite_xpm(frame, original_board_x+150, original_board_y+150);
+        draw_sprite_xpm(sprite, original_board_x+150, original_board_y+150);
         break;
     case 29:
-        draw_sprite_xpm(frame, original_board_x+200, original_board_y+150);
+        draw_sprite_xpm(sprite, original_board_x+200, original_board_y+150);
         break;
     case 30:
-        draw_sprite_xpm(frame, original_board_x+250, original_board_y+150);
+        draw_sprite_xpm(sprite, original_board_x+250, original_board_y+150);
         break;
     case 31:
-        draw_sprite_xpm(frame, original_board_x+300, original_board_y+150);
+        draw_sprite_xpm(sprite, original_board_x+300, original_board_y+150);
         break;
     case 32:
-        draw_sprite_xpm(frame, original_board_x+350, original_board_y+150);
+        draw_sprite_xpm(sprite, original_board_x+350, original_board_y+150);
         break;
     case 33:
-        draw_sprite_xpm(frame, original_board_x, original_board_y+200);
+        draw_sprite_xpm(sprite, original_board_x, original_board_y+200);
         break;
     case 34:
-        draw_sprite_xpm(frame, original_board_x+50, original_board_y+200);
+        draw_sprite_xpm(sprite, original_board_x+50, original_board_y+200);
         break;
     case 35:
-        draw_sprite_xpm(frame, original_board_x+100, original_board_y+200);
+        draw_sprite_xpm(sprite, original_board_x+100, original_board_y+200);
         break;
     case 36:
-        draw_sprite_xpm(frame, original_board_x+150, original_board_y+200);
+        draw_sprite_xpm(sprite, original_board_x+150, original_board_y+200);
         break;
     case 37:
-        draw_sprite_xpm(frame, original_board_x+200, original_board_y+200);
+        draw_sprite_xpm(sprite, original_board_x+200, original_board_y+200);
         break;
     case 38:
-        draw_sprite_xpm(frame, original_board_x+250, original_board_y+200);
+        draw_sprite_xpm(sprite, original_board_x+250, original_board_y+200);
         break;
     case 39:
-        draw_sprite_xpm(frame, original_board_x+300, original_board_y+200);
+        draw_sprite_xpm(sprite, original_board_x+300, original_board_y+200);
         break;
     case 40:
-        draw_sprite_xpm(frame, original_board_x+350, original_board_y+200);
+        draw_sprite_xpm(sprite, original_board_x+350, original_board_y+200);
         break;
     case 41:
-        draw_sprite_xpm(frame, original_board_x, original_board_y+250);
+        draw_sprite_xpm(sprite, original_board_x, original_board_y+250);
         break;
     case 42:
-        draw_sprite_xpm(frame, original_board_x+50, original_board_y+250);
+        draw_sprite_xpm(sprite, original_board_x+50, original_board_y+250);
         break;
     case 43:
-        draw_sprite_xpm(frame, original_board_x+100, original_board_y+250);
+        draw_sprite_xpm(sprite, original_board_x+100, original_board_y+250);
         break;
     case 44:
-        draw_sprite_xpm(frame, original_board_x+150, original_board_y+250);
+        draw_sprite_xpm(sprite, original_board_x+150, original_board_y+250);
         break;
     case 45:
-        draw_sprite_xpm(frame, original_board_x+200, original_board_y+250);
+        draw_sprite_xpm(sprite, original_board_x+200, original_board_y+250);
         break;
     case 46:
-        draw_sprite_xpm(frame, original_board_x+250, original_board_y+250);
+        draw_sprite_xpm(sprite, original_board_x+250, original_board_y+250);
         break;
     case 47:
-        draw_sprite_xpm(frame, original_board_x+300, original_board_y+250);
+        draw_sprite_xpm(sprite, original_board_x+300, original_board_y+250);
         break;
     case 48:
-        draw_sprite_xpm(frame, original_board_x+350, original_board_y+250);
+        draw_sprite_xpm(sprite, original_board_x+350, original_board_y+250);
         break;
     case 49:
-        draw_sprite_xpm(frame, original_board_x, original_board_y+300);
+        draw_sprite_xpm(sprite, original_board_x, original_board_y+300);
         break;
     case 50:
-        draw_sprite_xpm(frame, original_board_x+50, original_board_y+300);
+        draw_sprite_xpm(sprite, original_board_x+50, original_board_y+300);
         break;
     case 51:
-        draw_sprite_xpm(frame, original_board_x+100, original_board_y+300);
+        draw_sprite_xpm(sprite, original_board_x+100, original_board_y+300);
         break;
     case 52:
-        draw_sprite_xpm(frame, original_board_x+150, original_board_y+300);
+        draw_sprite_xpm(sprite, original_board_x+150, original_board_y+300);
         break;
     case 53:
-        draw_sprite_xpm(frame, original_board_x+200, original_board_y+300);
+        draw_sprite_xpm(sprite, original_board_x+200, original_board_y+300);
         break;
     case 54:
-        draw_sprite_xpm(frame, original_board_x+250, original_board_y+300);
+        draw_sprite_xpm(sprite, original_board_x+250, original_board_y+300);
         break;
     case 55:
-        draw_sprite_xpm(frame, original_board_x+300, original_board_y+300);
+        draw_sprite_xpm(sprite, original_board_x+300, original_board_y+300);
         break;
     case 56:
-        draw_sprite_xpm(frame, original_board_x+350, original_board_y+300);
+        draw_sprite_xpm(sprite, original_board_x+350, original_board_y+300);
         break;
     case 57:
-        draw_sprite_xpm(frame, original_board_x, original_board_y+350);
+        draw_sprite_xpm(sprite, original_board_x, original_board_y+350);
         break;
     case 58:
-        draw_sprite_xpm(frame, original_board_x+50, original_board_y+350);
+        draw_sprite_xpm(sprite, original_board_x+50, original_board_y+350);
         break;
     case 59:
-        draw_sprite_xpm(frame, original_board_x+100, original_board_y+350);
+        draw_sprite_xpm(sprite, original_board_x+100, original_board_y+350);
         break;
     case 60:
-        draw_sprite_xpm(frame, original_board_x+150, original_board_y+350);
+        draw_sprite_xpm(sprite, original_board_x+150, original_board_y+350);
         break;
     case 61:
-        draw_sprite_xpm(frame, original_board_x+200, original_board_y+350);
+        draw_sprite_xpm(sprite, original_board_x+200, original_board_y+350);
         break;
     case 62:
-        draw_sprite_xpm(frame, original_board_x+250, original_board_y+350);
+        draw_sprite_xpm(sprite, original_board_x+250, original_board_y+350);
         break;
     case 63:
-        draw_sprite_xpm(frame, original_board_x+300, original_board_y+350);
+        draw_sprite_xpm(sprite, original_board_x+300, original_board_y+350);
         break;
     case 64:
-        draw_sprite_xpm(frame, original_board_x+350, original_board_y+350);
+        draw_sprite_xpm(sprite, original_board_x+350, original_board_y+350);
         break;
     default:
         break;
     }
+    */
 }
 
 void draw_reticle(){
+    if (board_index!=0){
+        int x = (board_index-1)%8;
+        int y = (board_index-1)/8;
+        draw_sprite_xpm(frame, original_board_x+((x)*50), original_board_y+((y)*50));
+    }
+    /*
     switch (board_index)
     {
     case 1:
@@ -461,7 +530,7 @@ void draw_reticle(){
     default:
         break;
     }
-    
+    */
 }
 
 void draw_selected(){
@@ -469,38 +538,38 @@ void draw_selected(){
     {
     case 2:
         if (vert){
-            draw_sprite_xpm(frame, mouse_info.x, mouse_info.y);
-            draw_sprite_xpm(frame, mouse_info.x, mouse_info.y+50);
+            draw_sprite_xpm(boat_up, mouse_info.x, mouse_info.y);
+            draw_sprite_xpm(boat_down, mouse_info.x, mouse_info.y+50);
         }
         else{
-            draw_sprite_xpm(frame, mouse_info.x, mouse_info.y);
-            draw_sprite_xpm(frame, mouse_info.x+50, mouse_info.y);
+            draw_sprite_xpm(boat_left, mouse_info.x, mouse_info.y);
+            draw_sprite_xpm(boat_right, mouse_info.x+50, mouse_info.y);
         }
         break;
     case 3:
         if (vert){
-            draw_sprite_xpm(frame, mouse_info.x, mouse_info.y);
-            draw_sprite_xpm(frame, mouse_info.x, mouse_info.y+50);
-            draw_sprite_xpm(frame, mouse_info.x, mouse_info.y+100);
+            draw_sprite_xpm(boat_up, mouse_info.x, mouse_info.y);
+            draw_sprite_xpm(boat_middle_vert, mouse_info.x, mouse_info.y+50);
+            draw_sprite_xpm(boat_down, mouse_info.x, mouse_info.y+100);
         }
         else{
-            draw_sprite_xpm(frame, mouse_info.x, mouse_info.y);
-            draw_sprite_xpm(frame, mouse_info.x+50, mouse_info.y);
-            draw_sprite_xpm(frame, mouse_info.x+100, mouse_info.y);
+            draw_sprite_xpm(boat_left, mouse_info.x, mouse_info.y);
+            draw_sprite_xpm(boat_middle_hor, mouse_info.x+50, mouse_info.y);
+            draw_sprite_xpm(boat_right, mouse_info.x+100, mouse_info.y);
         }
         break;
     case 4:
         if (vert){
-            draw_sprite_xpm(frame, mouse_info.x, mouse_info.y);
-            draw_sprite_xpm(frame, mouse_info.x, mouse_info.y+50);
-            draw_sprite_xpm(frame, mouse_info.x, mouse_info.y+100);
-            draw_sprite_xpm(frame, mouse_info.x, mouse_info.y+150);
+            draw_sprite_xpm(boat_up, mouse_info.x, mouse_info.y);
+            draw_sprite_xpm(boat_middle_vert, mouse_info.x, mouse_info.y+50);
+            draw_sprite_xpm(boat_middle_vert, mouse_info.x, mouse_info.y+100);
+            draw_sprite_xpm(boat_down, mouse_info.x, mouse_info.y+150);
         }
         else{
-            draw_sprite_xpm(frame, mouse_info.x, mouse_info.y);
-            draw_sprite_xpm(frame, mouse_info.x+50, mouse_info.y);
-            draw_sprite_xpm(frame, mouse_info.x+100, mouse_info.y);
-            draw_sprite_xpm(frame, mouse_info.x+150, mouse_info.y);
+            draw_sprite_xpm(boat_left, mouse_info.x, mouse_info.y);
+            draw_sprite_xpm(boat_middle_hor, mouse_info.x+50, mouse_info.y);
+            draw_sprite_xpm(boat_middle_hor, mouse_info.x+100, mouse_info.y);
+            draw_sprite_xpm(boat_right, mouse_info.x+150, mouse_info.y);
         }
         break;
     default:

@@ -20,6 +20,12 @@
 #include "xpms/player2.xpm"
 #include "xpms/board.xpm"
 #include "xpms/frame.xpm"
+#include "xpms/down_vertical_boat.xpm"
+#include "xpms/left_horizontal_boat.xpm"
+#include "xpms/middle_horizontal_boat.xpm"
+#include "xpms/middle_vertical_boat.xpm"
+#include "xpms/right_horizontal_boat.xpm"
+#include "xpms/up_vertical_boat.xpm"
 
 typedef enum {
     RUNNING,
@@ -28,8 +34,9 @@ typedef enum {
 
 typedef enum{
   Title,
-  Player,
-  AI,
+  Placement,
+  Defend,
+  Atack,
 }State;
 
 void setup_sprites();
@@ -42,4 +49,7 @@ void debug_timer();
 void setup_backround();
 void update_mouse_actions_title();
 void update_mouse_actions_player();
+void aiBoats();
+void addBoat(int board_index,int pos);
+void addEnemyBoat(int board_index,int pos);
 #endif

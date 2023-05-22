@@ -45,6 +45,7 @@ int setup(){
 
   setup_sprites();
   setup_backround();
+
   if (timer_subscribe_interrupts() != 0) return 1;
   if (keyboard_subscribe_interrupts() != 0) return 1;
   if (mouse_subscribe_int() != 0) return 1;
@@ -74,7 +75,6 @@ int (proj_main_loop)(int argc, char *argv[]) {
   
   if(setup() != 0) return 1;
   
-
   int ipc_status;
   message msg;
   
@@ -96,9 +96,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
             kbd_print_scancode(!(scancode & MAKE_CODE), 1, &scancode);
           }
           if (msg.m_notify.interrupts & MOUSE_MASK){
-            //systemState = EXIT;
             update_mouse_state();  
-            
           }    
           //if (msg.m_notify.interrupts & RTC_MASK) update_rtc_state();
         }
