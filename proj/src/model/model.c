@@ -94,11 +94,11 @@ void update_timer_state() {
     case Placement:
         draw_game_screen();
         break;  
-    case Defend:
+    case Atack:
         draw_enemy();
         break;
-    case Atack:
-        //update_mouse_actions_Attack();
+    case Defend:
+        draw_defence();
         break;      
     }
     swap_buffers();
@@ -120,13 +120,15 @@ void update_mouse_state() {
             update_mouse_actions_title();
             break;
         case Placement:
+            getBoardPos();
             update_mouse_actions_player();
             break;
-        case Defend:
-            //update_mouse_actions_AI();
-            break;
         case Atack:
-            //update_mouse_actions_Attack();
+            getBoardPos();
+            update_mouse_actions_Attack();
+            break;
+        case Defend:
+            update_mouse_actions_defend();
             break;      
         }
         byteIndex=0;
@@ -167,7 +169,7 @@ void update_mouse_actions_title() {
     }
 }
 
-void update_mouse_actions_player() {
+void getBoardPos(){
     if(mouse_info.x>402 && mouse_info.x<801 && mouse_info.y>272 && mouse_info.y<671){
         //322
         if(mouse_info.y<original_board_y+50){
@@ -223,6 +225,9 @@ void update_mouse_actions_player() {
     else{
         board_index=0;
     }
+}
+
+void update_mouse_actions_player() {
     if(mouse_info.left_click){
         //printf("x: %d | y: %d",mouse_info.x,mouse_info.y);
        
@@ -253,7 +258,7 @@ void update_mouse_actions_player() {
         else{
             //printf(" board_index: %d | current_boat: %d ",board_index,current_boat);
             printf(" board_index: %d | x: %d | y: %d ",board_index,(board_index-1)%8,(board_index-1)/8);
-            if(board_index!=0){
+            if(board_index!=0 && !player_board[board_index].hasBoat){
                 switch (current_boat)
                 {
                 case 2:
@@ -264,9 +269,6 @@ void update_mouse_actions_player() {
                             addBoat(board_index+8,6);
                             doubles--;
                         }
-                        if(doubles==0){
-                            current_boat=0;
-                        }
                     }
                     else{
                         if(x<8 && !player_board[board_index+1].hasBoat){
@@ -275,11 +277,10 @@ void update_mouse_actions_player() {
                             addBoat(board_index+1,3);
                             doubles--;
                         }
-                        if(doubles==0){
-                            current_boat=0;
-                        }
                     }
-                    
+                    if(doubles==0){
+                        current_boat=0;
+                    }
                     break;
                 case 3:
                     if(vert){
@@ -290,9 +291,6 @@ void update_mouse_actions_player() {
                             addBoat(board_index+16,6);
                             triples--;
                         }
-                        if(triples==0){
-                            current_boat=0;
-                        }
                     }
                     else{
                         if(x<7 && !player_board[board_index+1].hasBoat && !player_board[board_index+2].hasBoat){
@@ -302,9 +300,9 @@ void update_mouse_actions_player() {
                             addBoat(board_index+2,3);
                             triples--;
                         }
-                        if(triples==0){
-                            current_boat=0;
-                        }
+                    }
+                    if(triples==0){
+                        current_boat=0;
                     }
                     break;
                 case 4:
@@ -317,9 +315,6 @@ void update_mouse_actions_player() {
                             addBoat(board_index+24,6);
                             quads--;
                         }
-                        if(quads==0){
-                            current_boat=0;
-                        }
                     }
                     else{
                         if(x<6 && !player_board[board_index+1].hasBoat && !player_board[board_index+2].hasBoat && !player_board[board_index+3].hasBoat){
@@ -330,9 +325,9 @@ void update_mouse_actions_player() {
                             addBoat(board_index+3,3);
                             quads--;
                         }
-                        if(quads==0){
-                            current_boat=0;
-                        }
+                    }
+                    if(quads==0){
+                        current_boat=0;
                     }
                     break;
                 default:
@@ -344,7 +339,8 @@ void update_mouse_actions_player() {
                 triples=3;
                 doubles=4;
                 aiBoats();
-                state=Defend;
+                state=Atack;
+                printf("                           test                         ");
             }
             
         }        
@@ -355,6 +351,230 @@ void update_mouse_actions_player() {
         }
         else{
             vert=true;
+        }
+    }
+}
+
+void update_mouse_actions_Attack(){
+    //printf("nuts");
+    if(mouse_info.left_click){
+        if(mouse_info.x<45 && mouse_info.y<45){
+            state=Title;
+        }
+        //printf(" board_index: %d | x: %d | y: %d ",board_index,(board_index-1)%8,(board_index-1)/8);
+        if(board_index!=0){
+            attack(enemy_board);
+        }
+    }
+}
+
+void update_mouse_actions_defend(){
+    if(mouse_info.left_click){
+        if(mouse_info.x<45 && mouse_info.y<45){
+            state=Atack;
+        }
+        //printf(" board_index: %d | x: %d | y: %d ",board_index,(board_index-1)%8,(board_index-1)/8);
+    }
+}
+
+void attack(struct slot atackee[66]){
+    if(!atackee[board_index].probed){
+        atackee[board_index].probed=true;
+        if(atackee[board_index].hasBoat){
+            printf("found %d ",atackee[board_index].len);
+            switch (atackee[board_index].len)
+            {
+            case 2:
+                switch (atackee[board_index].pos)
+                {
+                case 1:
+                    if(atackee[board_index+1].probed){
+                        printf("sinked");
+                        atackee[board_index].sinked=true;
+                        atackee[board_index+1].sinked=true;
+                    }
+                    break;
+                case 3:
+                    if(atackee[board_index-1].probed){
+                        printf("sinked");
+                        atackee[board_index].sinked=true;
+                        atackee[board_index-1].sinked=true;
+                    }
+                    break;
+                case 4:
+                    if(atackee[board_index+8].probed){
+                        printf("sinked");
+                        atackee[board_index].sinked=true;
+                        atackee[board_index+8].sinked=true;
+                    }
+                    break;
+                case 6:
+                    if(atackee[board_index-8].probed){
+                        printf("sinked");
+                        atackee[board_index].sinked=true;
+                        atackee[board_index-8].sinked=true;
+                    }
+                    break;
+                default:
+                    break;
+                }
+                break;
+            case 3:
+                switch (atackee[board_index].pos)
+                {
+                case 1:
+                    if(atackee[board_index+1].probed && atackee[board_index+2].probed){
+                        printf("sinked");
+                        atackee[board_index].sinked=true;
+                        atackee[board_index+1].sinked=true;
+                        atackee[board_index+2].sinked=true;
+                    }
+                    break;
+                case 2:
+                    if(atackee[board_index+1].probed && atackee[board_index-1].probed){
+                        printf("sinked");
+                        atackee[board_index-1].sinked=true;
+                        atackee[board_index].sinked=true;
+                        atackee[board_index+1].sinked=true;
+                    }
+                    break;
+                case 3:
+                    if(atackee[board_index-1].probed && atackee[board_index-2].probed){
+                        printf("sinked");
+                        atackee[board_index-2].sinked=true;
+                        atackee[board_index-1].sinked=true;
+                        atackee[board_index].sinked=true;
+                        
+                    }
+                    break;
+                case 4:
+                    if(atackee[board_index+8].probed && atackee[board_index+16].probed){
+                        printf("sinked");
+                        atackee[board_index].sinked=true;
+                        atackee[board_index+8].sinked=true;
+                        atackee[board_index+16].sinked=true;
+                    }
+                    break;
+                case 5:
+                    if(atackee[board_index+8].probed && atackee[board_index-8].probed){
+                        printf("sinked");
+                        atackee[board_index-8].sinked=true;
+                        atackee[board_index].sinked=true;
+                        atackee[board_index+8].sinked=true;
+                    }
+                    break;
+                case 6:
+                    if(atackee[board_index-8].probed && atackee[board_index-16].probed){
+                        printf("sinked");
+                        atackee[board_index-16].sinked=true;
+                        atackee[board_index-8].sinked=true;
+                        atackee[board_index].sinked=true;
+                        
+                    }
+                    break;
+                default:
+                    break;
+                }
+                break;
+            case 4:
+                switch (atackee[board_index].pos)
+                {
+                case 1:
+                    if(atackee[board_index+1].probed && atackee[board_index+2].probed && atackee[board_index+3].probed){
+                        printf("sinked");
+                        atackee[board_index].sinked=true;
+                        atackee[board_index+1].sinked=true;
+                        atackee[board_index+2].sinked=true;
+                        atackee[board_index+3].sinked=true;
+                    }
+                    break;
+                case 2:
+                    if(atackee[board_index+1].probed && atackee[board_index-1].probed){
+                        if(atackee[board_index-1].pos==1 && atackee[board_index+2].probed){
+                            atackee[board_index+2].sinked=true;
+                        }
+                        else if (atackee[board_index+1].pos==3 && atackee[board_index-2].probed){
+                            atackee[board_index-2].sinked=true;
+                        }
+                        
+                        printf("sinked");
+                        atackee[board_index-1].sinked=true;
+                        atackee[board_index].sinked=true;
+                        atackee[board_index+1].sinked=true;
+                    }
+                    break;
+                case 3:
+                    if(atackee[board_index-1].probed && atackee[board_index-2].probed && atackee[board_index-3].probed){
+                        printf("sinked");
+                        atackee[board_index-3].sinked=true;
+                        atackee[board_index-2].sinked=true;
+                        atackee[board_index-1].sinked=true;
+                        atackee[board_index].sinked=true;
+                        
+                    }
+                    break;
+                case 4:
+                    if(atackee[board_index+8].probed && atackee[board_index+16].probed && atackee[board_index+24].probed){
+                        printf("sinked");
+                        atackee[board_index].sinked=true;
+                        atackee[board_index+8].sinked=true;
+                        atackee[board_index+16].sinked=true;
+                        atackee[board_index+24].sinked=true;
+                    }
+                    break;
+                case 5:
+                    if(atackee[board_index+8].probed && atackee[board_index-8].probed){
+                        if(atackee[board_index-8].pos==4 && atackee[board_index+24].probed){
+                            atackee[board_index+24].sinked=true;
+                        }
+                        else if (atackee[board_index+8].pos==3 && atackee[board_index-24].probed){
+                            atackee[board_index-24].sinked=true;
+                        }
+                        printf("sinked");
+                        atackee[board_index-8].sinked=true;
+                        atackee[board_index].sinked=true;
+                        atackee[board_index+8].sinked=true;
+                    }
+                    break;
+                case 6:
+                    if(atackee[board_index-8].probed && atackee[board_index-16].probed && atackee[board_index-24].probed){
+                        printf("sinked");
+                        atackee[board_index-24].sinked=true;
+                        atackee[board_index-16].sinked=true;
+                        atackee[board_index-8].sinked=true;
+                        atackee[board_index].sinked=true;
+            
+                    }
+                    break;
+                default:
+                    break;
+                }
+                break;
+            default:
+                break;
+            }
+        }
+        else {
+            if(state==Atack){
+                printf("             ai time now                      ");
+                state=Defend;
+                /*
+                y=(rand() % (5 - 1 + 1)) + 1;
+                x=(rand() % (8 - 1 + 1)) + 1;
+                board_index=((y-1)*8)+x;
+                */
+                do
+                {
+                    do
+                    {
+                        y=(rand() % (5 - 1 + 1)) + 1;
+                        x=(rand() % (8 - 1 + 1)) + 1;
+                        board_index=((y-1)*8)+x;
+                        printf(" board_index: %d",board_index);
+                    } while (player_board[board_index].probed);
+                    attack(player_board);
+                } while (player_board[board_index].hasBoat);
+            }
         }
     }
 }
@@ -392,6 +612,7 @@ void aiBoats(){
             }
         }
     }
+    current_boat=3;
     while(triples!=0){
         vert=rand() % 2;
         if(vert){
@@ -422,6 +643,7 @@ void aiBoats(){
             }
         }
     }
+    current_boat=2;
     while(doubles!=0){
         vert=rand() % 2;
         if(vert){
@@ -458,12 +680,14 @@ void aiBoats(){
 void addBoat(int board_index,int pos){
     player_board[board_index].hasBoat=true;
     player_board[board_index].probed=false;
+    player_board[board_index].sinked=false;
     player_board[board_index].len=current_boat;
     player_board[board_index].pos=pos;
 }
 void addEnemyBoat(int board_index,int pos){
     enemy_board[board_index].hasBoat=true;
     enemy_board[board_index].probed=false;
+    enemy_board[board_index].sinked=false;
     enemy_board[board_index].len=current_boat;
     enemy_board[board_index].pos=pos;
 }

@@ -62,12 +62,12 @@ void draw_game_screen(){
 }
 
 void draw_enemy(){
+    //printf("nuts");
     memcpy(drawing_frame_buffer,game_board_backround_buffer,frame_buffer_size);
-    draw_mouse();
     for(int temp=1;temp<66;temp++){
-        if(enemy_board[temp].hasBoat){
-            int x = (temp-1)%8;
-            int y = (temp-1)/8;
+        int x = (temp-1)%8;
+        int y = (temp-1)/8;
+        if(enemy_board[temp].hasBoat && enemy_board[temp].sinked){
             switch (enemy_board[temp].pos)
             {
             case 1:
@@ -90,14 +90,24 @@ void draw_enemy(){
             break;
             }
         }
+        if (enemy_board[temp].probed){
+            draw_boat(x,y,XIco);
+        }
     }
+    draw_mouse();
+}
+
+void draw_defence(){
+    memcpy(drawing_frame_buffer,game_board_backround_buffer,frame_buffer_size);
+    draw_boats();
+    draw_mouse();
 }
 
 void draw_boats(){
     for(int temp=1;temp<66;temp++){
+        int x = (temp-1)%8;
+        int y = (temp-1)/8;
         if(player_board[temp].hasBoat){
-            int x = (temp-1)%8;
-            int y = (temp-1)/8;
             switch (player_board[temp].pos)
             {
             case 1:
@@ -119,6 +129,9 @@ void draw_boats(){
                 draw_boat(x,y,boat_down);
             break;
             }
+        }
+        if (player_board[temp].probed){
+            draw_boat(x,y,XIco);
         }
     }
 }

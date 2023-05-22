@@ -16,6 +16,7 @@ struct slot
 {
     bool hasBoat;
     bool probed;
+    bool sinked;
     int len;
     int pos;
     /*
@@ -37,6 +38,7 @@ int set_frame_buffers(uint16_t mode);
 int draw_sprite_xpm(Sprite *sprite, int x, int y);
 void draw_title_screen();
 void draw_enemy();
+void draw_defence();
 void draw_mouse();
 void draw_x();
 void draw_title_selection();
