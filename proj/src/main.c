@@ -37,22 +37,49 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
-int setup(){
-  
+int setup_graphic(){
   if (timer_set_frequency(TIMER_SEL0, GAME_FPS) != 0) return 1;
   if (set_frame_buffers(VIDEO_MODE) != 0) return 1;
   if (set_graphic_mode(VIDEO_MODE) != 0) return 1;
+  return 0;
+}
+
+int subscribe_interrupts(){
+  if (timer_subscribe_interrupts() != 0) return 1;
+  if (keyboard_subscribe_interrupts() != 0) return 1;
+  if (mouse_subscribe_int() != 0) return 1;
+  return 0;
+}
+
+int enable_mouse(){
+  if (mouse_write(ENABLE_STREAM_MODE) != 0) return 1;
+  if (mouse_write(ENABLE_DATA_REPORT) != 0) return 1;
+  return 0;
+}
+
+int setup_minix(){
+
+  if(setup_graphic()!=0) return 1;
 
   setup_sprites();
   setup_backround();
 
-  if (timer_subscribe_interrupts() != 0) return 1;
-  if (keyboard_subscribe_interrupts() != 0) return 1;
-  if (mouse_subscribe_int() != 0) return 1;
+  if(subscribe_interrupts()!=0) return 1;
 
-  if (mouse_write(ENABLE_STREAM_MODE) != 0) return 1;
-  if (mouse_write(ENABLE_DATA_REPORT) != 0) return 1;
+  if(enable_mouse() != 0) return 1;
 
+  return 0;
+}
+
+int unsubscribe_interrupts(){
+  if (timer_unsubscribe_int() != 0) return 1;
+  if (keyboard_unsubscribe_interrupts() != 0) return 1;
+  if (mouse_unsubscribe_int() != 0) return 1;
+  return 0;
+}
+
+int disable_mouse(){
+  if (mouse_write(DISABLE_DATA_REPORT) != 0) return 1;
   return 0;
 }
 
@@ -62,40 +89,39 @@ int turnoff(){
 
   destroy_sprites();
 
-  if (timer_unsubscribe_int() != 0) return 1;
-  if (keyboard_unsubscribe_interrupts() != 0) return 1;
-  if (mouse_unsubscribe_int() != 0) return 1;
+  if(unsubscribe_interrupts()!=0) return 1;
 
-  if (mouse_write(DISABLE_DATA_REPORT) != 0) return 1;
+  if(disable_mouse() != 0) return 1;
 
   return 0;
 }
 
+
+
+
 int (proj_main_loop)(int argc, char *argv[]) {
   
-  if(setup() != 0) return 1;
+  if(setup_minix() != 0) return 1;
   
   int ipc_status;
   message msg;
   
   while (systemState == RUNNING) {
-    if (driver_receive(ANY, &msg, &ipc_status) != 0) {
-      printf("Error");
-      continue;
-    }
-    //print_xpm((xpm_map_t)plus_xpm, 100, 100,secondary_frame_buffer);
+    if (driver_receive(ANY, &msg, &ipc_status) != 0) continue;
+
+  //print_xpm((xpm_map_t)plus_xpm, 100, 100,secondary_frame_buffer);
     if (is_ipc_notify(ipc_status)) {
       switch(_ENDPOINT_P(msg.m_source)) {
         case HARDWARE: 
-          if (msg.m_notify.interrupts & TIMER_MASK){
+          if (msg.m_notify.interrupts & TIMER_INTERRUPT){
             //destroy_sprites(&secondary_frame_buffer,frame_buffer_size);
             update_timer_state();
           }    
-          if (msg.m_notify.interrupts & KEYBOARD_MASK){
+          if (msg.m_notify.interrupts & KEYBOARD_INTERRUPT){
             update_keyboard_state();
             kbd_print_scancode(!(scancode & MAKE_CODE), 1, &scancode);
           }
-          if (msg.m_notify.interrupts & MOUSE_MASK){
+          if (msg.m_notify.interrupts & MOUSE_INTERRUPT){
             update_mouse_state();  
           }    
           //if (msg.m_notify.interrupts & RTC_MASK) update_rtc_state();

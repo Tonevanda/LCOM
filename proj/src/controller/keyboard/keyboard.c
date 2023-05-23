@@ -5,41 +5,24 @@
 int keyboard_hook_id = 1;
 uint8_t scancode = 0;
 
-// subscribe interrupts
-int (keyboard_subscribe_interrupts)()
-{
-  // para detectar as interrupções geradas
-  // subscrição das interrupções em modo exclusivo
-  return sys_irqsetpolicy(IRQ_KEYBOARD, IRQ_REENABLE | IRQ_EXCLUSIVE, 
-                          &keyboard_hook_id);
+int (keyboard_subscribe_interrupts)(){
+  return sys_irqsetpolicy(IRQ_KEYBOARD, IRQ_REENABLE | IRQ_EXCLUSIVE, &keyboard_hook_id);
 }
 
-// unsubscribe interrupts
-int (keyboard_unsubscribe_interrupts) ()
-{
+int (keyboard_unsubscribe_interrupts) (){
   return sys_irqrmpolicy(&keyboard_hook_id);
 }
 
-int (keyboard_restore)()
-{
-  uint8_t commandWord;
+int (keyboard_restore)(){
+  uint8_t cmdWord;
+  
+  if (write_KBC_Keyboard_command(0x64, 0x20) != 0) return 1;
+  if (read_KBC_Keyboard_output(0x60, &cmdWord) != 0) return 1; 
 
-  // Leitura da configuração atual
-  if (write_KBC_Keyboard_command(0x64, 0x20) != 0)
-    return 1;  // notificar o i8042 da leitura
-    
-  if (read_KBC_Keyboard_output(0x60, &commandWord) != 0)
-    return 1;  // ler a configuração
+  cmdWord |= BIT(0);
 
-  // Activar o bit das interrupções
-  commandWord = commandWord | BIT(0);
-
-  // Escrita da nova configuração
-  if (write_KBC_Keyboard_command(0x64, 0x60) != 0)
-    return 1;  // notificar o i8042 da escrita
-    
-  if (write_KBC_Keyboard_command(0x60, commandWord) != 0)
-    return 1;  // escrever a configuração
+  if (write_KBC_Keyboard_command(0x64, 0x60) != 0) return 1;
+  if (write_KBC_Keyboard_command(0x60, cmdWord) != 0) return 1;
     
   return 0;
 }

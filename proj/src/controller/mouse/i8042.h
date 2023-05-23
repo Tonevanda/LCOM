@@ -1,9 +1,8 @@
-#ifndef _LCOM_I8042_H_MOUSE_
-#define _LCOM_I8042_H_MOUSE_
+#ifndef _i8042_h_
+#define _i8042_h_
 #include <lcom/lcf.h>
 
 struct packet mouse_packet;
-
 
 #define IRQ_KEYBOARD    1
 #define MOUSE_IRQ       12
@@ -13,8 +12,6 @@ struct packet mouse_packet;
 #define TWO_BYTES       0xE0
 #define ENABLE_INT      BIT(0)
 
-#define TIMEOUT_ERROR   BIT(6)
-#define PARITY_ERROR    BIT(7)
 #define FULL_OUT_BUFFER BIT(0)
 #define FULL_IN_BUFFER  BIT(1)
 
@@ -23,9 +20,6 @@ struct packet mouse_packet;
 #define KBC_OUT_CMD     0x60
 #define KBC_READ_CMD    0x20
 #define KBC_WRITE_CMD   0x60
-
-#define WAIT_KBC        20000
-#define MAX_ATTEMPS     10
 
 #define MOUSE_LB            BIT(0)
 #define MOUSE_RB            BIT(1)
@@ -41,7 +35,4 @@ struct packet mouse_packet;
 #define MOUSE_READ_DATA     0xEB
 #define WRITE_BYTE_MOUSE    0xD4
 
-#define ACK 0xFA    
-#define NACK 0xFE
-
-#endif /* _LCOM_I8042_H_MOUSE_ */
+#endif

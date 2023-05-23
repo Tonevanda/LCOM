@@ -1,5 +1,5 @@
-#ifndef _LCOM_KBC_H_
-#define _LCOM_KBC_H_
+#ifndef _kbc_keyboard_h_
+#define _kbc_keyboard_h_
 
 #include <minix/sysutil.h>
 #include "i8042.h"
@@ -11,4 +11,4 @@ int (read_KBC_Keyboard_output)(uint8_t port, uint8_t *output);
 
 int (write_KBC_Keyboard_command)(uint8_t port, uint8_t commandByte);
 
-#endif /* _LCOM_KBC_H_ */
+#endif
