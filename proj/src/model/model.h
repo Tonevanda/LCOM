@@ -28,15 +28,15 @@
 #include "xpms/up_vertical_boat.xpm"
 
 typedef enum {
-    RUNNING,
-    EXIT,
+  RUNNING,
+  EXIT,
 }SystemState;
 
 typedef enum{
   Title,
   Placement,
   Defend,
-  Atack,
+  Attack,
 }State;
 
 void setup_sprites();
@@ -48,7 +48,7 @@ void update_keyboard_state();
 void debug_timer();
 void setup_backround();
 void update_mouse_actions_title();
-void update_mouse_actions_player();
+void update_mouse_actions_placement();
 void update_mouse_actions_Attack();
 void update_mouse_actions_defend();
 void update_keyboard_actions_title();
@@ -57,6 +57,6 @@ void placeBoat();
 void attack(struct slot atackee[66]);
 void getBoardPos();
 void aiBoats();
-void addBoat(int board_index,int pos);
-void addEnemyBoat(int board_index,int pos);
+void addBoat(struct slot board[66],int board_index,enum part);
+//void addEnemyBoat(int board_index,int pos);
 #endif

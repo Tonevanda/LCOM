@@ -11,6 +11,14 @@
 //#include "controller/rtc/rtc.h"
 
 
+enum part{
+    left_p,
+    middle_horizontal_p,
+    right_p,
+    up_p,
+    middle_vertical_p,
+    down_p
+};
 
 struct slot
 {
@@ -18,7 +26,7 @@ struct slot
     bool probed;
     bool sinked;
     int len;
-    int pos;
+    enum part pos;
     /*
     1:left
     2:middle horizontal
@@ -29,20 +37,26 @@ struct slot
     */
 };
 
-void draw_boats();
-void draw_selected();
-void draw_boat(int x,int y,Sprite *sprite);
-void swap_buffers();
 
 int set_frame_buffers(uint16_t mode);
+void swap_buffers();
 int draw_sprite_xpm(Sprite *sprite, int x, int y);
+int prepare_backround(Sprite *sprite, int x, int y,uint8_t* buffer);
+
 void draw_title_screen();
-void draw_enemy();
-void draw_defence();
-void draw_mouse();
-void draw_x();
+void draw_placement();
+void draw_attack();
+void draw_defend();
+
 void draw_title_selection();
 void draw_reticle();
-void draw_game_screen();
-int prepare_backround(Sprite *sprite, int x, int y,uint8_t* buffer);
+void draw_selected();
+void draw_mouse();
+
+void draw_player_board_icons();
+void draw_AI_board_icons();
+void pos_switch(int x, int y, enum part pos);
+void draw_on_board(int x,int y,Sprite *sprite);
+
+
 #endif

@@ -83,7 +83,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
       printf("Error");
       continue;
     }
-  //print_xpm((xpm_map_t)plus_xpm, 100, 100,secondary_frame_buffer);
+    //print_xpm((xpm_map_t)plus_xpm, 100, 100,secondary_frame_buffer);
     if (is_ipc_notify(ipc_status)) {
       switch(_ENDPOINT_P(msg.m_source)) {
         case HARDWARE: 
