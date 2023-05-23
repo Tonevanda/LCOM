@@ -5,7 +5,7 @@
 #include <lcom/lcf.h>
 #include "i8254.h"
 
-#define TIMER_MASK BIT(0)
+#define TIMER_INTERRUPT BIT(0)
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq);
 

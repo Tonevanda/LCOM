@@ -1,10 +1,9 @@
-#ifndef __GRAPHIC_H
-#define __GRAPHIC_H
+#ifndef _graphic_h
+#define _graphic_h
 
 #include <lcom/lcf.h>
 #include "VBE.h"
 
-// estrutura de dados que contém informação sobre o modo gráfico
 vbe_mode_info_t mode_info; 
 
 int (set_graphic_mode)(uint16_t submode);
@@ -17,4 +16,5 @@ int (draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, ui
 int (draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color,uint8_t* frame_buffer);
 int (draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color,uint8_t* frame_buffer);
 int (print_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y,uint8_t *buffer);
+
 #endif

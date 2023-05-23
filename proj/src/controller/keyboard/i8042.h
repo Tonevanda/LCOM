@@ -1,5 +1,5 @@
-#ifndef _LCOM_I8042_H_
-#define _LCOM_I8042_H_
+#ifndef _i8042_h_kbd_
+#define _i8042_h_kbd_
 #include <lcom/lcf.h>
 
 #define IRQ_KEYBOARD    1
@@ -10,11 +10,6 @@ uint32_t count;
 #define MAKE_CODE       BIT(7)
 #define TWO_BYTES       0xE0
 #define ENABLE_INT      BIT(0)
-
-#define TIMEOUT_ERROR   BIT(6)
-#define PARITY_ERROR    BIT(7)
-#define FULL_OUT_BUFFER BIT(0)
-#define FULL_IN_BUFFER  BIT(1)
 
 #define KBC_STATUS_REG  0x64
 #define KBC_IN_CMD      0x64
@@ -39,4 +34,4 @@ uint32_t count;
 #define E_KEY           18
 #define R_KEY           19
 
-#endif /* _LCOM_I8042_H_ */
+#endif

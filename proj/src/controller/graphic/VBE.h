@@ -1,7 +1,8 @@
-#ifndef __VBE_MACROS_H
-#define __VBE_MACROS_H
+#ifndef _vbe_h_
+#define _vbe_h_
 
-#define DIRECT_COLOR 0x06
 #define INDEXED_COLOR 0x105
+#define DIRECT_COLOR 0x06
+
 
 #endif
