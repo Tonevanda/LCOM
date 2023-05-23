@@ -29,6 +29,7 @@ int original_board_x=402;
 int original_board_y=272;
 int board_index=0;
 int current_boat;
+bool isKeyboard=false;
 bool vert=false;
 struct slot player_board[66];
 struct slot enemy_board[66];
@@ -547,42 +548,54 @@ void draw_reticle(){
 }
 
 void draw_selected(){
+    int x_rel;
+    int y_rel;
+    if (!isKeyboard){
+        x_rel=mouse_info.x;
+        y_rel=mouse_info.y;
+    }
+    else{
+        int x = (board_index-1)%8;
+        int y = (board_index-1)/8;
+        x_rel=original_board_x+((x)*50);
+        y_rel=original_board_y+((y)*50);
+    }
     switch (current_boat)
     {
     case 2:
         if (vert){
-            draw_sprite_xpm(boat_up, mouse_info.x, mouse_info.y);
-            draw_sprite_xpm(boat_down, mouse_info.x, mouse_info.y+50);
+            draw_sprite_xpm(boat_up, x_rel, y_rel);
+            draw_sprite_xpm(boat_down, x_rel, y_rel+50);
         }
         else{
-            draw_sprite_xpm(boat_left, mouse_info.x, mouse_info.y);
-            draw_sprite_xpm(boat_right, mouse_info.x+50, mouse_info.y);
+            draw_sprite_xpm(boat_left, x_rel, y_rel);
+            draw_sprite_xpm(boat_right, x_rel+50, y_rel);
         }
         break;
     case 3:
         if (vert){
-            draw_sprite_xpm(boat_up, mouse_info.x, mouse_info.y);
-            draw_sprite_xpm(boat_middle_vert, mouse_info.x, mouse_info.y+50);
-            draw_sprite_xpm(boat_down, mouse_info.x, mouse_info.y+100);
+            draw_sprite_xpm(boat_up, x_rel, y_rel);
+            draw_sprite_xpm(boat_middle_vert, x_rel, y_rel+50);
+            draw_sprite_xpm(boat_down, x_rel, y_rel+100);
         }
         else{
-            draw_sprite_xpm(boat_left, mouse_info.x, mouse_info.y);
-            draw_sprite_xpm(boat_middle_hor, mouse_info.x+50, mouse_info.y);
-            draw_sprite_xpm(boat_right, mouse_info.x+100, mouse_info.y);
+            draw_sprite_xpm(boat_left, x_rel, y_rel);
+            draw_sprite_xpm(boat_middle_hor, x_rel+50, y_rel);
+            draw_sprite_xpm(boat_right, x_rel+100, y_rel);
         }
         break;
     case 4:
         if (vert){
-            draw_sprite_xpm(boat_up, mouse_info.x, mouse_info.y);
-            draw_sprite_xpm(boat_middle_vert, mouse_info.x, mouse_info.y+50);
-            draw_sprite_xpm(boat_middle_vert, mouse_info.x, mouse_info.y+100);
-            draw_sprite_xpm(boat_down, mouse_info.x, mouse_info.y+150);
+            draw_sprite_xpm(boat_up, x_rel, y_rel);
+            draw_sprite_xpm(boat_middle_vert, x_rel, y_rel+50);
+            draw_sprite_xpm(boat_middle_vert, x_rel, y_rel+100);
+            draw_sprite_xpm(boat_down, x_rel, y_rel+150);
         }
         else{
-            draw_sprite_xpm(boat_left, mouse_info.x, mouse_info.y);
-            draw_sprite_xpm(boat_middle_hor, mouse_info.x+50, mouse_info.y);
-            draw_sprite_xpm(boat_middle_hor, mouse_info.x+100, mouse_info.y);
-            draw_sprite_xpm(boat_right, mouse_info.x+150, mouse_info.y);
+            draw_sprite_xpm(boat_left, x_rel, y_rel);
+            draw_sprite_xpm(boat_middle_hor, x_rel+50, y_rel);
+            draw_sprite_xpm(boat_middle_hor, x_rel+100, y_rel);
+            draw_sprite_xpm(boat_right, x_rel+150, y_rel);
         }
         break;
     default:

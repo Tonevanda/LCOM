@@ -25,6 +25,18 @@ uint32_t count;
 #define WAIT_KBC        20000
 #define MAX_ATTEMPS     10
 
+
+#define ESC_Key          1
+#define ONE_KEY          2
+#define TWO_KEY          3
+#define THREE_KEY        4
+#define FOUR_KEY         5
 #define Q_KEY           16
+#define W_KEY           17
+#define A_KEY           30
+#define S_KEY           31
+#define D_KEY           32
+#define E_KEY           18
+#define R_KEY           19
 
 #endif /* _LCOM_I8042_H_ */
