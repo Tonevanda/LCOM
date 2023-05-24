@@ -96,9 +96,6 @@ int turnoff(){
   return 0;
 }
 
-
-
-
 int (proj_main_loop)(int argc, char *argv[]) {
   
   if(setup_minix() != 0) return 1;
@@ -108,8 +105,6 @@ int (proj_main_loop)(int argc, char *argv[]) {
   
   while (systemState == RUNNING) {
     if (driver_receive(ANY, &msg, &ipc_status) != 0) continue;
-
-  //print_xpm((xpm_map_t)plus_xpm, 100, 100,secondary_frame_buffer);
     if (is_ipc_notify(ipc_status)) {
       switch(_ENDPOINT_P(msg.m_source)) {
         case HARDWARE: 
@@ -128,9 +123,6 @@ int (proj_main_loop)(int argc, char *argv[]) {
         }
     }
   }
-  
-  //sleep(3);
   if(turnoff() != 0) return 1;
-  
   return 0;
 }

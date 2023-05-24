@@ -23,6 +23,7 @@ extern Sprite *boat_middle_vert;
 extern Sprite *boat_left;
 extern Sprite *boat_right;
 extern Sprite *boat_middle_hor;
+extern Sprite *arrow;
 
 int selected=0;
 int original_board_x=402; 
@@ -33,6 +34,9 @@ bool isKeyboard=false;
 bool vert=false;
 struct slot player_board[66];
 struct slot enemy_board[66];
+struct gameInfo game;
+bool victory=false;
+
 
 
 int set_frame_buffers(uint16_t mode) {
@@ -113,7 +117,22 @@ void draw_attack(){
 void draw_defend(){
     memcpy(drawing_frame_buffer,game_board_backround_buffer,frame_buffer_size);
     draw_player_board_icons();
+    draw_reticle();
     draw_mouse();
+    draw_sprite_xpm(arrow, mode_info.XResolution-48, mode_info.YResolution-40);
+}
+
+void draw_victory(){
+    memset(drawing_frame_buffer,0,frame_buffer_size);
+    if (victory)
+    {
+        draw_sprite_xpm(arrow, mode_info.XResolution-48, mode_info.YResolution-40);
+    }
+    else{
+        draw_on_board(1,1,XIco);
+    }
+    
+    
 }
 
 void draw_title_selection(){    

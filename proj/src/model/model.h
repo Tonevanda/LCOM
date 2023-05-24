@@ -6,7 +6,7 @@
 #include "controller/keyboard/KBC_Keyboard.h"
 #include "controller/mouse/mouse.h"
 #include "controller/graphic/graphic.h"
-//#include "controller/rtc/rtc.h"
+#include "controller/rtc/rtc.h"
 
 #include "draw/draw.h"
 #include "model/sprite.h"
@@ -26,6 +26,7 @@
 #include "xpms/middle_vertical_boat.xpm"
 #include "xpms/right_horizontal_boat.xpm"
 #include "xpms/up_vertical_boat.xpm"
+#include "xpms/arrow.xpm"
 
 typedef enum {
   RUNNING,
@@ -37,26 +38,39 @@ typedef enum{
   Placement,
   Defend,
   Attack,
+  Victory,
 }State;
 
 void setup_sprites();
 void destroy_sprites();
-void destroy_sprites();
+void setup_backround();
+
 void update_timer_state();
 void update_mouse_state();
 void update_keyboard_state();
-void debug_timer();
-void setup_backround();
+
+
 void update_mouse_actions_title();
 void update_mouse_actions_placement();
 void update_mouse_actions_Attack();
 void update_mouse_actions_defend();
+
 void update_keyboard_actions_title();
 void update_keyboard_actions_placement();
-void placeBoat();
-void attack(struct slot atackee[66]);
+void update_keyboard_actions_attack();
+void update_keyboard_actions_defend();
+
+
+void menu_actions();
 void getBoardPos();
-void aiBoats();
+void getKeyboadPos();
+
+void placeBoat();
+
 void addBoat(struct slot board[66],int board_index,enum part);
-//void addEnemyBoat(int board_index,int pos);
+
+void attack(struct slot atackee[66]);
+void aiBoats();
+
+void ai_actions();
 #endif

@@ -37,6 +37,15 @@ struct slot
     */
 };
 
+struct gameInfo{
+    int doublesBoatsLeft;
+    int triplesBoatsLeft;
+    int quadsBoatsLeft;
+    int doublesAiBoatsLeft;
+    int triplesAiBoatsLeft;
+    int quadsAiBoatsLeft;
+};
+
 
 int set_frame_buffers(uint16_t mode);
 void swap_buffers();
@@ -47,6 +56,7 @@ void draw_title_screen();
 void draw_placement();
 void draw_attack();
 void draw_defend();
+void draw_victory();
 
 void draw_title_selection();
 void draw_reticle();
