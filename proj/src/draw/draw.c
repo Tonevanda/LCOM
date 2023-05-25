@@ -2,6 +2,8 @@
 
 uint8_t *main_frame_buffer;
 uint8_t *secondary_frame_buffer;
+uint8_t *test_frame_buffer;
+uint8_t *main_switch_frame_buffer;
 uint8_t *drawing_frame_buffer;
 uint8_t *title_screen_backround_buffer;
 uint8_t *game_board_backround_buffer;
@@ -32,6 +34,8 @@ int board_index=0;
 int current_boat;
 bool isKeyboard=false;
 bool vert=false;
+bool playerBoardVisible=false;
+uint16_t modes;
 struct slot player_board[66];
 struct slot enemy_board[66];
 struct gameInfo game;
@@ -40,17 +44,48 @@ bool victory=false;
 
 
 int set_frame_buffers(uint16_t mode) {
+    modes=mode;
     if (set_frame_buffer(mode, &main_frame_buffer)) return 1;
     frame_buffer_size = mode_info.XResolution * mode_info.YResolution * ((mode_info.BitsPerPixel + 7) / 8);
 
-    secondary_frame_buffer = (uint8_t *) malloc(frame_buffer_size);
-    drawing_frame_buffer = (uint8_t *) malloc(frame_buffer_size);
+    secondary_frame_buffer= (uint8_t *) malloc(frame_buffer_size);
+    //test_frame_buffer =(uint8_t *) malloc(frame_buffer_size);
+    //main_frame_buffer=(uint8_t *) malloc(frame_buffer_size);
+    //main_frame_buffer=main_switch_frame_buffer;
+    drawing_frame_buffer =(uint8_t *) malloc(frame_buffer_size);
     title_screen_backround_buffer=(uint8_t *) malloc(frame_buffer_size);
     game_board_backround_buffer=(uint8_t *) malloc(frame_buffer_size);
     return 0;
 }
 
-void swap_buffers() {memcpy(main_frame_buffer, drawing_frame_buffer, frame_buffer_size);}
+void swap_buffers() {
+    /*
+    main_frame_buffer = *drawing_frame_buffer;
+    if(drawing_frame_buffer == test_frame_buffer){
+        printf ("   1  ");
+        drawing_frame_buffer=secondary_frame_buffer;
+        //uint8_t* temp= main_frame_buffer;
+        //main_frame_buffer=*secondary_frame_buffer;
+        //secondary_frame_buffer=temp;
+        //drawing_frame_buffer=main_frame_buffer;
+        //drawing_frame_buffer=main_frame_buffer;
+        //set_frame_buffer(modes,&secondary_frame_buffer);
+        
+    }
+    else{
+        drawing_frame_buffer=test_frame_buffer;
+        printf ("   2  ");
+        //uint8_t *temp= secondary_frame_buffer;
+        //secondary_frame_buffer=*main_frame_buffer;
+        //main_frame_buffer=temp;
+        //drawing_frame_buffer=secondary_frame_buffer;
+        //drawing_frame_buffer=secondary_frame_buffer;
+        //set_frame_buffer(modes,&main_frame_buffer);
+        
+    }
+    */
+    memcpy(main_frame_buffer, drawing_frame_buffer, frame_buffer_size);
+}
 
 // A função recebe um objeto Sprite proveniente de um XPM e mostra-o nas coordenadas (x, y)
 // Usa as cores dinamicamente alocadas na altura da construção
@@ -109,7 +144,12 @@ void draw_placement(){
 
 void draw_attack(){
     memcpy(drawing_frame_buffer,game_board_backround_buffer,frame_buffer_size);
-    draw_AI_board_icons();
+    if (!playerBoardVisible){
+        draw_AI_board_icons();
+    }
+    else{
+        draw_player_board_icons();
+    }
     draw_reticle();
     draw_mouse();
 }

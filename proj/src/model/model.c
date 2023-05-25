@@ -20,6 +20,7 @@ extern int current_boat;
 extern bool vert;
 extern bool isKeyboard;
 extern bool victory;
+extern bool playerBoardVisible;
 Sprite *plus;
 Sprite *mouse;
 Sprite *XIco;
@@ -35,6 +36,8 @@ Sprite *boat_left;
 Sprite *boat_right;
 Sprite *boat_middle_hor;
 Sprite *arrow;
+Sprite *backround;
+Sprite *titleName;
 
 int x=0;
 int y=0;
@@ -59,6 +62,8 @@ void setup_sprites() {
     boat_right = create_sprite_xpm((xpm_map_t) right);
     boat_middle_hor = create_sprite_xpm((xpm_map_t) middle_h);
     arrow = create_sprite_xpm((xpm_map_t) arr);
+    backround = create_sprite_xpm((xpm_map_t) boatimg);
+    titleName = create_sprite_xpm((xpm_map_t) titleCard);
 }
 
 void destroy_sprites() {
@@ -77,11 +82,15 @@ void destroy_sprites() {
     destroy_sprite(boat_right);
     destroy_sprite(boat_middle_hor);
     destroy_sprite(arrow);
+    destroy_sprite(backround);
+    destroy_sprite(titleName);
 }
 
 void setup_backround(){
+    prepare_backround(backround, 0, 0,title_screen_backround_buffer);
     prepare_backround(XIco, 0, 0,title_screen_backround_buffer);
     prepare_backround(t, 300, 300,title_screen_backround_buffer);
+    prepare_backround(titleName, 231, 100,title_screen_backround_buffer);
     draw_rectangle(0,0,mode_info.XResolution,mode_info.YResolution,0x0000FF,game_board_backround_buffer);
     prepare_backround(XIco, 0, 0,game_board_backround_buffer);
     prepare_backround(board, 350, 220,game_board_backround_buffer);
@@ -106,7 +115,8 @@ void update_timer_state() {
         break;
     case Defend:
         ai_actions();
-        /*
+        //          ACCUALLY IMPORTANTE DESCOMENTA DEPOIS !!!!!!!!!!!!!!!!!!!!!!!!!!!
+        /* 
         if(aiCounter%(GAME_FPS*2)==0){
           ai_actions();
         }*/
@@ -119,7 +129,6 @@ void update_timer_state() {
     }
     swap_buffers();
     timer_interrupts++;
-    //debug_timer();
 }
 
 void update_mouse_state() {
@@ -200,7 +209,10 @@ void getBoardPos(){
     }
     else{board_index=0;}
 }
-
+/**
+ * @brief 
+ * 
+ */
 void update_mouse_actions_placement() {
     if(mouse_info.left_click){
         //printf("x: %d | y: %d",mouse_info.x,mouse_info.y);
@@ -245,9 +257,12 @@ void update_mouse_actions_Attack(){
             state=Title;
         }
         //printf(" board_index: %d | x: %d | y: %d ",board_index,(board_index-1)%8,(board_index-1)/8);
-        if(board_index!=0){
+        if(board_index!=0 && !playerBoardVisible){
             attack(enemy_board);
         }
+    }
+    else if(mouse_info.right_click){
+        playerBoardVisible=!playerBoardVisible;
     }
 }
 
@@ -831,6 +846,9 @@ void update_keyboard_actions_attack(){
         if(board_index!=0){
             attack(enemy_board);
         }
+        break;
+    case R_KEY:
+        playerBoardVisible=!playerBoardVisible;
         break;
     default:
         break;

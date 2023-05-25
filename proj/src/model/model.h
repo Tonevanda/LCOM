@@ -27,6 +27,8 @@
 #include "xpms/right_horizontal_boat.xpm"
 #include "xpms/up_vertical_boat.xpm"
 #include "xpms/arrow.xpm"
+#include "xpms/backround.xpm"
+#include "xpms/titlecard.xpm"
 
 typedef enum {
   RUNNING,

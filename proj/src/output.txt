@@ -1,130 +1,88 @@
-player1 state board_index: 10 | x: 1 | y: 1  board_index: 2 | x: 1 | y: 0  board_index: 2 | x: 1 | y: 0 Selected doubleMakecode: 0x03
-Breakcode: 0x83
- board_index: 2 | x: 1 | y: 0  placed double  board_index: 2 | x: 1 | y: 0  board_index: 2 | x: 1 | y: 0  board_index: 2 | x: 1 | y: 0  board_index: 2 | x: 1 | y: 0  board_index: 10 | x: 1 | y: 1  placed double  board_index: 10 | x: 1 | y: 1  board_index: 10 | x: 1 | y: 1  board_index: 10 | x: 1 | y: 1  board_index: 10 | x: 1 | y: 1  board_index: 10 | x: 1 | y: 1  board_index: 18 | x: 1 | y: 2  placed double  board_index: 18 | x: 1 | y: 2  board_index: 18 | x: 1 | y: 2  board_index: 18 | x: 1 | y: 2  board_index: 18 | x: 1 | y: 2  board_index: 18 | x: 1 | y: 2  board_index: 26 | x: 1 | y: 3  placed double  board_index: 26 | x: 1 | y: 3  board_index: 26 | x: 1 | y: 3  board_index: 26 | x: 1 | y: 3  board_index: 26 | x: 1 | y: 3  board_index: 26 | x: 1 | y: 3  board_index: 26 | x: 1 | y: 3  board_index: 34 | x: 1 | y: 4  board_index: 34 | x: 1 | y: 4  board_index: 34 | x: 1 | y: 4  board_index: 34 | x: 1 | y: 4  board_index: 42 | x: 1 | y: 5  board_index: 42 | x: 1 | y: 5  board_index: 42 | x: 1 | y: 5  board_index: 42 | x: 1 | y: 5  board_index: 42 | x: 1 | y: 5  board_index: 42 | x: 1 | y: 5  board_index: 42 | x: 1 | y: 5  board_index: 42 | x: 1 | y: 5  board_index: 50 | x: 1 | y: 6  board_index: 50 | x: 1 | y: 6  board_index: 50 | x: 1 | y: 6  board_index: 50 | x: 1 | y: 6  board_index: 50 | x: 1 | y: 6  board_index: 50 | x: 1 | y: 6  board_index: 50 | x: 1 | y: 6  board_index: 50 | x: 1 | y: 6  board_index: 50 | x: 1 | y: 6  board_index: 50 | x: 1 | y: 6  board_index: 50 | x: 1 | y: 6  board_index: 50 | x: 1 | y: 6  board_index: 50 | x: 1 | y: 6  board_index: 50 | x: 1 | y: 6  board_index: 50 | x: 1 | y: 6  board_index: 50 | x: 1 | y: 6  board_index: 51 | x: 2 | y: 6  board_index: 51 | x: 2 | y: 6  board_index: 51 | x: 2 | y: 6  board_index: 51 | x: 2 | y: 6  board_index: 43 | x: 2 | y: 5 Selected tripleMakecode: 0x04
+player1 stateSelected double board_index: 1 | x: 0 | y: 0  placed double  board_index: 9 | x: 0 | y: 1  placed double  board_index: 9 | x: 0 | y: 1  board_index: 9 | x: 0 | y: 1  board_index: 9 | x: 0 | y: 1  board_index: 9 | x: 0 | y: 1  board_index: 9 | x: 0 | y: 1  board_index: 9 | x: 0 | y: 1  board_index: 9 | x: 0 | y: 1  board_index: 9 | x: 0 | y: 1  board_index: 9 | x: 0 | y: 1  board_index: 9 | x: 0 | y: 1  board_index: 17 | x: 0 | y: 2  placed double  board_index: 17 | x: 0 | y: 2  board_index: 17 | x: 0 | y: 2  board_index: 17 | x: 0 | y: 2  board_index: 17 | x: 0 | y: 2  board_index: 17 | x: 0 | y: 2  board_index: 17 | x: 0 | y: 2  board_index: 17 | x: 0 | y: 2  board_index: 17 | x: 0 | y: 2  board_index: 17 | x: 0 | y: 2  board_index: 17 | x: 0 | y: 2  board_index: 25 | x: 0 | y: 3  placed double  board_index: 25 | x: 0 | y: 3  board_index: 25 | x: 0 | y: 3  board_index: 25 | x: 0 | y: 3  board_index: 25 | x: 0 | y: 3  board_index: 33 | x: 0 | y: 4  board_index: 33 | x: 0 | y: 4  board_index: 33 | x: 0 | y: 4  board_index: 33 | x: 0 | y: 4  board_index: 33 | x: 0 | y: 4  board_index: 33 | x: 0 | y: 4  board_index: 33 | x: 0 | y: 4  board_index: 33 | x: 0 | y: 4  board_index: 41 | x: 0 | y: 5  board_index: 41 | x: 0 | y: 5  board_index: 42 | x: 1 | y: 5  board_index: 42 | x: 1 | y: 5  board_index: 42 | x: 1 | y: 5  board_index: 42 | x: 1 | y: 5 Selected tripleMakecode: 0x04
 Breakcode: 0x84
- board_index: 13 | x: 4 | y: 1  placed triple  board_index: 13 | x: 4 | y: 1  board_index: 13 | x: 4 | y: 1  board_index: 13 | x: 4 | y: 1  board_index: 13 | x: 4 | y: 1  board_index: 21 | x: 4 | y: 2  placed triple  board_index: 21 | x: 4 | y: 2  board_index: 29 | x: 4 | y: 3  placed triple  board_index: 29 | x: 4 | y: 3  board_index: 37 | x: 4 | y: 4  board_index: 37 | x: 4 | y: 4  board_index: 37 | x: 4 | y: 4  board_index: 45 | x: 4 | y: 5  board_index: 45 | x: 4 | y: 5  board_index: 45 | x: 4 | y: 5  board_index: 45 | x: 4 | y: 5  board_index: 45 | x: 4 | y: 5  board_index: 45 | x: 4 | y: 5  board_index: 45 | x: 4 | y: 5  board_index: 45 | x: 4 | y: 5  board_index: 45 | x: 4 | y: 5  board_index: 45 | x: 4 | y: 5  board_index: 45 | x: 4 | y: 5  board_index: 45 | x: 4 | y: 5  board_index: 45 | x: 4 | y: 5  board_index: 45 | x: 4 | y: 5  board_index: 45 | x: 4 | y: 5  board_index: 53 | x: 4 | y: 6  board_index: 53 | x: 4 | y: 6  board_index: 53 | x: 4 | y: 6  board_index: 53 | x: 4 | y: 6  board_index: 53 | x: 4 | y: 6  board_index: 53 | x: 4 | y: 6  board_index: 53 | x: 4 | y: 6  board_index: 53 | x: 4 | y: 6  board_index: 53 | x: 4 | y: 6  board_index: 53 | x: 4 | y: 6  board_index: 53 | x: 4 | y: 6 Selected quadMakecode: 0x05
+ board_index: 3 | x: 2 | y: 0  placed triple  board_index: 3 | x: 2 | y: 0  board_index: 3 | x: 2 | y: 0  board_index: 3 | x: 2 | y: 0  board_index: 3 | x: 2 | y: 0  board_index: 11 | x: 2 | y: 1  placed triple  board_index: 11 | x: 2 | y: 1  board_index: 11 | x: 2 | y: 1  board_index: 11 | x: 2 | y: 1  board_index: 20 | x: 3 | y: 2  placed triple  board_index: 20 | x: 3 | y: 2  board_index: 20 | x: 3 | y: 2  board_index: 28 | x: 3 | y: 3  board_index: 28 | x: 3 | y: 3  board_index: 28 | x: 3 | y: 3  board_index: 28 | x: 3 | y: 3  board_index: 28 | x: 3 | y: 3  board_index: 36 | x: 3 | y: 4  board_index: 36 | x: 3 | y: 4  board_index: 36 | x: 3 | y: 4  board_index: 36 | x: 3 | y: 4  board_index: 36 | x: 3 | y: 4  board_index: 36 | x: 3 | y: 4  board_index: 36 | x: 3 | y: 4  board_index: 36 | x: 3 | y: 4  board_index: 36 | x: 3 | y: 4  board_index: 36 | x: 3 | y: 4  board_index: 36 | x: 3 | y: 4  board_index: 36 | x: 3 | y: 4 Selected quadMakecode: 0x05
 Breakcode: 0x85
- board_index: 42 | x: 1 | y: 5  placed quad  board_index: 42 | x: 1 | y: 5  board_index: 42 | x: 1 | y: 5  board_index: 42 | x: 1 | y: 5  board_index: 42 | x: 1 | y: 5  board_index: 42 | x: 1 | y: 5  board_index: 50 | x: 1 | y: 6  placed quad                                                    ai turn:                                                      placed quad  placed quad  placed triple  placed triple  placed triple  placed double  placed double  placed double  placed double                            test                         found 4                    ai time now                    board_index: 54Makecode: 0x12
-                   ai time now                   Makecode: 0x12
- board_index: 24 board_index: 62Makecode: 0x12
-                   ai time now                   Makecode: 0x12
- board_index: 30 board_index: 9Makecode: 0x12
-found 2 Makecode: 0x12
-                   ai time now                   Makecode: 0x12
- board_index: 57 board_index: 12Makecode: 0x12
-                   ai time now                   Makecode: 0x12
- board_index: 40 board_index: 1Makecode: 0x12
-found 3 Makecode: 0x12
-                   ai time now                   Makecode: 0x12
- board_index: 60 board_index: 7 board_index: 29found 3  board_index: 33Makecode: 0x12
-found 2 Makecode: 0x12
-                   ai time now                   Makecode: 0x12
- board_index: 41 board_index: 21found 3  board_index: 10 board_index: 62 board_index: 28Makecode: 0x12
+ board_index: 15 | x: 6 | y: 1  placed quad  board_index: 16 | x: 7 | y: 1  placed quad                                                    ai turn:                                                      placed quad  placed quad  placed triple  placed triple  placed triple  placed double  placed double  placed double  placed double                            test                         found 2                    ai time now                    board_index: 37 board_index: 18 board_index: 6Makecode: 0x05
+Breakcode: 0x85
 Makecode: 0x12
-                   ai time now                   Makecode: 0x12
- board_index: 42 board_index: 14 board_index: 41Makecode: 0x12
-Makecode: 0x12
-                   ai time now                   Makecode: 0x12
- board_index: 10 board_index: 46 board_index: 24Makecode: 0x12
-found 4 Makecode: 0x12
-Makecode: 0x12
-found 4 Makecode: 0x12
-                   ai time now                   Makecode: 0x12
- board_index: 33 board_index: 7Makecode: 0x12
-                   ai time now                   Makecode: 0x12
- board_index: 12 board_index: 60 board_index: 44 board_index: 47Makecode: 0x12
-Makecode: 0x12
-Makecode: 0x12
-                   ai time now                   Makecode: 0x12
- board_index: 3 board_index: 55Makecode: 0x12
-found 3 Makecode: 0x12
-Makecode: 0x12
-Makecode: 0x12
-Makecode: 0x12
-                   ai time now                   Makecode: 0x12
- board_index: 55 board_index: 60 board_index: 23 board_index: 56Breakcode: 0x92
-Makecode: 0x12
-found 3 Makecode: 0x12
-found 3 Makecode: 0x12
-found 2 sinked      AI DOUBLE SANK, 3 LEFT   Makecode: 0x12
-                   ai time now                   Makecode: 0x12
- board_index: 14 board_index: 52found 4  board_index: 20 board_index: 12 board_index: 56 board_index: 41 board_index: 27Makecode: 0x12
-Makecode: 0x12
-                   ai time now                   Makecode: 0x12
- board_index: 25Makecode: 0x12
-                   ai time now                   Makecode: 0x12
- board_index: 44 board_index: 3 board_index: 29 board_index: 53found 4  board_index: 43 board_index: 46Makecode: 0x12
-Makecode: 0x12
-Makecode: 0x12
-Makecode: 0x12
-Makecode: 0x12
-Makecode: 0x12
-Makecode: 0x12
-                   ai time now                   Makecode: 0x12
- board_index: 16 board_index: 20Makecode: 0x12
-Makecode: 0x12
-Makecode: 0x12
-found 2 Makecode: 0x12
-Makecode: 0x12
-Makecode: 0x12
+Breakcode: 0x92
+found 2 sinked      AI DOUBLE SANK, 3 LEFT                      ai time now                    board_index: 31 board_index: 50Makecode: 0x12
+found 3 Breakcode: 0x92
+found 3 found 3                    ai time now                    board_index: 20 board_index: 6 board_index: 27 board_index: 43Makecode: 0x12
+                   ai time now                    board_index: 50 board_index: 32Breakcode: 0x92
+ board_index: 62 board_index: 61Makecode: 0x12
+found 3                    ai time now                    board_index: 19Makecode: 0x12
+found 3 sinked      AI TRIPLE SANK, 2 LEFT   Makecode: 0x12
 Makecode: 0x12
 Makecode: 0x12
 found 4 Makecode: 0x12
+                   ai time now                    board_index: 3 board_index: 50 board_index: 64Makecode: 0x12
+Makecode: 0x12
+found 3 sinked      AI TRIPLE SANK, 1 LEFT                      ai time now                    board_index: 43 board_index: 33Makecode: 0x12
+                   ai time now                    board_index: 63 board_index: 13 board_index: 34Makecode: 0x12
+Makecode: 0x12
+                   ai time now                    board_index: 39 board_index: 43 board_index: 4found 3 Makecode: 0x12
+found 3 Makecode: 0x12
+                   ai time now                    board_index: 32Makecode: 0x12
+                   ai time now                    board_index: 22found 3  board_index: 14Makecode: 0x12
+found 3                    ai time now                    board_index: 41Makecode: 0x12
 Makecode: 0x12
 Makecode: 0x12
+                   ai time now                    board_index: 3found 3 Makecode: 0x12
+Makecode: 0x12
+Makecode: 0x12
+Makecode: 0x12
+Makecode: 0x12
+Makecode: 0x12
+Makecode: 0x12
+                   ai time now                    board_index: 10Makecode: 0x12
+Makecode: 0x12
+Makecode: 0x12
+Makecode: 0x12
+Breakcode: 0x92
+                   ai time now                    board_index: 5 board_index: 42Makecode: 0x12
+                   ai time now                    board_index: 34 board_index: 18 board_index: 54Makecode: 0x12
+                   ai time now                    board_index: 20 board_index: 64 board_index: 62 board_index: 54 board_index: 28Makecode: 0x12
+found 3 sinked      AI TRIPLE SANK, 0 LEFT   Makecode: 0x12
+Breakcode: 0x92
+                   ai time now                    board_index: 6 board_index: 12Makecode: 0x12
+                   ai time now                    board_index: 54 board_index: 8 board_index: 51 board_index: 44Makecode: 0x12
+Breakcode: 0x92
+                   ai time now                    board_index: 64 board_index: 55 board_index: 53 board_index: 11found 3  board_index: 23 board_index: 56 board_index: 45Makecode: 0x12
+Breakcode: 0x92
+found 2                    ai time now                    board_index: 45 board_index: 14 board_index: 16 board_index: 37Makecode: 0x12
+                   ai time now                    board_index: 62 board_index: 16found 4  board_index: 3 board_index: 44 board_index: 19 board_index: 32 board_index: 15 board_index: 5found 3 sinked      PLAYER TRIPLE SANK, 2 LEFT    board_index: 27Makecode: 0x12
+found 4 Breakcode: 0x92
+found 4 Makecode: 0x12
+                   ai time now                    board_index: 27 board_index: 36 board_index: 2found 2  board_index: 53Makecode: 0x12
+Breakcode: 0x92
+found 4                    ai time now                   Makecode: 0x12
+ board_index: 22 board_index: 9 board_index: 28 board_index: 23found 4  board_index: 3 board_index: 8 board_index: 8Makecode: 0x12
+Breakcode: 0x92
+found 4 Makecode: 0x12
+                   ai time now                    board_index: 19 board_index: 25 board_index: 32found 4  board_index: 23 board_index: 8 board_index: 2 board_index: 56Makecode: 0x12
+found 4 sinked      AI QUAD SANK, 1 LEFT   Breakcode: 0x92
+Makecode: 0x12
+                   ai time now                    board_index: 26 board_index: 21 board_index: 46Makecode: 0x12
+Makecode: 0x12
+                   ai time now                    board_index: 5 board_index: 27 board_index: 36Makecode: 0x12
+Breakcode: 0x92
+Makecode: 0x12
+                   ai time now                    board_index: 22 board_index: 47 board_index: 3 board_index: 37 board_index: 28 board_index: 60 board_index: 1found 2 sinked      PLAYER DOUBLE SANK, 3 LEFT    board_index: 33 board_index: 5 board_index: 36 board_index: 15found 4  board_index: 54 board_index: 9 board_index: 26 board_index: 64 board_index: 53 board_index: 16 board_index: 19 board_index: 53 board_index: 13found 3  board_index: 64 board_index: 28 board_index: 47 board_index: 29 board_index: 35Makecode: 0x12
+                   ai time now                    board_index: 39 board_index: 5 board_index: 58 board_index: 50 board_index: 48Makecode: 0x12
+found 2 Makecode: 0x12
 found 2 sinked      AI DOUBLE SANK, 2 LEFT   Makecode: 0x12
 Makecode: 0x12
+found 4 Makecode: 0x12
+found 2 found 2 sinked      AI DOUBLE SANK, 1 LEFT   Makecode: 0x12
 Makecode: 0x12
-                   ai time now                   Makecode: 0x12
- board_index: 14found 3  board_index: 16 board_index: 23 board_index: 48Makecode: 0x12
-found 3 Makecode: 0x12
+Breakcode: 0x92
+found 2 sinked      AI DOUBLE SANK, 0 LEFT                      ai time now                    board_index: 40found 4  board_index: 10found 2  board_index: 25found 2  board_index: 54 board_index: 53 board_index: 21 board_index: 46 board_index: 15 board_index: 11 board_index: 33Makecode: 0x12
+                   ai time now                    board_index: 25 board_index: 12 board_index: 35 board_index: 20found 3  board_index: 64 board_index: 45 board_index: 28 board_index: 7 board_index: 48 board_index: 40 board_index: 31Makecode: 0x12
 Makecode: 0x12
-Makecode: 0x12
-Makecode: 0x12
-Makecode: 0x12
-Makecode: 0x12
-found 3 sinked      AI TRIPLE SANK, 2 LEFT   Makecode: 0x12
-found 4 sinked      AI QUAD SANK, 1 LEFT   Makecode: 0x12
-                   ai time now                   Makecode: 0x12
- board_index: 16 board_index: 45found 4  board_index: 17 board_index: 26Makecode: 0x12
-Makecode: 0x12
+found 4 sinked      AI QUAD SANK, 0 LEFT   Makecode: 0x12
 Makecode: 0x12
 Makecode: 0x12
 Makecode: 0x12
 Breakcode: 0x92
-                   ai time now                   Makecode: 0x12
- board_index: 48 board_index: 51found 4  board_index: 55 board_index: 28 board_index: 36 board_index: 42 board_index: 14 board_index: 43found 4  board_index: 44 board_index: 27found 2  board_index: 29 board_index: 34 board_index: 29 board_index: 32 board_index: 19found 2  board_index: 27 board_index: 52 board_index: 36 board_index: 37Makecode: 0x12
-Breakcode: 0x92
-                   ai time now                   Makecode: 0x12
- board_index: 63Breakcode: 0x92
-Makecode: 0x12
-Breakcode: 0x92
-                   ai time now                    board_index: 4Makecode: 0x12
-Breakcode: 0x92
-                   ai time now                    board_index: 48 board_index: 27 board_index: 23 board_index: 47 board_index: 14 board_index: 57Makecode: 0x12
-Breakcode: 0x92
-                   ai time now                    board_index: 47 board_index: 24 board_index: 58 board_index: 5Makecode: 0x12
-Breakcode: 0x92
-                   ai time now                    board_index: 63 board_index: 62 board_index: 15 board_index: 6Makecode: 0x12
-Breakcode: 0x92
-                   ai time now                    board_index: 44 board_index: 22found 3  board_index: 10 board_index: 49 board_index: 31found 3  board_index: 32 board_index: 21 board_index: 12 board_index: 37 board_index: 41 board_index: 2 board_index: 63 board_index: 63 board_index: 3found 2  board_index: 34 board_index: 29 board_index: 52 board_index: 12 board_index: 29 board_index: 52 board_index: 64 board_index: 39Makecode: 0x12
-Breakcode: 0x92
-                   ai time now                    board_index: 59Makecode: 0x12
-Breakcode: 0x92
-found 3 sinked      AI TRIPLE SANK, 1 LEFT                      ai time now                    board_index: 55 board_index: 28 board_index: 16Makecode: 0x12
-Breakcode: 0x92
-                   ai time now                    board_index: 58 board_index: 16 board_index: 14 board_index: 40Makecode: 0x12
-Breakcode: 0x92
-                   ai time now                    board_index: 61Makecode: 0x12
-Breakcode: 0x92
-                   ai time now                    board_index: 33Makecode: 0x12
-Breakcode: 0x92
-found 4 found 2 found 2 sinked      AI DOUBLE SANK, 1 LEFT   found 4 found 4 sinked      AI QUAD SANK, 0 LEFT                      ai time now                    board_index: 54 board_index: 37 board_index: 56 board_index: 32 board_index: 44 board_index: 35Makecode: 0x12
-Breakcode: 0x92
-                   ai time now                    board_index: 52 board_index: 5 board_index: 35 board_index: 7 board_index: 35 board_index: 52 board_index: 53 board_index: 48 board_index: 47 board_index: 36 board_index: 33 board_index: 2 board_index: 60Makecode: 0x12
-Breakcode: 0x92
-                   ai time now                    board_index: 56 board_index: 11 board_index: 46 board_index: 50found 4 sinked      PLAYER ~QUAD SANK, 1 LEFT    board_index: 8 board_index: 47 board_index: 10found 2  board_index: 1 board_index: 42found 4  board_index: 50 board_index: 59 board_index: 24 board_index: 31 board_index: 57 board_index: 54 board_index: 26 board_index: 19 board_index: 27 board_index: 53 board_index: 39 board_index: 57 board_index: 10 board_index: 61 board_index: 47 board_index: 39 board_index: 9 board_index: 16 board_index: 45 board_index: 43 board_index: 61 board_index: 7 board_index: 8Makecode: 0x12
-Breakcode: 0x92
-                   ai time now                    board_index: 36Makecode: 0x12
-Breakcode: 0x92
-found 3 found 3 sinked      AI TRIPLE SANK, 0 LEFT   Makecode: 0x10
+Makecode: 0x10
