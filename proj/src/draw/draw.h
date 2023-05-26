@@ -62,6 +62,7 @@ void draw_title_selection();
 void draw_reticle();
 void draw_selected();
 void draw_mouse();
+void draw_rtc();
 
 void draw_player_board_icons();
 void draw_AI_board_icons();

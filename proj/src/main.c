@@ -3,7 +3,7 @@
 #include "controller/graphic/graphic.h"
 #include "controller/keyboard/keyboard.h"
 #include "controller/mouse/mouse.h"
-//#include "controller/rtc/rtc.h"
+#include "controller/rtc/rtc.h"
 #include "model/model.h"
 #include "draw/draw.h"
 #include "config.h"
@@ -48,6 +48,7 @@ int subscribe_interrupts(){
   if (timer_subscribe_interrupts() != 0) return 1;
   if (keyboard_subscribe_interrupts() != 0) return 1;
   if (mouse_subscribe_int() != 0) return 1;
+  if (rtc_subscribe_int() != 0) return 1;
   return 0;
 }
 
@@ -56,6 +57,7 @@ int enable_mouse(){
   if (mouse_write(ENABLE_DATA_REPORT) != 0) return 1;
   return 0;
 }
+
 
 int setup_minix(){
 
@@ -75,8 +77,10 @@ int unsubscribe_interrupts(){
   if (timer_unsubscribe_int() != 0) return 1;
   if (keyboard_unsubscribe_interrupts() != 0) return 1;
   if (mouse_unsubscribe_int() != 0) return 1;
+  if (rtc_unsubscribe_int() !=0) return 1;
   return 0;
 }
+
 
 int disable_mouse(){
   if (mouse_write(DISABLE_DATA_REPORT) != 0) return 1;
@@ -107,11 +111,13 @@ int (proj_main_loop)(int argc, char *argv[]) {
     if (driver_receive(ANY, &msg, &ipc_status) != 0) continue;
     if (is_ipc_notify(ipc_status)) {
       switch(_ENDPOINT_P(msg.m_source)) {
-        case HARDWARE: 
+        case HARDWARE:
           if (msg.m_notify.interrupts & TIMER_INTERRUPT){
-            //destroy_sprites(&secondary_frame_buffer,frame_buffer_size);
             update_timer_state();
-          }    
+          }
+          if(msg.m_notify.interrupts & RTC_INTERRUPT){
+              rtc_ih();
+          }
           if (msg.m_notify.interrupts & KEYBOARD_INTERRUPT){
             update_keyboard_state();
             kbd_print_scancode(!(scancode & MAKE_CODE), 1, &scancode);
@@ -119,7 +125,6 @@ int (proj_main_loop)(int argc, char *argv[]) {
           if (msg.m_notify.interrupts & MOUSE_INTERRUPT){
             update_mouse_state();  
           }    
-          //if (msg.m_notify.interrupts & RTC_MASK) update_rtc_state();
         }
     }
   }

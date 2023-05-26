@@ -29,6 +29,11 @@
 #include "xpms/arrow.xpm"
 #include "xpms/backround.xpm"
 #include "xpms/titlecard.xpm"
+#include "xpms/probed.xpm"
+#include "xpms/gameBackround.xpm"
+#include "xpms/white-x.xpm"
+#include "xpms/red-x.xpm"
+#include "xpms/win.xpm"
 
 typedef enum {
   RUNNING,

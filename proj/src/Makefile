@@ -5,10 +5,11 @@ PROG=proj
 .PATH: ${.CURDIR}/controller/mouse
 .PATH: ${.CURDIR}/controller/timer
 .PATH: ${.CURDIR}/controller/graphic
+.PATH: ${.CURDIR}/controller/rtc
 .PATH: ${.CURDIR}/model/
 .PATH: ${.CURDIR}/draw/
 
-SRCS = main.c timer.c utils.c KBC_Mouse.c keyboard.c graphic.c mouse.c draw.c model.c sprite.c KBC_Keyboard.c
+SRCS = main.c timer.c utils.c KBC_Mouse.c keyboard.c graphic.c mouse.c draw.c model.c sprite.c KBC_Keyboard.c rtc.c
 
 CFLAGS += -pedantic -D_LCOM_OPTIMIZED_ -O2
 

@@ -9,6 +9,7 @@ uint8_t *title_screen_backround_buffer;
 uint8_t *game_board_backround_buffer;
 uint32_t frame_buffer_size;
 
+extern uint8_t rtc_data[6];
 extern int timer_interrupts;
 extern vbe_mode_info_t mode_info;
 extern MouseInfo mouse_info;
@@ -26,6 +27,10 @@ extern Sprite *boat_left;
 extern Sprite *boat_right;
 extern Sprite *boat_middle_hor;
 extern Sprite *arrow;
+extern Sprite *ProbedHole;
+extern Sprite *redX;
+extern Sprite *whiteX;
+extern Sprite *vicotory;
 
 int selected=0;
 int original_board_x=402; 
@@ -163,12 +168,14 @@ void draw_defend(){
 }
 
 void draw_victory(){
-    memset(drawing_frame_buffer,0,frame_buffer_size);
+    memcpy(drawing_frame_buffer,game_board_backround_buffer,frame_buffer_size);
     if (victory)
     {
-        draw_sprite_xpm(arrow, mode_info.XResolution-48, mode_info.YResolution-40);
+        draw_AI_board_icons();
+        draw_sprite_xpm(vicotory, 100, 300);
     }
     else{
+        draw_player_board_icons();
         draw_on_board(1,1,XIco);
     }
     
@@ -252,16 +259,34 @@ void draw_mouse() {
     draw_sprite_xpm(mouse, mouse_info.x, mouse_info.y);
 }
 
+void draw_rtc(){
+    /*
+    int x = 200;
+    int y = 200;
+    int seconds = rtc_data[0];
+    for(int i = 0;i < 2;i++){
+
+    }
+     */
+}
+
 void draw_player_board_icons(){
     for(int temp=1;temp<66;temp++){
         int x = (temp-1)%8;
         int y = (temp-1)/8;
         if(player_board[temp].hasBoat){
             pos_switch(x,y,player_board[temp].pos);
+            if(player_board[temp].sinked){
+                draw_on_board(x,y,redX);
+            }
+            else if (player_board[temp].probed){
+                draw_on_board(x,y,whiteX);
+            }
         }
-        if (player_board[temp].probed){
-            draw_on_board(x,y,XIco);
-        }
+        else if (player_board[temp].probed){
+                draw_on_board(x,y,ProbedHole);
+            }
+        
     }
 }
 
@@ -269,11 +294,17 @@ void draw_AI_board_icons(){
     for(int temp=1;temp<66;temp++){
         int x = (temp-1)%8;
         int y = (temp-1)/8;
-        if(enemy_board[temp].hasBoat && enemy_board[temp].sinked){
-            pos_switch(x,y,enemy_board[temp].pos);
+        if(enemy_board[temp].hasBoat){
+            if(enemy_board[temp].sinked){
+                pos_switch(x,y,enemy_board[temp].pos);
+                draw_on_board(x,y,redX);
+            }
+            else if (enemy_board[temp].probed){
+                draw_on_board(x,y,whiteX);
+            }
         }
-        if (enemy_board[temp].probed){
-            draw_on_board(x,y,XIco);
+        else if (enemy_board[temp].probed){
+            draw_on_board(x,y,ProbedHole);
         }
     }
 }

@@ -38,6 +38,11 @@ Sprite *boat_middle_hor;
 Sprite *arrow;
 Sprite *backround;
 Sprite *titleName;
+Sprite *ProbedHole;
+Sprite *gameBackround;
+Sprite *redX;
+Sprite *whiteX;
+Sprite *vicotory;
 
 int x=0;
 int y=0;
@@ -64,6 +69,11 @@ void setup_sprites() {
     arrow = create_sprite_xpm((xpm_map_t) arr);
     backround = create_sprite_xpm((xpm_map_t) boatimg);
     titleName = create_sprite_xpm((xpm_map_t) titleCard);
+    ProbedHole = create_sprite_xpm((xpm_map_t) hole);
+    gameBackround = create_sprite_xpm((xpm_map_t) gameBo);
+    redX = create_sprite_xpm((xpm_map_t) red-x);
+    whiteX = create_sprite_xpm((xpm_map_t) white-x);
+    vicotory = create_sprite_xpm((xpm_map_t) wi);
 }
 
 void destroy_sprites() {
@@ -84,6 +94,11 @@ void destroy_sprites() {
     destroy_sprite(arrow);
     destroy_sprite(backround);
     destroy_sprite(titleName);
+    destroy_sprite(ProbedHole);
+    destroy_sprite(gameBackround);
+    destroy_sprite(redX);
+    destroy_sprite(whiteX);
+    destroy_sprite(vicotory);
 }
 
 void setup_backround(){
@@ -91,7 +106,8 @@ void setup_backround(){
     prepare_backround(XIco, 0, 0,title_screen_backround_buffer);
     prepare_backround(t, 300, 300,title_screen_backround_buffer);
     prepare_backround(titleName, 231, 100,title_screen_backround_buffer);
-    draw_rectangle(0,0,mode_info.XResolution,mode_info.YResolution,0x0000FF,game_board_backround_buffer);
+    //draw_rectangle(0,0,mode_info.XResolution,mode_info.YResolution,0x0000FF,game_board_backround_buffer);
+    prepare_backround(gameBackround, 0, 0,game_board_backround_buffer);
     prepare_backround(XIco, 0, 0,game_board_backround_buffer);
     prepare_backround(board, 350, 220,game_board_backround_buffer);
     draw_rectangle(100,100,10,10,0xFF0000,game_board_backround_buffer);
@@ -114,12 +130,12 @@ void update_timer_state() {
         draw_attack();
         break;
     case Defend:
-        ai_actions();
+        //ai_actions();
         //          ACCUALLY IMPORTANTE DESCOMENTA DEPOIS !!!!!!!!!!!!!!!!!!!!!!!!!!!
-        /* 
-        if(aiCounter%(GAME_FPS*2)==0){
+        
+        if(aiCounter%(GAME_FPS)==0){
           ai_actions();
-        }*/
+        }
         draw_defend();
         aiCounter++;
         break;
@@ -209,10 +225,7 @@ void getBoardPos(){
     }
     else{board_index=0;}
 }
-/**
- * @brief 
- * 
- */
+
 void update_mouse_actions_placement() {
     if(mouse_info.left_click){
         //printf("x: %d | y: %d",mouse_info.x,mouse_info.y);
