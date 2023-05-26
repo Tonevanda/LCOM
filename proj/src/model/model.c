@@ -43,6 +43,16 @@ Sprite *gameBackround;
 Sprite *redX;
 Sprite *whiteX;
 Sprite *vicotory;
+Sprite *number0;
+Sprite *number1;
+Sprite *number2;
+Sprite *number3;
+Sprite *number4;
+Sprite *number5;
+Sprite *number6;
+Sprite *number7;
+Sprite *number8;
+Sprite *number9;
 
 int x=0;
 int y=0;
@@ -74,6 +84,18 @@ void setup_sprites() {
     redX = create_sprite_xpm((xpm_map_t) red-x);
     whiteX = create_sprite_xpm((xpm_map_t) white-x);
     vicotory = create_sprite_xpm((xpm_map_t) wi);
+    /*
+    number0 = create_sprite_xpm((xpm_map_t) n0);
+    number1 = create_sprite_xpm((xpm_map_t) n1);
+    number2 = create_sprite_xpm((xpm_map_t) n2);
+    number3 = create_sprite_xpm((xpm_map_t) n3);
+    number4 = create_sprite_xpm((xpm_map_t) n4);
+    number5 = create_sprite_xpm((xpm_map_t) n5);
+    number6 = create_sprite_xpm((xpm_map_t) n6);
+    number7 = create_sprite_xpm((xpm_map_t) n7);
+    number8 = create_sprite_xpm((xpm_map_t) n8);
+    number9 = create_sprite_xpm((xpm_map_t) n9);
+    */
 }
 
 void destroy_sprites() {

@@ -34,6 +34,19 @@
 #include "xpms/white-x.xpm"
 #include "xpms/red-x.xpm"
 #include "xpms/win.xpm"
+//FALTA ADICIONAR XPMS DOS NUMEROS PARA RTC
+/*
+#include "xpms/n0.xpm"
+#include "xpms/n1.xpm"
+#include "xpms/n2.xpm"
+#include "xpms/n3.xpm"
+#include "xpms/n4.xpm"
+#include "xpms/n5.xpm"
+#include "xpms/n6.xpm"
+#include "xpms/n7.xpm"
+#include "xpms/n8.xpm"
+#include "xpms/n9.xpm"
+*/
 
 typedef enum {
   RUNNING,

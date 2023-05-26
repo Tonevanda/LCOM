@@ -31,6 +31,16 @@ extern Sprite *ProbedHole;
 extern Sprite *redX;
 extern Sprite *whiteX;
 extern Sprite *vicotory;
+extern Sprite *number0;
+extern Sprite *number1;
+extern Sprite *number2;
+extern Sprite *number3;
+extern Sprite *number4;
+extern Sprite *number5;
+extern Sprite *number6;
+extern Sprite *number7;
+extern Sprite *number8;
+extern Sprite *number9;
 
 int selected=0;
 int original_board_x=402; 
@@ -112,6 +122,42 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
       }
     }
     return 0; 
+}
+
+void draw_number_xpm(int number, int x, int y){
+    switch (number)
+    {
+    case 0:
+        if(draw_sprite_xpm(number0,x,y)) return 1;
+        break;
+    case 1:
+        if(draw_sprite_xpm(number1,x,y)) return 1;
+        break;
+    case 2:
+        if(draw_sprite_xpm(number2,x,y)) return 1;
+        break;
+    case 3:
+        if(draw_sprite_xpm(number3,x,y)) return 1;
+        break;
+    case 4:
+        if(draw_sprite_xpm(number4,x,y)) return 1;
+        break;
+    case 5:
+        if(draw_sprite_xpm(number5,x,y)) return 1;
+        break;
+    case 6:
+        if(draw_sprite_xpm(number6,x,y)) return 1;
+        break;
+    case 7:
+        if(draw_sprite_xpm(number7,x,y)) return 1;
+        break;
+    case 8:
+        if(draw_sprite_xpm(number8,x,y)) return 1;
+        break;
+    case 9:
+        if(draw_sprite_xpm(number9,x,y)) return 1;
+        break;
+    }
 }
 
 int prepare_backround(Sprite *sprite, int x, int y,uint8_t* buffer) { 
@@ -260,14 +306,35 @@ void draw_mouse() {
 }
 
 void draw_rtc(){
-    /*
-    int x = 200;
+    
+    int x = 200;//random coordenadas, devem ser mudadas
     int y = 200;
-    int seconds = rtc_data[0];
-    for(int i = 0;i < 2;i++){
 
+    int seconds = rtc_data[0];
+    int digit;
+    for(int i = 0;i < 2;i++){ //SECONDS
+        digit = seconds % 10;
+        draw_number_xpm(digit, x, y);
+        seconds = seconds / 10;
+        // Acho que é preciso ir ajustando o x e y, porque se isto ler 25, primeiro vai ler o 5, depois precisa de andar uns pixeis para 
+        // a esquerda e desenhar um 2 para ser 25
     }
-     */
+    int minutes = rtc_data[1];
+    for(int i = 0;i < 2;i++){ //MINUTES
+        digit = minutes % 10;
+        draw_number_xpm(digit, x, y);
+        minutes = minutes / 10;
+        // Acho que é preciso ir ajustando o x e y, porque se isto ler 25, primeiro vai ler o 5, depois precisa de andar uns pixeis para 
+        // a esquerda e desenhar um 2 para ser 25
+    }
+    int hours = rtc_data[2];
+    for(int i = 0;i < 2;i++){ //HOURS
+        digit = hours % 10;
+        draw_number_xpm(digit, x, y);
+        hours = hours / 10;
+        // Acho que é preciso ir ajustando o x e y, porque se isto ler 25, primeiro vai ler o 5, depois precisa de andar uns pixeis para 
+        // a esquerda e desenhar um 2 para ser 25
+    }
 }
 
 void draw_player_board_icons(){
