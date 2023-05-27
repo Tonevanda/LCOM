@@ -30,12 +30,10 @@
 #include "xpms/backround.xpm"
 #include "xpms/titlecard.xpm"
 #include "xpms/probed.xpm"
-#include "xpms/gameBackround.xpm"
 #include "xpms/white-x.xpm"
 #include "xpms/red-x.xpm"
 #include "xpms/win.xpm"
 //FALTA ADICIONAR XPMS DOS NUMEROS PARA RTC
-/*
 #include "xpms/n0.xpm"
 #include "xpms/n1.xpm"
 #include "xpms/n2.xpm"
@@ -46,7 +44,15 @@
 #include "xpms/n7.xpm"
 #include "xpms/n8.xpm"
 #include "xpms/n9.xpm"
-*/
+#include "xpms/colon.xpm"
+#include "xpms/auga.xpm"
+#include "xpms/opp.xpm"
+#include "xpms/your.xpm"
+#include "xpms/boardn.xpm"
+#include "xpms/start.xpm"
+#include "xpms/select.xpm"
+#include "xpms/exit.xpm"
+#include "xpms/exit_selected.xpm"
 
 typedef enum {
   RUNNING,

@@ -51,7 +51,7 @@ int set_frame_buffers(uint16_t mode);
 void swap_buffers();
 int draw_sprite_xpm(Sprite *sprite, int x, int y);
 int prepare_backround(Sprite *sprite, int x, int y,uint8_t* buffer);
-
+int draw_number_xpm(int number, int x, int y);
 void draw_title_screen();
 void draw_placement();
 void draw_attack();

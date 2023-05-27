@@ -23,13 +23,11 @@ int enable_int_update(bool enable) {
 
 int(rtc_subscribe_int)() {
     sys_irqsetpolicy(RTC_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, &rtc_hook_id);
-    enable_int_update(true);
     return 0;
 }
 
 int(rtc_unsubscribe_int)() {
     sys_irqrmpolicy(&rtc_hook_id);
-    enable_int_update(false);
     return 0;
 }
 

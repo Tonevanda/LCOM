@@ -52,6 +52,11 @@ int subscribe_interrupts(){
   return 0;
 }
 
+int enable_rtc(){
+  if(enable_int_update(true) !=0) return 1;
+  return 0;
+}
+
 int enable_mouse(){
   if (mouse_write(ENABLE_STREAM_MODE) != 0) return 1;
   if (mouse_write(ENABLE_DATA_REPORT) != 0) return 1;
@@ -68,6 +73,7 @@ int setup_minix(){
 
   if(subscribe_interrupts()!=0) return 1;
 
+  if(enable_rtc() != 0) return 1;
   if(enable_mouse() != 0) return 1;
 
   return 0;
@@ -81,6 +87,10 @@ int unsubscribe_interrupts(){
   return 0;
 }
 
+int disable_rtc(){
+  if(enable_int_update(false) != 0) return 1;
+  return 0;
+}
 
 int disable_mouse(){
   if (mouse_write(DISABLE_DATA_REPORT) != 0) return 1;
@@ -95,6 +105,7 @@ int turnoff(){
 
   if(unsubscribe_interrupts()!=0) return 1;
 
+  if(disable_rtc() != 0) return 1;
   if(disable_mouse() != 0) return 1;
 
   return 0;
@@ -116,7 +127,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
             update_timer_state();
           }
           if(msg.m_notify.interrupts & RTC_INTERRUPT){
-              rtc_ih();
+            rtc_ih();
           }
           if (msg.m_notify.interrupts & KEYBOARD_INTERRUPT){
             update_keyboard_state();

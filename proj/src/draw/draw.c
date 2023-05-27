@@ -41,6 +41,12 @@ extern Sprite *number6;
 extern Sprite *number7;
 extern Sprite *number8;
 extern Sprite *number9;
+extern Sprite *colon;
+extern Sprite *your;
+extern Sprite *opponent;
+extern Sprite *board_name;
+extern Sprite *selected_idk;
+extern Sprite *exit_selected;
 
 int selected=0;
 int original_board_x=402; 
@@ -124,7 +130,7 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
     return 0; 
 }
 
-void draw_number_xpm(int number, int x, int y){
+int draw_number_xpm(int number, int x, int y){
     switch (number)
     {
     case 0:
@@ -158,6 +164,7 @@ void draw_number_xpm(int number, int x, int y){
         if(draw_sprite_xpm(number9,x,y)) return 1;
         break;
     }
+    return 0;
 }
 
 int prepare_backround(Sprite *sprite, int x, int y,uint8_t* buffer) { 
@@ -182,6 +189,7 @@ int prepare_backround(Sprite *sprite, int x, int y,uint8_t* buffer) {
 void draw_title_screen(){
     memcpy(drawing_frame_buffer,title_screen_backround_buffer,frame_buffer_size);
     draw_title_selection();
+    draw_rtc();
     draw_mouse();
 }
 
@@ -190,6 +198,7 @@ void draw_placement(){
     draw_player_board_icons();
     draw_reticle();
     draw_selected();
+    draw_rtc();
     draw_mouse(); 
 }
 
@@ -202,6 +211,7 @@ void draw_attack(){
         draw_player_board_icons();
     }
     draw_reticle();
+    draw_rtc();
     draw_mouse();
 }
 
@@ -209,16 +219,18 @@ void draw_defend(){
     memcpy(drawing_frame_buffer,game_board_backround_buffer,frame_buffer_size);
     draw_player_board_icons();
     draw_reticle();
+    draw_rtc();
+    draw_sprite_xpm(arrow, mode_info.XResolution-48, 0);
     draw_mouse();
-    draw_sprite_xpm(arrow, mode_info.XResolution-48, mode_info.YResolution-40);
 }
 
 void draw_victory(){
     memcpy(drawing_frame_buffer,game_board_backround_buffer,frame_buffer_size);
+    draw_rtc();
     if (victory)
     {
         draw_AI_board_icons();
-        draw_sprite_xpm(vicotory, 100, 300);
+        draw_sprite_xpm(vicotory, 465, 312);
     }
     else{
         draw_player_board_icons();
@@ -230,10 +242,10 @@ void draw_victory(){
 
 void draw_title_selection(){    
     if (selected==1){
-        draw_sprite_xpm(player1, 300, 300);
+        draw_sprite_xpm(selected_idk, 420, 398);
     }
     else if (selected==2){
-        draw_sprite_xpm(player2, 300, 336);
+        draw_sprite_xpm(exit_selected, 471, 500);
     }
 }
 
@@ -307,8 +319,8 @@ void draw_mouse() {
 
 void draw_rtc(){
     
-    int x = 200;//random coordenadas, devem ser mudadas
-    int y = 200;
+    int x = 200;
+    int y = 800;
 
     int seconds = rtc_data[0];
     int digit;
@@ -316,28 +328,36 @@ void draw_rtc(){
         digit = seconds % 10;
         draw_number_xpm(digit, x, y);
         seconds = seconds / 10;
-        // Acho que é preciso ir ajustando o x e y, porque se isto ler 25, primeiro vai ler o 5, depois precisa de andar uns pixeis para 
-        // a esquerda e desenhar um 2 para ser 25
+        x -= 24;
     }
+    draw_sprite_xpm(colon,x+5,y);
+    x-=25;
     int minutes = rtc_data[1];
     for(int i = 0;i < 2;i++){ //MINUTES
         digit = minutes % 10;
         draw_number_xpm(digit, x, y);
         minutes = minutes / 10;
-        // Acho que é preciso ir ajustando o x e y, porque se isto ler 25, primeiro vai ler o 5, depois precisa de andar uns pixeis para 
-        // a esquerda e desenhar um 2 para ser 25
+        x-=24;
     }
-    int hours = rtc_data[2];
+    draw_sprite_xpm(colon,x+5,y);
+    x-=25;
+    int hours = rtc_data[2] + 1;
     for(int i = 0;i < 2;i++){ //HOURS
         digit = hours % 10;
         draw_number_xpm(digit, x, y);
         hours = hours / 10;
-        // Acho que é preciso ir ajustando o x e y, porque se isto ler 25, primeiro vai ler o 5, depois precisa de andar uns pixeis para 
-        // a esquerda e desenhar um 2 para ser 25
+        x-=24;
     }
 }
 
 void draw_player_board_icons(){
+    draw_number_xpm(game.doublesBoatsLeft,40,268);
+    draw_number_xpm(game.triplesBoatsLeft,40,368);
+    draw_number_xpm(game.quadsBoatsLeft,40,468);
+    //284
+    //304
+    draw_sprite_xpm(your,284,50);
+    draw_sprite_xpm(board_name,556,50);
     for(int temp=1;temp<66;temp++){
         int x = (temp-1)%8;
         int y = (temp-1)/8;
@@ -358,6 +378,11 @@ void draw_player_board_icons(){
 }
 
 void draw_AI_board_icons(){
+    draw_number_xpm(game.doublesAiBoatsLeft,40,268);
+    draw_number_xpm(game.triplesAiBoatsLeft,40,368);
+    draw_number_xpm(game.quadsAiBoatsLeft,40,468);
+    draw_sprite_xpm(opponent,158,50);
+    draw_sprite_xpm(board_name,681,50);
     for(int temp=1;temp<66;temp++){
         int x = (temp-1)%8;
         int y = (temp-1)/8;
