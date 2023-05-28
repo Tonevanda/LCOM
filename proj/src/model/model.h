@@ -118,34 +118,46 @@ void update_mouse_actions_attack();
  */
 void update_mouse_actions_defend();
 
+/**
+ * @brief Handles mouse scancodes while on the Victory state 
+ */
 void update_mouse_actions_victory();
+
 /**
  * @brief Handles keyboard scancodes while on the Title state 
  */
 void update_keyboard_actions_title();
+
 /**
  * @brief Handles keyboard scancodes while on the Placement state 
  */
 void update_keyboard_actions_placement();
+
 /**
  * @brief Handles keyboard scancodes while on the Attack state 
  */
 void update_keyboard_actions_attack();
+
 /**
  * @brief Handles keyboard scancodes while on the Defend state 
  */
 void update_keyboard_actions_defend();
 
+/**
+ * @brief Handles keyboard scancodes while on the Victory state 
+ */
 void update_keyboard_actions_victory();
 
 /**
  * @brief Chooses main menu options depending on user input
  */
 void menu_actions();
+
 /**
  * @brief Updates global board_index variable with mouse inputs
  */
 void getBoardPos();
+
 /**
  * @brief Updates global board_index variable with keyboard inputs
  */

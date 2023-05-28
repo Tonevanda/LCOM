@@ -132,7 +132,11 @@ void draw_rtc();
  */
 void draw_round_time();
 
+/**
+ * @brief Draws the time it took to the game to end in the bottom of the screen
+ */
 void draw_end_time();
+
 /**
  * @brief Draws the sprites that need to be visible when the player board is visible
  */
