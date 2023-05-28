@@ -23,6 +23,7 @@ extern bool isKeyboard;
 extern bool victory;
 extern bool playerBoardVisible;
 extern uint8_t rtc_data[6];
+extern time_t endTime;
 struct tm initialTime;
 Sprite *mouse;
 Sprite *XIco;
@@ -154,7 +155,6 @@ void destroy_sprites() {
 
 void setup_backround(){
     prepare_backround(backround, 0, 0,title_screen_backround_buffer);
-    prepare_backround(XIco, 0, 0,title_screen_backround_buffer);
     prepare_backround(start, 420, 398,title_screen_backround_buffer);
     prepare_backround(exit_idk, 471, 500,title_screen_backround_buffer);
     prepare_backround(titleName, 231, 100,title_screen_backround_buffer);
@@ -189,7 +189,7 @@ void update_timer_state() {
     case Defend:
         //ai_actions();
         //ACCUALLY IMPORTANTE DESCOMENTA DEPOIS !!!!!!!!!!!!!!!!!!!!!!!!!!!
-        if(aiCounter%(GAME_FPS)==0){
+        if(aiCounter%(GAME_FPS/2)==0){
           ai_actions();
         }
         draw_defend();
@@ -220,12 +220,13 @@ void update_mouse_state() {
             break;
         case Attack:
             getBoardPos();
-            update_mouse_actions_Attack();
+            update_mouse_actions_attack();
             break;
         case Defend:
             update_mouse_actions_defend();
             break;  
         case Victory:
+            update_mouse_actions_victory();
             break;    
         }
         byteIndex=0;
@@ -255,12 +256,15 @@ void menu_actions(){
             initialTime.tm_sec = rtc_data[0];
             initialTime.tm_min = rtc_data[1];
             initialTime.tm_hour = rtc_data[2];
+            lastAttackedBoat=(rand() % (64 - 1 + 1)) + 1;
             game.doublesBoatsLeft=doubles;
             game.triplesBoatsLeft=triples;
             game.quadsBoatsLeft=quads;
             game.doublesAiBoatsLeft=doubles;
             game.triplesAiBoatsLeft=triples;
             game.quadsAiBoatsLeft=quads;
+            memset(player_board,0,sizeof player_board);
+            memset(enemy_board,0,sizeof enemy_board);
             break;
         case 2:
             systemState = EXIT;
@@ -311,13 +315,13 @@ void update_mouse_actions_placement() {
     }
 }
 
-void update_mouse_actions_Attack(){
+void update_mouse_actions_attack(){
     //printf("nuts");
     if(mouse_info.left_click){
         if(mouse_info.x<45 && mouse_info.y<45){
             state=Title;
         }
-        //printf(" board_index: %d | x: %d | y: %d ",board_index,(board_index-1)%8,(board_index-1)/8);
+        ////printf(" board_index: %d | x: %d | y: %d ",board_index,(board_index-1)%8,(board_index-1)/8);
         if(board_index!=0 && !playerBoardVisible){
             attack(enemy_board);
         }
@@ -332,16 +336,24 @@ void update_mouse_actions_defend(){
         if(mouse_info.x<45 && mouse_info.y<45){
             state=Title;
         }
-        else if(aiAttackTries==-1 && mouse_info.x>mode_info.XResolution-48 && mouse_info.y>mode_info.YResolution-40){
+        else if(aiAttackTries==-1 && mouse_info.x>mode_info.XResolution-48 && mouse_info.y<40){
             state=Attack;
         }
-        //printf(" board_index: %d | x: %d | y: %d ",board_index,(board_index-1)%8,(board_index-1)/8);
+        ////printf(" board_index: %d | x: %d | y: %d ",board_index,(board_index-1)%8,(board_index-1)/8);
+    }
+}
+
+void update_mouse_actions_victory(){
+    if(mouse_info.left_click){
+        if(mouse_info.x<45 && mouse_info.y<45){
+            state=Title;
+        }
     }
 }
 
 void placeBoat(){
-    //printf(" board_index: %d | current_boat: %d ",board_index,current_boat);
-    printf(" board_index: %d | x: %d | y: %d ",board_index,(board_index-1)%8,(board_index-1)/8);
+    ////printf(" board_index: %d | current_boat: %d ",board_index,current_boat);
+    //printf(" board_index: %d | x: %d | y: %d ",board_index,(board_index-1)%8,(board_index-1)/8);
     if(board_index==0){
         current_boat=0;
     }
@@ -351,7 +363,7 @@ void placeBoat(){
         case 2:
             if(vert){
                 if(y<8 && !player_board[board_index+8].hasBoat){
-                    printf(" placed double ");
+                    //printf(" placed double ");
                     addBoat(player_board,board_index,up_p);
                     addBoat(player_board,board_index+8,down_p);
                     game.doublesBoatsLeft--;
@@ -359,7 +371,7 @@ void placeBoat(){
             }
             else{
                 if(x<8 && !player_board[board_index+1].hasBoat){
-                    printf(" placed double ");
+                    //printf(" placed double ");
                     addBoat(player_board,board_index,left_p);
                     addBoat(player_board,board_index+1,right_p);
                     game.doublesBoatsLeft--;
@@ -372,7 +384,7 @@ void placeBoat(){
         case 3:
             if(vert){
                 if(y<7 && !player_board[board_index+8].hasBoat && !player_board[board_index+16].hasBoat){
-                    printf(" placed triple ");
+                    //printf(" placed triple ");
                     addBoat(player_board,board_index,up_p);
                     addBoat(player_board,board_index+8,middle_vertical_p);
                     addBoat(player_board,board_index+16,down_p);
@@ -381,7 +393,7 @@ void placeBoat(){
             }
             else{
                 if(x<7 && !player_board[board_index+1].hasBoat && !player_board[board_index+2].hasBoat){
-                    printf(" placed triple ");
+                    //printf(" placed triple ");
                     addBoat(player_board,board_index,left_p);
                     addBoat(player_board,board_index+1,middle_horizontal_p);
                     addBoat(player_board,board_index+2,right_p);
@@ -395,7 +407,7 @@ void placeBoat(){
         case 4:
             if(vert){
                 if(y<6 && !player_board[board_index+8].hasBoat && !player_board[board_index+16].hasBoat && !player_board[board_index+24].hasBoat){
-                    printf(" placed quad ");
+                    //printf(" placed quad ");
                     addBoat(player_board,board_index,up_p);
                     addBoat(player_board,board_index+8,middle_vertical_p);
                     addBoat(player_board,board_index+16,middle_vertical_p);
@@ -405,7 +417,7 @@ void placeBoat(){
             }
             else{
                 if(x<6 && !player_board[board_index+1].hasBoat && !player_board[board_index+2].hasBoat && !player_board[board_index+3].hasBoat){
-                    printf(" placed quad ");
+                    //printf(" placed quad ");
                     addBoat(player_board,board_index,left_p);
                     addBoat(player_board,board_index+1,middle_horizontal_p);
                     addBoat(player_board,board_index+2,middle_horizontal_p);
@@ -427,7 +439,7 @@ void placeBoat(){
         game.doublesBoatsLeft=doubles;
         placeAiBoats();
         state=Attack;
-        printf("                           test                         ");
+        //printf("                           test                         ");
     }
 }
 
@@ -435,35 +447,35 @@ void attack(struct slot atackee[66]){
     if(!atackee[board_index].probed){
         atackee[board_index].probed=true;
         if(atackee[board_index].hasBoat){
-            printf("found %d ",atackee[board_index].len);
+            //printf("found %d ",atackee[board_index].len);
             switch (atackee[board_index].len)
             {
             case 2:
                 switch (atackee[board_index].pos){
                 case left_p:
                     if(atackee[board_index+1].probed){
-                        printf("sinked");
+                        //printf("sinked");
                         atackee[board_index].sinked=true;
                         atackee[board_index+1].sinked=true;
                     }
                     break;
                 case right_p:
                     if(atackee[board_index-1].probed){
-                        printf("sinked");
+                        //printf("sinked");
                         atackee[board_index].sinked=true;
                         atackee[board_index-1].sinked=true;
                     }
                     break;
                 case up_p:
                     if(atackee[board_index+8].probed){
-                        printf("sinked");
+                        //printf("sinked");
                         atackee[board_index].sinked=true;
                         atackee[board_index+8].sinked=true;
                     }
                     break;
                 case down_p:
                     if(atackee[board_index-8].probed){
-                        printf("sinked");
+                        //printf("sinked");
                         atackee[board_index].sinked=true;
                         atackee[board_index-8].sinked=true;
                     }
@@ -477,7 +489,7 @@ void attack(struct slot atackee[66]){
                 {
                 case left_p:
                     if(atackee[board_index+1].probed && atackee[board_index+2].probed){
-                        printf("sinked");
+                        //printf("sinked");
                         atackee[board_index].sinked=true;
                         atackee[board_index+1].sinked=true;
                         atackee[board_index+2].sinked=true;
@@ -485,7 +497,7 @@ void attack(struct slot atackee[66]){
                     break;
                 case middle_horizontal_p:
                     if(atackee[board_index+1].probed && atackee[board_index-1].probed){
-                        printf("sinked");
+                        //printf("sinked");
                         atackee[board_index-1].sinked=true;
                         atackee[board_index].sinked=true;
                         atackee[board_index+1].sinked=true;
@@ -493,7 +505,7 @@ void attack(struct slot atackee[66]){
                     break;
                 case right_p:
                     if(atackee[board_index-1].probed && atackee[board_index-2].probed){
-                        printf("sinked");
+                        //printf("sinked");
                         atackee[board_index-2].sinked=true;
                         atackee[board_index-1].sinked=true;
                         atackee[board_index].sinked=true;
@@ -502,7 +514,7 @@ void attack(struct slot atackee[66]){
                     break;
                 case up_p:
                     if(atackee[board_index+8].probed && atackee[board_index+16].probed){
-                        printf("sinked");
+                        //printf("sinked");
                         atackee[board_index].sinked=true;
                         atackee[board_index+8].sinked=true;
                         atackee[board_index+16].sinked=true;
@@ -510,7 +522,7 @@ void attack(struct slot atackee[66]){
                     break;
                 case middle_vertical_p:
                     if(atackee[board_index+8].probed && atackee[board_index-8].probed){
-                        printf("sinked");
+                        //printf("sinked");
                         atackee[board_index-8].sinked=true;
                         atackee[board_index].sinked=true;
                         atackee[board_index+8].sinked=true;
@@ -518,7 +530,7 @@ void attack(struct slot atackee[66]){
                     break;
                 case down_p:
                     if(atackee[board_index-8].probed && atackee[board_index-16].probed){
-                        printf("sinked");
+                        //printf("sinked");
                         atackee[board_index-16].sinked=true;
                         atackee[board_index-8].sinked=true;
                         atackee[board_index].sinked=true;
@@ -534,7 +546,7 @@ void attack(struct slot atackee[66]){
                 {
                 case left_p:
                     if(atackee[board_index+1].probed && atackee[board_index+2].probed && atackee[board_index+3].probed){
-                        printf("sinked");
+                        //printf("sinked");
                         atackee[board_index].sinked=true;
                         atackee[board_index+1].sinked=true;
                         atackee[board_index+2].sinked=true;
@@ -555,12 +567,12 @@ void attack(struct slot atackee[66]){
                             atackee[board_index].sinked=true;
                             atackee[board_index+1].sinked=true;
                         }
-                        printf("sinked");
+                        //printf("sinked");
                     }
                     break;
                 case right_p:
                     if(atackee[board_index-1].probed && atackee[board_index-2].probed && atackee[board_index-3].probed){
-                        printf("sinked");
+                        //printf("sinked");
                         atackee[board_index-3].sinked=true;
                         atackee[board_index-2].sinked=true;
                         atackee[board_index-1].sinked=true;
@@ -569,7 +581,7 @@ void attack(struct slot atackee[66]){
                     break;
                 case up_p:
                     if(atackee[board_index+8].probed && atackee[board_index+16].probed && atackee[board_index+24].probed){
-                        printf("sinked");
+                        //printf("sinked");
                         atackee[board_index].sinked=true;
                         atackee[board_index+8].sinked=true;
                         atackee[board_index+16].sinked=true;
@@ -590,12 +602,12 @@ void attack(struct slot atackee[66]){
                             atackee[board_index].sinked=true;
                             atackee[board_index+8].sinked=true;
                         }
-                        printf("sinked");
+                        //printf("sinked");
                     }
                     break;
                 case down_p:
                     if(atackee[board_index-8].probed && atackee[board_index-16].probed && atackee[board_index-24].probed){
-                        printf("sinked");
+                        //printf("sinked");
                         atackee[board_index-24].sinked=true;
                         atackee[board_index-16].sinked=true;
                         atackee[board_index-8].sinked=true;
@@ -615,19 +627,20 @@ void attack(struct slot atackee[66]){
                     switch (atackee[board_index].len){
                         case 2:
                             game.doublesAiBoatsLeft--;
-                            printf("      AI DOUBLE SANK, %d LEFT   ",game.doublesAiBoatsLeft);
+                            //printf("      AI DOUBLE SANK, %d LEFT   ",game.doublesAiBoatsLeft);
                             break;
                         case 3:
                             game.triplesAiBoatsLeft--;
-                            printf("      AI TRIPLE SANK, %d LEFT   ",game.triplesAiBoatsLeft);
+                            //printf("      AI TRIPLE SANK, %d LEFT   ",game.triplesAiBoatsLeft);
                             break;
                         case 4:
                             game.quadsAiBoatsLeft--;
-                            printf("      AI QUAD SANK, %d LEFT   ",game.quadsAiBoatsLeft);
+                            //printf("      AI QUAD SANK, %d LEFT   ",game.quadsAiBoatsLeft);
                             break;
                         }
                     if(!game.doublesAiBoatsLeft && !game.triplesAiBoatsLeft && !game.quadsAiBoatsLeft){
                         state = Victory;
+                        endTime = rtc_data[0] + rtc_data[1]*60 + rtc_data[2]*3600;
                         victory=true;
                     }
                 }
@@ -635,19 +648,20 @@ void attack(struct slot atackee[66]){
                     switch (atackee[board_index].len){
                         case 2:
                             game.doublesBoatsLeft--;
-                            printf("      PLAYER DOUBLE SANK, %d LEFT   ",game.doublesBoatsLeft);
+                            //printf("      PLAYER DOUBLE SANK, %d LEFT   ",game.doublesBoatsLeft);
                             break;
                         case 3:
                             game.triplesBoatsLeft--;
-                            printf("      PLAYER TRIPLE SANK, %d LEFT   ",game.triplesBoatsLeft);
+                            //printf("      PLAYER TRIPLE SANK, %d LEFT   ",game.triplesBoatsLeft);
                             break;
                         case 4:
                             game.quadsBoatsLeft--;
-                            printf("      PLAYER QUAD SANK, %d LEFT   ",game.quadsBoatsLeft);
+                            //printf("      PLAYER QUAD SANK, %d LEFT   ",game.quadsBoatsLeft);
                             break;
                         }
                     if(!game.quadsBoatsLeft && !game.triplesBoatsLeft && !game.quadsBoatsLeft){
                         state = Victory;
+                        endTime = rtc_data[0] + rtc_data[1]*60 + rtc_data[2]*3600;
                     }
                 }
 
@@ -655,7 +669,7 @@ void attack(struct slot atackee[66]){
         }
         else {
             if(state==Attack){
-                printf("                   ai time now                   ");
+                //printf("                   ai time now                   ");
                 aiAttackTries=(rand() % (3 - 1 + 1)) + 1;
                 state=Defend;
             }
@@ -664,13 +678,14 @@ void attack(struct slot atackee[66]){
 }
 
 void ai_actions(){
+    //easy ai
     /*
   if(aiAttackTries>0){
         do{
             y=(rand() % (8 - 1 + 1)) + 1;
             x=(rand() % (8 - 1 + 1)) + 1;
             board_index=((y-1)*8)+x;
-            printf(" board_index: %d",board_index);
+            //printf(" board_index: %d",board_index);
         } while (player_board[board_index].probed);
         aiAttackTries--;
   }
@@ -684,10 +699,23 @@ void ai_actions(){
         }
   }
   */
+    //harder ai
     if(aiAttackTries>0){
+        int counter=0;
         do{
-            int tempx = (lastAttackedBoat-1)%8;
-            int tempy = (lastAttackedBoat-1)/8;
+            if (counter==10){
+                do{
+                    y=(rand() % (8 - 1 + 1)) + 1;
+                    x=(rand() % (8 - 1 + 1)) + 1;
+                    board_index=((y-1)*8)+x;
+
+                    
+                } while (player_board[board_index].probed);
+                break;
+            }
+            printf(" board_index: %d \n",lastAttackedBoat);
+            int tempx = (lastAttackedBoat-1)%8 +1;
+            int tempy = (lastAttackedBoat-1)/8 +1;
             printf("  x:%d |y:%d  \n",tempx,tempy);
             int random = (rand() % (4 - 1 + 1)) + 1;
             switch (random)
@@ -714,24 +742,25 @@ void ai_actions(){
                 break;
             }
             board_index=((tempy-1)*8)+tempx;
-            printf(" board_index: %d",board_index);
+            printf(" board_index: %d \n",board_index);
+            counter++;
         } while (player_board[board_index].probed);
         aiAttackTries--;
     }
     else{
-            attack(player_board);
-            if(player_board[board_index].hasBoat){
-                lastAttackedBoat=board_index;
-                aiAttackTries=(rand() % (3 - 1 + 1)) + 1;
-            }
-            else{
-                aiAttackTries=-1;
-            }
+        attack(player_board);
+        if(player_board[board_index].hasBoat){
+            lastAttackedBoat=board_index;
+            aiAttackTries=(rand() % (3 - 1 + 1)) + 1;
+        }
+        else{
+            aiAttackTries=-1;
+        }
     }
 }
 
 void placeAiBoats(){
-    printf("                                                   ai turn:                                                     ");
+    //printf("                                                   ai turn:                                                     ");
     srand(time(NULL));
     current_boat=4;
     while(game.quadsAiBoatsLeft!=0){
@@ -741,7 +770,7 @@ void placeAiBoats(){
             x=(rand() % (8 - 1 + 1)) + 1;
             board_index=((y-1)*8)+x;
             if(!enemy_board[board_index].hasBoat && !enemy_board[board_index+8].hasBoat && !enemy_board[board_index+16].hasBoat && !enemy_board[board_index+24].hasBoat){
-                printf(" placed quad ");
+                //printf(" placed quad ");
                 addBoat(enemy_board,board_index,up_p);
                 addBoat(enemy_board,board_index+8,middle_vertical_p);
                 addBoat(enemy_board,board_index+16,middle_vertical_p);
@@ -754,7 +783,7 @@ void placeAiBoats(){
             x=(rand() % (5 - 1 + 1)) + 1;
             board_index=((y-1)*8)+x;
             if(!enemy_board[board_index].hasBoat && !enemy_board[board_index+1].hasBoat && !enemy_board[board_index+2].hasBoat && !enemy_board[board_index+3].hasBoat){
-                printf(" placed quad ");
+                //printf(" placed quad ");
                 addBoat(enemy_board,board_index,left_p);
                 addBoat(enemy_board,board_index+1,middle_horizontal_p);
                 addBoat(enemy_board,board_index+2,middle_horizontal_p);
@@ -771,7 +800,7 @@ void placeAiBoats(){
             x=(rand() % (8 - 1 + 1)) + 1;
             board_index=((y-1)*8)+x;
             if(!enemy_board[board_index].hasBoat && !enemy_board[board_index+8].hasBoat && !enemy_board[board_index+16].hasBoat){
-                printf(" placed triple ");
+                //printf(" placed triple ");
                 addBoat(enemy_board,board_index,up_p);
                 addBoat(enemy_board,board_index+8,middle_vertical_p);
                 addBoat(enemy_board,board_index+16,down_p);
@@ -783,7 +812,7 @@ void placeAiBoats(){
             x=(rand() % (6 - 1 + 1)) + 1;
             board_index=((y-1)*8)+x;
             if(!enemy_board[board_index].hasBoat && !enemy_board[board_index+1].hasBoat && !enemy_board[board_index+2].hasBoat){
-                printf(" placed triple ");
+                //printf(" placed triple ");
                 addBoat(enemy_board,board_index,left_p);
                 addBoat(enemy_board,board_index+1,middle_horizontal_p);
                 addBoat(enemy_board,board_index+2,right_p);
@@ -799,7 +828,7 @@ void placeAiBoats(){
             x=(rand() % (8 - 1 + 1)) + 1;
             board_index=((y-1)*8)+x;
             if(!enemy_board[board_index].hasBoat && !enemy_board[board_index+8].hasBoat){
-                printf(" placed double ");
+                //printf(" placed double ");
                 addBoat(enemy_board,board_index,up_p);
                 addBoat(enemy_board,board_index+8,down_p);
                 game.doublesAiBoatsLeft--;
@@ -810,7 +839,7 @@ void placeAiBoats(){
             x=(rand() % (7 - 1 + 1)) + 1;
             board_index=((y-1)*8)+x;
             if(!enemy_board[board_index].hasBoat && !enemy_board[board_index+1].hasBoat){
-                printf(" placed double ");
+                //printf(" placed double ");
                 addBoat(enemy_board,board_index,left_p);
                 addBoat(enemy_board,board_index+1,right_p);
                 game.doublesAiBoatsLeft--;
@@ -858,6 +887,7 @@ void update_keyboard_state(){
         update_keyboard_actions_defend();
         break;  
     case Victory:
+        update_keyboard_actions_victory();
         break;     	
     default:
         break;
@@ -886,7 +916,7 @@ void update_keyboard_actions_title(){
         break;
     case E_KEY:
         menu_actions();
-        printf("current pos: %d ",board_index);
+        //printf("current pos: %d ",board_index);
         break;
     case ESC_Key:
         systemState = EXIT;
@@ -907,24 +937,24 @@ void update_keyboard_actions_placement(){
         break;
     case ONE_KEY:
         current_boat=0;
-        printf("deselecting");
+        //printf("deselecting");
         break;
     case TWO_KEY:
         if(game.doublesBoatsLeft!=0){
             current_boat=2;
-            printf("Selected double");
+            //printf("Selected double");
         }
         break;
     case THREE_KEY:
         if(game.triplesBoatsLeft!=0){
             current_boat=3;
-            printf("Selected triple");
+            //printf("Selected triple");
         }
         break;
     case FOUR_KEY:
         if(game.quadsBoatsLeft!=0){
             current_boat=4;
-            printf("Selected quad");
+            //printf("Selected quad");
         }
         break;
     case ESC_Key:
@@ -962,6 +992,15 @@ void update_keyboard_actions_defend(){
         if(aiAttackTries==-1){
             state=Attack;
         }
+        break;
+    default:
+        break;
+    }
+}
+void update_keyboard_actions_victory(){
+    switch (scancode){
+    case ESC_Key:
+        state=Title;
         break;
     default:
         break;
@@ -1018,3 +1057,4 @@ void getKeyboadPos(){
     }
     board_index=((y-1)*8)+x;
 }
+

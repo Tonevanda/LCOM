@@ -55,6 +55,7 @@ uint16_t modes;
 struct slot player_board[66];
 struct slot enemy_board[66];
 struct gameInfo game;
+time_t endTime;
 bool victory=false;
 
 
@@ -189,7 +190,7 @@ void draw_defend(){
 void draw_victory(){
     memcpy(drawing_frame_buffer,game_board_backround_buffer,frame_buffer_size);
     draw_rtc();
-    draw_round_time();
+    draw_end_time();
     if (victory)
     {
         draw_AI_board_icons();
@@ -316,10 +317,36 @@ void draw_round_time(){
 
     int x = 600;
     int y = 800;
-
+    
     time_t initialTimeInSeconds = initialTime.tm_sec + initialTime.tm_min *60 + initialTime.tm_hour * 3600;
     time_t currentTime = rtc_data[0] + rtc_data[1]*60 + rtc_data[2]*3600;
     time_t timeDifference = currentTime - initialTimeInSeconds;
+    int seconds = timeDifference % 60;
+    int digit;
+    for(int i = 0;i < 2;i++){ //SECONDS
+        digit = seconds % 10;
+        draw_number_xpm(digit, x, y);
+        seconds = seconds / 10;
+        x -= 24;
+    }
+    draw_sprite_xpm(colon,x+5,y);
+    x-=25;
+    int minutes = (timeDifference % 3600) / 60;
+    for(int i = 0;i < 2;i++){ //SECONDS
+        digit = minutes % 10;
+        draw_number_xpm(digit, x, y);
+        minutes = minutes / 10;
+        x -= 24;
+    }
+}
+
+void draw_end_time(){
+
+    int x = 600;
+    int y = 800;
+    
+    time_t initialTimeInSeconds = initialTime.tm_sec + initialTime.tm_min *60 + initialTime.tm_hour * 3600;
+    time_t timeDifference = endTime - initialTimeInSeconds;
     int seconds = timeDifference % 60;
     int digit;
     for(int i = 0;i < 2;i++){ //SECONDS

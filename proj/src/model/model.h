@@ -112,12 +112,13 @@ void update_mouse_actions_placement();
 /**
  * @brief Handles mouse packets while on the Attack state 
  */
-void update_mouse_actions_Attack();
+void update_mouse_actions_attack();
 /**
  * @brief Handles mouse packets while on the Defend state 
  */
 void update_mouse_actions_defend();
 
+void update_mouse_actions_victory();
 /**
  * @brief Handles keyboard scancodes while on the Title state 
  */
@@ -134,6 +135,8 @@ void update_keyboard_actions_attack();
  * @brief Handles keyboard scancodes while on the Defend state 
  */
 void update_keyboard_actions_defend();
+
+void update_keyboard_actions_victory();
 
 /**
  * @brief Chooses main menu options depending on user input
@@ -172,4 +175,6 @@ void attack(struct slot atackee[66]);
  * @brief Randomizes board movement and attacks to act as AI
  */
 void ai_actions();
+
+
 #endif

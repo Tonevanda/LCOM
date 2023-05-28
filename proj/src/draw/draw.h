@@ -132,6 +132,7 @@ void draw_rtc();
  */
 void draw_round_time();
 
+void draw_end_time();
 /**
  * @brief Draws the sprites that need to be visible when the player board is visible
  */
