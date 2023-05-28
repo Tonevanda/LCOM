@@ -1,46 +1,56 @@
-#ifndef _LCOM_RTC_H_
-#define _LCOM_RTC_H_
-
-#include <minix/sysutil.h>
 #include <lcom/lcf.h>
 
-// Macros
-#define IRQ_RTC             8
-#define REGISTER_INPUT      0x70
-#define REGISTER_OUTPUT     0x71
+#define RTC_IRQ 8
+#define RTC_INTERRUPT BIT(8)
 
-#define REGISTER_UPDATING   10
-#define REGISTER_COUNTING   11
+#define RTC_ADDR_REG 0x70
+#define RTC_DATA_REG 0x71
 
-#define SECONDS    0
-#define MINUTES    2
-#define HOURS      4   
-#define DAY        7
-#define MONTH      8
-#define YEAR       9
+// Valores de acesso
+#define RTC_SEC 0
+#define RTC_SEC_A 1
+#define RTC_MIN 2
+#define RTC_MIN_A 3
+#define RTC_HOURS 4
+#define RTC_HOURS_A 5
+#define RTC_WEEK_DAY 6
+#define RTC_DAY 7
+#define RTC_MONTH 8
+#define RTC_YEAR 9
 
-#define BINARY              BIT(2)
-#define UPDATING            BIT(7)
+// Reg
+#define RTC_REG_A 10
+#define RTC_REG_B 11
+#define RTC_REG_C 12
+#define RTC_REG_D 13
 
-// Estrutura que reune todos os dados importantes
-typedef struct {
-    uint8_t year;
-    uint8_t month;
-    uint8_t day;
-    uint8_t hours;
-    uint8_t minutes;
-    uint8_t seconds;
-} real_time_info;
+// Configuração
+#define RTC_UIP BIT(7)
+#define RTC_SET BIT(7)
+#define RTC_UIE BIT(4)
 
-// Functions
-void rtc_setup();
-int rtc_subscribe_interrupts(uint8_t *bit_no);
-int rtc_unsubscribe_interrupts();
-int rtc_output(uint8_t command, uint8_t *output);
-int rtc_is_updating();
-int rtc_is_binary();
-int rtc_is_bcd();
-int rtc_update_time();
-uint8_t to_binary(uint8_t bcd_number);
+// Interrupções
+#define RTC_UF BIT(4) // Update Interrupt Pending
+#define RTC_AF BIT(5) // Alarm Interrupt Pending
+#define RTC_PF BIT(6) // Periodic Interrupt Pending
 
-#endif
+
+int(enable_int_update)(bool enable);
+
+
+int(rtc_subscribe_int)();
+
+
+int(rtc_unsubscribe_int)();
+
+
+void(rtc_ih)();
+
+
+int(wait_rtc)();
+
+
+uint8_t(bcd2dec)(uint8_t bcdNum);
+
+
+int(rtc_read)(uint8_t reg, uint8_t pos);
