@@ -7,17 +7,17 @@ SystemState systemState = RUNNING;
 State state = Title;
 extern vbe_mode_info_t mode_info;
 extern MouseInfo mouse_info;
-extern int selected;
+extern uint8_t selected;
 int timer_interrupts = 0;
-extern int original_board_x; 
-extern int original_board_y;
-extern int board_index;
+extern uint16_t original_board_x; 
+extern uint16_t original_board_y;
+extern uint8_t board_index;
 extern uint8_t *title_screen_backround_buffer;
 extern uint8_t *game_board_backround_buffer;
 extern struct slot player_board[66];
 extern struct slot enemy_board[66];
 extern struct gameInfo game;
-extern int current_boat;
+extern uint8_t current_boat;
 extern bool vert;
 extern bool isKeyboard;
 extern bool victory;
@@ -64,14 +64,14 @@ Sprite *exit_idk;
 Sprite *exit_selected;
 Sprite* sprites[40];
 
-int x=0;
-int y=0;
-int doubles=2;
-int triples=2;
-int quads=2;
-int aiAttackTries=0;
+uint8_t x=0;
+uint8_t y=0;
+uint8_t doubles=2;
+uint8_t triples=2;
+uint8_t quads=2;
+uint8_t aiAttackTries=0;
 int aiCounter=0;
-int lastAttackedBoat=1;
+uint8_t lastAttackedBoat=1;
 
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
@@ -189,7 +189,7 @@ void update_timer_state() {
     case Defend:
         //ai_actions();
         //ACCUALLY IMPORTANTE DESCOMENTA DEPOIS !!!!!!!!!!!!!!!!!!!!!!!!!!!
-        if(aiCounter%(GAME_FPS/2)==0){
+        if(aiCounter%(GAME_FPS)==0){
           ai_actions();
         }
         draw_defend();
@@ -336,7 +336,7 @@ void update_mouse_actions_defend(){
         if(mouse_info.x<45 && mouse_info.y<45){
             state=Title;
         }
-        else if(aiAttackTries==-1 && mouse_info.x>mode_info.XResolution-48 && mouse_info.y<40){
+        else if(aiAttackTries==4 && mouse_info.x>mode_info.XResolution-48 && mouse_info.y<40){
             state=Attack;
         }
         ////printf(" board_index: %d | x: %d | y: %d ",board_index,(board_index-1)%8,(board_index-1)/8);
@@ -700,8 +700,8 @@ void ai_actions(){
   }
   */
     //harder ai
-    if(aiAttackTries>0){
-        int counter=0;
+    if(aiAttackTries>0 && aiAttackTries!=4){
+        uint8_t counter=0;
         do{
             if (counter==10){
                 do{
@@ -714,10 +714,10 @@ void ai_actions(){
                 break;
             }
             printf(" board_index: %d \n",lastAttackedBoat);
-            int tempx = (lastAttackedBoat-1)%8 +1;
-            int tempy = (lastAttackedBoat-1)/8 +1;
+            uint8_t tempx = (lastAttackedBoat-1)%8 +1;
+            uint8_t tempy = (lastAttackedBoat-1)/8 +1;
             printf("  x:%d |y:%d  \n",tempx,tempy);
-            int random = (rand() % (4 - 1 + 1)) + 1;
+            uint8_t random = (rand() % (4 - 1 + 1)) + 1;
             switch (random)
             {
             case 1:
@@ -754,7 +754,7 @@ void ai_actions(){
             aiAttackTries=(rand() % (3 - 1 + 1)) + 1;
         }
         else{
-            aiAttackTries=-1;
+            aiAttackTries=4;
         }
     }
 }
@@ -852,7 +852,7 @@ void placeAiBoats(){
     current_boat=0;
 }
 
-void addBoat(struct slot board[66],int board_index,enum part pos){
+void addBoat(struct slot board[66],uint8_t board_index,enum part pos){
     board[board_index].hasBoat=true;
     board[board_index].probed=false;
     board[board_index].sinked=false;
@@ -989,7 +989,7 @@ void update_keyboard_actions_defend(){
         state=Title;
         break;
     case E_KEY:
-        if(aiAttackTries==-1){
+        if(aiAttackTries==4){
             state=Attack;
         }
         break;

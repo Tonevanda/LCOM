@@ -24,17 +24,17 @@ struct slot
     bool hasBoat;
     bool probed;
     bool sinked;
-    int len;
+    uint8_t len;
     enum part pos;
 };
 
 struct gameInfo{
-    int doublesBoatsLeft;
-    int triplesBoatsLeft;
-    int quadsBoatsLeft;
-    int doublesAiBoatsLeft;
-    int triplesAiBoatsLeft;
-    int quadsAiBoatsLeft;
+    uint8_t doublesBoatsLeft;
+    uint8_t triplesBoatsLeft;
+    uint8_t quadsBoatsLeft;
+    uint8_t doublesAiBoatsLeft;
+    uint8_t triplesAiBoatsLeft;
+    uint8_t quadsAiBoatsLeft;
 };
 
 /**

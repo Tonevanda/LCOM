@@ -175,11 +175,15 @@ void placeAiBoats();
 
 /**
  * @brief Updates the player_board's and enemy_board's individual slot structs to reflect on placed boats. It's called in the placeBoat and placeAiBoats methods
+ * @param board The board where the boat part is added
+ * @param board_index The boat index where the boat part is added
+ * @param part The part itself to add
  */
-void addBoat(struct slot board[66],int board_index,enum part);
+void addBoat(struct slot board[66],uint8_t board_index,enum part);
 
 /**
  * @brief Updates the player_board's and enemy_board's individual slot structs to reflect on attacks.
+ * @param atackee Board of who is atacked (player_board/enemy_board)
  */
 void attack(struct slot atackee[66]);
 

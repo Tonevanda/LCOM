@@ -43,11 +43,11 @@ extern Sprite *lose;
 extern Sprite *selected_start;
 extern Sprite *exit_selected;
 
-int selected=0;
-int original_board_x=402; 
-int original_board_y=272;
-int board_index=0;
-int current_boat;
+uint8_t selected=0;
+uint16_t original_board_x=402; 
+uint16_t original_board_y=272;
+uint8_t board_index=0;
+uint8_t current_boat;
 bool isKeyboard=false;
 bool vert=false;
 bool playerBoardVisible=false;
