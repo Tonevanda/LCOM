@@ -13,6 +13,10 @@ int (keyboard_unsubscribe_interrupts) (){
   return sys_irqrmpolicy(&keyboard_hook_id);
 }
 
+void (kbc_ih)() {
+  read_KBC_Keyboard_output(KBC_OUT_CMD, &scancode);
+}
+
 int (keyboard_restore)(){
   uint8_t cmdWord;
   
@@ -25,8 +29,4 @@ int (keyboard_restore)(){
   if (write_KBC_Keyboard_command(0x60, cmdWord) != 0) return 1;
     
   return 0;
-}
-
-void (kbc_ih)() {
-  read_KBC_Keyboard_output(KBC_OUT_CMD, &scancode);
 }

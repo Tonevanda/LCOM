@@ -7,6 +7,7 @@ uint8_t *game_board_backround_buffer;
 uint32_t frame_buffer_size;
 
 extern uint8_t rtc_data[6];
+extern struct tm initialTime;
 extern int timer_interrupts;
 extern vbe_mode_info_t mode_info;
 extern MouseInfo mouse_info;
@@ -38,7 +39,8 @@ extern Sprite *colon;
 extern Sprite *your;
 extern Sprite *opponent;
 extern Sprite *board_name;
-extern Sprite *selected_idk;
+extern Sprite *lose;
+extern Sprite *selected_start;
 extern Sprite *exit_selected;
 
 int selected=0;
@@ -156,6 +158,7 @@ void draw_placement(){
     draw_reticle();
     draw_selected();
     draw_rtc();
+    draw_round_time();
     draw_mouse(); 
 }
 
@@ -169,6 +172,7 @@ void draw_attack(){
     }
     draw_reticle();
     draw_rtc();
+    draw_round_time();
     draw_mouse();
 }
 
@@ -177,6 +181,7 @@ void draw_defend(){
     draw_player_board_icons();
     draw_reticle();
     draw_rtc();
+    draw_round_time();
     draw_sprite_xpm(arrow, mode_info.XResolution-48, 0);
     draw_mouse();
 }
@@ -184,6 +189,7 @@ void draw_defend(){
 void draw_victory(){
     memcpy(drawing_frame_buffer,game_board_backround_buffer,frame_buffer_size);
     draw_rtc();
+    draw_round_time();
     if (victory)
     {
         draw_AI_board_icons();
@@ -191,15 +197,14 @@ void draw_victory(){
     }
     else{
         draw_player_board_icons();
-        draw_on_board(1,1,XIco);
+        draw_sprite_xpm(lose, 472, 315);
     }
-    
-    
+    draw_mouse(); 
 }
 
 void draw_title_selection(){    
     if (selected==1){
-        draw_sprite_xpm(selected_idk, 420, 398);
+        draw_sprite_xpm(selected_start, 420, 398);
     }
     else if (selected==2){
         draw_sprite_xpm(exit_selected, 471, 500);
@@ -298,12 +303,39 @@ void draw_rtc(){
     }
     draw_sprite_xpm(colon,x+5,y);
     x-=25;
-    int hours = rtc_data[2] + 1;
+    int hours = (rtc_data[2] + 1) % 24;
     for(int i = 0;i < 2;i++){ //HOURS
         digit = hours % 10;
         draw_number_xpm(digit, x, y);
         hours = hours / 10;
         x-=24;
+    }
+}
+
+void draw_round_time(){
+
+    int x = 600;
+    int y = 800;
+
+    time_t initialTimeInSeconds = initialTime.tm_sec + initialTime.tm_min *60 + initialTime.tm_hour * 3600;
+    time_t currentTime = rtc_data[0] + rtc_data[1]*60 + rtc_data[2]*3600;
+    time_t timeDifference = currentTime - initialTimeInSeconds;
+    int seconds = timeDifference % 60;
+    int digit;
+    for(int i = 0;i < 2;i++){ //SECONDS
+        digit = seconds % 10;
+        draw_number_xpm(digit, x, y);
+        seconds = seconds / 10;
+        x -= 24;
+    }
+    draw_sprite_xpm(colon,x+5,y);
+    x-=25;
+    int minutes = (timeDifference % 3600) / 60;
+    for(int i = 0;i < 2;i++){ //SECONDS
+        digit = minutes % 10;
+        draw_number_xpm(digit, x, y);
+        minutes = minutes / 10;
+        x -= 24;
     }
 }
 

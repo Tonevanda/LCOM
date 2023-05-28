@@ -37,6 +37,10 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
+/**
+ * @brief Sets up the graphic configurations such as the frames per second, frame buffers and the graphic mode.
+ * @return 0 if successful, 1 otherwise
+ */
 int setup_graphic(){
   if (timer_set_frequency(TIMER_SEL0, GAME_FPS) != 0) return 1;
   if (set_frame_buffers(VIDEO_MODE) != 0) return 1;
@@ -44,6 +48,10 @@ int setup_graphic(){
   return 0;
 }
 
+/**
+ * @brief Subscribes the interrupts for all the used devices, except the video card
+ * @return 0 if successful, 1 otherwise
+ */
 int subscribe_interrupts(){
   if (timer_subscribe_interrupts() != 0) return 1;
   if (keyboard_subscribe_interrupts() != 0) return 1;
@@ -52,18 +60,29 @@ int subscribe_interrupts(){
   return 0;
 }
 
+/**
+ * @brief Enables the RTC interrupt updates
+ * @return 0 if successful, 1 otherwise
+ */
 int enable_rtc(){
   if(enable_int_update(true) !=0) return 1;
   return 0;
 }
 
+/**
+ * @brief Enables the stream mode and data report for the mouse
+ * @return 0 if successful, 1 otherwise
+ */
 int enable_mouse(){
   if (mouse_write(ENABLE_STREAM_MODE) != 0) return 1;
   if (mouse_write(ENABLE_DATA_REPORT) != 0) return 1;
   return 0;
 }
 
-
+/**
+ * @brief Sets everything up such as the graphic configurations, sprites and background, interrupts, rtc and mouse
+ * @return 0 if successful, 1 otherwise
+ */
 int setup_minix(){
 
   if(setup_graphic()!=0) return 1;
@@ -79,6 +98,10 @@ int setup_minix(){
   return 0;
 }
 
+/**
+ * @brief Unsubscribes the interrupts for all the previously subscribed devices
+ * @return 0 if successful, 1 otherwise
+ */
 int unsubscribe_interrupts(){
   if (timer_unsubscribe_int() != 0) return 1;
   if (keyboard_unsubscribe_interrupts() != 0) return 1;
@@ -87,16 +110,28 @@ int unsubscribe_interrupts(){
   return 0;
 }
 
+/**
+ * @brief Disables the RTC interrupt updates
+ * @return 0 if successful, 1 otherwise
+ */
 int disable_rtc(){
   if(enable_int_update(false) != 0) return 1;
   return 0;
 }
 
+/**
+ * @brief Disables the data report for the mouse
+ * @return 0 if successful, 1 otherwise
+ */
 int disable_mouse(){
   if (mouse_write(DISABLE_DATA_REPORT) != 0) return 1;
   return 0;
 }
 
+/**
+ * @brief Prepares everything to shut down the program, such as reverting to text mode, destroying the sprites, unsubscribing the interrupts and disabling the rtc and mouse
+ * @return 0 if successful, 1 otherwise
+ */
 int turnoff(){
 
   if (vg_exit() != 0) return 1; 

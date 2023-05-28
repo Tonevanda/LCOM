@@ -12,7 +12,17 @@ typedef struct {
     uint8_t pressed;
 } Sprite; 
 
+/**
+ * @brief Loads the xpm passed as parameter and transforms it into a sprite
+ * @param sprite Represents the xpm to be transformed into a sprite
+ * @return Sprite if successful, NULL otherwise
+ */
 Sprite *create_sprite_xpm(xpm_map_t sprite);
+
+/**
+ * @brief Frees the space occupied by the sprite passed as parameter
+ * @param sprite Represents the sprite to free space
+ */
 void destroy_sprite(Sprite *sprite);
 
 #endif

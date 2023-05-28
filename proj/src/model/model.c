@@ -1,4 +1,5 @@
 #include "model.h"
+#include <time.h>
 
 extern uint8_t scancode;
 extern uint8_t byteIndex;
@@ -21,6 +22,8 @@ extern bool vert;
 extern bool isKeyboard;
 extern bool victory;
 extern bool playerBoardVisible;
+extern uint8_t rtc_data[6];
+struct tm initialTime;
 Sprite *mouse;
 Sprite *XIco;
 Sprite *board;
@@ -39,6 +42,7 @@ Sprite *gameBackround;
 Sprite *redX;
 Sprite *whiteX;
 Sprite *vicotory;
+Sprite *lose;
 Sprite *number0;
 Sprite *number1;
 Sprite *number2;
@@ -54,18 +58,20 @@ Sprite *board_name;
 Sprite *your;
 Sprite *opponent;
 Sprite *start;
-Sprite *selected_idk;
+Sprite *selected_start;
 Sprite *exit_idk;
 Sprite *exit_selected;
 Sprite* sprites[40];
 
 int x=0;
 int y=0;
-int doubles=4;
-int triples=3;
+int doubles=2;
+int triples=2;
 int quads=2;
 int aiAttackTries=0;
 int aiCounter=0;
+int lastAttackedBoat=1;
+
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
     XIco = create_sprite_xpm((xpm_map_t) X);
@@ -100,9 +106,10 @@ void setup_sprites() {
     your = create_sprite_xpm((xpm_map_t) you);
     opponent = create_sprite_xpm((xpm_map_t) opp);
     start = create_sprite_xpm((xpm_map_t) star);
-    selected_idk = create_sprite_xpm((xpm_map_t) selec);
+    selected_start = create_sprite_xpm((xpm_map_t) selec);
     exit_idk = create_sprite_xpm((xpm_map_t) ext);
     exit_selected = create_sprite_xpm((xpm_map_t) exit_s);
+    lose = create_sprite_xpm((xpm_map_t) los);
 }
 
 void destroy_sprites() {
@@ -139,15 +146,15 @@ void destroy_sprites() {
     destroy_sprite(your);
     destroy_sprite(opponent);
     destroy_sprite(start);
-    destroy_sprite(selected_idk);
+    destroy_sprite(selected_start);
     destroy_sprite(exit_idk);
     destroy_sprite(exit_selected);
+    destroy_sprite(lose);
 }
 
 void setup_backround(){
     prepare_backround(backround, 0, 0,title_screen_backround_buffer);
     prepare_backround(XIco, 0, 0,title_screen_backround_buffer);
-    //prepare_backround(t, 496, 398,title_screen_backround_buffer);
     prepare_backround(start, 420, 398,title_screen_backround_buffer);
     prepare_backround(exit_idk, 471, 500,title_screen_backround_buffer);
     prepare_backround(titleName, 231, 100,title_screen_backround_buffer);
@@ -162,9 +169,7 @@ void setup_backround(){
     prepare_backround(boat_left, 70, 460,game_board_backround_buffer);
     prepare_backround(boat_middle_hor, 120, 460,game_board_backround_buffer);
     prepare_backround(boat_middle_hor, 170, 460,game_board_backround_buffer);
-    //prepare_backround(board_name, 600, 50,game_board_backround_buffer);
     prepare_backround(boat_right, 220, 460,game_board_backround_buffer);
-    prepare_backround(XIco, 0, 0,game_board_backround_buffer);
 }
 
 
@@ -183,8 +188,7 @@ void update_timer_state() {
         break;
     case Defend:
         //ai_actions();
-        //          ACCUALLY IMPORTANTE DESCOMENTA DEPOIS !!!!!!!!!!!!!!!!!!!!!!!!!!!
-        
+        //ACCUALLY IMPORTANTE DESCOMENTA DEPOIS !!!!!!!!!!!!!!!!!!!!!!!!!!!
         if(aiCounter%(GAME_FPS)==0){
           ai_actions();
         }
@@ -205,7 +209,6 @@ void update_mouse_state() {
     isKeyboard=false;
     if (byteIndex == 3) {
         mouse_sync_mouseInfo();
-        //draw_new_frame();
         switch (state)
         {
         case Title:
@@ -249,6 +252,9 @@ void menu_actions(){
         case 1:
             printf("player1 state");
             state=Placement;
+            initialTime.tm_sec = rtc_data[0];
+            initialTime.tm_min = rtc_data[1];
+            initialTime.tm_hour = rtc_data[2];
             game.doublesBoatsLeft=doubles;
             game.triplesBoatsLeft=triples;
             game.quadsBoatsLeft=quads;
@@ -280,17 +286,17 @@ void update_mouse_actions_placement() {
 
         
         if(mouse_info.x>70 && mouse_info.x<270 && mouse_info.y>260 && mouse_info.y<510){
-            if(mouse_info.x<170 && mouse_info.y<310 && doubles!=0){
+            if(mouse_info.x<170 && mouse_info.y<310 && game.doublesBoatsLeft!=0){
                 //double
                 current_boat=2;
                 printf("Selected double");
             }
-            else if(mouse_info.x<220 && mouse_info.y>360 && mouse_info.y<410 && triples!=0){
+            else if(mouse_info.x<220 && mouse_info.y>360 && mouse_info.y<410 && game.triplesBoatsLeft!=0){
                 current_boat=3;
                 printf("Selected triple");
                 //triple
             }
-            else if(mouse_info.y>460 && quads!=0){
+            else if(mouse_info.y>460 && game.quadsBoatsLeft!=0){
                 current_boat=4;
                 printf("Selected quad");
                 //quad
@@ -348,7 +354,7 @@ void placeBoat(){
                     printf(" placed double ");
                     addBoat(player_board,board_index,up_p);
                     addBoat(player_board,board_index+8,down_p);
-                    doubles--;
+                    game.doublesBoatsLeft--;
                 }
             }
             else{
@@ -356,10 +362,10 @@ void placeBoat(){
                     printf(" placed double ");
                     addBoat(player_board,board_index,left_p);
                     addBoat(player_board,board_index+1,right_p);
-                    doubles--;
+                    game.doublesBoatsLeft--;
                 }
             }
-            if(doubles==0){
+            if(game.doublesBoatsLeft==0){
                 current_boat=0;
             }
             break;
@@ -370,7 +376,7 @@ void placeBoat(){
                     addBoat(player_board,board_index,up_p);
                     addBoat(player_board,board_index+8,middle_vertical_p);
                     addBoat(player_board,board_index+16,down_p);
-                    triples--;
+                    game.triplesBoatsLeft--;
                 }
             }
             else{
@@ -379,10 +385,10 @@ void placeBoat(){
                     addBoat(player_board,board_index,left_p);
                     addBoat(player_board,board_index+1,middle_horizontal_p);
                     addBoat(player_board,board_index+2,right_p);
-                    triples--;
+                    game.triplesBoatsLeft--;
                 }
             }
-            if(triples==0){
+            if(game.triplesBoatsLeft==0){
                 current_boat=0;
             }
             break;
@@ -394,7 +400,7 @@ void placeBoat(){
                     addBoat(player_board,board_index+8,middle_vertical_p);
                     addBoat(player_board,board_index+16,middle_vertical_p);
                     addBoat(player_board,board_index+24,down_p);
-                    quads--;
+                    game.quadsBoatsLeft--;
                 }
             }
             else{
@@ -404,10 +410,10 @@ void placeBoat(){
                     addBoat(player_board,board_index+1,middle_horizontal_p);
                     addBoat(player_board,board_index+2,middle_horizontal_p);
                     addBoat(player_board,board_index+3,right_p);
-                    quads--;
+                    game.quadsBoatsLeft--;
                 }
             }
-            if(quads==0){
+            if(game.quadsBoatsLeft==0){
                 current_boat=0;
             }
             break;
@@ -415,11 +421,11 @@ void placeBoat(){
             break;
         }
     }
-    if(quads==0 && triples==0 && doubles==0){
-        quads=2;
-        triples=3;
-        doubles=4;
-        aiBoats();
+    if(game.quadsBoatsLeft==0 && game.triplesBoatsLeft==0 && game.doublesBoatsLeft==0){
+        game.quadsBoatsLeft=quads;
+        game.triplesBoatsLeft=triples;
+        game.doublesBoatsLeft=doubles;
+        placeAiBoats();
         state=Attack;
         printf("                           test                         ");
     }
@@ -539,15 +545,17 @@ void attack(struct slot atackee[66]){
                     if(atackee[board_index+1].probed && atackee[board_index-1].probed){
                         if(atackee[board_index-1].pos==left_p && atackee[board_index+2].probed){
                             atackee[board_index+2].sinked=true;
+                            atackee[board_index-1].sinked=true;
+                            atackee[board_index].sinked=true;
+                            atackee[board_index+1].sinked=true;
                         }
                         else if (atackee[board_index+1].pos==right_p && atackee[board_index-2].probed){
                             atackee[board_index-2].sinked=true;
+                            atackee[board_index-1].sinked=true;
+                            atackee[board_index].sinked=true;
+                            atackee[board_index+1].sinked=true;
                         }
-                        
                         printf("sinked");
-                        atackee[board_index-1].sinked=true;
-                        atackee[board_index].sinked=true;
-                        atackee[board_index+1].sinked=true;
                     }
                     break;
                 case right_p:
@@ -557,7 +565,6 @@ void attack(struct slot atackee[66]){
                         atackee[board_index-2].sinked=true;
                         atackee[board_index-1].sinked=true;
                         atackee[board_index].sinked=true;
-                        
                     }
                     break;
                 case up_p:
@@ -571,16 +578,19 @@ void attack(struct slot atackee[66]){
                     break;
                 case middle_vertical_p:
                     if(atackee[board_index+8].probed && atackee[board_index-8].probed){
-                        if(atackee[board_index-8].pos==up_p && atackee[board_index+24].probed){
-                            atackee[board_index+24].sinked=true;
+                        if(atackee[board_index-8].pos==up_p && atackee[board_index+16].probed){
+                            atackee[board_index+16].sinked=true;
+                            atackee[board_index-8].sinked=true;
+                            atackee[board_index].sinked=true;
+                            atackee[board_index+8].sinked=true;
                         }
-                        else if (atackee[board_index+8].pos==down_p && atackee[board_index-24].probed){
-                            atackee[board_index-24].sinked=true;
+                        else if (atackee[board_index+8].pos==down_p && atackee[board_index-16].probed){
+                            atackee[board_index-16].sinked=true;
+                            atackee[board_index-8].sinked=true;
+                            atackee[board_index].sinked=true;
+                            atackee[board_index+8].sinked=true;
                         }
                         printf("sinked");
-                        atackee[board_index-8].sinked=true;
-                        atackee[board_index].sinked=true;
-                        atackee[board_index+8].sinked=true;
                     }
                     break;
                 case down_p:
@@ -633,7 +643,7 @@ void attack(struct slot atackee[66]){
                             break;
                         case 4:
                             game.quadsBoatsLeft--;
-                            printf("      PLAYER ~QUAD SANK, %d LEFT   ",game.quadsBoatsLeft);
+                            printf("      PLAYER QUAD SANK, %d LEFT   ",game.quadsBoatsLeft);
                             break;
                         }
                     if(!game.quadsBoatsLeft && !game.triplesBoatsLeft && !game.quadsBoatsLeft){
@@ -654,6 +664,7 @@ void attack(struct slot atackee[66]){
 }
 
 void ai_actions(){
+    /*
   if(aiAttackTries>0){
         do{
             y=(rand() % (8 - 1 + 1)) + 1;
@@ -672,13 +683,58 @@ void ai_actions(){
             aiAttackTries=-1;
         }
   }
+  */
+    if(aiAttackTries>0){
+        do{
+            int tempx = (lastAttackedBoat-1)%8;
+            int tempy = (lastAttackedBoat-1)/8;
+            printf("  x:%d |y:%d  \n",tempx,tempy);
+            int random = (rand() % (4 - 1 + 1)) + 1;
+            switch (random)
+            {
+            case 1:
+                if (tempy>1){
+                    tempy--;
+                }
+                break;
+            case 2:
+                if (tempy<8){
+                    tempy++;
+                }
+                break;
+            case 3:
+                if (tempx>1){
+                    tempx--;
+                }
+                break;
+            case 4:
+                if (tempx<8){
+                    tempx++;
+                }
+                break;
+            }
+            board_index=((tempy-1)*8)+tempx;
+            printf(" board_index: %d",board_index);
+        } while (player_board[board_index].probed);
+        aiAttackTries--;
+    }
+    else{
+            attack(player_board);
+            if(player_board[board_index].hasBoat){
+                lastAttackedBoat=board_index;
+                aiAttackTries=(rand() % (3 - 1 + 1)) + 1;
+            }
+            else{
+                aiAttackTries=-1;
+            }
+    }
 }
 
-void aiBoats(){
+void placeAiBoats(){
     printf("                                                   ai turn:                                                     ");
     srand(time(NULL));
     current_boat=4;
-    while(quads!=0){
+    while(game.quadsAiBoatsLeft!=0){
         vert=rand() % 2;
         if(vert){
             y=(rand() % (5 - 1 + 1)) + 1;
@@ -690,7 +746,7 @@ void aiBoats(){
                 addBoat(enemy_board,board_index+8,middle_vertical_p);
                 addBoat(enemy_board,board_index+16,middle_vertical_p);
                 addBoat(enemy_board,board_index+24,down_p);
-                quads--;
+                game.quadsAiBoatsLeft--;
             }
         }
         else{
@@ -703,12 +759,12 @@ void aiBoats(){
                 addBoat(enemy_board,board_index+1,middle_horizontal_p);
                 addBoat(enemy_board,board_index+2,middle_horizontal_p);
                 addBoat(enemy_board,board_index+3,right_p);
-                quads--;
+                game.quadsAiBoatsLeft--;
             }
         }
     }
     current_boat=3;
-    while(triples!=0){
+    while(game.triplesAiBoatsLeft!=0){
         vert=rand() % 2;
         if(vert){
             y=(rand() % (6 - 1 + 1)) + 1;
@@ -719,7 +775,7 @@ void aiBoats(){
                 addBoat(enemy_board,board_index,up_p);
                 addBoat(enemy_board,board_index+8,middle_vertical_p);
                 addBoat(enemy_board,board_index+16,down_p);
-                triples--;
+                game.triplesAiBoatsLeft--;
             }
         }
         else{
@@ -731,15 +787,12 @@ void aiBoats(){
                 addBoat(enemy_board,board_index,left_p);
                 addBoat(enemy_board,board_index+1,middle_horizontal_p);
                 addBoat(enemy_board,board_index+2,right_p);
-                triples--;
-            }
-            if(doubles==0){
-                current_boat=0;
+                game.triplesAiBoatsLeft--;
             }
         }
     }
     current_boat=2;
-    while(doubles!=0){
+    while(game.doublesAiBoatsLeft!=0){
         vert=rand() % 2;
         if(vert){
             y=(rand() % (7 - 1 + 1)) + 1;
@@ -749,10 +802,7 @@ void aiBoats(){
                 printf(" placed double ");
                 addBoat(enemy_board,board_index,up_p);
                 addBoat(enemy_board,board_index+8,down_p);
-                doubles--;
-            }
-            if(doubles==0){
-                current_boat=0;
+                game.doublesAiBoatsLeft--;
             }
         }
         else{
@@ -763,13 +813,14 @@ void aiBoats(){
                 printf(" placed double ");
                 addBoat(enemy_board,board_index,left_p);
                 addBoat(enemy_board,board_index+1,right_p);
-                doubles--;
-            }
-            if(doubles==0){
-                current_boat=0;
+                game.doublesAiBoatsLeft--;
             }
         }
     }
+    game.doublesAiBoatsLeft=doubles;
+    game.triplesAiBoatsLeft=triples;
+    game.quadsAiBoatsLeft=quads;
+    current_boat=0;
 }
 
 void addBoat(struct slot board[66],int board_index,enum part pos){
@@ -859,19 +910,19 @@ void update_keyboard_actions_placement(){
         printf("deselecting");
         break;
     case TWO_KEY:
-        if(doubles!=0){
+        if(game.doublesBoatsLeft!=0){
             current_boat=2;
             printf("Selected double");
         }
         break;
     case THREE_KEY:
-        if(triples!=0){
+        if(game.triplesBoatsLeft!=0){
             current_boat=3;
             printf("Selected triple");
         }
         break;
     case FOUR_KEY:
-        if(quads!=0){
+        if(game.quadsBoatsLeft!=0){
             current_boat=4;
             printf("Selected quad");
         }

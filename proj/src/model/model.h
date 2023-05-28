@@ -26,6 +26,7 @@
 #include "xpms/backround.xpm"
 #include "xpms/win.xpm"
 #include "xpms/auga.xpm"
+#include "xpms/los.xpm"
 
 //icons
 #include "xpms/mouse.xpm"
@@ -72,36 +73,103 @@ typedef enum{
   Victory,
 }State;
 
+/**
+ * @brief Loads all xpms onto their respective sprite objects 
+ */
 void setup_sprites();
+/**
+ * @brief Destroys all sprite objects to clear memory
+ */
 void destroy_sprites();
+/**
+ * @brief Draws the static sprites onto their necessary background buffers
+ */
 void setup_backround();
 
+/**
+ * @brief Handles timer interruptions according to the current state. All the draw functions are called from here and also the method for the AI to attack
+ */
 void update_timer_state();
+
+/**
+ * @brief Handles mouse interruptions according to the current state. Calls functions to handle the mouse scancodes sent by the user's mouse
+ */
 void update_mouse_state();
+
+/**
+ * @brief Handles keyboard interruptions according to the current state. Calls functions to handle the keyboard scancodes sent by the user's keyboard
+ */
 void update_keyboard_state();
 
-
+/**
+ * @brief Handles mouse packets while on the Title state 
+ */
 void update_mouse_actions_title();
+/**
+ * @brief Handles mouse packets while on the Placement state 
+ */
 void update_mouse_actions_placement();
+/**
+ * @brief Handles mouse packets while on the Attack state 
+ */
 void update_mouse_actions_Attack();
+/**
+ * @brief Handles mouse packets while on the Defend state 
+ */
 void update_mouse_actions_defend();
 
+/**
+ * @brief Handles keyboard scancodes while on the Title state 
+ */
 void update_keyboard_actions_title();
+/**
+ * @brief Handles keyboard scancodes while on the Placement state 
+ */
 void update_keyboard_actions_placement();
+/**
+ * @brief Handles keyboard scancodes while on the Attack state 
+ */
 void update_keyboard_actions_attack();
+/**
+ * @brief Handles keyboard scancodes while on the Defend state 
+ */
 void update_keyboard_actions_defend();
 
-
+/**
+ * @brief Chooses main menu options depending on user input
+ */
 void menu_actions();
+/**
+ * @brief Updates global board_index variable with mouse inputs
+ */
 void getBoardPos();
+/**
+ * @brief Updates global board_index variable with keyboard inputs
+ */
 void getKeyboadPos();
 
+/**
+ * @brief Places boats in the player_board given the current board_index,current_boat and the vert value
+ */
 void placeBoat();
 
+/**
+ * @brief Places all the boats in the enemy_board randomly 
+ */
+void placeAiBoats();
+
+/**
+ * @brief Updates the player_board's and enemy_board's individual slot structs to reflect on placed boats. It's called in the placeBoat and placeAiBoats methods
+ */
 void addBoat(struct slot board[66],int board_index,enum part);
 
+/**
+ * @brief Updates the player_board's and enemy_board's individual slot structs to reflect on attacks.
+ */
 void attack(struct slot atackee[66]);
-void aiBoats();
 
+/**
+ * @brief Randomizes board movement and attacks to act as AI
+ */
 void ai_actions();
 #endif
