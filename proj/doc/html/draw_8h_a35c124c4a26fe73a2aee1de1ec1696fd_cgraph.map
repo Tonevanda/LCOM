@@ -1,0 +1,7 @@
+<map id="prepare_backround" name="prepare_backround">
+<area shape="rect" id="Node000001" title="Given a sprite object, draws its contents onto a buffer given in the input. Mostly used to draw onto ..." alt="" coords="5,5,137,31"/>
+<area shape="rect" id="Node000002" href="$graphic_8c.html#a950e17209d152e8a40ec064a0b201b25" title="Draws a pixel of a certain color onto a frame buffer." alt="" coords="185,5,268,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,16,170,16,170,21,137,21"/>
+<area shape="rect" id="Node000003" href="$graphic_8c.html#a74940314543182800b2ec867fc0116f2" title=" " alt="" coords="316,5,453,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="269,16,301,16,301,21,269,21"/>
+</map>

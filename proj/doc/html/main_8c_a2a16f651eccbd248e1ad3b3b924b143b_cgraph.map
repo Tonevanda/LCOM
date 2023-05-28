@@ -1,0 +1,103 @@
+<map id="proj_main_loop" name="proj_main_loop">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,552,114,578"/>
+<area shape="rect" id="Node000002" href="$rtc_8c.html#a0b9ae809cf571f61e54712a23c65348e" title="RTC interrupt handler. Reads every field of the RTC." alt="" coords="213,79,267,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,551,65,488,80,389,110,274,132,217,159,163,181,135,206,112,210,116,185,138,164,166,137,219,116,276,86,390,70,488,64,552"/>
+<area shape="rect" id="Node000006" href="$main_8c.html#a02edc1937d94655d8c57e817e34b21d1" title="Sets everything up such as the graphic configurations, sprites and background, interrupts,..." alt="" coords="194,424,286,450"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="78,549,207,456,210,461,81,554"/>
+<area shape="rect" id="Node000034" href="$main_8c.html#aefd81f15cd7663f8d5a5458fbffee4c0" title="Prepares everything to shut down the program, such as reverting to text mode, destroying the sprites,..." alt="" coords="211,177,269,203"/>
+<area shape="poly" id="edge21_Node000001_Node000034" title=" " alt="" coords="65,550,224,215,229,217,70,553"/>
+<area shape="rect" id="Node000044" href="$model_8c.html#aacf177f660c44528fc3926b3cd69fb88" title="Handles keyboard interruptions according to the current state. Calls functions to handle the keyboard..." alt="" coords="162,679,318,704"/>
+<area shape="poly" id="edge28_Node000001_Node000044" title=" " alt="" coords="81,576,210,668,207,672,78,580"/>
+<area shape="rect" id="Node000058" href="$model_8c.html#aa577e78e2462033d486b5d8fa64c7bec" title="Handles mouse interruptions according to the current state. Calls functions to handle the mouse scanc..." alt="" coords="169,1080,311,1106"/>
+<area shape="poly" id="edge35_Node000001_Node000058" title=" " alt="" coords="68,577,232,1065,227,1067,63,579"/>
+<area shape="rect" id="Node000067" href="$model_8c.html#a2e7983abedd3fae94a24b4775a97210f" title="Handles timer interruptions according to the current state. All the draw functions are called from he..." alt="" coords="174,1513,306,1539"/>
+<area shape="poly" id="edge44_Node000001_Node000067" title=" " alt="" coords="66,578,164,1118,236,1498,231,1499,159,1119,61,579"/>
+<area shape="rect" id="Node000003" href="$rtc_8c.html#a697f49cff7a35feddc8f1647f50c7aa0" title="Reads the values in the RTC and updated the rtc_data array with said values." alt="" coords="417,29,485,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="266,83,402,51,403,56,268,88"/>
+<area shape="rect" id="Node000004" href="$rtc_8c.html#a6c983a8570a08157595eb84bef4e8d6d" title="Converts BCD to decimal." alt="" coords="620,55,691,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="486,44,606,59,605,64,485,49"/>
+<area shape="rect" id="Node000005" href="$rtc_8c.html#a9736c80df4fb645659ccb752108f910f" title="Waits for the RTC to update its values so it doesn&#39;t read the values during an update." alt="" coords="622,5,689,31"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="485,36,607,21,607,26,486,41"/>
+<area shape="rect" id="Node000007" href="$main_8c.html#ad8f082d47fa7bde0306eb3b82b6127e9" title="Enables the stream mode and data report for the mouse." alt="" coords="398,276,503,302"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="249,422,295,368,328,337,365,311,383,302,385,307,367,315,331,341,298,372,253,425"/>
+<area shape="rect" id="Node000013" href="$main_8c.html#aa72c84997063db2be7cd9bd1020c57d6" title="Enables the RTC interrupt updates." alt="" coords="410,325,491,351"/>
+<area shape="poly" id="edge8_Node000006_Node000013" title=" " alt="" coords="258,421,306,391,365,360,395,349,397,354,367,365,308,396,261,426"/>
+<area shape="rect" id="Node000015" href="$model_8c.html#aef4666d46db998697b6c82403e89751d" title="Draws the static sprites onto their necessary background buffers." alt="" coords="391,473,511,499"/>
+<area shape="poly" id="edge10_Node000006_Node000015" title=" " alt="" coords="286,445,379,467,378,472,285,450"/>
+<area shape="rect" id="Node000019" href="$main_8c.html#a7c590d09f454b9be9ec117818d3e5671" title="Sets up the graphic configurations such as the frames per second, frame buffers and the graphic mode." alt="" coords="400,523,502,548"/>
+<area shape="poly" id="edge12_Node000006_Node000019" title=" " alt="" coords="261,448,308,478,367,509,386,516,385,521,365,514,306,483,258,452"/>
+<area shape="rect" id="Node000027" href="$model_8c.html#a834200084177d31e41dd9b28754a3312" title="Loads all xpms onto their respective sprite objects." alt="" coords="401,375,500,400"/>
+<area shape="poly" id="edge16_Node000006_Node000027" title=" " alt="" coords="285,424,386,400,387,405,286,429"/>
+<area shape="rect" id="Node000029" href="$main_8c.html#ab570339ba658dea7f08a99b9374e605f" title="Subscribes the interrupts for all the used devices, except the video card." alt="" coords="382,424,520,450"/>
+<area shape="poly" id="edge18_Node000006_Node000029" title=" " alt="" coords="286,434,366,434,366,440,286,440"/>
+<area shape="rect" id="Node000008" href="$mouse_8c.html#a1703c3c5b61eef30d724b15cafd1d75e" title="Writes the command passed as parameter to the according port to configure the mouse." alt="" coords="608,136,703,162"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="503,276,534,262,564,242,591,218,633,172,637,175,595,222,567,246,537,267,505,281"/>
+<area shape="rect" id="Node000014" href="$rtc_8c.html#a8e180a02874218607d15759835805a31" title="Enables/Disables the interrupt updates for the RTC." alt="" coords="592,243,719,268"/>
+<area shape="poly" id="edge9_Node000013_Node000014" title=" " alt="" coords="491,326,534,312,616,273,619,278,536,317,493,331"/>
+<area shape="rect" id="Node000016" href="$draw_8c.html#a35c124c4a26fe73a2aee1de1ec1696fd" title="Given a sprite object, draws its contents onto a buffer given in the input. Mostly used to draw onto ..." alt="" coords="590,473,721,499"/>
+<area shape="poly" id="edge11_Node000015_Node000016" title=" " alt="" coords="511,484,575,484,575,489,511,489"/>
+<area shape="rect" id="Node000020" href="$draw_8c.html#a3ad9f04212e7602618a0dd7ad4afbd4e" title="Calls the set_frame_buffer method to create de main buffer and allocates memory for all the other buf..." alt="" coords="592,572,719,598"/>
+<area shape="poly" id="edge13_Node000019_Node000020" title=" " alt="" coords="503,545,585,565,584,570,502,550"/>
+<area shape="rect" id="Node000022" href="$graphic_8c.html#a967432a6c8128a907b937b0f3f4b4472" title="Sets graphic mode." alt="" coords="592,621,719,647"/>
+<area shape="poly" id="edge14_Node000019_Node000022" title=" " alt="" coords="503,543,537,557,552,570,562,583,571,596,585,608,593,613,590,617,582,612,567,599,557,586,548,574,534,562,501,548"/>
+<area shape="rect" id="Node000023" href="$timer_8c.html#af2c04fa8e97ffa748fd3f612886a92a7" title="Sets the timer frequency." alt="" coords="586,523,725,548"/>
+<area shape="poly" id="edge15_Node000019_Node000023" title=" " alt="" coords="502,533,571,533,571,538,502,538"/>
+<area shape="rect" id="Node000028" href="$sprite_8c.html#acb93792ebc27a32413e0b31624c6d9b1" title="Loads the xpm passed as parameter and transforms it into a sprite." alt="" coords="591,309,720,335"/>
+<area shape="poly" id="edge17_Node000027_Node000028" title=" " alt="" coords="499,372,535,361,603,338,605,343,536,366,501,377"/>
+<area shape="rect" id="Node000030" href="$keyboard_8c.html#a4f3036dc383cb3264414c231f2ca11e4" title="Subscribes the keyboard interrupts." alt="" coords="587,359,724,400"/>
+<area shape="poly" id="edge19_Node000029_Node000030" title=" " alt="" coords="499,421,572,400,573,405,500,426"/>
+<area shape="rect" id="Node000031" href="$mouse_8c.html#a08895a8a691590216c1e72bbf1b2d333" title="Subscribes mouse interrupts." alt="" coords="583,424,728,450"/>
+<area shape="poly" id="edge20_Node000029_Node000031" title=" " alt="" coords="520,434,568,434,568,440,520,440"/>
+<area shape="rect" id="Node000035" href="$model_8c.html#a8fdbc6c7bfca3ef4a8800a3cdc19d932" title="Destroys all sprite objects to clear memory." alt="" coords="396,128,506,154"/>
+<area shape="poly" id="edge22_Node000034_Node000035" title=" " alt="" coords="269,181,380,155,381,160,270,186"/>
+<area shape="rect" id="Node000037" href="$main_8c.html#a22e7aa936a38417be07fc29cf34cfd05" title="Disables the data report for the mouse." alt="" coords="397,79,505,104"/>
+<area shape="poly" id="edge23_Node000034_Node000037" title=" " alt="" coords="258,175,306,144,365,113,381,107,383,112,367,118,308,149,261,179"/>
+<area shape="rect" id="Node000038" href="$main_8c.html#acbc03c5dd9b7f037d9d1dc5d3eb4dbf5" title="Disables the RTC interrupt updates." alt="" coords="409,227,493,252"/>
+<area shape="poly" id="edge25_Node000034_Node000038" title=" " alt="" coords="270,194,395,224,393,229,269,199"/>
+<area shape="rect" id="Node000039" href="$main_8c.html#a39ca4da537e3c0062ada871f99b91b8d" title="Unsubscribes the interrupts for all the previously subscribed devices." alt="" coords="375,177,527,203"/>
+<area shape="poly" id="edge27_Node000034_Node000039" title=" " alt="" coords="269,188,360,188,360,193,269,193"/>
+<area shape="poly" id="edge24_Node000037_Node000008" title=" " alt="" coords="500,102,594,129,593,134,499,108"/>
+<area shape="poly" id="edge26_Node000038_Node000014" title=" " alt="" coords="494,240,577,247,577,252,493,245"/>
+<area shape="rect" id="Node000045" href="$model_8c.html#a6094a0b19d809485af77b4fdfbdc1612" title="Updates global board_index variable with keyboard inputs." alt="" coords="394,572,507,598"/>
+<area shape="poly" id="edge29_Node000044_Node000045" title=" " alt="" coords="256,676,303,642,365,606,379,601,381,605,367,611,306,646,259,680"/>
+<area shape="rect" id="Node000046" href="$keyboard_8c.html#aea970a154161a35f6894898a092ed70a" title="KBC interrupt handler." alt="" coords="421,621,480,647"/>
+<area shape="poly" id="edge30_Node000044_Node000046" title=" " alt="" coords="289,675,406,643,407,648,291,681"/>
+<area shape="rect" id="Node000049" href="$model_8c.html#a2699e097c9840b8fe1067975f80da234" title="Handles keyboard scancodes while on the Attack state." alt="" coords="366,671,535,712"/>
+<area shape="poly" id="edge31_Node000044_Node000049" title=" " alt="" coords="318,689,351,689,351,694,318,694"/>
+<area shape="rect" id="Node000051" href="$model_8c.html#a8c2ade0a18f6d7109a81d86b3e15cce6" title="Handles keyboard scancodes while on the Defend state." alt="" coords="366,737,535,777"/>
+<area shape="poly" id="edge32_Node000044_Node000051" title=" " alt="" coords="285,702,369,729,368,734,283,707"/>
+<area shape="rect" id="Node000052" href="$model_8c.html#a1f5a00e8c8a0c75051cda61a513fd38f" title="Handles keyboard scancodes while on the Placement state." alt="" coords="366,802,535,843"/>
+<area shape="poly" id="edge33_Node000044_Node000052" title=" " alt="" coords="257,703,304,743,367,787,379,793,377,797,365,791,301,747,254,707"/>
+<area shape="rect" id="Node000056" href="$model_8c.html#a7a6cabbe5c5ae40beb464969dab1ebcc" title="Handles keyboard scancodes while on the Title state." alt="" coords="366,867,535,908"/>
+<area shape="poly" id="edge34_Node000044_Node000056" title=" " alt="" coords="250,703,294,773,328,815,368,852,375,857,372,862,364,856,324,819,290,776,246,706"/>
+<area shape="rect" id="Node000059" href="$model_8c.html#ae12dfa34095a84a3088e20f5bb648746" title="Updates global board_index variable with mouse inputs." alt="" coords="403,932,499,958"/>
+<area shape="poly" id="edge36_Node000058_Node000059" title=" " alt="" coords="249,1078,295,1024,328,993,365,967,388,956,390,961,367,971,331,997,298,1028,253,1081"/>
+<area shape="rect" id="Node000060" href="$mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Mouse interrupt handler." alt="" coords="412,981,489,1007"/>
+<area shape="poly" id="edge37_Node000058_Node000060" title=" " alt="" coords="258,1077,306,1047,365,1016,397,1004,399,1009,367,1021,308,1052,261,1082"/>
+<area shape="rect" id="Node000061" href="$mouse_8c.html#a1538254b8ccba2f68e02cc3d5547722c" title="Checks the state of the mouse interrupt and stores the current byte accordingly in the mouseBytes arr..." alt="" coords="384,1031,518,1056"/>
+<area shape="poly" id="edge38_Node000058_Node000061" title=" " alt="" coords="297,1077,378,1058,379,1063,299,1082"/>
+<area shape="rect" id="Node000062" href="$mouse_8c.html#a57603171ec6b74c33bb2ba2515232ab5" title="When the mouse packet is complete, updates the mouse info values." alt="" coords="369,1080,532,1106"/>
+<area shape="poly" id="edge39_Node000058_Node000062" title=" " alt="" coords="312,1090,354,1090,354,1096,312,1096"/>
+<area shape="rect" id="Node000063" href="$model_8c.html#ad28345f7598f8bda8bf0746008769caa" title="Handles mouse packets while on the Attack state." alt="" coords="373,1130,528,1171"/>
+<area shape="poly" id="edge40_Node000058_Node000063" title=" " alt="" coords="291,1104,360,1123,359,1128,289,1109"/>
+<area shape="rect" id="Node000064" href="$model_8c.html#ab211cbab5108281640c8e734e61f4bc1" title="Handles mouse packets while on the Defend state." alt="" coords="373,1195,528,1236"/>
+<area shape="poly" id="edge41_Node000058_Node000064" title=" " alt="" coords="259,1104,306,1141,367,1180,380,1186,377,1191,365,1184,303,1145,256,1108"/>
+<area shape="rect" id="Node000065" href="$model_8c.html#a3d668bc59e279e1942416c9914a1a5f2" title="Handles mouse packets while on the Placement state." alt="" coords="373,1261,528,1301"/>
+<area shape="poly" id="edge42_Node000058_Node000065" title=" " alt="" coords="251,1104,295,1171,329,1210,368,1245,376,1251,373,1255,364,1250,325,1214,291,1174,246,1107"/>
+<area shape="rect" id="Node000066" href="$model_8c.html#a85ecf596862915a7ac3db4df57ab070b" title="Handles mouse packets while on the Title state." alt="" coords="373,1326,528,1367"/>
+<area shape="poly" id="edge43_Node000058_Node000066" title=" " alt="" coords="248,1105,262,1145,287,1200,322,1259,343,1286,368,1311,373,1315,370,1320,364,1315,339,1290,317,1262,282,1202,257,1147,243,1107"/>
+<area shape="rect" id="Node000068" href="$model_8c.html#afd13a2a70ab7ad5636cce74c3e0ab515" title="Randomizes board movement and attacks to act as AI." alt="" coords="411,1637,491,1663"/>
+<area shape="poly" id="edge45_Node000067_Node000068" title=" " alt="" coords="256,1538,303,1580,334,1603,367,1624,397,1636,395,1641,365,1629,331,1608,299,1584,252,1541"/>
+<area shape="rect" id="Node000069" href="$draw_8c.html#ab10abe02ad8d53b900bfe74fece9a02d" title="Copies the game_board_background_buffer onto the drawing_frame_buffer and draws other sprites necessa..." alt="" coords="405,1687,497,1712"/>
+<area shape="poly" id="edge46_Node000067_Node000069" title=" " alt="" coords="251,1538,295,1603,328,1641,367,1673,392,1685,389,1690,365,1678,324,1645,290,1606,246,1541"/>
+<area shape="rect" id="Node000080" href="$draw_8c.html#a09468f68b47c4d3348c9380a40819f59" title="Copies the game_board_background_buffer onto the drawing_frame_buffer and draws other sprites necessa..." alt="" coords="403,1391,498,1416"/>
+<area shape="poly" id="edge47_Node000067_Node000080" title=" " alt="" coords="252,1511,299,1469,331,1446,365,1425,388,1415,390,1420,367,1430,334,1450,303,1473,256,1515"/>
+<area shape="rect" id="Node000081" href="$draw_8c.html#a6900cd99d092fbc46ca20a03b8af972f" title="Copies the game_board_background_buffer onto the drawing_frame_buffer and draws other sprites necessa..." alt="" coords="393,1440,509,1466"/>
+<area shape="poly" id="edge48_Node000067_Node000081" title=" " alt="" coords="272,1510,365,1474,385,1468,387,1473,367,1479,274,1515"/>
+<area shape="rect" id="Node000083" href="$draw_8c.html#a6b57bfa4c560c707cce131388467a095" title="Copies the title_screen_background_buffer onto the drawing_frame_buffer and draws other sprites neces..." alt="" coords="389,1489,512,1515"/>
+<area shape="poly" id="edge49_Node000067_Node000083" title=" " alt="" coords="306,1516,374,1508,375,1513,307,1521"/>
+<area shape="rect" id="Node000085" href="$draw_8c.html#a9496e4380bbed6f786f33fa7edfeb0cf" title="Copies the game_board_background_buffer onto the drawing_frame_buffer and draws other sprites necessa..." alt="" coords="403,1539,498,1564"/>
+<area shape="poly" id="edge50_Node000067_Node000085" title=" " alt="" coords="307,1531,389,1541,388,1547,306,1537"/>
+<area shape="rect" id="Node000086" href="$draw_8c.html#a0d157d997329169f936545f9985e334b" title="Copies the drawing_frame_buffer contents onto the main_frame_buffer, thus changing what&#39;s displayed o..." alt="" coords="401,1588,500,1614"/>
+<area shape="poly" id="edge51_Node000067_Node000086" title=" " alt="" coords="273,1537,367,1574,388,1581,386,1586,365,1579,271,1542"/>
+</map>

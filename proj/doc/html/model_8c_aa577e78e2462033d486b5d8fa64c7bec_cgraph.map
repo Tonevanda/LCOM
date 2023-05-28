@@ -1,0 +1,37 @@
+<map id="update_mouse_state" name="update_mouse_state">
+<area shape="rect" id="Node000001" title="Handles mouse interruptions according to the current state. Calls functions to handle the mouse scanc..." alt="" coords="5,183,148,208"/>
+<area shape="rect" id="Node000002" href="$model_8c.html#ae12dfa34095a84a3088e20f5bb648746" title="Updates global board_index variable with mouse inputs." alt="" coords="229,5,326,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,181,123,114,155,74,194,40,214,29,217,34,197,44,159,78,127,117,87,184"/>
+<area shape="rect" id="Node000003" href="$mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Mouse interrupt handler." alt="" coords="239,55,316,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="87,180,131,136,161,111,194,89,223,77,226,82,197,94,165,115,135,140,91,184"/>
+<area shape="rect" id="Node000007" href="$mouse_8c.html#a1538254b8ccba2f68e02cc3d5547722c" title="Checks the state of the mouse interrupt and stores the current byte accordingly in the mouseBytes arr..." alt="" coords="210,104,345,130"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="103,180,195,138,212,132,214,137,197,143,105,184"/>
+<area shape="rect" id="Node000008" href="$mouse_8c.html#a57603171ec6b74c33bb2ba2515232ab5" title="When the mouse packet is complete, updates the mouse info values." alt="" coords="196,153,359,179"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="148,182,181,178,181,183,149,188"/>
+<area shape="rect" id="Node000009" href="$model_8c.html#ad28345f7598f8bda8bf0746008769caa" title="Handles mouse packets while on the Attack state." alt="" coords="200,203,355,244"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="149,203,185,208,184,213,148,208"/>
+<area shape="rect" id="Node000011" href="$model_8c.html#ab211cbab5108281640c8e734e61f4bc1" title="Handles mouse packets while on the Defend state." alt="" coords="200,269,355,309"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="104,207,197,253,212,260,209,265,195,258,102,211"/>
+<area shape="rect" id="Node000012" href="$model_8c.html#a3d668bc59e279e1942416c9914a1a5f2" title="Handles mouse packets while on the Placement state." alt="" coords="200,334,355,375"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="89,207,133,260,163,291,197,319,206,324,203,329,194,323,160,295,129,264,85,211"/>
+<area shape="rect" id="Node000016" href="$model_8c.html#a85ecf596862915a7ac3db4df57ab070b" title="Handles mouse packets while on the Title state." alt="" coords="200,399,355,440"/>
+<area shape="poly" id="edge17_Node000001_Node000016" title=" " alt="" coords="85,208,100,242,123,289,156,340,197,384,203,389,200,393,194,388,152,343,119,292,95,244,80,210"/>
+<area shape="rect" id="Node000004" href="$_k_b_c___mouse_8c.html#af1cdca97cdbb084f1815b656e88cd7ab" title="Reads the content of the KBC in the port passed as parameter and stores it in the output variable." alt="" coords="407,55,577,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="317,65,392,65,392,70,317,70"/>
+<area shape="rect" id="Node000005" href="$_k_b_c___mouse_8c.html#a8963a43127c850f8b2ee9ca72b675c39" title="Reads the status of the KBC and stores it in the variable passed as parameter." alt="" coords="625,29,796,55"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="577,55,610,51,611,56,578,60"/>
+<area shape="rect" id="Node000006" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="844,55,934,80"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="578,65,829,65,829,70,578,70"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="796,52,829,56,829,62,796,57"/>
+<area shape="rect" id="Node000010" href="$model_8c.html#a22b7380d6f047abaa450a0151dbcb726" title="Updates the player_board&#39;s and enemy_board&#39;s individual slot structs to reflect on attacks." alt="" coords="464,211,521,236"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="355,221,448,221,448,226,355,226"/>
+<area shape="rect" id="Node000013" href="$model_8c.html#a2dac5003a9eadf99a2e61bea2ba39342" title="Places boats in the player_board given the current board_index,current_boat and the vert value." alt="" coords="453,341,532,367"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="355,352,437,352,437,357,355,357"/>
+<area shape="rect" id="Node000014" href="$model_8c.html#acaf921ff7b19d54d0a778267621d18e2" title="Updates the player_board&#39;s and enemy_board&#39;s individual slot structs to reflect on placed boats...." alt="" coords="854,341,924,367"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="532,352,840,352,840,357,532,357"/>
+<area shape="rect" id="Node000015" href="$model_8c.html#a76e826f01d887adc7f29e599352bc88d" title="Places all the boats in the enemy_board randomly." alt="" coords="661,367,760,392"/>
+<area shape="poly" id="edge15_Node000013_Node000015" title=" " alt="" coords="532,356,647,369,646,375,532,361"/>
+<area shape="poly" id="edge16_Node000015_Node000014" title=" " alt="" coords="760,370,839,358,840,364,761,375"/>
+<area shape="rect" id="Node000017" href="$model_8c.html#a3f26c5998c2a64702efab219c46acf1d" title="Chooses main menu options depending on user input." alt="" coords="441,407,543,432"/>
+<area shape="poly" id="edge18_Node000016_Node000017" title=" " alt="" coords="355,417,427,417,427,422,355,422"/>
+</map>

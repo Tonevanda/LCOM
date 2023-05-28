@@ -1,0 +1,960 @@
+\doxysection{model/model.c File Reference}
+\hypertarget{model_8c}{}\label{model_8c}\index{model/model.c@{model/model.c}}
+{\ttfamily \#include \"{}model.\+h\"{}}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+Include dependency graph for model.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{model_8c_a834200084177d31e41dd9b28754a3312}{setup\+\_\+sprites}} ()
+\begin{DoxyCompactList}\small\item\em Loads all xpms onto their respective sprite objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_a8fdbc6c7bfca3ef4a8800a3cdc19d932}{destroy\+\_\+sprites}} ()
+\begin{DoxyCompactList}\small\item\em Destroys all sprite objects to clear memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_aef4666d46db998697b6c82403e89751d}{setup\+\_\+backround}} ()
+\begin{DoxyCompactList}\small\item\em Draws the static sprites onto their necessary background buffers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_a2e7983abedd3fae94a24b4775a97210f}{update\+\_\+timer\+\_\+state}} ()
+\begin{DoxyCompactList}\small\item\em Handles timer interruptions according to the current state. All the draw functions are called from here and also the method for the AI to attack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_aa577e78e2462033d486b5d8fa64c7bec}{update\+\_\+mouse\+\_\+state}} ()
+\begin{DoxyCompactList}\small\item\em Handles mouse interruptions according to the current state. Calls functions to handle the mouse scancodes sent by the user\textquotesingle{}s mouse. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_a85ecf596862915a7ac3db4df57ab070b}{update\+\_\+mouse\+\_\+actions\+\_\+title}} ()
+\begin{DoxyCompactList}\small\item\em Handles mouse packets while on the Title state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_a3f26c5998c2a64702efab219c46acf1d}{menu\+\_\+actions}} ()
+\begin{DoxyCompactList}\small\item\em Chooses main menu options depending on user input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_ae12dfa34095a84a3088e20f5bb648746}{get\+Board\+Pos}} ()
+\begin{DoxyCompactList}\small\item\em Updates global board\+\_\+index variable with mouse inputs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_a3d668bc59e279e1942416c9914a1a5f2}{update\+\_\+mouse\+\_\+actions\+\_\+placement}} ()
+\begin{DoxyCompactList}\small\item\em Handles mouse packets while on the Placement state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_ad28345f7598f8bda8bf0746008769caa}{update\+\_\+mouse\+\_\+actions\+\_\+\+Attack}} ()
+\begin{DoxyCompactList}\small\item\em Handles mouse packets while on the Attack state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_ab211cbab5108281640c8e734e61f4bc1}{update\+\_\+mouse\+\_\+actions\+\_\+defend}} ()
+\begin{DoxyCompactList}\small\item\em Handles mouse packets while on the Defend state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_a2dac5003a9eadf99a2e61bea2ba39342}{place\+Boat}} ()
+\begin{DoxyCompactList}\small\item\em Places boats in the player\+\_\+board given the current board\+\_\+index,current\+\_\+boat and the vert value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_a22b7380d6f047abaa450a0151dbcb726}{attack}} (struct \mbox{\hyperlink{structslot}{slot}} atackee\mbox{[}66\mbox{]})
+\begin{DoxyCompactList}\small\item\em Updates the player\+\_\+board\textquotesingle{}s and enemy\+\_\+board\textquotesingle{}s individual slot structs to reflect on attacks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_afd13a2a70ab7ad5636cce74c3e0ab515}{ai\+\_\+actions}} ()
+\begin{DoxyCompactList}\small\item\em Randomizes board movement and attacks to act as AI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_a76e826f01d887adc7f29e599352bc88d}{place\+Ai\+Boats}} ()
+\begin{DoxyCompactList}\small\item\em Places all the boats in the enemy\+\_\+board randomly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_acaf921ff7b19d54d0a778267621d18e2}{add\+Boat}} (struct \mbox{\hyperlink{structslot}{slot}} \mbox{\hyperlink{model_8c_a5fac8105223c65bc1ccef5589fac0301}{board}}\mbox{[}66\mbox{]}, int \mbox{\hyperlink{draw_8c_a15d32cd36d34b227762045c8c146acd2}{board\+\_\+index}}, enum \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293}{part}} pos)
+\begin{DoxyCompactList}\small\item\em Updates the player\+\_\+board\textquotesingle{}s and enemy\+\_\+board\textquotesingle{}s individual slot structs to reflect on placed boats. It\textquotesingle{}s called in the place\+Boat and place\+Ai\+Boats methods. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_aacf177f660c44528fc3926b3cd69fb88}{update\+\_\+keyboard\+\_\+state}} ()
+\begin{DoxyCompactList}\small\item\em Handles keyboard interruptions according to the current state. Calls functions to handle the keyboard scancodes sent by the user\textquotesingle{}s keyboard. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_a7a6cabbe5c5ae40beb464969dab1ebcc}{update\+\_\+keyboard\+\_\+actions\+\_\+title}} ()
+\begin{DoxyCompactList}\small\item\em Handles keyboard scancodes while on the Title state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_a1f5a00e8c8a0c75051cda61a513fd38f}{update\+\_\+keyboard\+\_\+actions\+\_\+placement}} ()
+\begin{DoxyCompactList}\small\item\em Handles keyboard scancodes while on the Placement state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_a2699e097c9840b8fe1067975f80da234}{update\+\_\+keyboard\+\_\+actions\+\_\+attack}} ()
+\begin{DoxyCompactList}\small\item\em Handles keyboard scancodes while on the Attack state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_a8c2ade0a18f6d7109a81d86b3e15cce6}{update\+\_\+keyboard\+\_\+actions\+\_\+defend}} ()
+\begin{DoxyCompactList}\small\item\em Handles keyboard scancodes while on the Defend state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_a6094a0b19d809485af77b4fdfbdc1612}{get\+Keyboad\+Pos}} ()
+\begin{DoxyCompactList}\small\item\em Updates global board\+\_\+index variable with keyboard inputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{model_8c_aa1de7a5557e9d96b83cf03f73c92163f}{scancode}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{model_8c_af4b0411f5ba8899391c182a4371ad4fc}{byte\+Index}}
+\item 
+\mbox{\hyperlink{model_8h_aa51313be2faacb739a18fdeecefbac75}{System\+State}} \mbox{\hyperlink{model_8c_ac705089b22877f6322d09a9f0f5bdb1d}{system\+State}} = \mbox{\hyperlink{model_8h_aa51313be2faacb739a18fdeecefbac75a1061be6c3fb88d32829cba6f6b2be304}{RUNNING}}
+\item 
+\mbox{\hyperlink{model_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \mbox{\hyperlink{model_8c_a876b486d3a5241a126bd5751c5f70f79}{state}} = \mbox{\hyperlink{model_8h_a5d74787dedbc4e11c1ab15bf487e61f8aae37fab5e18e444f110064c349066675}{Title}}
+\item 
+vbe\+\_\+mode\+\_\+info\+\_\+t \mbox{\hyperlink{model_8c_a9fcc2243068f8e628648febc0909c509}{mode\+\_\+info}}
+\item 
+\mbox{\hyperlink{struct_mouse_info}{Mouse\+Info}} \mbox{\hyperlink{model_8c_a343e4f854a0c3e5001228e209c5f025e}{mouse\+\_\+info}}
+\item 
+int \mbox{\hyperlink{model_8c_adab4da51ba40d5a492becdceccccbfcd}{selected}}
+\item 
+int \mbox{\hyperlink{model_8c_a9dd86e05eb51b73ffa496d0478503939}{timer\+\_\+interrupts}} = 0
+\item 
+int \mbox{\hyperlink{model_8c_af5f9057d52067e660c59b49b6e035fd1}{original\+\_\+board\+\_\+x}}
+\item 
+int \mbox{\hyperlink{model_8c_aeba637d40e5569184d1ee66c6363cf4b}{original\+\_\+board\+\_\+y}}
+\item 
+int \mbox{\hyperlink{model_8c_a15d32cd36d34b227762045c8c146acd2}{board\+\_\+index}}
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a5624124985253fcdf641a0a38081fed8}{title\+\_\+screen\+\_\+backround\+\_\+buffer}}
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a106b5487f916cbb6beaae430b2bcce83}{game\+\_\+board\+\_\+backround\+\_\+buffer}}
+\item 
+struct \mbox{\hyperlink{structslot}{slot}} \mbox{\hyperlink{model_8c_aada05c8bed99663fe9186b3d432e014a}{player\+\_\+board}} \mbox{[}66\mbox{]}
+\item 
+struct \mbox{\hyperlink{structslot}{slot}} \mbox{\hyperlink{model_8c_a9ed3a771cd0340eb82b1d7b896ba28a7}{enemy\+\_\+board}} \mbox{[}66\mbox{]}
+\item 
+struct \mbox{\hyperlink{structgame_info}{game\+Info}} \mbox{\hyperlink{model_8c_a68f005151973f9559f77e95b1fa66e16}{game}}
+\item 
+int \mbox{\hyperlink{model_8c_aacd2ee6d7e1276f9519631c8f5790a78}{current\+\_\+boat}}
+\item 
+bool \mbox{\hyperlink{model_8c_aeb2b936f6bf70cace2cdeaefa818a2dd}{vert}}
+\item 
+bool \mbox{\hyperlink{model_8c_a8e224ff5280deaa89a3aece981125904}{is\+Keyboard}}
+\item 
+bool \mbox{\hyperlink{model_8c_a1b43d566cbd44f84556d40dbd2c5272a}{victory}}
+\item 
+bool \mbox{\hyperlink{model_8c_a3fc8cdbe99156a3efe92a31d1dc6c680}{player\+Board\+Visible}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{model_8c_ac93fcba5d1ccdf8176ddc0510ab5e1d8}{rtc\+\_\+data}} \mbox{[}6\mbox{]}
+\item 
+struct tm \mbox{\hyperlink{model_8c_ae913aa34b3763ac696ce5a01458c8eb8}{initial\+Time}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_af03a383fdcfdf7501006a5c8d68be42b}{mouse}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a2337e804f9cb555ab4bbaae841cce26a}{XIco}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a5fac8105223c65bc1ccef5589fac0301}{board}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a7e106c384127c9b2052c91f0ac6b961d}{frame}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_ac9bb395f6dbe15fc04d1279328663f2e}{boat\+\_\+down}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_abb0580715b9c1d8dcc883f8d75226f59}{boat\+\_\+up}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a915296d5abb0e1c7c1ceeac64768bbf5}{boat\+\_\+middle\+\_\+vert}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a8b591d6cdefbbe00bca76f2395e39fa0}{boat\+\_\+left}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a768357a60891aac8c0293fbd1fb27b6e}{boat\+\_\+right}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_af660de4a4cf2048b2abf34eecf638aaa}{boat\+\_\+middle\+\_\+hor}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_aba66a1ceb852911beed9297766c13b22}{arrow}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a7bcfe5af5db9cbc30bfc911ae2b26a76}{backround}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_ab721ef23d48f79c1ed3a5b0546a89636}{title\+Name}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_acc42c045d6c3b0e43274b1875217776a}{Probed\+Hole}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a7088bc4acac22d04ca1216c4b4e39a0d}{game\+Backround}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a950fa4bad1ed958f5f599a0b94953bf6}{redX}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a334599b4c80bf9577a8c640495829543}{whiteX}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a5d2e5e9b476cb847c978317037190eff}{vicotory}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a97e621da8bd4d7e7ddc2be138aad47e0}{lose}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a1d502bcb0fc81ec6b52950854ddd4e11}{number0}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_aaee505dc5b3b45801ffb410df1704541}{number1}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a18e6a886be63dfb579756e81e3fe5292}{number2}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a5a4ec8b1c2b7241721e90cdb201c7562}{number3}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_abf017686ed31131ad0f09cd637bfff4d}{number4}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_acffe389543fcf770f3dbc3f460b66ff0}{number5}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a320b85ccfe029ee4f811ff193e06b9ab}{number6}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a0de4c39e391f59c596d46a00e8fbf7c6}{number7}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a311c0da3e2d004050eca5fd65a657671}{number8}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a6e13636f04c2d7e7c597ca3cb518b6a8}{number9}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a61d0c7fc9d9720d2ceb8044442cc3806}{colon}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_adaec8ee691a7d571e7f163afafad1399}{board\+\_\+name}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a33500dbcaa186cb8d2fb074c4e259e34}{your}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a3f79243d35cb4c538cc7881888d691dc}{opponent}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a76454a7d013e0b6d5feb29b0ced6429e}{start}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_ab32e08d120d70f7bade21ceeb91b16e6}{selected\+\_\+start}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a7e68e10b88d11f2f7b850ac81663e261}{exit\+\_\+idk}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_aab324afb9de1afaafdc5ee09f13ab84e}{exit\+\_\+selected}}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_ab0f079449dce330cb5c11b43ce39ce33}{sprites}} \mbox{[}40\mbox{]}
+\item 
+int \mbox{\hyperlink{model_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}} =0
+\item 
+int \mbox{\hyperlink{model_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}} =0
+\item 
+int \mbox{\hyperlink{model_8c_a8fac448cbfa6fed7c3606265f3564595}{doubles}} =2
+\item 
+int \mbox{\hyperlink{model_8c_a373ca0fdcab07d3e66219e41a1a8c877}{triples}} =2
+\item 
+int \mbox{\hyperlink{model_8c_aaa0de61fd94f393cc005851132c5b59c}{quads}} =2
+\item 
+int \mbox{\hyperlink{model_8c_a84faf5a9eb2d07e6d2a7e283c642b405}{ai\+Attack\+Tries}} =0
+\item 
+int \mbox{\hyperlink{model_8c_ad0fc01b82acbff0d22d59c6eee8450ef}{ai\+Counter}} =0
+\item 
+int \mbox{\hyperlink{model_8c_a8db442d76ec15829213830166d572abe}{last\+Attacked\+Boat}} =1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{model_8c_acaf921ff7b19d54d0a778267621d18e2}\label{model_8c_acaf921ff7b19d54d0a778267621d18e2} 
+\index{model.c@{model.c}!addBoat@{addBoat}}
+\index{addBoat@{addBoat}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{addBoat()}{addBoat()}}
+{\footnotesize\ttfamily void add\+Boat (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structslot}{slot}}}]{board\mbox{[}66\mbox{]},  }\item[{int}]{board\+\_\+index,  }\item[{enum \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293}{part}}}]{pos }\end{DoxyParamCaption})}
+
+
+
+Updates the player\+\_\+board\textquotesingle{}s and enemy\+\_\+board\textquotesingle{}s individual slot structs to reflect on placed boats. It\textquotesingle{}s called in the place\+Boat and place\+Ai\+Boats methods. 
+
+\Hypertarget{model_8c_afd13a2a70ab7ad5636cce74c3e0ab515}\label{model_8c_afd13a2a70ab7ad5636cce74c3e0ab515} 
+\index{model.c@{model.c}!ai\_actions@{ai\_actions}}
+\index{ai\_actions@{ai\_actions}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{ai\_actions()}{ai\_actions()}}
+{\footnotesize\ttfamily void ai\+\_\+actions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Randomizes board movement and attacks to act as AI. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{model_8c_afd13a2a70ab7ad5636cce74c3e0ab515_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model_8c_a22b7380d6f047abaa450a0151dbcb726}\label{model_8c_a22b7380d6f047abaa450a0151dbcb726} 
+\index{model.c@{model.c}!attack@{attack}}
+\index{attack@{attack}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{attack()}{attack()}}
+{\footnotesize\ttfamily void attack (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structslot}{slot}}}]{atackee\mbox{[}66\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Updates the player\+\_\+board\textquotesingle{}s and enemy\+\_\+board\textquotesingle{}s individual slot structs to reflect on attacks. 
+
+\Hypertarget{model_8c_a8fdbc6c7bfca3ef4a8800a3cdc19d932}\label{model_8c_a8fdbc6c7bfca3ef4a8800a3cdc19d932} 
+\index{model.c@{model.c}!destroy\_sprites@{destroy\_sprites}}
+\index{destroy\_sprites@{destroy\_sprites}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{destroy\_sprites()}{destroy\_sprites()}}
+{\footnotesize\ttfamily void destroy\+\_\+sprites (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroys all sprite objects to clear memory. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{model_8c_a8fdbc6c7bfca3ef4a8800a3cdc19d932_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model_8c_ae12dfa34095a84a3088e20f5bb648746}\label{model_8c_ae12dfa34095a84a3088e20f5bb648746} 
+\index{model.c@{model.c}!getBoardPos@{getBoardPos}}
+\index{getBoardPos@{getBoardPos}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{getBoardPos()}{getBoardPos()}}
+{\footnotesize\ttfamily void get\+Board\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates global board\+\_\+index variable with mouse inputs. 
+
+\Hypertarget{model_8c_a6094a0b19d809485af77b4fdfbdc1612}\label{model_8c_a6094a0b19d809485af77b4fdfbdc1612} 
+\index{model.c@{model.c}!getKeyboadPos@{getKeyboadPos}}
+\index{getKeyboadPos@{getKeyboadPos}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{getKeyboadPos()}{getKeyboadPos()}}
+{\footnotesize\ttfamily void get\+Keyboad\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates global board\+\_\+index variable with keyboard inputs. 
+
+\Hypertarget{model_8c_a3f26c5998c2a64702efab219c46acf1d}\label{model_8c_a3f26c5998c2a64702efab219c46acf1d} 
+\index{model.c@{model.c}!menu\_actions@{menu\_actions}}
+\index{menu\_actions@{menu\_actions}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{menu\_actions()}{menu\_actions()}}
+{\footnotesize\ttfamily void menu\+\_\+actions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Chooses main menu options depending on user input. 
+
+\Hypertarget{model_8c_a76e826f01d887adc7f29e599352bc88d}\label{model_8c_a76e826f01d887adc7f29e599352bc88d} 
+\index{model.c@{model.c}!placeAiBoats@{placeAiBoats}}
+\index{placeAiBoats@{placeAiBoats}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{placeAiBoats()}{placeAiBoats()}}
+{\footnotesize\ttfamily void place\+Ai\+Boats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Places all the boats in the enemy\+\_\+board randomly. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{model_8c_a76e826f01d887adc7f29e599352bc88d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model_8c_a2dac5003a9eadf99a2e61bea2ba39342}\label{model_8c_a2dac5003a9eadf99a2e61bea2ba39342} 
+\index{model.c@{model.c}!placeBoat@{placeBoat}}
+\index{placeBoat@{placeBoat}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{placeBoat()}{placeBoat()}}
+{\footnotesize\ttfamily void place\+Boat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Places boats in the player\+\_\+board given the current board\+\_\+index,current\+\_\+boat and the vert value. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{model_8c_a2dac5003a9eadf99a2e61bea2ba39342_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model_8c_aef4666d46db998697b6c82403e89751d}\label{model_8c_aef4666d46db998697b6c82403e89751d} 
+\index{model.c@{model.c}!setup\_backround@{setup\_backround}}
+\index{setup\_backround@{setup\_backround}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{setup\_backround()}{setup\_backround()}}
+{\footnotesize\ttfamily void setup\+\_\+backround (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the static sprites onto their necessary background buffers. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model_8c_aef4666d46db998697b6c82403e89751d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model_8c_a834200084177d31e41dd9b28754a3312}\label{model_8c_a834200084177d31e41dd9b28754a3312} 
+\index{model.c@{model.c}!setup\_sprites@{setup\_sprites}}
+\index{setup\_sprites@{setup\_sprites}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{setup\_sprites()}{setup\_sprites()}}
+{\footnotesize\ttfamily void setup\+\_\+sprites (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads all xpms onto their respective sprite objects. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{model_8c_a834200084177d31e41dd9b28754a3312_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model_8c_a2699e097c9840b8fe1067975f80da234}\label{model_8c_a2699e097c9840b8fe1067975f80da234} 
+\index{model.c@{model.c}!update\_keyboard\_actions\_attack@{update\_keyboard\_actions\_attack}}
+\index{update\_keyboard\_actions\_attack@{update\_keyboard\_actions\_attack}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{update\_keyboard\_actions\_attack()}{update\_keyboard\_actions\_attack()}}
+{\footnotesize\ttfamily void update\+\_\+keyboard\+\_\+actions\+\_\+attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles keyboard scancodes while on the Attack state. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{model_8c_a2699e097c9840b8fe1067975f80da234_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model_8c_a8c2ade0a18f6d7109a81d86b3e15cce6}\label{model_8c_a8c2ade0a18f6d7109a81d86b3e15cce6} 
+\index{model.c@{model.c}!update\_keyboard\_actions\_defend@{update\_keyboard\_actions\_defend}}
+\index{update\_keyboard\_actions\_defend@{update\_keyboard\_actions\_defend}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{update\_keyboard\_actions\_defend()}{update\_keyboard\_actions\_defend()}}
+{\footnotesize\ttfamily void update\+\_\+keyboard\+\_\+actions\+\_\+defend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles keyboard scancodes while on the Defend state. 
+
+\Hypertarget{model_8c_a1f5a00e8c8a0c75051cda61a513fd38f}\label{model_8c_a1f5a00e8c8a0c75051cda61a513fd38f} 
+\index{model.c@{model.c}!update\_keyboard\_actions\_placement@{update\_keyboard\_actions\_placement}}
+\index{update\_keyboard\_actions\_placement@{update\_keyboard\_actions\_placement}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{update\_keyboard\_actions\_placement()}{update\_keyboard\_actions\_placement()}}
+{\footnotesize\ttfamily void update\+\_\+keyboard\+\_\+actions\+\_\+placement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles keyboard scancodes while on the Placement state. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model_8c_a1f5a00e8c8a0c75051cda61a513fd38f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model_8c_a7a6cabbe5c5ae40beb464969dab1ebcc}\label{model_8c_a7a6cabbe5c5ae40beb464969dab1ebcc} 
+\index{model.c@{model.c}!update\_keyboard\_actions\_title@{update\_keyboard\_actions\_title}}
+\index{update\_keyboard\_actions\_title@{update\_keyboard\_actions\_title}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{update\_keyboard\_actions\_title()}{update\_keyboard\_actions\_title()}}
+{\footnotesize\ttfamily void update\+\_\+keyboard\+\_\+actions\+\_\+title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles keyboard scancodes while on the Title state. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{model_8c_a7a6cabbe5c5ae40beb464969dab1ebcc_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model_8c_aacf177f660c44528fc3926b3cd69fb88}\label{model_8c_aacf177f660c44528fc3926b3cd69fb88} 
+\index{model.c@{model.c}!update\_keyboard\_state@{update\_keyboard\_state}}
+\index{update\_keyboard\_state@{update\_keyboard\_state}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{update\_keyboard\_state()}{update\_keyboard\_state()}}
+{\footnotesize\ttfamily void update\+\_\+keyboard\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles keyboard interruptions according to the current state. Calls functions to handle the keyboard scancodes sent by the user\textquotesingle{}s keyboard. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model_8c_aacf177f660c44528fc3926b3cd69fb88_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model_8c_ad28345f7598f8bda8bf0746008769caa}\label{model_8c_ad28345f7598f8bda8bf0746008769caa} 
+\index{model.c@{model.c}!update\_mouse\_actions\_Attack@{update\_mouse\_actions\_Attack}}
+\index{update\_mouse\_actions\_Attack@{update\_mouse\_actions\_Attack}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{update\_mouse\_actions\_Attack()}{update\_mouse\_actions\_Attack()}}
+{\footnotesize\ttfamily void update\+\_\+mouse\+\_\+actions\+\_\+\+Attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles mouse packets while on the Attack state. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{model_8c_ad28345f7598f8bda8bf0746008769caa_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model_8c_ab211cbab5108281640c8e734e61f4bc1}\label{model_8c_ab211cbab5108281640c8e734e61f4bc1} 
+\index{model.c@{model.c}!update\_mouse\_actions\_defend@{update\_mouse\_actions\_defend}}
+\index{update\_mouse\_actions\_defend@{update\_mouse\_actions\_defend}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{update\_mouse\_actions\_defend()}{update\_mouse\_actions\_defend()}}
+{\footnotesize\ttfamily void update\+\_\+mouse\+\_\+actions\+\_\+defend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles mouse packets while on the Defend state. 
+
+\Hypertarget{model_8c_a3d668bc59e279e1942416c9914a1a5f2}\label{model_8c_a3d668bc59e279e1942416c9914a1a5f2} 
+\index{model.c@{model.c}!update\_mouse\_actions\_placement@{update\_mouse\_actions\_placement}}
+\index{update\_mouse\_actions\_placement@{update\_mouse\_actions\_placement}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{update\_mouse\_actions\_placement()}{update\_mouse\_actions\_placement()}}
+{\footnotesize\ttfamily void update\+\_\+mouse\+\_\+actions\+\_\+placement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles mouse packets while on the Placement state. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model_8c_a3d668bc59e279e1942416c9914a1a5f2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model_8c_a85ecf596862915a7ac3db4df57ab070b}\label{model_8c_a85ecf596862915a7ac3db4df57ab070b} 
+\index{model.c@{model.c}!update\_mouse\_actions\_title@{update\_mouse\_actions\_title}}
+\index{update\_mouse\_actions\_title@{update\_mouse\_actions\_title}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{update\_mouse\_actions\_title()}{update\_mouse\_actions\_title()}}
+{\footnotesize\ttfamily void update\+\_\+mouse\+\_\+actions\+\_\+title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles mouse packets while on the Title state. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{model_8c_a85ecf596862915a7ac3db4df57ab070b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model_8c_aa577e78e2462033d486b5d8fa64c7bec}\label{model_8c_aa577e78e2462033d486b5d8fa64c7bec} 
+\index{model.c@{model.c}!update\_mouse\_state@{update\_mouse\_state}}
+\index{update\_mouse\_state@{update\_mouse\_state}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{update\_mouse\_state()}{update\_mouse\_state()}}
+{\footnotesize\ttfamily void update\+\_\+mouse\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles mouse interruptions according to the current state. Calls functions to handle the mouse scancodes sent by the user\textquotesingle{}s mouse. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model_8c_aa577e78e2462033d486b5d8fa64c7bec_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model_8c_a2e7983abedd3fae94a24b4775a97210f}\label{model_8c_a2e7983abedd3fae94a24b4775a97210f} 
+\index{model.c@{model.c}!update\_timer\_state@{update\_timer\_state}}
+\index{update\_timer\_state@{update\_timer\_state}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{update\_timer\_state()}{update\_timer\_state()}}
+{\footnotesize\ttfamily void update\+\_\+timer\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles timer interruptions according to the current state. All the draw functions are called from here and also the method for the AI to attack. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model_8c_a2e7983abedd3fae94a24b4775a97210f_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{model_8c_a84faf5a9eb2d07e6d2a7e283c642b405}\label{model_8c_a84faf5a9eb2d07e6d2a7e283c642b405} 
+\index{model.c@{model.c}!aiAttackTries@{aiAttackTries}}
+\index{aiAttackTries@{aiAttackTries}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{aiAttackTries}{aiAttackTries}}
+{\footnotesize\ttfamily int ai\+Attack\+Tries =0}
+
+\Hypertarget{model_8c_ad0fc01b82acbff0d22d59c6eee8450ef}\label{model_8c_ad0fc01b82acbff0d22d59c6eee8450ef} 
+\index{model.c@{model.c}!aiCounter@{aiCounter}}
+\index{aiCounter@{aiCounter}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{aiCounter}{aiCounter}}
+{\footnotesize\ttfamily int ai\+Counter =0}
+
+\Hypertarget{model_8c_aba66a1ceb852911beed9297766c13b22}\label{model_8c_aba66a1ceb852911beed9297766c13b22} 
+\index{model.c@{model.c}!arrow@{arrow}}
+\index{arrow@{arrow}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{arrow}{arrow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} arrow}
+
+\Hypertarget{model_8c_a7bcfe5af5db9cbc30bfc911ae2b26a76}\label{model_8c_a7bcfe5af5db9cbc30bfc911ae2b26a76} 
+\index{model.c@{model.c}!backround@{backround}}
+\index{backround@{backround}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{backround}{backround}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} backround}
+
+\Hypertarget{model_8c_a5fac8105223c65bc1ccef5589fac0301}\label{model_8c_a5fac8105223c65bc1ccef5589fac0301} 
+\index{model.c@{model.c}!board@{board}}
+\index{board@{board}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{board}{board}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} board}
+
+\Hypertarget{model_8c_a15d32cd36d34b227762045c8c146acd2}\label{model_8c_a15d32cd36d34b227762045c8c146acd2} 
+\index{model.c@{model.c}!board\_index@{board\_index}}
+\index{board\_index@{board\_index}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{board\_index}{board\_index}}
+{\footnotesize\ttfamily int board\+\_\+index\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_adaec8ee691a7d571e7f163afafad1399}\label{model_8c_adaec8ee691a7d571e7f163afafad1399} 
+\index{model.c@{model.c}!board\_name@{board\_name}}
+\index{board\_name@{board\_name}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{board\_name}{board\_name}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} board\+\_\+name}
+
+\Hypertarget{model_8c_ac9bb395f6dbe15fc04d1279328663f2e}\label{model_8c_ac9bb395f6dbe15fc04d1279328663f2e} 
+\index{model.c@{model.c}!boat\_down@{boat\_down}}
+\index{boat\_down@{boat\_down}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{boat\_down}{boat\_down}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} boat\+\_\+down}
+
+\Hypertarget{model_8c_a8b591d6cdefbbe00bca76f2395e39fa0}\label{model_8c_a8b591d6cdefbbe00bca76f2395e39fa0} 
+\index{model.c@{model.c}!boat\_left@{boat\_left}}
+\index{boat\_left@{boat\_left}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{boat\_left}{boat\_left}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} boat\+\_\+left}
+
+\Hypertarget{model_8c_af660de4a4cf2048b2abf34eecf638aaa}\label{model_8c_af660de4a4cf2048b2abf34eecf638aaa} 
+\index{model.c@{model.c}!boat\_middle\_hor@{boat\_middle\_hor}}
+\index{boat\_middle\_hor@{boat\_middle\_hor}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{boat\_middle\_hor}{boat\_middle\_hor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} boat\+\_\+middle\+\_\+hor}
+
+\Hypertarget{model_8c_a915296d5abb0e1c7c1ceeac64768bbf5}\label{model_8c_a915296d5abb0e1c7c1ceeac64768bbf5} 
+\index{model.c@{model.c}!boat\_middle\_vert@{boat\_middle\_vert}}
+\index{boat\_middle\_vert@{boat\_middle\_vert}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{boat\_middle\_vert}{boat\_middle\_vert}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} boat\+\_\+middle\+\_\+vert}
+
+\Hypertarget{model_8c_a768357a60891aac8c0293fbd1fb27b6e}\label{model_8c_a768357a60891aac8c0293fbd1fb27b6e} 
+\index{model.c@{model.c}!boat\_right@{boat\_right}}
+\index{boat\_right@{boat\_right}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{boat\_right}{boat\_right}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} boat\+\_\+right}
+
+\Hypertarget{model_8c_abb0580715b9c1d8dcc883f8d75226f59}\label{model_8c_abb0580715b9c1d8dcc883f8d75226f59} 
+\index{model.c@{model.c}!boat\_up@{boat\_up}}
+\index{boat\_up@{boat\_up}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{boat\_up}{boat\_up}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} boat\+\_\+up}
+
+\Hypertarget{model_8c_af4b0411f5ba8899391c182a4371ad4fc}\label{model_8c_af4b0411f5ba8899391c182a4371ad4fc} 
+\index{model.c@{model.c}!byteIndex@{byteIndex}}
+\index{byteIndex@{byteIndex}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{byteIndex}{byteIndex}}
+{\footnotesize\ttfamily uint8\+\_\+t byte\+Index\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_a61d0c7fc9d9720d2ceb8044442cc3806}\label{model_8c_a61d0c7fc9d9720d2ceb8044442cc3806} 
+\index{model.c@{model.c}!colon@{colon}}
+\index{colon@{colon}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{colon}{colon}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} colon}
+
+\Hypertarget{model_8c_aacd2ee6d7e1276f9519631c8f5790a78}\label{model_8c_aacd2ee6d7e1276f9519631c8f5790a78} 
+\index{model.c@{model.c}!current\_boat@{current\_boat}}
+\index{current\_boat@{current\_boat}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{current\_boat}{current\_boat}}
+{\footnotesize\ttfamily int current\+\_\+boat\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_a8fac448cbfa6fed7c3606265f3564595}\label{model_8c_a8fac448cbfa6fed7c3606265f3564595} 
+\index{model.c@{model.c}!doubles@{doubles}}
+\index{doubles@{doubles}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{doubles}{doubles}}
+{\footnotesize\ttfamily int doubles =2}
+
+\Hypertarget{model_8c_a9ed3a771cd0340eb82b1d7b896ba28a7}\label{model_8c_a9ed3a771cd0340eb82b1d7b896ba28a7} 
+\index{model.c@{model.c}!enemy\_board@{enemy\_board}}
+\index{enemy\_board@{enemy\_board}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{enemy\_board}{enemy\_board}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structslot}{slot}} enemy\+\_\+board\mbox{[}66\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_a7e68e10b88d11f2f7b850ac81663e261}\label{model_8c_a7e68e10b88d11f2f7b850ac81663e261} 
+\index{model.c@{model.c}!exit\_idk@{exit\_idk}}
+\index{exit\_idk@{exit\_idk}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{exit\_idk}{exit\_idk}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} exit\+\_\+idk}
+
+\Hypertarget{model_8c_aab324afb9de1afaafdc5ee09f13ab84e}\label{model_8c_aab324afb9de1afaafdc5ee09f13ab84e} 
+\index{model.c@{model.c}!exit\_selected@{exit\_selected}}
+\index{exit\_selected@{exit\_selected}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{exit\_selected}{exit\_selected}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} exit\+\_\+selected}
+
+\Hypertarget{model_8c_a7e106c384127c9b2052c91f0ac6b961d}\label{model_8c_a7e106c384127c9b2052c91f0ac6b961d} 
+\index{model.c@{model.c}!frame@{frame}}
+\index{frame@{frame}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{frame}{frame}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} frame}
+
+\Hypertarget{model_8c_a68f005151973f9559f77e95b1fa66e16}\label{model_8c_a68f005151973f9559f77e95b1fa66e16} 
+\index{model.c@{model.c}!game@{game}}
+\index{game@{game}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{game}{game}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structgame_info}{game\+Info}} game\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_a106b5487f916cbb6beaae430b2bcce83}\label{model_8c_a106b5487f916cbb6beaae430b2bcce83} 
+\index{model.c@{model.c}!game\_board\_backround\_buffer@{game\_board\_backround\_buffer}}
+\index{game\_board\_backround\_buffer@{game\_board\_backround\_buffer}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{game\_board\_backround\_buffer}{game\_board\_backround\_buffer}}
+{\footnotesize\ttfamily uint8\+\_\+t\texorpdfstring{$\ast$}{*} game\+\_\+board\+\_\+backround\+\_\+buffer\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_a7088bc4acac22d04ca1216c4b4e39a0d}\label{model_8c_a7088bc4acac22d04ca1216c4b4e39a0d} 
+\index{model.c@{model.c}!gameBackround@{gameBackround}}
+\index{gameBackround@{gameBackround}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{gameBackround}{gameBackround}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} game\+Backround}
+
+\Hypertarget{model_8c_ae913aa34b3763ac696ce5a01458c8eb8}\label{model_8c_ae913aa34b3763ac696ce5a01458c8eb8} 
+\index{model.c@{model.c}!initialTime@{initialTime}}
+\index{initialTime@{initialTime}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{initialTime}{initialTime}}
+{\footnotesize\ttfamily struct tm initial\+Time}
+
+\Hypertarget{model_8c_a8e224ff5280deaa89a3aece981125904}\label{model_8c_a8e224ff5280deaa89a3aece981125904} 
+\index{model.c@{model.c}!isKeyboard@{isKeyboard}}
+\index{isKeyboard@{isKeyboard}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{isKeyboard}{isKeyboard}}
+{\footnotesize\ttfamily bool is\+Keyboard\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_a8db442d76ec15829213830166d572abe}\label{model_8c_a8db442d76ec15829213830166d572abe} 
+\index{model.c@{model.c}!lastAttackedBoat@{lastAttackedBoat}}
+\index{lastAttackedBoat@{lastAttackedBoat}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{lastAttackedBoat}{lastAttackedBoat}}
+{\footnotesize\ttfamily int last\+Attacked\+Boat =1}
+
+\Hypertarget{model_8c_a97e621da8bd4d7e7ddc2be138aad47e0}\label{model_8c_a97e621da8bd4d7e7ddc2be138aad47e0} 
+\index{model.c@{model.c}!lose@{lose}}
+\index{lose@{lose}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{lose}{lose}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} lose}
+
+\Hypertarget{model_8c_a9fcc2243068f8e628648febc0909c509}\label{model_8c_a9fcc2243068f8e628648febc0909c509} 
+\index{model.c@{model.c}!mode\_info@{mode\_info}}
+\index{mode\_info@{mode\_info}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{mode\_info}{mode\_info}}
+{\footnotesize\ttfamily vbe\+\_\+mode\+\_\+info\+\_\+t mode\+\_\+info\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_af03a383fdcfdf7501006a5c8d68be42b}\label{model_8c_af03a383fdcfdf7501006a5c8d68be42b} 
+\index{model.c@{model.c}!mouse@{mouse}}
+\index{mouse@{mouse}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{mouse}{mouse}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} mouse}
+
+\Hypertarget{model_8c_a343e4f854a0c3e5001228e209c5f025e}\label{model_8c_a343e4f854a0c3e5001228e209c5f025e} 
+\index{model.c@{model.c}!mouse\_info@{mouse\_info}}
+\index{mouse\_info@{mouse\_info}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_info}{mouse\_info}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_mouse_info}{Mouse\+Info}} mouse\+\_\+info\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_a1d502bcb0fc81ec6b52950854ddd4e11}\label{model_8c_a1d502bcb0fc81ec6b52950854ddd4e11} 
+\index{model.c@{model.c}!number0@{number0}}
+\index{number0@{number0}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{number0}{number0}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} number0}
+
+\Hypertarget{model_8c_aaee505dc5b3b45801ffb410df1704541}\label{model_8c_aaee505dc5b3b45801ffb410df1704541} 
+\index{model.c@{model.c}!number1@{number1}}
+\index{number1@{number1}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{number1}{number1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} number1}
+
+\Hypertarget{model_8c_a18e6a886be63dfb579756e81e3fe5292}\label{model_8c_a18e6a886be63dfb579756e81e3fe5292} 
+\index{model.c@{model.c}!number2@{number2}}
+\index{number2@{number2}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{number2}{number2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} number2}
+
+\Hypertarget{model_8c_a5a4ec8b1c2b7241721e90cdb201c7562}\label{model_8c_a5a4ec8b1c2b7241721e90cdb201c7562} 
+\index{model.c@{model.c}!number3@{number3}}
+\index{number3@{number3}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{number3}{number3}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} number3}
+
+\Hypertarget{model_8c_abf017686ed31131ad0f09cd637bfff4d}\label{model_8c_abf017686ed31131ad0f09cd637bfff4d} 
+\index{model.c@{model.c}!number4@{number4}}
+\index{number4@{number4}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{number4}{number4}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} number4}
+
+\Hypertarget{model_8c_acffe389543fcf770f3dbc3f460b66ff0}\label{model_8c_acffe389543fcf770f3dbc3f460b66ff0} 
+\index{model.c@{model.c}!number5@{number5}}
+\index{number5@{number5}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{number5}{number5}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} number5}
+
+\Hypertarget{model_8c_a320b85ccfe029ee4f811ff193e06b9ab}\label{model_8c_a320b85ccfe029ee4f811ff193e06b9ab} 
+\index{model.c@{model.c}!number6@{number6}}
+\index{number6@{number6}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{number6}{number6}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} number6}
+
+\Hypertarget{model_8c_a0de4c39e391f59c596d46a00e8fbf7c6}\label{model_8c_a0de4c39e391f59c596d46a00e8fbf7c6} 
+\index{model.c@{model.c}!number7@{number7}}
+\index{number7@{number7}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{number7}{number7}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} number7}
+
+\Hypertarget{model_8c_a311c0da3e2d004050eca5fd65a657671}\label{model_8c_a311c0da3e2d004050eca5fd65a657671} 
+\index{model.c@{model.c}!number8@{number8}}
+\index{number8@{number8}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{number8}{number8}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} number8}
+
+\Hypertarget{model_8c_a6e13636f04c2d7e7c597ca3cb518b6a8}\label{model_8c_a6e13636f04c2d7e7c597ca3cb518b6a8} 
+\index{model.c@{model.c}!number9@{number9}}
+\index{number9@{number9}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{number9}{number9}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} number9}
+
+\Hypertarget{model_8c_a3f79243d35cb4c538cc7881888d691dc}\label{model_8c_a3f79243d35cb4c538cc7881888d691dc} 
+\index{model.c@{model.c}!opponent@{opponent}}
+\index{opponent@{opponent}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{opponent}{opponent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} opponent}
+
+\Hypertarget{model_8c_af5f9057d52067e660c59b49b6e035fd1}\label{model_8c_af5f9057d52067e660c59b49b6e035fd1} 
+\index{model.c@{model.c}!original\_board\_x@{original\_board\_x}}
+\index{original\_board\_x@{original\_board\_x}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{original\_board\_x}{original\_board\_x}}
+{\footnotesize\ttfamily int original\+\_\+board\+\_\+x\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_aeba637d40e5569184d1ee66c6363cf4b}\label{model_8c_aeba637d40e5569184d1ee66c6363cf4b} 
+\index{model.c@{model.c}!original\_board\_y@{original\_board\_y}}
+\index{original\_board\_y@{original\_board\_y}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{original\_board\_y}{original\_board\_y}}
+{\footnotesize\ttfamily int original\+\_\+board\+\_\+y\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_aada05c8bed99663fe9186b3d432e014a}\label{model_8c_aada05c8bed99663fe9186b3d432e014a} 
+\index{model.c@{model.c}!player\_board@{player\_board}}
+\index{player\_board@{player\_board}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{player\_board}{player\_board}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structslot}{slot}} player\+\_\+board\mbox{[}66\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_a3fc8cdbe99156a3efe92a31d1dc6c680}\label{model_8c_a3fc8cdbe99156a3efe92a31d1dc6c680} 
+\index{model.c@{model.c}!playerBoardVisible@{playerBoardVisible}}
+\index{playerBoardVisible@{playerBoardVisible}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{playerBoardVisible}{playerBoardVisible}}
+{\footnotesize\ttfamily bool player\+Board\+Visible\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_acc42c045d6c3b0e43274b1875217776a}\label{model_8c_acc42c045d6c3b0e43274b1875217776a} 
+\index{model.c@{model.c}!ProbedHole@{ProbedHole}}
+\index{ProbedHole@{ProbedHole}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{ProbedHole}{ProbedHole}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} Probed\+Hole}
+
+\Hypertarget{model_8c_aaa0de61fd94f393cc005851132c5b59c}\label{model_8c_aaa0de61fd94f393cc005851132c5b59c} 
+\index{model.c@{model.c}!quads@{quads}}
+\index{quads@{quads}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{quads}{quads}}
+{\footnotesize\ttfamily int quads =2}
+
+\Hypertarget{model_8c_a950fa4bad1ed958f5f599a0b94953bf6}\label{model_8c_a950fa4bad1ed958f5f599a0b94953bf6} 
+\index{model.c@{model.c}!redX@{redX}}
+\index{redX@{redX}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{redX}{redX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} redX}
+
+\Hypertarget{model_8c_ac93fcba5d1ccdf8176ddc0510ab5e1d8}\label{model_8c_ac93fcba5d1ccdf8176ddc0510ab5e1d8} 
+\index{model.c@{model.c}!rtc\_data@{rtc\_data}}
+\index{rtc\_data@{rtc\_data}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{rtc\_data}{rtc\_data}}
+{\footnotesize\ttfamily uint8\+\_\+t rtc\+\_\+data\mbox{[}6\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_aa1de7a5557e9d96b83cf03f73c92163f}\label{model_8c_aa1de7a5557e9d96b83cf03f73c92163f} 
+\index{model.c@{model.c}!scancode@{scancode}}
+\index{scancode@{scancode}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{scancode}{scancode}}
+{\footnotesize\ttfamily uint8\+\_\+t scancode\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_adab4da51ba40d5a492becdceccccbfcd}\label{model_8c_adab4da51ba40d5a492becdceccccbfcd} 
+\index{model.c@{model.c}!selected@{selected}}
+\index{selected@{selected}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{selected}{selected}}
+{\footnotesize\ttfamily int selected\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_ab32e08d120d70f7bade21ceeb91b16e6}\label{model_8c_ab32e08d120d70f7bade21ceeb91b16e6} 
+\index{model.c@{model.c}!selected\_start@{selected\_start}}
+\index{selected\_start@{selected\_start}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{selected\_start}{selected\_start}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} selected\+\_\+start}
+
+\Hypertarget{model_8c_ab0f079449dce330cb5c11b43ce39ce33}\label{model_8c_ab0f079449dce330cb5c11b43ce39ce33} 
+\index{model.c@{model.c}!sprites@{sprites}}
+\index{sprites@{sprites}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{sprites}{sprites}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} sprites\mbox{[}40\mbox{]}}
+
+\Hypertarget{model_8c_a76454a7d013e0b6d5feb29b0ced6429e}\label{model_8c_a76454a7d013e0b6d5feb29b0ced6429e} 
+\index{model.c@{model.c}!start@{start}}
+\index{start@{start}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} start}
+
+\Hypertarget{model_8c_a876b486d3a5241a126bd5751c5f70f79}\label{model_8c_a876b486d3a5241a126bd5751c5f70f79} 
+\index{model.c@{model.c}!state@{state}}
+\index{state@{state}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{model_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} state = \mbox{\hyperlink{model_8h_a5d74787dedbc4e11c1ab15bf487e61f8aae37fab5e18e444f110064c349066675}{Title}}}
+
+\Hypertarget{model_8c_ac705089b22877f6322d09a9f0f5bdb1d}\label{model_8c_ac705089b22877f6322d09a9f0f5bdb1d} 
+\index{model.c@{model.c}!systemState@{systemState}}
+\index{systemState@{systemState}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{systemState}{systemState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{model_8h_aa51313be2faacb739a18fdeecefbac75}{System\+State}} system\+State = \mbox{\hyperlink{model_8h_aa51313be2faacb739a18fdeecefbac75a1061be6c3fb88d32829cba6f6b2be304}{RUNNING}}}
+
+\Hypertarget{model_8c_a9dd86e05eb51b73ffa496d0478503939}\label{model_8c_a9dd86e05eb51b73ffa496d0478503939} 
+\index{model.c@{model.c}!timer\_interrupts@{timer\_interrupts}}
+\index{timer\_interrupts@{timer\_interrupts}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{timer\_interrupts}{timer\_interrupts}}
+{\footnotesize\ttfamily int timer\+\_\+interrupts = 0}
+
+\Hypertarget{model_8c_a5624124985253fcdf641a0a38081fed8}\label{model_8c_a5624124985253fcdf641a0a38081fed8} 
+\index{model.c@{model.c}!title\_screen\_backround\_buffer@{title\_screen\_backround\_buffer}}
+\index{title\_screen\_backround\_buffer@{title\_screen\_backround\_buffer}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{title\_screen\_backround\_buffer}{title\_screen\_backround\_buffer}}
+{\footnotesize\ttfamily uint8\+\_\+t\texorpdfstring{$\ast$}{*} title\+\_\+screen\+\_\+backround\+\_\+buffer\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_ab721ef23d48f79c1ed3a5b0546a89636}\label{model_8c_ab721ef23d48f79c1ed3a5b0546a89636} 
+\index{model.c@{model.c}!titleName@{titleName}}
+\index{titleName@{titleName}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{titleName}{titleName}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} title\+Name}
+
+\Hypertarget{model_8c_a373ca0fdcab07d3e66219e41a1a8c877}\label{model_8c_a373ca0fdcab07d3e66219e41a1a8c877} 
+\index{model.c@{model.c}!triples@{triples}}
+\index{triples@{triples}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{triples}{triples}}
+{\footnotesize\ttfamily int triples =2}
+
+\Hypertarget{model_8c_aeb2b936f6bf70cace2cdeaefa818a2dd}\label{model_8c_aeb2b936f6bf70cace2cdeaefa818a2dd} 
+\index{model.c@{model.c}!vert@{vert}}
+\index{vert@{vert}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{vert}{vert}}
+{\footnotesize\ttfamily bool vert\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_a5d2e5e9b476cb847c978317037190eff}\label{model_8c_a5d2e5e9b476cb847c978317037190eff} 
+\index{model.c@{model.c}!vicotory@{vicotory}}
+\index{vicotory@{vicotory}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{vicotory}{vicotory}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} vicotory}
+
+\Hypertarget{model_8c_a1b43d566cbd44f84556d40dbd2c5272a}\label{model_8c_a1b43d566cbd44f84556d40dbd2c5272a} 
+\index{model.c@{model.c}!victory@{victory}}
+\index{victory@{victory}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{victory}{victory}}
+{\footnotesize\ttfamily bool victory\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{model_8c_a334599b4c80bf9577a8c640495829543}\label{model_8c_a334599b4c80bf9577a8c640495829543} 
+\index{model.c@{model.c}!whiteX@{whiteX}}
+\index{whiteX@{whiteX}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{whiteX}{whiteX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} whiteX}
+
+\Hypertarget{model_8c_a6150e0515f7202e2fb518f7206ed97dc}\label{model_8c_a6150e0515f7202e2fb518f7206ed97dc} 
+\index{model.c@{model.c}!x@{x}}
+\index{x@{x}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int x =0}
+
+\Hypertarget{model_8c_a2337e804f9cb555ab4bbaae841cce26a}\label{model_8c_a2337e804f9cb555ab4bbaae841cce26a} 
+\index{model.c@{model.c}!XIco@{XIco}}
+\index{XIco@{XIco}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{XIco}{XIco}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} XIco}
+
+\Hypertarget{model_8c_a0a2f84ed7838f07779ae24c5a9086d33}\label{model_8c_a0a2f84ed7838f07779ae24c5a9086d33} 
+\index{model.c@{model.c}!y@{y}}
+\index{y@{y}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int y =0}
+
+\Hypertarget{model_8c_a33500dbcaa186cb8d2fb074c4e259e34}\label{model_8c_a33500dbcaa186cb8d2fb074c4e259e34} 
+\index{model.c@{model.c}!your@{your}}
+\index{your@{your}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{your}{your}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} your}
+

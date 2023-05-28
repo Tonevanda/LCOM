@@ -1,0 +1,7 @@
+<map id="set_frame_buffers" name="set_frame_buffers">
+<area shape="rect" id="Node000001" title="Calls the set_frame_buffer method to create de main buffer and allocates memory for all the other buf..." alt="" coords="5,5,132,31"/>
+<area shape="rect" id="Node000002" href="$graphic_8c.html#ac50005645b76a08eff8126607633420f" title="Creates the main frame buffer and allocates VRAM to it." alt="" coords="180,5,299,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,16,165,16,165,21,132,21"/>
+<area shape="rect" id="Node000003" href="$graphic_8c.html#a74940314543182800b2ec867fc0116f2" title=" " alt="" coords="347,5,484,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="299,16,332,16,332,21,299,21"/>
+</map>

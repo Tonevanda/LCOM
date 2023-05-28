@@ -1,0 +1,5 @@
+<map id="placeAiBoats" name="placeAiBoats">
+<area shape="rect" id="Node000001" title="Places all the boats in the enemy_board randomly." alt="" coords="5,5,104,31"/>
+<area shape="rect" id="Node000002" href="$model_8c.html#acaf921ff7b19d54d0a778267621d18e2" title="Updates the player_board&#39;s and enemy_board&#39;s individual slot structs to reflect on placed boats...." alt="" coords="152,5,221,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,16,137,16,137,21,104,21"/>
+</map>

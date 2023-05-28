@@ -1,0 +1,542 @@
+\doxysection{draw/draw.h File Reference}
+\hypertarget{draw_8h}{}\label{draw_8h}\index{draw/draw.h@{draw/draw.h}}
+{\ttfamily \#include $<$minix/sysutil.\+h$>$}\newline
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \"{}config.\+h\"{}}\newline
+{\ttfamily \#include \"{}controller/graphic/graphic.\+h\"{}}\newline
+{\ttfamily \#include \"{}controller/mouse/mouse.\+h\"{}}\newline
+{\ttfamily \#include \"{}model/sprite.\+h\"{}}\newline
+Include dependency graph for draw.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{draw_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structslot}{slot}}
+\item 
+struct \mbox{\hyperlink{structgame_info}{game\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293}{part}} \{ \newline
+\mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293afc021bb9bb99d928e81ed9595d530411}{left\+\_\+p}}
+, \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293a1508e3dc87714cf6d24e410f3fa38c79}{middle\+\_\+horizontal\+\_\+p}}
+, \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293a3ec80b90e99faa64c3186edec4b91202}{right\+\_\+p}}
+, \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293af511a8d31b119764400bfd8f24b24e65}{up\+\_\+p}}
+, \newline
+\mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293a171662ebb4ec6ada527e319cd8b51116}{middle\+\_\+vertical\+\_\+p}}
+, \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293abddeec68ef82a2cc5627e60dc27e1296}{down\+\_\+p}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{draw_8h_a3ad9f04212e7602618a0dd7ad4afbd4e}{set\+\_\+frame\+\_\+buffers}} (uint16\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em Calls the set\+\_\+frame\+\_\+buffer method to create de main buffer and allocates memory for all the other buffers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw_8h_a0d157d997329169f936545f9985e334b}{swap\+\_\+buffers}} ()
+\begin{DoxyCompactList}\small\item\em Copies the drawing\+\_\+frame\+\_\+buffer contents onto the main\+\_\+frame\+\_\+buffer, thus changing what\textquotesingle{}s displayed on screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{draw_8h_a6db4230a0003a09515d78b790d8ec52d}{draw\+\_\+sprite\+\_\+xpm}} (\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*}sprite, int \mbox{\hyperlink{model_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, int \mbox{\hyperlink{model_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}})
+\begin{DoxyCompactList}\small\item\em Given a sprite object, draws its contents onto the drawing\+\_\+frame\+\_\+buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{draw_8h_a35c124c4a26fe73a2aee1de1ec1696fd}{prepare\+\_\+backround}} (\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*}sprite, int \mbox{\hyperlink{model_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, int \mbox{\hyperlink{model_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}}, uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer)
+\begin{DoxyCompactList}\small\item\em Given a sprite object, draws its contents onto a buffer given in the input. Mostly used to draw onto the other background buffers right at the start and won\textquotesingle{}t be updated after this initial phase. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{draw_8h_a63a9d7ba55d16da86edd1226876619bd}{draw\+\_\+number\+\_\+xpm}} (int number, int \mbox{\hyperlink{model_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, int \mbox{\hyperlink{model_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}})
+\begin{DoxyCompactList}\small\item\em Given user input will draw a number sprite onto the drawing\+\_\+frame\+\_\+buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw_8h_a6b57bfa4c560c707cce131388467a095}{draw\+\_\+title\+\_\+screen}} ()
+\begin{DoxyCompactList}\small\item\em Copies the title\+\_\+screen\+\_\+background\+\_\+buffer onto the drawing\+\_\+frame\+\_\+buffer and draws other sprites necessary for the Title state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw_8h_a6900cd99d092fbc46ca20a03b8af972f}{draw\+\_\+placement}} ()
+\begin{DoxyCompactList}\small\item\em Copies the game\+\_\+board\+\_\+background\+\_\+buffer onto the drawing\+\_\+frame\+\_\+buffer and draws other sprites necessary for the Placement state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw_8h_ab10abe02ad8d53b900bfe74fece9a02d}{draw\+\_\+attack}} ()
+\begin{DoxyCompactList}\small\item\em Copies the game\+\_\+board\+\_\+background\+\_\+buffer onto the drawing\+\_\+frame\+\_\+buffer and draws other sprites necessary for the Attack state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw_8h_a09468f68b47c4d3348c9380a40819f59}{draw\+\_\+defend}} ()
+\begin{DoxyCompactList}\small\item\em Copies the game\+\_\+board\+\_\+background\+\_\+buffer onto the drawing\+\_\+frame\+\_\+buffer and draws other sprites necessary for the Defend state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw_8h_a9496e4380bbed6f786f33fa7edfeb0cf}{draw\+\_\+victory}} ()
+\begin{DoxyCompactList}\small\item\em Copies the game\+\_\+board\+\_\+background\+\_\+buffer onto the drawing\+\_\+frame\+\_\+buffer and draws other sprites necessary for the Victory state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw_8h_a8f93d09f2a59b8a6d236974d7426f5ed}{draw\+\_\+title\+\_\+selection}} ()
+\begin{DoxyCompactList}\small\item\em Draws onto the drawing\+\_\+frame\+\_\+buffer the highlighted portions of the title screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw_8h_a951fe8504ee3ff80dd18aff5b83aea2b}{draw\+\_\+reticle}} ()
+\begin{DoxyCompactList}\small\item\em Draws a reticle onto the selected board slot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw_8h_aa34db13623534c37e72c5dfc263b2964}{draw\+\_\+selected}} ()
+\begin{DoxyCompactList}\small\item\em Draws the current\+\_\+boat that follows the mouse position or the selected reticle icon in the case of keyboard input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw_8h_a42f4903ab89aff9e3ee0206c52cf710a}{draw\+\_\+mouse}} ()
+\begin{DoxyCompactList}\small\item\em Draws the mouse sprite on its current position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw_8h_a0944e45dab2b95345c29e01b548eb1ab}{draw\+\_\+rtc}} ()
+\begin{DoxyCompactList}\small\item\em Draws the current time in the bottom left corner. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw_8h_ab6d3efc0c2ecaf7a9be52b5635cbf0ae}{draw\+\_\+round\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Draws the elapsed time since the start of the round in the bottom of the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw_8h_a60fec87dff640c2928684dc0b8b5da1d}{draw\+\_\+player\+\_\+board\+\_\+icons}} ()
+\begin{DoxyCompactList}\small\item\em Draws the sprites that need to be visible when the player board is visible. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw_8h_a8d3c99662ef69827cd0475179f399da4}{draw\+\_\+\+AI\+\_\+board\+\_\+icons}} ()
+\begin{DoxyCompactList}\small\item\em Draws the sprites that need to be visible when the Opponent board is visible. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw_8h_acd3c448323a6fa8c250915eb0cf8eb3b}{pos\+\_\+switch}} (int \mbox{\hyperlink{model_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, int \mbox{\hyperlink{model_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}}, enum \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293}{part}} pos)
+\begin{DoxyCompactList}\small\item\em Decides which boat sprite to draw depending on the current slot pos enum. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw_8h_a78c8e4ac1be02eefdeaee6891ecf5de3}{draw\+\_\+on\+\_\+board}} (int \mbox{\hyperlink{model_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, int \mbox{\hyperlink{model_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}}, \mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*}sprite)
+\begin{DoxyCompactList}\small\item\em Draws on a board slot (determined by the input x and y coordinates) the inputted \doxylink{struct_sprite}{Sprite}. This is only used for icons related to the board and the progression of the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293}\label{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293} 
+\index{draw.h@{draw.h}!part@{part}}
+\index{part@{part}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{part}{part}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293}{part}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{left\_p@{left\_p}!draw.h@{draw.h}}\index{draw.h@{draw.h}!left\_p@{left\_p}}}\Hypertarget{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293afc021bb9bb99d928e81ed9595d530411}\label{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293afc021bb9bb99d928e81ed9595d530411} 
+left\+\_\+p&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{middle\_horizontal\_p@{middle\_horizontal\_p}!draw.h@{draw.h}}\index{draw.h@{draw.h}!middle\_horizontal\_p@{middle\_horizontal\_p}}}\Hypertarget{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293a1508e3dc87714cf6d24e410f3fa38c79}\label{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293a1508e3dc87714cf6d24e410f3fa38c79} 
+middle\+\_\+horizontal\+\_\+p&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{right\_p@{right\_p}!draw.h@{draw.h}}\index{draw.h@{draw.h}!right\_p@{right\_p}}}\Hypertarget{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293a3ec80b90e99faa64c3186edec4b91202}\label{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293a3ec80b90e99faa64c3186edec4b91202} 
+right\+\_\+p&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{up\_p@{up\_p}!draw.h@{draw.h}}\index{draw.h@{draw.h}!up\_p@{up\_p}}}\Hypertarget{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293af511a8d31b119764400bfd8f24b24e65}\label{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293af511a8d31b119764400bfd8f24b24e65} 
+up\+\_\+p&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{middle\_vertical\_p@{middle\_vertical\_p}!draw.h@{draw.h}}\index{draw.h@{draw.h}!middle\_vertical\_p@{middle\_vertical\_p}}}\Hypertarget{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293a171662ebb4ec6ada527e319cd8b51116}\label{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293a171662ebb4ec6ada527e319cd8b51116} 
+middle\+\_\+vertical\+\_\+p&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{down\_p@{down\_p}!draw.h@{draw.h}}\index{draw.h@{draw.h}!down\_p@{down\_p}}}\Hypertarget{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293abddeec68ef82a2cc5627e60dc27e1296}\label{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293abddeec68ef82a2cc5627e60dc27e1296} 
+down\+\_\+p&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{draw_8h_a8d3c99662ef69827cd0475179f399da4}\label{draw_8h_a8d3c99662ef69827cd0475179f399da4} 
+\index{draw.h@{draw.h}!draw\_AI\_board\_icons@{draw\_AI\_board\_icons}}
+\index{draw\_AI\_board\_icons@{draw\_AI\_board\_icons}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{draw\_AI\_board\_icons()}{draw\_AI\_board\_icons()}}
+{\footnotesize\ttfamily void draw\+\_\+\+AI\+\_\+board\+\_\+icons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the sprites that need to be visible when the Opponent board is visible. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_a8d3c99662ef69827cd0475179f399da4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_ab10abe02ad8d53b900bfe74fece9a02d}\label{draw_8h_ab10abe02ad8d53b900bfe74fece9a02d} 
+\index{draw.h@{draw.h}!draw\_attack@{draw\_attack}}
+\index{draw\_attack@{draw\_attack}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{draw\_attack()}{draw\_attack()}}
+{\footnotesize\ttfamily void draw\+\_\+attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Copies the game\+\_\+board\+\_\+background\+\_\+buffer onto the drawing\+\_\+frame\+\_\+buffer and draws other sprites necessary for the Attack state. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_ab10abe02ad8d53b900bfe74fece9a02d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_a09468f68b47c4d3348c9380a40819f59}\label{draw_8h_a09468f68b47c4d3348c9380a40819f59} 
+\index{draw.h@{draw.h}!draw\_defend@{draw\_defend}}
+\index{draw\_defend@{draw\_defend}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{draw\_defend()}{draw\_defend()}}
+{\footnotesize\ttfamily void draw\+\_\+defend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Copies the game\+\_\+board\+\_\+background\+\_\+buffer onto the drawing\+\_\+frame\+\_\+buffer and draws other sprites necessary for the Defend state. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_a09468f68b47c4d3348c9380a40819f59_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_a42f4903ab89aff9e3ee0206c52cf710a}\label{draw_8h_a42f4903ab89aff9e3ee0206c52cf710a} 
+\index{draw.h@{draw.h}!draw\_mouse@{draw\_mouse}}
+\index{draw\_mouse@{draw\_mouse}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{draw\_mouse()}{draw\_mouse()}}
+{\footnotesize\ttfamily void draw\+\_\+mouse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the mouse sprite on its current position. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_a42f4903ab89aff9e3ee0206c52cf710a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_a63a9d7ba55d16da86edd1226876619bd}\label{draw_8h_a63a9d7ba55d16da86edd1226876619bd} 
+\index{draw.h@{draw.h}!draw\_number\_xpm@{draw\_number\_xpm}}
+\index{draw\_number\_xpm@{draw\_number\_xpm}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{draw\_number\_xpm()}{draw\_number\_xpm()}}
+{\footnotesize\ttfamily int draw\+\_\+number\+\_\+xpm (\begin{DoxyParamCaption}\item[{int}]{number,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Given user input will draw a number sprite onto the drawing\+\_\+frame\+\_\+buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Determines which number sprite to draw \\
+\hline
+{\em x} & Leftmost pixel x coordinate \\
+\hline
+{\em y} & Topmost pixel y coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_a63a9d7ba55d16da86edd1226876619bd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_a78c8e4ac1be02eefdeaee6891ecf5de3}\label{draw_8h_a78c8e4ac1be02eefdeaee6891ecf5de3} 
+\index{draw.h@{draw.h}!draw\_on\_board@{draw\_on\_board}}
+\index{draw\_on\_board@{draw\_on\_board}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{draw\_on\_board()}{draw\_on\_board()}}
+{\footnotesize\ttfamily void draw\+\_\+on\+\_\+board (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*}}]{sprite }\end{DoxyParamCaption})}
+
+
+
+Draws on a board slot (determined by the input x and y coordinates) the inputted \doxylink{struct_sprite}{Sprite}. This is only used for icons related to the board and the progression of the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X slot coordinate starting from the left (value goes from 1 to 8) \\
+\hline
+{\em y} & Y slot coordinate starting from the top (value goes from 1 to 8) \\
+\hline
+{\em sprite} & \doxylink{struct_sprite}{Sprite} that is drawn \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_a78c8e4ac1be02eefdeaee6891ecf5de3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_a6900cd99d092fbc46ca20a03b8af972f}\label{draw_8h_a6900cd99d092fbc46ca20a03b8af972f} 
+\index{draw.h@{draw.h}!draw\_placement@{draw\_placement}}
+\index{draw\_placement@{draw\_placement}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{draw\_placement()}{draw\_placement()}}
+{\footnotesize\ttfamily void draw\+\_\+placement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Copies the game\+\_\+board\+\_\+background\+\_\+buffer onto the drawing\+\_\+frame\+\_\+buffer and draws other sprites necessary for the Placement state. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_a6900cd99d092fbc46ca20a03b8af972f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_a60fec87dff640c2928684dc0b8b5da1d}\label{draw_8h_a60fec87dff640c2928684dc0b8b5da1d} 
+\index{draw.h@{draw.h}!draw\_player\_board\_icons@{draw\_player\_board\_icons}}
+\index{draw\_player\_board\_icons@{draw\_player\_board\_icons}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{draw\_player\_board\_icons()}{draw\_player\_board\_icons()}}
+{\footnotesize\ttfamily void draw\+\_\+player\+\_\+board\+\_\+icons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the sprites that need to be visible when the player board is visible. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_a60fec87dff640c2928684dc0b8b5da1d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_a951fe8504ee3ff80dd18aff5b83aea2b}\label{draw_8h_a951fe8504ee3ff80dd18aff5b83aea2b} 
+\index{draw.h@{draw.h}!draw\_reticle@{draw\_reticle}}
+\index{draw\_reticle@{draw\_reticle}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{draw\_reticle()}{draw\_reticle()}}
+{\footnotesize\ttfamily void draw\+\_\+reticle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws a reticle onto the selected board slot. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_a951fe8504ee3ff80dd18aff5b83aea2b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_ab6d3efc0c2ecaf7a9be52b5635cbf0ae}\label{draw_8h_ab6d3efc0c2ecaf7a9be52b5635cbf0ae} 
+\index{draw.h@{draw.h}!draw\_round\_time@{draw\_round\_time}}
+\index{draw\_round\_time@{draw\_round\_time}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{draw\_round\_time()}{draw\_round\_time()}}
+{\footnotesize\ttfamily void draw\+\_\+round\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the elapsed time since the start of the round in the bottom of the screen. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_ab6d3efc0c2ecaf7a9be52b5635cbf0ae_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_a0944e45dab2b95345c29e01b548eb1ab}\label{draw_8h_a0944e45dab2b95345c29e01b548eb1ab} 
+\index{draw.h@{draw.h}!draw\_rtc@{draw\_rtc}}
+\index{draw\_rtc@{draw\_rtc}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{draw\_rtc()}{draw\_rtc()}}
+{\footnotesize\ttfamily void draw\+\_\+rtc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the current time in the bottom left corner. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_a0944e45dab2b95345c29e01b548eb1ab_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_aa34db13623534c37e72c5dfc263b2964}\label{draw_8h_aa34db13623534c37e72c5dfc263b2964} 
+\index{draw.h@{draw.h}!draw\_selected@{draw\_selected}}
+\index{draw\_selected@{draw\_selected}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{draw\_selected()}{draw\_selected()}}
+{\footnotesize\ttfamily void draw\+\_\+selected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the current\+\_\+boat that follows the mouse position or the selected reticle icon in the case of keyboard input. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_aa34db13623534c37e72c5dfc263b2964_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_a6db4230a0003a09515d78b790d8ec52d}\label{draw_8h_a6db4230a0003a09515d78b790d8ec52d} 
+\index{draw.h@{draw.h}!draw\_sprite\_xpm@{draw\_sprite\_xpm}}
+\index{draw\_sprite\_xpm@{draw\_sprite\_xpm}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{draw\_sprite\_xpm()}{draw\_sprite\_xpm()}}
+{\footnotesize\ttfamily int draw\+\_\+sprite\+\_\+xpm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*}}]{sprite,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Given a sprite object, draws its contents onto the drawing\+\_\+frame\+\_\+buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite} & \doxylink{struct_sprite}{Sprite} object generated from a xpm \\
+\hline
+{\em x} & Leftmost pixel x coordinate \\
+\hline
+{\em y} & Topmost pixel y coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_a6db4230a0003a09515d78b790d8ec52d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_a6b57bfa4c560c707cce131388467a095}\label{draw_8h_a6b57bfa4c560c707cce131388467a095} 
+\index{draw.h@{draw.h}!draw\_title\_screen@{draw\_title\_screen}}
+\index{draw\_title\_screen@{draw\_title\_screen}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{draw\_title\_screen()}{draw\_title\_screen()}}
+{\footnotesize\ttfamily void draw\+\_\+title\+\_\+screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Copies the title\+\_\+screen\+\_\+background\+\_\+buffer onto the drawing\+\_\+frame\+\_\+buffer and draws other sprites necessary for the Title state. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_a6b57bfa4c560c707cce131388467a095_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_a8f93d09f2a59b8a6d236974d7426f5ed}\label{draw_8h_a8f93d09f2a59b8a6d236974d7426f5ed} 
+\index{draw.h@{draw.h}!draw\_title\_selection@{draw\_title\_selection}}
+\index{draw\_title\_selection@{draw\_title\_selection}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{draw\_title\_selection()}{draw\_title\_selection()}}
+{\footnotesize\ttfamily void draw\+\_\+title\+\_\+selection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws onto the drawing\+\_\+frame\+\_\+buffer the highlighted portions of the title screen. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_a8f93d09f2a59b8a6d236974d7426f5ed_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_a9496e4380bbed6f786f33fa7edfeb0cf}\label{draw_8h_a9496e4380bbed6f786f33fa7edfeb0cf} 
+\index{draw.h@{draw.h}!draw\_victory@{draw\_victory}}
+\index{draw\_victory@{draw\_victory}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{draw\_victory()}{draw\_victory()}}
+{\footnotesize\ttfamily void draw\+\_\+victory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Copies the game\+\_\+board\+\_\+background\+\_\+buffer onto the drawing\+\_\+frame\+\_\+buffer and draws other sprites necessary for the Victory state. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_a9496e4380bbed6f786f33fa7edfeb0cf_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_acd3c448323a6fa8c250915eb0cf8eb3b}\label{draw_8h_acd3c448323a6fa8c250915eb0cf8eb3b} 
+\index{draw.h@{draw.h}!pos\_switch@{pos\_switch}}
+\index{pos\_switch@{pos\_switch}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{pos\_switch()}{pos\_switch()}}
+{\footnotesize\ttfamily void pos\+\_\+switch (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{enum \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293}{part}}}]{pos }\end{DoxyParamCaption})}
+
+
+
+Decides which boat sprite to draw depending on the current slot pos enum. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X slot coordinate starting from the left (value goes from 1 to 8) \\
+\hline
+{\em y} & Y slot coordinate starting from the top (value goes from 1 to 8) \\
+\hline
+{\em pos} & Enum that represents witch boat portion this is \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_acd3c448323a6fa8c250915eb0cf8eb3b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_a35c124c4a26fe73a2aee1de1ec1696fd}\label{draw_8h_a35c124c4a26fe73a2aee1de1ec1696fd} 
+\index{draw.h@{draw.h}!prepare\_backround@{prepare\_backround}}
+\index{prepare\_backround@{prepare\_backround}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{prepare\_backround()}{prepare\_backround()}}
+{\footnotesize\ttfamily int prepare\+\_\+backround (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*}}]{sprite,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Given a sprite object, draws its contents onto a buffer given in the input. Mostly used to draw onto the other background buffers right at the start and won\textquotesingle{}t be updated after this initial phase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite} & \doxylink{struct_sprite}{Sprite} object generated from a xpm \\
+\hline
+{\em x} & Leftmost pixel x coordinate \\
+\hline
+{\em y} & Topmost pixel y coordinate \\
+\hline
+{\em buffer} & The buffer that it draws onto \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_a35c124c4a26fe73a2aee1de1ec1696fd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_a3ad9f04212e7602618a0dd7ad4afbd4e}\label{draw_8h_a3ad9f04212e7602618a0dd7ad4afbd4e} 
+\index{draw.h@{draw.h}!set\_frame\_buffers@{set\_frame\_buffers}}
+\index{set\_frame\_buffers@{set\_frame\_buffers}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{set\_frame\_buffers()}{set\_frame\_buffers()}}
+{\footnotesize\ttfamily int set\+\_\+frame\+\_\+buffers (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+
+
+Calls the set\+\_\+frame\+\_\+buffer method to create de main buffer and allocates memory for all the other buffers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & Hex value of the graphics mode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8h_a3ad9f04212e7602618a0dd7ad4afbd4e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8h_a0d157d997329169f936545f9985e334b}\label{draw_8h_a0d157d997329169f936545f9985e334b} 
+\index{draw.h@{draw.h}!swap\_buffers@{swap\_buffers}}
+\index{swap\_buffers@{swap\_buffers}!draw.h@{draw.h}}
+\doxysubsubsection{\texorpdfstring{swap\_buffers()}{swap\_buffers()}}
+{\footnotesize\ttfamily void swap\+\_\+buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Copies the drawing\+\_\+frame\+\_\+buffer contents onto the main\+\_\+frame\+\_\+buffer, thus changing what\textquotesingle{}s displayed on screen. 
+

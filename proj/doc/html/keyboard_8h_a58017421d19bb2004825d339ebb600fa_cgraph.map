@@ -1,0 +1,13 @@
+<map id="keyboard_restore" name="keyboard_restore">
+<area shape="rect" id="Node000001" title="Used to restore the keyboard interrupts, in case the keyboard was used in polling mode." alt="" coords="5,42,127,68"/>
+<area shape="rect" id="Node000002" href="$_k_b_c___keyboard_8c.html#a551527f424ab5612df0c38807d83689c" title="Reads the content of the KBC in the port passed as parameter and stores it in the output variable." alt="" coords="175,70,361,96"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,61,160,65,160,71,127,66"/>
+<area shape="rect" id="Node000005" href="$_k_b_c___keyboard_8c.html#aeb16605bdc7bbfd22db8de4e89ca83f9" title="Writes the command passed as parameter to the desired port." alt="" coords="195,5,341,46"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="127,44,180,36,180,41,127,49"/>
+<area shape="rect" id="Node000003" href="$_k_b_c___keyboard_8c.html#a07881460b47acb1bf8a897d5874f51e0" title="Reads the status of the KBC and stores it in the variable passed as parameter." alt="" coords="409,20,595,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="330,67,425,46,426,51,331,72"/>
+<area shape="rect" id="Node000004" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="643,45,734,71"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="361,75,629,59,629,64,362,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="596,42,629,47,628,52,596,48"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="341,25,394,27,394,32,341,30"/>
+</map>

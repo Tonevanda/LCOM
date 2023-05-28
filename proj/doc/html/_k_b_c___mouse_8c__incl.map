@@ -1,0 +1,18 @@
+<map id="controller/mouse/KBC_Mouse.c" name="controller/mouse/KBC_Mouse.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="213,5,362,46"/>
+<area shape="rect" id="Node000002" href="$_k_b_c___mouse_8h.html" title=" " alt="" coords="93,94,199,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="253,49,182,89,179,84,251,44"/>
+<area shape="rect" id="Node000004" href="$mouse_2i8042_8h.html" title=" " alt="" coords="186,168,250,193"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="281,47,232,155,227,153,276,45"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="179,241,257,267"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="290,46,285,113,277,154,264,194,241,231,237,228,260,192,272,153,280,113,285,46"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="325,94,389,120"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="306,45,338,81,334,84,302,48"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="413,94,506,120"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="331,44,421,85,419,90,329,49"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,168,111,193"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="133,122,86,160,82,156,129,118"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="160,118,198,155,194,159,156,122"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="151,119,161,153,176,192,200,228,196,231,172,195,156,155,146,121"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="221,194,221,226,215,226,215,194"/>
+</map>

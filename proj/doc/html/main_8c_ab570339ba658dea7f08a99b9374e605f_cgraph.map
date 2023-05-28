@@ -1,0 +1,11 @@
+<map id="subscribe_interrupts" name="subscribe_interrupts">
+<area shape="rect" id="Node000001" title="Subscribes the interrupts for all the used devices, except the video card." alt="" coords="5,96,144,121"/>
+<area shape="rect" id="Node000002" href="$keyboard_8c.html#a4f3036dc383cb3264414c231f2ca11e4" title="Subscribes the keyboard interrupts." alt="" coords="210,5,348,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,93,191,55,206,49,208,54,193,60,106,97"/>
+<area shape="rect" id="Node000003" href="$mouse_8c.html#a08895a8a691590216c1e72bbf1b2d333" title="Subscribes mouse interrupts." alt="" coords="207,70,351,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="144,97,191,91,192,96,144,102"/>
+<area shape="rect" id="Node000004" href="$rtc_8c.html#a7f383813134493bf424f952da8f3f196" title="Subscribes interrupts for the RTC." alt="" coords="219,120,339,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="144,114,204,121,203,126,144,119"/>
+<area shape="rect" id="Node000005" href="$timer_8c.html#a74c67a2dec2c0d3d6f0cf68e89d4b14e" title="Subscribes the interrupts for the timer." alt="" coords="192,169,366,195"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="105,119,193,155,212,162,211,167,191,160,103,124"/>
+</map>

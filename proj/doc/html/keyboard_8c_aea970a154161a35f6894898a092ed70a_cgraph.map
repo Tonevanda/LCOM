@@ -1,0 +1,10 @@
+<map id="kbc_ih" name="kbc_ih">
+<area shape="rect" id="Node000001" title="KBC interrupt handler." alt="" coords="5,31,65,56"/>
+<area shape="rect" id="Node000002" href="$_k_b_c___keyboard_8c.html#a551527f424ab5612df0c38807d83689c" title="Reads the content of the KBC in the port passed as parameter and stores it in the output variable." alt="" coords="113,31,299,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,41,98,41,98,46,65,46"/>
+<area shape="rect" id="Node000003" href="$_k_b_c___keyboard_8c.html#a07881460b47acb1bf8a897d5874f51e0" title="Reads the status of the KBC and stores it in the variable passed as parameter." alt="" coords="347,5,533,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="299,31,332,27,333,32,300,36"/>
+<area shape="rect" id="Node000004" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="581,31,672,56"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="299,41,567,41,567,46,299,46"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="534,28,567,33,566,38,534,34"/>
+</map>
