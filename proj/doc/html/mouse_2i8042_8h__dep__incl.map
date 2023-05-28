@@ -1,27 +1,27 @@
-<map id="controller/mouse/i8042.h" name="controller/mouse/i8042.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="166,5,330,31"/>
-<area shape="rect" id="Node000002" href="$_k_b_c___mouse_8c.html" title=" " alt="" coords="5,168,155,208"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,38,138,55,107,81,95,101,87,124,82,168,77,167,82,123,90,99,103,77,135,51,172,34"/>
-<area shape="rect" id="Node000003" href="$_k_b_c___mouse_8h.html" title=" " alt="" coords="117,79,267,120"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="233,45,208,80,204,77,229,42"/>
-<area shape="rect" id="Node000004" href="$mouse_8h.html" title=" " alt="" coords="178,175,350,201"/>
-<area shape="poly" id="edge15_Node000001_Node000004" title=" " alt="" coords="266,43,281,78,284,105,282,132,271,175,266,174,277,132,279,106,276,80,261,45"/>
-<area shape="rect" id="Node000005" href="$mouse_8c.html" title=" " alt="" coords="301,256,472,282"/>
-<area shape="poly" id="edge14_Node000001_Node000005" title=" " alt="" coords="273,40,319,95,344,129,364,167,380,216,388,256,382,257,375,217,359,169,339,132,315,98,269,44"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="157,131,107,169,104,165,154,127"/>
-<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="220,129,256,173,252,177,215,133"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="296,207,369,254,366,258,293,211"/>
-<area shape="rect" id="Node000006" href="$draw_8h.html" title=" " alt="" coords="136,256,227,282"/>
-<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="243,213,196,258,192,254,239,209"/>
-<area shape="rect" id="Node000008" href="$main_8c.html" title=" " alt="" coords="142,404,202,429"/>
-<area shape="poly" id="edge12_Node000004_Node000008" title=" " alt="" coords="206,209,161,227,115,253,74,287,57,308,44,331,41,346,44,359,54,370,68,381,105,397,142,407,141,412,103,402,66,385,50,374,40,361,35,346,39,329,52,305,70,284,112,248,159,222,204,204"/>
-<area shape="rect" id="Node000009" href="$model_8h.html" title=" " alt="" coords="219,330,325,356"/>
-<area shape="poly" id="edge13_Node000004_Node000009" title=" " alt="" coords="268,215,274,329,269,330,263,216"/>
-<area shape="rect" id="Node000007" href="$draw_8c.html" title=" " alt="" coords="54,330,144,356"/>
-<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="158,294,114,332,111,328,155,290"/>
-<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="182,297,175,403,170,403,177,297"/>
-<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="210,289,258,328,255,332,206,293"/>
-<area shape="poly" id="edge10_Node000009_Node000008" title=" " alt="" coords="245,367,191,405,188,401,242,362"/>
-<area shape="rect" id="Node000010" href="$model_8c.html" title=" " alt="" coords="227,404,333,429"/>
-<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="278,370,281,403,276,403,272,371"/>
+<map id="/Users/tonevanda/Downloads/MINIX&#45;LCOM/shared/proj/src/controller/mouse/i8042.h" name="/Users/tonevanda/Downloads/MINIX&#45;LCOM/shared/proj/src/controller/mouse/i8042.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="278,5,472,61"/>
+<area shape="rect" id="Node000002" href="$_k_b_c___mouse_8c.html" title=" " alt="" coords="77,228,270,298"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="266,64,230,84,201,111,186,138,177,169,173,228,168,227,172,168,181,136,197,107,227,79,263,59"/>
+<area shape="rect" id="Node000003" href="$_k_b_c___mouse_8h.html" title=" " alt="" coords="212,109,405,180"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="353,75,332,110,327,107,349,72"/>
+<area shape="rect" id="Node000004" href="$mouse_8h.html" title=" " alt="" coords="295,235,492,291"/>
+<area shape="poly" id="edge15_Node000001_Node000004" title=" " alt="" coords="404,73,419,108,423,143,421,177,407,235,401,234,416,176,418,143,414,110,399,75"/>
+<area shape="rect" id="Node000005" href="$mouse_8c.html" title=" " alt="" coords="431,346,628,402"/>
+<area shape="poly" id="edge14_Node000001_Node000005" title=" " alt="" coords="411,71,440,107,479,164,507,227,523,290,530,346,525,346,518,291,502,229,474,167,435,111,407,74"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="259,191,215,229,212,225,256,187"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="344,190,376,233,372,236,340,193"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="440,298,497,344,494,348,437,302"/>
+<area shape="rect" id="Node000006" href="$draw_8h.html" title=" " alt="" coords="162,346,356,402"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="351,302,294,348,291,344,347,298"/>
+<area shape="rect" id="Node000008" href="$main_8c.html" title=" " alt="" coords="121,554,314,609"/>
+<area shape="poly" id="edge12_Node000004_Node000008" title=" " alt="" coords="296,298,151,349,71,388,43,412,17,451,8,479,10,491,17,504,38,527,63,544,92,557,121,566,120,571,90,562,61,549,34,531,13,507,5,492,3,478,13,449,39,408,68,384,149,344,294,293"/>
+<area shape="rect" id="Node000009" href="$model_8h.html" title=" " alt="" coords="297,450,490,506"/>
+<area shape="poly" id="edge13_Node000004_Node000009" title=" " alt="" coords="396,306,396,450,391,450,391,306"/>
+<area shape="rect" id="Node000007" href="$draw_8c.html" title=" " alt="" coords="28,450,221,506"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="213,413,162,451,159,447,210,409"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="253,417,226,554,220,553,248,416"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="308,409,359,447,356,451,305,413"/>
+<area shape="poly" id="edge10_Node000009_Node000008" title=" " alt="" coords="336,516,266,555,264,551,333,511"/>
+<area shape="rect" id="Node000010" href="$model_8c.html" title=" " alt="" coords="338,554,532,609"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="413,518,426,552,421,554,408,520"/>
 </map>

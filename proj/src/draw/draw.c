@@ -74,9 +74,7 @@ void swap_buffers() {
     memcpy(main_frame_buffer, drawing_frame_buffer, frame_buffer_size);
 }
 
-// A função recebe um objeto Sprite proveniente de um XPM e mostra-o nas coordenadas (x, y)
-// Usa as cores dinamicamente alocadas na altura da construção
-// A função ignora a cor transparente do XPM para não modificar o fundo quando não é preciso
+
 int draw_sprite_xpm(Sprite *sprite, int x, int y) { 
     uint16_t height = sprite->height;
     uint16_t width = sprite->width;
@@ -332,7 +330,7 @@ void draw_round_time(){
     draw_sprite_xpm(colon,x+5,y);
     x-=25;
     int minutes = (timeDifference % 3600) / 60;
-    for(int i = 0;i < 2;i++){ //SECONDS
+    for(int i = 0;i < 2;i++){ //MINUTES
         digit = minutes % 10;
         draw_number_xpm(digit, x, y);
         minutes = minutes / 10;
@@ -358,7 +356,7 @@ void draw_end_time(){
     draw_sprite_xpm(colon,x+5,y);
     x-=25;
     int minutes = (timeDifference % 3600) / 60;
-    for(int i = 0;i < 2;i++){ //SECONDS
+    for(int i = 0;i < 2;i++){ //MINUTES
         digit = minutes % 10;
         draw_number_xpm(digit, x, y);
         minutes = minutes / 10;
@@ -370,8 +368,6 @@ void draw_player_board_icons(){
     draw_number_xpm(game.doublesBoatsLeft,40,268);
     draw_number_xpm(game.triplesBoatsLeft,40,368);
     draw_number_xpm(game.quadsBoatsLeft,40,468);
-    //284
-    //304
     draw_sprite_xpm(your,284,50);
     draw_sprite_xpm(board_name,556,50);
     for(int temp=1;temp<66;temp++){

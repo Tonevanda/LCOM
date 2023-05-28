@@ -1,15 +1,15 @@
-<map id="controller/keyboard/keyboard.h" name="controller/keyboard/keyboard.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="105,5,236,46"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="144,168,250,193"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,46,197,94,201,153,196,153,192,94,177,47"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="67,241,146,267"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,44,228,74,257,111,268,132,273,153,272,174,263,195,242,217,217,233,189,243,161,250,160,245,187,238,214,228,239,213,259,192,267,173,268,154,263,134,253,114,224,77,193,48"/>
-<area shape="rect" id="Node000004" href="$keyboard_2i8042_8h.html" title=" " alt="" coords="5,168,69,193"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="111,49,77,68,50,95,39,124,37,153,32,153,34,123,45,93,74,64,108,44"/>
-<area shape="rect" id="Node000005" href="$_k_b_c___keyboard_8h.html" title=" " alt="" coords="60,94,182,120"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="160,48,139,82,134,80,156,45"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="50,192,86,229,83,232,47,195"/>
-<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="136,118,176,155,172,159,132,122"/>
-<area shape="poly" id="edge8_Node000005_Node000003" title=" " alt="" coords="122,120,112,227,106,226,117,120"/>
-<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="108,122,64,160,60,156,105,118"/>
+<map id="/Users/tonevanda/Downloads/MINIX&#45;LCOM/shared/proj/src/controller/keyboard/keyboard.h" name="/Users/tonevanda/Downloads/MINIX&#45;LCOM/shared/proj/src/controller/keyboard/keyboard.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="74,5,267,76"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="144,198,250,223"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,76,197,124,201,183,195,183,192,124,180,77"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="67,271,146,297"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,75,240,107,264,145,272,165,275,186,272,206,263,225,242,247,217,263,189,273,161,280,160,275,187,268,214,258,239,243,259,222,267,204,269,186,266,167,259,147,236,110,207,78"/>
+<area shape="rect" id="Node000004" href="$keyboard_2i8042_8h.html" title=" " alt="" coords="5,198,69,223"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="99,79,72,99,50,125,40,154,37,183,32,182,35,153,45,123,68,96,95,74"/>
+<area shape="rect" id="Node000005" href="$_k_b_c___keyboard_8h.html" title=" " alt="" coords="60,124,182,150"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="155,78,137,112,132,109,150,75"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="50,222,86,259,83,262,47,225"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="136,148,176,185,172,189,132,152"/>
+<area shape="poly" id="edge8_Node000005_Node000003" title=" " alt="" coords="122,150,112,257,106,256,117,150"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="108,152,64,190,60,186,105,148"/>
 </map>

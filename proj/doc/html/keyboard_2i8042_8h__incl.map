@@ -1,5 +1,5 @@
-<map id="controller/keyboard/i8042.h" name="controller/keyboard/i8042.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,137,46"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="32,94,110,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,46,74,79,68,79,68,46"/>
+<map id="/Users/tonevanda/Downloads/MINIX&#45;LCOM/shared/proj/src/controller/keyboard/i8042.h" name="/Users/tonevanda/Downloads/MINIX&#45;LCOM/shared/proj/src/controller/keyboard/i8042.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,199,76"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="63,124,141,150"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,76,105,109,99,109,99,76"/>
 </map>

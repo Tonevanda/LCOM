@@ -33,9 +33,9 @@ var searchData=
   ['title_30',['Title',['../model_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8aae37fab5e18e444f110064c349066675',1,'model.h']]],
   ['title_5fscreen_5fbackround_5fbuffer_31',['title_screen_backround_buffer',['../draw_8c.html#a5624124985253fcdf641a0a38081fed8',1,'title_screen_backround_buffer:&#160;draw.c'],['../model_8c.html#a5624124985253fcdf641a0a38081fed8',1,'title_screen_backround_buffer:&#160;draw.c']]],
   ['titlename_32',['titleName',['../model_8c.html#ab721ef23d48f79c1ed3a5b0546a89636',1,'model.c']]],
-  ['triples_33',['triples',['../model_8c.html#a373ca0fdcab07d3e66219e41a1a8c877',1,'model.c']]],
-  ['triplesaiboatsleft_34',['triplesAiBoatsLeft',['../structgame_info.html#a390cac0dadbc399a419b9ed8e1adecfb',1,'gameInfo']]],
-  ['triplesboatsleft_35',['triplesBoatsLeft',['../structgame_info.html#a763cc9e53bfbfd64b6a270a8539c09cc',1,'gameInfo']]],
+  ['triples_33',['triples',['../model_8c.html#ab2cb8090f1d8600abf2595d41e5bee2b',1,'model.c']]],
+  ['triplesaiboatsleft_34',['triplesAiBoatsLeft',['../structgame_info.html#a9a4e821450d3012aedcbdeeb62ab2ae0',1,'gameInfo']]],
+  ['triplesboatsleft_35',['triplesBoatsLeft',['../structgame_info.html#a5a60826a896365085bf788da473a8b5c',1,'gameInfo']]],
   ['turnoff_36',['turnoff',['../main_8c.html#aefd81f15cd7663f8d5a5458fbffee4c0',1,'main.c']]],
   ['two_5fbytes_37',['TWO_BYTES',['../keyboard_2i8042_8h.html#ab427e6926fcc47eb1c02c1f78162b6f6',1,'TWO_BYTES:&#160;i8042.h'],['../mouse_2i8042_8h.html#ab427e6926fcc47eb1c02c1f78162b6f6',1,'TWO_BYTES:&#160;i8042.h']]],
   ['two_5fkey_38',['TWO_KEY',['../keyboard_2i8042_8h.html#ad9380e88f8d0ae57bd76e2613353b3a2',1,'i8042.h']]]

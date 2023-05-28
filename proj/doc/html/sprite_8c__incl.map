@@ -1,11 +1,11 @@
-<map id="model/sprite.c" name="model/sprite.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="40,5,143,31"/>
-<area shape="rect" id="Node000002" href="$sprite_8h.html" title=" " alt="" coords="59,79,123,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,31,94,64,89,64,89,31"/>
-<area shape="rect" id="Node000003" href="$graphic_8h.html" title=" " alt="" coords="31,153,151,193"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="94,105,94,138,89,138,89,105"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="5,241,84,267"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="82,195,61,230,57,227,77,192"/>
-<area shape="rect" id="Node000005" href="$_v_b_e_8h.html" title=" " alt="" coords="108,241,168,267"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="105,192,126,227,121,230,100,195"/>
+<map id="/Users/tonevanda/Downloads/MINIX&#45;LCOM/shared/proj/src/model/sprite.c" name="/Users/tonevanda/Downloads/MINIX&#45;LCOM/shared/proj/src/model/sprite.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,199,61"/>
+<area shape="rect" id="Node000002" href="$sprite_8h.html" title=" " alt="" coords="70,109,134,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,61,105,94,99,94,99,61"/>
+<area shape="rect" id="Node000003" href="$graphic_8h.html" title=" " alt="" coords="42,183,162,223"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="105,135,105,168,99,168,99,135"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="16,271,95,297"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="93,225,72,260,68,257,88,222"/>
+<area shape="rect" id="Node000005" href="$_v_b_e_8h.html" title=" " alt="" coords="119,271,178,297"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="116,222,136,257,132,260,111,225"/>
 </map>

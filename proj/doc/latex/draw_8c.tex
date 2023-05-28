@@ -1,5 +1,5 @@
-\doxysection{draw/draw.c File Reference}
-\hypertarget{draw_8c}{}\label{draw_8c}\index{draw/draw.c@{draw/draw.c}}
+\doxysection{/\+Users/tonevanda/\+Downloads/\+MINIX-\/\+LCOM/shared/proj/src/draw/draw.c File Reference}
+\hypertarget{draw_8c}{}\label{draw_8c}\index{/Users/tonevanda/Downloads/MINIX-\/LCOM/shared/proj/src/draw/draw.c@{/Users/tonevanda/Downloads/MINIX-\/LCOM/shared/proj/src/draw/draw.c}}
 {\ttfamily \#include \"{}draw.\+h\"{}}\newline
 Include dependency graph for draw.\+c\+:
 \nopagebreak
@@ -16,11 +16,11 @@ int \mbox{\hyperlink{draw_8c_a3ad9f04212e7602618a0dd7ad4afbd4e}{set\+\_\+frame\+
 \begin{DoxyCompactList}\small\item\em Calls the set\+\_\+frame\+\_\+buffer method to create de main buffer and allocates memory for all the other buffers. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{draw_8c_a0d157d997329169f936545f9985e334b}{swap\+\_\+buffers}} ()
 \begin{DoxyCompactList}\small\item\em Copies the drawing\+\_\+frame\+\_\+buffer contents onto the main\+\_\+frame\+\_\+buffer, thus changing what\textquotesingle{}s displayed on screen. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{draw_8c_a6db4230a0003a09515d78b790d8ec52d}{draw\+\_\+sprite\+\_\+xpm}} (\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*}sprite, int \mbox{\hyperlink{model_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, int \mbox{\hyperlink{model_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}})
+int \mbox{\hyperlink{draw_8c_a6db4230a0003a09515d78b790d8ec52d}{draw\+\_\+sprite\+\_\+xpm}} (\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*}sprite, int \mbox{\hyperlink{model_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, int \mbox{\hyperlink{model_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}})
 \begin{DoxyCompactList}\small\item\em Given a sprite object, draws its contents onto the drawing\+\_\+frame\+\_\+buffer. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{draw_8c_a63a9d7ba55d16da86edd1226876619bd}{draw\+\_\+number\+\_\+xpm}} (int number, int \mbox{\hyperlink{model_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, int \mbox{\hyperlink{model_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}})
+int \mbox{\hyperlink{draw_8c_a63a9d7ba55d16da86edd1226876619bd}{draw\+\_\+number\+\_\+xpm}} (int number, int \mbox{\hyperlink{model_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, int \mbox{\hyperlink{model_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}})
 \begin{DoxyCompactList}\small\item\em Given user input will draw a number sprite onto the drawing\+\_\+frame\+\_\+buffer. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{draw_8c_a35c124c4a26fe73a2aee1de1ec1696fd}{prepare\+\_\+backround}} (\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*}sprite, int \mbox{\hyperlink{model_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, int \mbox{\hyperlink{model_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}}, uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer)
+int \mbox{\hyperlink{draw_8c_a35c124c4a26fe73a2aee1de1ec1696fd}{prepare\+\_\+backround}} (\mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*}sprite, int \mbox{\hyperlink{model_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, int \mbox{\hyperlink{model_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer)
 \begin{DoxyCompactList}\small\item\em Given a sprite object, draws its contents onto a buffer given in the input. Mostly used to draw onto the other background buffers right at the start and won\textquotesingle{}t be updated after this initial phase. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{draw_8c_a6b57bfa4c560c707cce131388467a095}{draw\+\_\+title\+\_\+screen}} ()
 \begin{DoxyCompactList}\small\item\em Copies the title\+\_\+screen\+\_\+background\+\_\+buffer onto the drawing\+\_\+frame\+\_\+buffer and draws other sprites necessary for the Title state. \end{DoxyCompactList}\item 
@@ -44,13 +44,15 @@ void \mbox{\hyperlink{draw_8c_a0944e45dab2b95345c29e01b548eb1ab}{draw\+\_\+rtc}}
 \begin{DoxyCompactList}\small\item\em Draws the current time in the bottom left corner. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{draw_8c_ab6d3efc0c2ecaf7a9be52b5635cbf0ae}{draw\+\_\+round\+\_\+time}} ()
 \begin{DoxyCompactList}\small\item\em Draws the elapsed time since the start of the round in the bottom of the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{draw_8c_aab4c51b87b5edd290e54c82f7d174af4}{draw\+\_\+end\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Draws the time it took to the game to end in the bottom of the screen. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{draw_8c_a60fec87dff640c2928684dc0b8b5da1d}{draw\+\_\+player\+\_\+board\+\_\+icons}} ()
 \begin{DoxyCompactList}\small\item\em Draws the sprites that need to be visible when the player board is visible. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{draw_8c_a8d3c99662ef69827cd0475179f399da4}{draw\+\_\+\+AI\+\_\+board\+\_\+icons}} ()
 \begin{DoxyCompactList}\small\item\em Draws the sprites that need to be visible when the Opponent board is visible. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{draw_8c_acd3c448323a6fa8c250915eb0cf8eb3b}{pos\+\_\+switch}} (int \mbox{\hyperlink{model_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, int \mbox{\hyperlink{model_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}}, enum \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293}{part}} pos)
+void \mbox{\hyperlink{draw_8c_acd3c448323a6fa8c250915eb0cf8eb3b}{pos\+\_\+switch}} (int \mbox{\hyperlink{model_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, int \mbox{\hyperlink{model_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, enum \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293}{part}} pos)
 \begin{DoxyCompactList}\small\item\em Decides which boat sprite to draw depending on the current slot pos enum. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{draw_8c_a78c8e4ac1be02eefdeaee6891ecf5de3}{draw\+\_\+on\+\_\+board}} (int \mbox{\hyperlink{model_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, int \mbox{\hyperlink{model_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}}, \mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*}sprite)
+void \mbox{\hyperlink{draw_8c_a78c8e4ac1be02eefdeaee6891ecf5de3}{draw\+\_\+on\+\_\+board}} (int \mbox{\hyperlink{model_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, int \mbox{\hyperlink{model_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, \mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*}sprite)
 \begin{DoxyCompactList}\small\item\em Draws on a board slot (determined by the input x and y coordinates) the inputted \doxylink{struct_sprite}{Sprite}. This is only used for icons related to the board and the progression of the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -137,15 +139,15 @@ vbe\+\_\+mode\+\_\+info\+\_\+t \mbox{\hyperlink{draw_8c_a9fcc2243068f8e628648feb
 \item 
 \mbox{\hyperlink{struct_sprite}{Sprite}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{draw_8c_aab324afb9de1afaafdc5ee09f13ab84e}{exit\+\_\+selected}}
 \item 
-int \mbox{\hyperlink{draw_8c_adab4da51ba40d5a492becdceccccbfcd}{selected}} =0
+uint8\+\_\+t \mbox{\hyperlink{draw_8c_ab7f6d86d06cedb6ae463f6321298829f}{selected}} =0
 \item 
-int \mbox{\hyperlink{draw_8c_af5f9057d52067e660c59b49b6e035fd1}{original\+\_\+board\+\_\+x}} =402
+uint16\+\_\+t \mbox{\hyperlink{draw_8c_ac41bbd1a508903e04de4b94a37fe5d75}{original\+\_\+board\+\_\+x}} =402
 \item 
-int \mbox{\hyperlink{draw_8c_aeba637d40e5569184d1ee66c6363cf4b}{original\+\_\+board\+\_\+y}} =272
+uint16\+\_\+t \mbox{\hyperlink{draw_8c_a6e107a3310945b4af4e59a59c612340c}{original\+\_\+board\+\_\+y}} =272
 \item 
-int \mbox{\hyperlink{draw_8c_a15d32cd36d34b227762045c8c146acd2}{board\+\_\+index}} =0
+uint8\+\_\+t \mbox{\hyperlink{draw_8c_ad87d61305438cd1a1dd4788a629f8fdf}{board\+\_\+index}} =0
 \item 
-int \mbox{\hyperlink{draw_8c_aacd2ee6d7e1276f9519631c8f5790a78}{current\+\_\+boat}}
+uint8\+\_\+t \mbox{\hyperlink{draw_8c_a0d7e472c87bbc7748f509e8938ad3deb}{current\+\_\+boat}}
 \item 
 bool \mbox{\hyperlink{draw_8c_a8e224ff5280deaa89a3aece981125904}{is\+Keyboard}} =false
 \item 
@@ -160,6 +162,8 @@ struct \mbox{\hyperlink{structslot}{slot}} \mbox{\hyperlink{draw_8c_aada05c8bed9
 struct \mbox{\hyperlink{structslot}{slot}} \mbox{\hyperlink{draw_8c_a9ed3a771cd0340eb82b1d7b896ba28a7}{enemy\+\_\+board}} \mbox{[}66\mbox{]}
 \item 
 struct \mbox{\hyperlink{structgame_info}{game\+Info}} \mbox{\hyperlink{draw_8c_a68f005151973f9559f77e95b1fa66e16}{game}}
+\item 
+time\+\_\+t \mbox{\hyperlink{draw_8c_a1f1e169e482467aaf615639bb3467f09}{end\+Time}}
 \item 
 bool \mbox{\hyperlink{draw_8c_a1b43d566cbd44f84556d40dbd2c5272a}{victory}} =false
 \end{DoxyCompactItemize}
@@ -176,8 +180,7 @@ bool \mbox{\hyperlink{draw_8c_a1b43d566cbd44f84556d40dbd2c5272a}{victory}} =fals
 
 Draws the sprites that need to be visible when the Opponent board is visible. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -194,8 +197,7 @@ Here is the call graph for this function\+:
 
 Copies the game\+\_\+board\+\_\+background\+\_\+buffer onto the drawing\+\_\+frame\+\_\+buffer and draws other sprites necessary for the Attack state. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -212,12 +214,29 @@ Here is the call graph for this function\+:
 
 Copies the game\+\_\+board\+\_\+background\+\_\+buffer onto the drawing\+\_\+frame\+\_\+buffer and draws other sprites necessary for the Defend state. 
 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{draw_8c_a09468f68b47c4d3348c9380a40819f59_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{draw_8c_aab4c51b87b5edd290e54c82f7d174af4}\label{draw_8c_aab4c51b87b5edd290e54c82f7d174af4} 
+\index{draw.c@{draw.c}!draw\_end\_time@{draw\_end\_time}}
+\index{draw\_end\_time@{draw\_end\_time}!draw.c@{draw.c}}
+\doxysubsubsection{\texorpdfstring{draw\_end\_time()}{draw\_end\_time()}}
+{\footnotesize\ttfamily void draw\+\_\+end\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the time it took to the game to end in the bottom of the screen. 
+
 Here is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{draw_8c_a09468f68b47c4d3348c9380a40819f59_cgraph}
+\includegraphics[width=350pt]{draw_8c_aab4c51b87b5edd290e54c82f7d174af4_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{draw_8c_a42f4903ab89aff9e3ee0206c52cf710a}\label{draw_8c_a42f4903ab89aff9e3ee0206c52cf710a} 
@@ -230,8 +249,7 @@ Here is the call graph for this function\+:
 
 Draws the mouse sprite on its current position. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -260,8 +278,7 @@ Given user input will draw a number sprite onto the drawing\+\_\+frame\+\_\+buff
 \begin{DoxyReturn}{Returns}
 0 if successful 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -287,8 +304,7 @@ Draws on a board slot (determined by the input x and y coordinates) the inputted
 {\em sprite} & \doxylink{struct_sprite}{Sprite} that is drawn \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -305,8 +321,7 @@ Here is the call graph for this function\+:
 
 Copies the game\+\_\+board\+\_\+background\+\_\+buffer onto the drawing\+\_\+frame\+\_\+buffer and draws other sprites necessary for the Placement state. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -323,8 +338,7 @@ Here is the call graph for this function\+:
 
 Draws the sprites that need to be visible when the player board is visible. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -341,8 +355,7 @@ Here is the call graph for this function\+:
 
 Draws a reticle onto the selected board slot. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -359,8 +372,7 @@ Here is the call graph for this function\+:
 
 Draws the elapsed time since the start of the round in the bottom of the screen. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -377,8 +389,7 @@ Here is the call graph for this function\+:
 
 Draws the current time in the bottom left corner. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -395,8 +406,7 @@ Here is the call graph for this function\+:
 
 Draws the current\+\_\+boat that follows the mouse position or the selected reticle icon in the case of keyboard input. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -425,8 +435,7 @@ Given a sprite object, draws its contents onto the drawing\+\_\+frame\+\_\+buffe
 \begin{DoxyReturn}{Returns}
 0 if successful 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -443,8 +452,7 @@ Here is the call graph for this function\+:
 
 Copies the title\+\_\+screen\+\_\+background\+\_\+buffer onto the drawing\+\_\+frame\+\_\+buffer and draws other sprites necessary for the Title state. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -461,8 +469,7 @@ Here is the call graph for this function\+:
 
 Draws onto the drawing\+\_\+frame\+\_\+buffer the highlighted portions of the title screen. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -506,8 +513,7 @@ Decides which boat sprite to draw depending on the current slot pos enum.
 {\em pos} & Enum that represents witch boat portion this is \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -538,8 +544,7 @@ Given a sprite object, draws its contents onto a buffer given in the input. Most
 \begin{DoxyReturn}{Returns}
 0 if successful 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -564,8 +569,7 @@ Calls the set\+\_\+frame\+\_\+buffer method to create de main buffer and allocat
 \begin{DoxyReturn}{Returns}
 0 if successful 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -591,11 +595,11 @@ Copies the drawing\+\_\+frame\+\_\+buffer contents onto the main\+\_\+frame\+\_\
 \doxysubsubsection{\texorpdfstring{arrow}{arrow}}
 {\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} arrow\hspace{0.3cm}{\ttfamily [extern]}}
 
-\Hypertarget{draw_8c_a15d32cd36d34b227762045c8c146acd2}\label{draw_8c_a15d32cd36d34b227762045c8c146acd2} 
+\Hypertarget{draw_8c_ad87d61305438cd1a1dd4788a629f8fdf}\label{draw_8c_ad87d61305438cd1a1dd4788a629f8fdf} 
 \index{draw.c@{draw.c}!board\_index@{board\_index}}
 \index{board\_index@{board\_index}!draw.c@{draw.c}}
 \doxysubsubsection{\texorpdfstring{board\_index}{board\_index}}
-{\footnotesize\ttfamily int board\+\_\+index =0}
+{\footnotesize\ttfamily uint8\+\_\+t board\+\_\+index =0}
 
 \Hypertarget{draw_8c_adaec8ee691a7d571e7f163afafad1399}\label{draw_8c_adaec8ee691a7d571e7f163afafad1399} 
 \index{draw.c@{draw.c}!board\_name@{board\_name}}
@@ -645,17 +649,23 @@ Copies the drawing\+\_\+frame\+\_\+buffer contents onto the main\+\_\+frame\+\_\
 \doxysubsubsection{\texorpdfstring{colon}{colon}}
 {\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} colon\hspace{0.3cm}{\ttfamily [extern]}}
 
-\Hypertarget{draw_8c_aacd2ee6d7e1276f9519631c8f5790a78}\label{draw_8c_aacd2ee6d7e1276f9519631c8f5790a78} 
+\Hypertarget{draw_8c_a0d7e472c87bbc7748f509e8938ad3deb}\label{draw_8c_a0d7e472c87bbc7748f509e8938ad3deb} 
 \index{draw.c@{draw.c}!current\_boat@{current\_boat}}
 \index{current\_boat@{current\_boat}!draw.c@{draw.c}}
 \doxysubsubsection{\texorpdfstring{current\_boat}{current\_boat}}
-{\footnotesize\ttfamily int current\+\_\+boat}
+{\footnotesize\ttfamily uint8\+\_\+t current\+\_\+boat}
 
 \Hypertarget{draw_8c_a5d7d41c450228146c9c902c582f0c289}\label{draw_8c_a5d7d41c450228146c9c902c582f0c289} 
 \index{draw.c@{draw.c}!drawing\_frame\_buffer@{drawing\_frame\_buffer}}
 \index{drawing\_frame\_buffer@{drawing\_frame\_buffer}!draw.c@{draw.c}}
 \doxysubsubsection{\texorpdfstring{drawing\_frame\_buffer}{drawing\_frame\_buffer}}
 {\footnotesize\ttfamily uint8\+\_\+t\texorpdfstring{$\ast$}{*} drawing\+\_\+frame\+\_\+buffer}
+
+\Hypertarget{draw_8c_a1f1e169e482467aaf615639bb3467f09}\label{draw_8c_a1f1e169e482467aaf615639bb3467f09} 
+\index{draw.c@{draw.c}!endTime@{endTime}}
+\index{endTime@{endTime}!draw.c@{draw.c}}
+\doxysubsubsection{\texorpdfstring{endTime}{endTime}}
+{\footnotesize\ttfamily time\+\_\+t end\+Time}
 
 \Hypertarget{draw_8c_a9ed3a771cd0340eb82b1d7b896ba28a7}\label{draw_8c_a9ed3a771cd0340eb82b1d7b896ba28a7} 
 \index{draw.c@{draw.c}!enemy\_board@{enemy\_board}}
@@ -807,17 +817,17 @@ Copies the drawing\+\_\+frame\+\_\+buffer contents onto the main\+\_\+frame\+\_\
 \doxysubsubsection{\texorpdfstring{opponent}{opponent}}
 {\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}\texorpdfstring{$\ast$}{*} opponent\hspace{0.3cm}{\ttfamily [extern]}}
 
-\Hypertarget{draw_8c_af5f9057d52067e660c59b49b6e035fd1}\label{draw_8c_af5f9057d52067e660c59b49b6e035fd1} 
+\Hypertarget{draw_8c_ac41bbd1a508903e04de4b94a37fe5d75}\label{draw_8c_ac41bbd1a508903e04de4b94a37fe5d75} 
 \index{draw.c@{draw.c}!original\_board\_x@{original\_board\_x}}
 \index{original\_board\_x@{original\_board\_x}!draw.c@{draw.c}}
 \doxysubsubsection{\texorpdfstring{original\_board\_x}{original\_board\_x}}
-{\footnotesize\ttfamily int original\+\_\+board\+\_\+x =402}
+{\footnotesize\ttfamily uint16\+\_\+t original\+\_\+board\+\_\+x =402}
 
-\Hypertarget{draw_8c_aeba637d40e5569184d1ee66c6363cf4b}\label{draw_8c_aeba637d40e5569184d1ee66c6363cf4b} 
+\Hypertarget{draw_8c_a6e107a3310945b4af4e59a59c612340c}\label{draw_8c_a6e107a3310945b4af4e59a59c612340c} 
 \index{draw.c@{draw.c}!original\_board\_y@{original\_board\_y}}
 \index{original\_board\_y@{original\_board\_y}!draw.c@{draw.c}}
 \doxysubsubsection{\texorpdfstring{original\_board\_y}{original\_board\_y}}
-{\footnotesize\ttfamily int original\+\_\+board\+\_\+y =272}
+{\footnotesize\ttfamily uint16\+\_\+t original\+\_\+board\+\_\+y =272}
 
 \Hypertarget{draw_8c_aada05c8bed99663fe9186b3d432e014a}\label{draw_8c_aada05c8bed99663fe9186b3d432e014a} 
 \index{draw.c@{draw.c}!player\_board@{player\_board}}
@@ -849,11 +859,11 @@ Copies the drawing\+\_\+frame\+\_\+buffer contents onto the main\+\_\+frame\+\_\
 \doxysubsubsection{\texorpdfstring{rtc\_data}{rtc\_data}}
 {\footnotesize\ttfamily uint8\+\_\+t rtc\+\_\+data\mbox{[}6\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
 
-\Hypertarget{draw_8c_adab4da51ba40d5a492becdceccccbfcd}\label{draw_8c_adab4da51ba40d5a492becdceccccbfcd} 
+\Hypertarget{draw_8c_ab7f6d86d06cedb6ae463f6321298829f}\label{draw_8c_ab7f6d86d06cedb6ae463f6321298829f} 
 \index{draw.c@{draw.c}!selected@{selected}}
 \index{selected@{selected}!draw.c@{draw.c}}
 \doxysubsubsection{\texorpdfstring{selected}{selected}}
-{\footnotesize\ttfamily int selected =0}
+{\footnotesize\ttfamily uint8\+\_\+t selected =0}
 
 \Hypertarget{draw_8c_ab32e08d120d70f7bade21ceeb91b16e6}\label{draw_8c_ab32e08d120d70f7bade21ceeb91b16e6} 
 \index{draw.c@{draw.c}!selected\_start@{selected\_start}}

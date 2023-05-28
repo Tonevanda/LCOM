@@ -54,8 +54,6 @@ void(rtc_ih)() {
 int wait_rtc() {
     uint32_t reg = 0;
 
-    // desativar e reativar interrupts
-    // por causa de preemption
     do {
 
         sys_irqdisable(&rtc_hook_id);

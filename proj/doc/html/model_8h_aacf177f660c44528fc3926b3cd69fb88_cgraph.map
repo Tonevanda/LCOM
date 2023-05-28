@@ -1,17 +1,19 @@
 <map id="update_keyboard_state" name="update_keyboard_state">
-<area shape="rect" id="Node000001" title="Handles keyboard interruptions according to the current state. Calls functions to handle the keyboard..." alt="" coords="5,145,162,171"/>
+<area shape="rect" id="Node000001" title="Handles keyboard interruptions according to the current state. Calls functions to handle the keyboard..." alt="" coords="5,177,162,203"/>
 <area shape="rect" id="Node000002" href="$model_8c.html#a6094a0b19d809485af77b4fdfbdc1612" title="Updates global board_index variable with keyboard inputs." alt="" coords="238,5,351,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,143,140,93,172,64,208,40,223,33,225,38,211,44,175,69,143,97,97,147"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,175,134,111,168,73,208,40,223,32,225,37,211,44,172,76,138,114,94,178"/>
 <area shape="rect" id="Node000003" href="$keyboard_8c.html#aea970a154161a35f6894898a092ed70a" title="KBC interrupt handler." alt="" coords="265,55,324,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="106,142,153,117,209,90,250,76,251,81,211,95,155,122,109,147"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="96,175,144,134,175,111,208,90,249,75,251,80,211,95,178,115,147,138,100,179"/>
 <area shape="rect" id="Node000007" href="$model_8c.html#a2699e097c9840b8fe1067975f80da234" title="Handles keyboard scancodes while on the Attack state." alt="" coords="210,105,379,145"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="161,143,194,138,195,143,162,148"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="127,174,211,148,213,153,128,179"/>
 <area shape="rect" id="Node000009" href="$model_8c.html#a8c2ade0a18f6d7109a81d86b3e15cce6" title="Handles keyboard scancodes while on the Defend state." alt="" coords="210,170,379,211"/>
-<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="162,167,195,172,194,178,161,173"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="162,188,195,188,195,193,162,193"/>
 <area shape="rect" id="Node000010" href="$model_8c.html#a1f5a00e8c8a0c75051cda61a513fd38f" title="Handles keyboard scancodes while on the Placement state." alt="" coords="210,235,379,276"/>
-<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="111,169,211,220,226,227,224,231,209,225,108,174"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="128,201,213,228,211,233,127,206"/>
 <area shape="rect" id="Node000014" href="$model_8c.html#a7a6cabbe5c5ae40beb464969dab1ebcc" title="Handles keyboard scancodes while on the Title state." alt="" coords="210,301,379,341"/>
-<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="96,170,142,225,175,257,211,285,220,291,218,296,208,290,171,261,138,228,92,173"/>
+<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="101,202,148,242,211,285,223,291,220,296,208,290,145,246,97,206"/>
+<area shape="rect" id="Node000016" href="$model_8c.html#a38bc650ff492ad4171fe588540ca9d76" title="Handles keyboard scancodes while on the Victory state." alt="" coords="210,366,379,407"/>
+<area shape="poly" id="edge17_Node000001_Node000016" title=" " alt="" coords="94,202,138,272,171,314,211,351,219,356,216,360,208,355,168,317,133,275,89,205"/>
 <area shape="rect" id="Node000004" href="$_k_b_c___keyboard_8c.html#a551527f424ab5612df0c38807d83689c" title="Reads the content of the KBC in the port passed as parameter and stores it in the output variable." alt="" coords="427,55,613,80"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="324,65,412,65,412,70,324,70"/>
 <area shape="rect" id="Node000005" href="$_k_b_c___keyboard_8c.html#a07881460b47acb1bf8a897d5874f51e0" title="Reads the status of the KBC and stores it in the variable passed as parameter." alt="" coords="661,29,848,55"/>
@@ -23,7 +25,7 @@
 <area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="379,122,476,122,476,128,379,128"/>
 <area shape="rect" id="Node000011" href="$model_8c.html#a2dac5003a9eadf99a2e61bea2ba39342" title="Places boats in the player_board given the current board_index,current_boat and the vert value." alt="" coords="481,243,560,268"/>
 <area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="379,253,466,253,466,258,379,258"/>
-<area shape="rect" id="Node000012" href="$model_8c.html#acaf921ff7b19d54d0a778267621d18e2" title="Updates the player_board&#39;s and enemy_board&#39;s individual slot structs to reflect on placed boats...." alt="" coords="906,243,976,268"/>
+<area shape="rect" id="Node000012" href="$model_8c.html#a573bcebb29cc9a7e7cb08c693fa43aa9" title="Updates the player_board&#39;s and enemy_board&#39;s individual slot structs to reflect on placed boats...." alt="" coords="906,243,976,268"/>
 <area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="560,253,891,253,891,258,560,258"/>
 <area shape="rect" id="Node000013" href="$model_8c.html#a76e826f01d887adc7f29e599352bc88d" title="Places all the boats in the enemy_board randomly." alt="" coords="705,268,804,294"/>
 <area shape="poly" id="edge13_Node000011_Node000013" title=" " alt="" coords="561,257,691,271,691,277,560,262"/>

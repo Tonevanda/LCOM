@@ -1,5 +1,5 @@
-\doxysection{controller/graphic/graphic.h File Reference}
-\hypertarget{graphic_8h}{}\label{graphic_8h}\index{controller/graphic/graphic.h@{controller/graphic/graphic.h}}
+\doxysection{/\+Users/tonevanda/\+Downloads/\+MINIX-\/\+LCOM/shared/proj/src/controller/graphic/graphic.h File Reference}
+\hypertarget{graphic_8h}{}\label{graphic_8h}\index{/Users/tonevanda/Downloads/MINIX-\/LCOM/shared/proj/src/controller/graphic/graphic.h@{/Users/tonevanda/Downloads/MINIX-\/LCOM/shared/proj/src/controller/graphic/graphic.h}}
 {\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
 {\ttfamily \#include \"{}VBE.\+h\"{}}\newline
 Include dependency graph for graphic.\+h\+:
@@ -7,7 +7,7 @@ Include dependency graph for graphic.\+h\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=202pt]{graphic_8h__incl}
+\includegraphics[width=233pt]{graphic_8h__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:
@@ -25,13 +25,13 @@ int() \mbox{\hyperlink{graphic_8h_a967432a6c8128a907b937b0f3f4b4472}{set\+\_\+gr
 \begin{DoxyCompactList}\small\item\em Sets graphic mode. \end{DoxyCompactList}\item 
 int() \mbox{\hyperlink{graphic_8h_ac50005645b76a08eff8126607633420f}{set\+\_\+frame\+\_\+buffer}} (uint16\+\_\+t mode, uint8\+\_\+t \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}frame\+\_\+buffer)
 \begin{DoxyCompactList}\small\item\em Creates the main frame buffer and allocates VRAM to it. \end{DoxyCompactList}\item 
-int() \mbox{\hyperlink{graphic_8h_a950e17209d152e8a40ec064a0b201b25}{draw\+\_\+pixel}} (uint16\+\_\+t \mbox{\hyperlink{model_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, uint16\+\_\+t \mbox{\hyperlink{model_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}}, uint32\+\_\+t color, uint8\+\_\+t \texorpdfstring{$\ast$}{*}frame\+\_\+buffer)
+int() \mbox{\hyperlink{graphic_8h_a950e17209d152e8a40ec064a0b201b25}{draw\+\_\+pixel}} (uint16\+\_\+t \mbox{\hyperlink{model_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint16\+\_\+t \mbox{\hyperlink{model_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, uint32\+\_\+t color, uint8\+\_\+t \texorpdfstring{$\ast$}{*}frame\+\_\+buffer)
 \begin{DoxyCompactList}\small\item\em Draws a pixel of a certain color onto a frame buffer. \end{DoxyCompactList}\item 
-int() \mbox{\hyperlink{graphic_8h_a499a8230e82b3eece0d87e83daa4a419}{draw\+\_\+hline}} (uint16\+\_\+t \mbox{\hyperlink{model_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, uint16\+\_\+t \mbox{\hyperlink{model_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}}, uint16\+\_\+t len, uint32\+\_\+t color, uint8\+\_\+t \texorpdfstring{$\ast$}{*}frame\+\_\+buffer)
+int() \mbox{\hyperlink{graphic_8h_a499a8230e82b3eece0d87e83daa4a419}{draw\+\_\+hline}} (uint16\+\_\+t \mbox{\hyperlink{model_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint16\+\_\+t \mbox{\hyperlink{model_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, uint16\+\_\+t len, uint32\+\_\+t color, uint8\+\_\+t \texorpdfstring{$\ast$}{*}frame\+\_\+buffer)
 \begin{DoxyCompactList}\small\item\em Draws a horizontal line of a certain color onto a frame buffer. \end{DoxyCompactList}\item 
-int() \mbox{\hyperlink{graphic_8h_a985c2ca86c8f87d6dbc5956e34f45faa}{draw\+\_\+rectangle}} (uint16\+\_\+t \mbox{\hyperlink{model_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, uint16\+\_\+t \mbox{\hyperlink{model_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}}, uint16\+\_\+t width, uint16\+\_\+t height, uint32\+\_\+t color, uint8\+\_\+t \texorpdfstring{$\ast$}{*}frame\+\_\+buffer)
+int() \mbox{\hyperlink{graphic_8h_a985c2ca86c8f87d6dbc5956e34f45faa}{draw\+\_\+rectangle}} (uint16\+\_\+t \mbox{\hyperlink{model_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint16\+\_\+t \mbox{\hyperlink{model_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, uint16\+\_\+t width, uint16\+\_\+t height, uint32\+\_\+t color, uint8\+\_\+t \texorpdfstring{$\ast$}{*}frame\+\_\+buffer)
 \begin{DoxyCompactList}\small\item\em Draws a rectangle of a certain color onto a frame buffer. \end{DoxyCompactList}\item 
-int() \mbox{\hyperlink{graphic_8h_a93e621ce4c7944f2d0b68ffde5fd913f}{print\+\_\+xpm}} (xpm\+\_\+map\+\_\+t xpm, uint16\+\_\+t \mbox{\hyperlink{model_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}}, uint16\+\_\+t \mbox{\hyperlink{model_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}}, uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer)
+int() \mbox{\hyperlink{graphic_8h_a93e621ce4c7944f2d0b68ffde5fd913f}{print\+\_\+xpm}} (xpm\+\_\+map\+\_\+t xpm, uint16\+\_\+t \mbox{\hyperlink{model_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint16\+\_\+t \mbox{\hyperlink{model_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer)
 \begin{DoxyCompactList}\small\item\em Draws a xpm onto a frame buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -65,8 +65,7 @@ Draws a horizontal line of a certain color onto a frame buffer.
 \begin{DoxyReturn}{Returns}
 0 if successful 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -97,8 +96,7 @@ Draws a pixel of a certain color onto a frame buffer.
 \begin{DoxyReturn}{Returns}
 0 if successful 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -129,8 +127,7 @@ Draws a rectangle of a certain color onto a frame buffer.
 \begin{DoxyReturn}{Returns}
 0 if successful 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -161,8 +158,7 @@ Draws a xpm onto a frame buffer.
 \begin{DoxyReturn}{Returns}
 0 if successful 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -189,8 +185,7 @@ Creates the main frame buffer and allocates VRAM to it.
 \begin{DoxyReturn}{Returns}
 0 if successful 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

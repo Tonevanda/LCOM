@@ -1,7 +1,7 @@
-<map id="controller/rtc/rtc.c" name="controller/rtc/rtc.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,129,31"/>
-<area shape="rect" id="Node000002" href="$rtc_8h.html" title=" " alt="" coords="43,79,91,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,31,70,64,64,64,64,31"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="28,153,106,178"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="70,105,70,138,64,138,64,105"/>
+<map id="/Users/tonevanda/Downloads/MINIX&#45;LCOM/shared/proj/src/controller/rtc/rtc.c" name="/Users/tonevanda/Downloads/MINIX&#45;LCOM/shared/proj/src/controller/rtc/rtc.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,199,61"/>
+<area shape="rect" id="Node000002" href="$rtc_8h.html" title=" " alt="" coords="78,109,126,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,61,105,94,99,94,99,61"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="63,183,141,208"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="105,135,105,168,99,168,99,135"/>
 </map>

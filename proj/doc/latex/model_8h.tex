@@ -1,5 +1,5 @@
-\doxysection{model/model.h File Reference}
-\hypertarget{model_8h}{}\label{model_8h}\index{model/model.h@{model/model.h}}
+\doxysection{/\+Users/tonevanda/\+Downloads/\+MINIX-\/\+LCOM/shared/proj/src/model/model.h File Reference}
+\hypertarget{model_8h}{}\label{model_8h}\index{/Users/tonevanda/Downloads/MINIX-\/LCOM/shared/proj/src/model/model.h@{/Users/tonevanda/Downloads/MINIX-\/LCOM/shared/proj/src/model/model.h}}
 {\ttfamily \#include $<$minix/sysutil.\+h$>$}\newline
 {\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
 {\ttfamily \#include \"{}controller/keyboard/\+KBC\+\_\+\+Keyboard.\+h\"{}}\newline
@@ -59,7 +59,7 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=224pt]{model_8h__dep__incl}
+\includegraphics[width=350pt]{model_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Enumerations}
@@ -97,10 +97,12 @@ void \mbox{\hyperlink{model_8h_a85ecf596862915a7ac3db4df57ab070b}{update\+\_\+mo
 \begin{DoxyCompactList}\small\item\em Handles mouse packets while on the Title state. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{model_8h_a3d668bc59e279e1942416c9914a1a5f2}{update\+\_\+mouse\+\_\+actions\+\_\+placement}} ()
 \begin{DoxyCompactList}\small\item\em Handles mouse packets while on the Placement state. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{model_8h_ad28345f7598f8bda8bf0746008769caa}{update\+\_\+mouse\+\_\+actions\+\_\+\+Attack}} ()
+void \mbox{\hyperlink{model_8h_a201b73d57b1be03bd1bf4ffe68184eeb}{update\+\_\+mouse\+\_\+actions\+\_\+attack}} ()
 \begin{DoxyCompactList}\small\item\em Handles mouse packets while on the Attack state. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{model_8h_ab211cbab5108281640c8e734e61f4bc1}{update\+\_\+mouse\+\_\+actions\+\_\+defend}} ()
 \begin{DoxyCompactList}\small\item\em Handles mouse packets while on the Defend state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8h_a084c80401d707a9eb7215d076a8f72f8}{update\+\_\+mouse\+\_\+actions\+\_\+victory}} ()
+\begin{DoxyCompactList}\small\item\em Handles mouse scancodes while on the Victory state. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{model_8h_a7a6cabbe5c5ae40beb464969dab1ebcc}{update\+\_\+keyboard\+\_\+actions\+\_\+title}} ()
 \begin{DoxyCompactList}\small\item\em Handles keyboard scancodes while on the Title state. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{model_8h_a1f5a00e8c8a0c75051cda61a513fd38f}{update\+\_\+keyboard\+\_\+actions\+\_\+placement}} ()
@@ -109,6 +111,8 @@ void \mbox{\hyperlink{model_8h_a2699e097c9840b8fe1067975f80da234}{update\+\_\+ke
 \begin{DoxyCompactList}\small\item\em Handles keyboard scancodes while on the Attack state. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{model_8h_a8c2ade0a18f6d7109a81d86b3e15cce6}{update\+\_\+keyboard\+\_\+actions\+\_\+defend}} ()
 \begin{DoxyCompactList}\small\item\em Handles keyboard scancodes while on the Defend state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8h_a38bc650ff492ad4171fe588540ca9d76}{update\+\_\+keyboard\+\_\+actions\+\_\+victory}} ()
+\begin{DoxyCompactList}\small\item\em Handles keyboard scancodes while on the Victory state. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{model_8h_a3f26c5998c2a64702efab219c46acf1d}{menu\+\_\+actions}} ()
 \begin{DoxyCompactList}\small\item\em Chooses main menu options depending on user input. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{model_8h_ae12dfa34095a84a3088e20f5bb648746}{get\+Board\+Pos}} ()
@@ -119,7 +123,7 @@ void \mbox{\hyperlink{model_8h_a2dac5003a9eadf99a2e61bea2ba39342}{place\+Boat}} 
 \begin{DoxyCompactList}\small\item\em Places boats in the player\+\_\+board given the current board\+\_\+index,current\+\_\+boat and the vert value. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{model_8h_a76e826f01d887adc7f29e599352bc88d}{place\+Ai\+Boats}} ()
 \begin{DoxyCompactList}\small\item\em Places all the boats in the enemy\+\_\+board randomly. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{model_8h_a990c6f78bbdf1729d222c19fab7c0bd8}{add\+Boat}} (struct \mbox{\hyperlink{structslot}{slot}} \mbox{\hyperlink{model_8c_a5fac8105223c65bc1ccef5589fac0301}{board}}\mbox{[}66\mbox{]}, int \mbox{\hyperlink{draw_8c_a15d32cd36d34b227762045c8c146acd2}{board\+\_\+index}}, enum \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293}{part}})
+void \mbox{\hyperlink{model_8h_a6197374a7ad9dff5db98bcaf00774a7c}{add\+Boat}} (struct \mbox{\hyperlink{structslot}{slot}} \mbox{\hyperlink{model_8c_a5fac8105223c65bc1ccef5589fac0301}{board}}\mbox{[}66\mbox{]}, uint8\+\_\+t \mbox{\hyperlink{draw_8c_ad87d61305438cd1a1dd4788a629f8fdf}{board\+\_\+index}}, enum \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293}{part}})
 \begin{DoxyCompactList}\small\item\em Updates the player\+\_\+board\textquotesingle{}s and enemy\+\_\+board\textquotesingle{}s individual slot structs to reflect on placed boats. It\textquotesingle{}s called in the place\+Boat and place\+Ai\+Boats methods. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{model_8h_a22b7380d6f047abaa450a0151dbcb726}{attack}} (struct \mbox{\hyperlink{structslot}{slot}} atackee\mbox{[}66\mbox{]})
 \begin{DoxyCompactList}\small\item\em Updates the player\+\_\+board\textquotesingle{}s and enemy\+\_\+board\textquotesingle{}s individual slot structs to reflect on attacks. \end{DoxyCompactList}\item 
@@ -175,16 +179,25 @@ EXIT&\\
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{model_8h_a990c6f78bbdf1729d222c19fab7c0bd8}\label{model_8h_a990c6f78bbdf1729d222c19fab7c0bd8} 
+\Hypertarget{model_8h_a6197374a7ad9dff5db98bcaf00774a7c}\label{model_8h_a6197374a7ad9dff5db98bcaf00774a7c} 
 \index{model.h@{model.h}!addBoat@{addBoat}}
 \index{addBoat@{addBoat}!model.h@{model.h}}
 \doxysubsubsection{\texorpdfstring{addBoat()}{addBoat()}}
-{\footnotesize\ttfamily void add\+Boat (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structslot}{slot}}}]{board\mbox{[}66\mbox{]},  }\item[{int}]{board\+\_\+index,  }\item[{enum}]{part }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void add\+Boat (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structslot}{slot}}}]{board\mbox{[}66\mbox{]},  }\item[{uint8\+\_\+t}]{board\+\_\+index,  }\item[{enum}]{part }\end{DoxyParamCaption})}
 
 
 
 Updates the player\+\_\+board\textquotesingle{}s and enemy\+\_\+board\textquotesingle{}s individual slot structs to reflect on placed boats. It\textquotesingle{}s called in the place\+Boat and place\+Ai\+Boats methods. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em board} & The board where the boat part is added \\
+\hline
+{\em board\+\_\+index} & The boat index where the boat part is added \\
+\hline
+{\em part} & The part itself to add \\
+\hline
+\end{DoxyParams}
 \Hypertarget{model_8h_afd13a2a70ab7ad5636cce74c3e0ab515}\label{model_8h_afd13a2a70ab7ad5636cce74c3e0ab515} 
 \index{model.h@{model.h}!ai\_actions@{ai\_actions}}
 \index{ai\_actions@{ai\_actions}!model.h@{model.h}}
@@ -195,8 +208,7 @@ Updates the player\+\_\+board\textquotesingle{}s and enemy\+\_\+board\textquotes
 
 Randomizes board movement and attacks to act as AI. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -213,6 +225,11 @@ Here is the call graph for this function\+:
 
 Updates the player\+\_\+board\textquotesingle{}s and enemy\+\_\+board\textquotesingle{}s individual slot structs to reflect on attacks. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em atackee} & Board of who is atacked (player\+\_\+board/enemy\+\_\+board) \\
+\hline
+\end{DoxyParams}
 \Hypertarget{model_8h_a8fdbc6c7bfca3ef4a8800a3cdc19d932}\label{model_8h_a8fdbc6c7bfca3ef4a8800a3cdc19d932} 
 \index{model.h@{model.h}!destroy\_sprites@{destroy\_sprites}}
 \index{destroy\_sprites@{destroy\_sprites}!model.h@{model.h}}
@@ -223,8 +240,7 @@ Updates the player\+\_\+board\textquotesingle{}s and enemy\+\_\+board\textquotes
 
 Destroys all sprite objects to clear memory. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -307,8 +323,7 @@ Here is the call graph for this function\+:
 
 Draws the static sprites onto their necessary background buffers. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -325,8 +340,7 @@ Here is the call graph for this function\+:
 
 Loads all xpms onto their respective sprite objects. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -343,8 +357,7 @@ Here is the call graph for this function\+:
 
 Handles keyboard scancodes while on the Attack state. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -389,14 +402,23 @@ Here is the call graph for this function\+:
 
 Handles keyboard scancodes while on the Title state. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=320pt]{model_8h_a7a6cabbe5c5ae40beb464969dab1ebcc_cgraph}
 \end{center}
 \end{figure}
+\Hypertarget{model_8h_a38bc650ff492ad4171fe588540ca9d76}\label{model_8h_a38bc650ff492ad4171fe588540ca9d76} 
+\index{model.h@{model.h}!update\_keyboard\_actions\_victory@{update\_keyboard\_actions\_victory}}
+\index{update\_keyboard\_actions\_victory@{update\_keyboard\_actions\_victory}!model.h@{model.h}}
+\doxysubsubsection{\texorpdfstring{update\_keyboard\_actions\_victory()}{update\_keyboard\_actions\_victory()}}
+{\footnotesize\ttfamily void update\+\_\+keyboard\+\_\+actions\+\_\+victory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles keyboard scancodes while on the Victory state. 
+
 \Hypertarget{model_8h_aacf177f660c44528fc3926b3cd69fb88}\label{model_8h_aacf177f660c44528fc3926b3cd69fb88} 
 \index{model.h@{model.h}!update\_keyboard\_state@{update\_keyboard\_state}}
 \index{update\_keyboard\_state@{update\_keyboard\_state}!model.h@{model.h}}
@@ -415,11 +437,11 @@ Here is the call graph for this function\+:
 \includegraphics[width=350pt]{model_8h_aacf177f660c44528fc3926b3cd69fb88_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{model_8h_ad28345f7598f8bda8bf0746008769caa}\label{model_8h_ad28345f7598f8bda8bf0746008769caa} 
-\index{model.h@{model.h}!update\_mouse\_actions\_Attack@{update\_mouse\_actions\_Attack}}
-\index{update\_mouse\_actions\_Attack@{update\_mouse\_actions\_Attack}!model.h@{model.h}}
-\doxysubsubsection{\texorpdfstring{update\_mouse\_actions\_Attack()}{update\_mouse\_actions\_Attack()}}
-{\footnotesize\ttfamily void update\+\_\+mouse\+\_\+actions\+\_\+\+Attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\Hypertarget{model_8h_a201b73d57b1be03bd1bf4ffe68184eeb}\label{model_8h_a201b73d57b1be03bd1bf4ffe68184eeb} 
+\index{model.h@{model.h}!update\_mouse\_actions\_attack@{update\_mouse\_actions\_attack}}
+\index{update\_mouse\_actions\_attack@{update\_mouse\_actions\_attack}!model.h@{model.h}}
+\doxysubsubsection{\texorpdfstring{update\_mouse\_actions\_attack()}{update\_mouse\_actions\_attack()}}
+{\footnotesize\ttfamily void update\+\_\+mouse\+\_\+actions\+\_\+attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -430,7 +452,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=276pt]{model_8h_ad28345f7598f8bda8bf0746008769caa_cgraph}
+\includegraphics[width=276pt]{model_8h_a201b73d57b1be03bd1bf4ffe68184eeb_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{model_8h_ab211cbab5108281640c8e734e61f4bc1}\label{model_8h_ab211cbab5108281640c8e734e61f4bc1} 
@@ -471,14 +493,23 @@ Here is the call graph for this function\+:
 
 Handles mouse packets while on the Title state. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=309pt]{model_8h_a85ecf596862915a7ac3db4df57ab070b_cgraph}
 \end{center}
 \end{figure}
+\Hypertarget{model_8h_a084c80401d707a9eb7215d076a8f72f8}\label{model_8h_a084c80401d707a9eb7215d076a8f72f8} 
+\index{model.h@{model.h}!update\_mouse\_actions\_victory@{update\_mouse\_actions\_victory}}
+\index{update\_mouse\_actions\_victory@{update\_mouse\_actions\_victory}!model.h@{model.h}}
+\doxysubsubsection{\texorpdfstring{update\_mouse\_actions\_victory()}{update\_mouse\_actions\_victory()}}
+{\footnotesize\ttfamily void update\+\_\+mouse\+\_\+actions\+\_\+victory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles mouse scancodes while on the Victory state. 
+
 \Hypertarget{model_8h_aa577e78e2462033d486b5d8fa64c7bec}\label{model_8h_aa577e78e2462033d486b5d8fa64c7bec} 
 \index{model.h@{model.h}!update\_mouse\_state@{update\_mouse\_state}}
 \index{update\_mouse\_state@{update\_mouse\_state}!model.h@{model.h}}

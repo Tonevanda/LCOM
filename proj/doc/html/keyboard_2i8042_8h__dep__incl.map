@@ -1,21 +1,21 @@
-<map id="controller/keyboard/i8042.h" name="controller/keyboard/i8042.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="228,5,359,46"/>
-<area shape="rect" id="Node000002" href="$_k_b_c___keyboard_8c.html" title=" " alt="" coords="5,183,137,223"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,54,182,73,147,96,127,117,109,140,83,184,78,181,104,137,123,113,144,92,179,68,217,50"/>
-<area shape="rect" id="Node000003" href="$_k_b_c___keyboard_8h.html" title=" " alt="" coords="157,94,289,135"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="270,60,241,95,237,92,266,56"/>
-<area shape="rect" id="Node000004" href="$keyboard_8h.html" title=" " alt="" coords="291,183,422,223"/>
-<area shape="poly" id="edge11_Node000001_Node000004" title=" " alt="" coords="308,59,352,181,347,183,303,61"/>
-<area shape="rect" id="Node000005" href="$keyboard_8c.html" title=" " alt="" coords="388,271,519,312"/>
-<area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="331,54,386,109,413,144,436,182,451,228,456,270,451,271,446,230,431,184,409,147,382,112,327,58"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="178,144,107,185,104,180,175,140"/>
-<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="267,141,328,180,325,184,264,145"/>
-<area shape="rect" id="Node000007" href="$model_8h.html" title=" " alt="" coords="161,190,267,216"/>
-<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="222,150,218,190,212,190,217,149"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="391,231,433,269,430,273,387,235"/>
-<area shape="rect" id="Node000006" href="$main_8c.html" title=" " alt="" coords="300,279,360,305"/>
-<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="349,238,336,279,331,278,343,237"/>
-<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="243,223,315,276,312,280,240,227"/>
-<area shape="rect" id="Node000008" href="$model_8c.html" title=" " alt="" coords="161,279,267,305"/>
-<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="216,231,216,278,211,278,211,231"/>
+<map id="/Users/tonevanda/Downloads/MINIX&#45;LCOM/shared/proj/src/controller/keyboard/i8042.h" name="/Users/tonevanda/Downloads/MINIX&#45;LCOM/shared/proj/src/controller/keyboard/i8042.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="351,5,544,76"/>
+<area shape="rect" id="Node000002" href="$_k_b_c___keyboard_8c.html" title=" " alt="" coords="5,243,199,313"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="338,74,284,97,233,126,200,153,171,184,125,244,121,241,167,181,197,149,230,122,281,92,336,69"/>
+<area shape="rect" id="Node000003" href="$_k_b_c___keyboard_8h.html" title=" " alt="" coords="243,124,436,195"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="408,89,373,125,369,122,404,85"/>
+<area shape="rect" id="Node000004" href="$keyboard_8h.html" title=" " alt="" coords="440,243,633,313"/>
+<area shape="poly" id="edge11_Node000001_Node000004" title=" " alt="" coords="468,89,526,241,521,243,463,91"/>
+<area shape="rect" id="Node000005" href="$keyboard_8c.html" title=" " alt="" coords="575,361,768,432"/>
+<area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="509,83,545,114,583,152,619,195,648,241,660,272,668,303,674,360,669,361,663,304,655,273,644,244,615,198,579,155,541,118,505,87"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="257,204,174,245,172,240,255,199"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="411,200,479,240,477,244,409,205"/>
+<area shape="rect" id="Node000007" href="$model_8h.html" title=" " alt="" coords="223,250,416,306"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="334,209,327,250,321,249,328,208"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="589,321,633,359,629,363,586,325"/>
+<area shape="rect" id="Node000006" href="$main_8c.html" title=" " alt="" coords="357,369,551,425"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="506,327,475,370,471,367,502,324"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="363,313,424,366,421,370,359,317"/>
+<area shape="rect" id="Node000008" href="$model_8c.html" title=" " alt="" coords="140,369,333,425"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="294,319,258,370,254,367,290,316"/>
 </map>
