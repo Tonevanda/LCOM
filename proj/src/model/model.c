@@ -21,12 +21,8 @@ extern bool vert;
 extern bool isKeyboard;
 extern bool victory;
 extern bool playerBoardVisible;
-Sprite *plus;
 Sprite *mouse;
 Sprite *XIco;
-Sprite *t;
-Sprite *player1;
-Sprite *player2;
 Sprite *board;
 Sprite *frame;
 Sprite *boat_down;
@@ -61,7 +57,7 @@ Sprite *start;
 Sprite *selected_idk;
 Sprite *exit_idk;
 Sprite *exit_selected;
-
+Sprite* sprites[40];
 
 int x=0;
 int y=0;
@@ -72,11 +68,7 @@ int aiAttackTries=0;
 int aiCounter=0;
 void setup_sprites() {
     mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
-    plus = create_sprite_xpm((xpm_map_t) plus_xpm);
     XIco = create_sprite_xpm((xpm_map_t) X);
-    t = create_sprite_xpm((xpm_map_t) title);
-    player1 = create_sprite_xpm((xpm_map_t) play1);
-    player2 = create_sprite_xpm((xpm_map_t) play2);
     board = create_sprite_xpm((xpm_map_t) bo);
     frame = create_sprite_xpm((xpm_map_t) fra);
     boat_down = create_sprite_xpm((xpm_map_t) down);
@@ -115,11 +107,7 @@ void setup_sprites() {
 
 void destroy_sprites() {
     destroy_sprite(mouse);
-    destroy_sprite(plus);
     destroy_sprite(XIco);
-    destroy_sprite(t);
-    destroy_sprite(player1);
-    destroy_sprite(player2);
     destroy_sprite(board);
     destroy_sprite(frame);
     destroy_sprite(boat_down);
@@ -338,7 +326,7 @@ void update_mouse_actions_defend(){
         if(mouse_info.x<45 && mouse_info.y<45){
             state=Title;
         }
-        else if(mouse_info.x>mode_info.XResolution-48 && mouse_info.y>mode_info.YResolution-40){
+        else if(aiAttackTries==-1 && mouse_info.x>mode_info.XResolution-48 && mouse_info.y>mode_info.YResolution-40){
             state=Attack;
         }
         //printf(" board_index: %d | x: %d | y: %d ",board_index,(board_index-1)%8,(board_index-1)/8);
@@ -628,7 +616,7 @@ void attack(struct slot atackee[66]){
                             printf("      AI QUAD SANK, %d LEFT   ",game.quadsAiBoatsLeft);
                             break;
                         }
-                    if(!game.quadsAiBoatsLeft && !game.triplesAiBoatsLeft && !game.quadsAiBoatsLeft){
+                    if(!game.doublesAiBoatsLeft && !game.triplesAiBoatsLeft && !game.quadsAiBoatsLeft){
                         state = Victory;
                         victory=true;
                     }
@@ -920,7 +908,9 @@ void update_keyboard_actions_defend(){
         state=Title;
         break;
     case E_KEY:
-        state=Attack;
+        if(aiAttackTries==-1){
+            state=Attack;
+        }
         break;
     default:
         break;

@@ -1,9 +1,6 @@
 #include "draw.h"
 
 uint8_t *main_frame_buffer;
-uint8_t *secondary_frame_buffer;
-uint8_t *test_frame_buffer;
-uint8_t *main_switch_frame_buffer;
 uint8_t *drawing_frame_buffer;
 uint8_t *title_screen_backround_buffer;
 uint8_t *game_board_backround_buffer;
@@ -14,11 +11,7 @@ extern int timer_interrupts;
 extern vbe_mode_info_t mode_info;
 extern MouseInfo mouse_info;
 extern Sprite *mouse;
-extern Sprite *plus;
 extern Sprite *XIco;
-extern Sprite *t;
-extern Sprite *player1;
-extern Sprite *player2;
 extern Sprite *frame;
 extern Sprite *boat_down;
 extern Sprite *boat_up;
@@ -68,11 +61,6 @@ int set_frame_buffers(uint16_t mode) {
     modes=mode;
     if (set_frame_buffer(mode, &main_frame_buffer)) return 1;
     frame_buffer_size = mode_info.XResolution * mode_info.YResolution * ((mode_info.BitsPerPixel + 7) / 8);
-
-    secondary_frame_buffer= (uint8_t *) malloc(frame_buffer_size);
-    //test_frame_buffer =(uint8_t *) malloc(frame_buffer_size);
-    //main_frame_buffer=(uint8_t *) malloc(frame_buffer_size);
-    //main_frame_buffer=main_switch_frame_buffer;
     drawing_frame_buffer =(uint8_t *) malloc(frame_buffer_size);
     title_screen_backround_buffer=(uint8_t *) malloc(frame_buffer_size);
     game_board_backround_buffer=(uint8_t *) malloc(frame_buffer_size);
@@ -80,31 +68,6 @@ int set_frame_buffers(uint16_t mode) {
 }
 
 void swap_buffers() {
-    /*
-    main_frame_buffer = *drawing_frame_buffer;
-    if(drawing_frame_buffer == test_frame_buffer){
-        printf ("   1  ");
-        drawing_frame_buffer=secondary_frame_buffer;
-        //uint8_t* temp= main_frame_buffer;
-        //main_frame_buffer=*secondary_frame_buffer;
-        //secondary_frame_buffer=temp;
-        //drawing_frame_buffer=main_frame_buffer;
-        //drawing_frame_buffer=main_frame_buffer;
-        //set_frame_buffer(modes,&secondary_frame_buffer);
-        
-    }
-    else{
-        drawing_frame_buffer=test_frame_buffer;
-        printf ("   2  ");
-        //uint8_t *temp= secondary_frame_buffer;
-        //secondary_frame_buffer=*main_frame_buffer;
-        //main_frame_buffer=temp;
-        //drawing_frame_buffer=secondary_frame_buffer;
-        //drawing_frame_buffer=secondary_frame_buffer;
-        //set_frame_buffer(modes,&main_frame_buffer);
-        
-    }
-    */
     memcpy(main_frame_buffer, drawing_frame_buffer, frame_buffer_size);
 }
 
@@ -118,10 +81,7 @@ int draw_sprite_xpm(Sprite *sprite, int x, int y) {
     for (int h = 0 ; h < height ; h++) {
       for (int w = 0 ; w < width ; w++) {
         current_color = sprite->colors[w + h*width];
-        //printf(" %d ",current_color);
         if (current_color == 0xFFFFFE) {
-            //printf("x: %d ,y: %d ",x+w,y+w);
-            //draw_pixel(x + w, y + h, 0xFF0000, drawing_frame_buffer);
             continue;
             }
         else if (draw_pixel(x + w, y + h, current_color, drawing_frame_buffer) != 0) return 1;
@@ -174,10 +134,7 @@ int prepare_backround(Sprite *sprite, int x, int y,uint8_t* buffer) {
     for (int h = 0 ; h < height ; h++) {
       for (int w = 0 ; w < width ; w++) {
         current_color = sprite->colors[w + h*width];
-        //printf(" %d ",current_color);
         if (current_color == 0xFFFFFE) {
-            //printf("x: %d ,y: %d ",x+w,y+w);
-            //draw_pixel(x + w, y + h, 0xFF0000, drawing_frame_buffer);
             continue;
             }
         else if (draw_pixel(x + w, y + h, current_color, buffer) != 0) return 1;

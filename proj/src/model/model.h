@@ -7,33 +7,37 @@
 #include "controller/mouse/mouse.h"
 #include "controller/graphic/graphic.h"
 #include "controller/rtc/rtc.h"
-
 #include "draw/draw.h"
 #include "model/sprite.h"
 #include "config.h"
 
-#include "xpms/plus.xpm"
+
+
+//boats
+#include "xpms/boat_down_vertical.xpm"
+#include "xpms/boat_left_horizontal.xpm"
+#include "xpms/boat_middle_horizontal.xpm"
+#include "xpms/boat_middle_vertical.xpm"
+#include "xpms/boat_right_horizontal.xpm"
+#include "xpms/boat_up_vertical.xpm"
+
+//backrounds/complex xpms
+#include "xpms/board.xpm"
+#include "xpms/backround.xpm"
+#include "xpms/win.xpm"
+#include "xpms/auga.xpm"
+
+//icons
 #include "xpms/mouse.xpm"
 #include "xpms/x.xpm"
-#include "xpms/title.xpm"
-#include "xpms/player1.xpm"
-#include "xpms/player2.xpm"
-#include "xpms/board.xpm"
-#include "xpms/frame.xpm"
-#include "xpms/down_vertical_boat.xpm"
-#include "xpms/left_horizontal_boat.xpm"
-#include "xpms/middle_horizontal_boat.xpm"
-#include "xpms/middle_vertical_boat.xpm"
-#include "xpms/right_horizontal_boat.xpm"
-#include "xpms/up_vertical_boat.xpm"
 #include "xpms/arrow.xpm"
-#include "xpms/backround.xpm"
-#include "xpms/titlecard.xpm"
 #include "xpms/probed.xpm"
 #include "xpms/white-x.xpm"
 #include "xpms/red-x.xpm"
-#include "xpms/win.xpm"
-//FALTA ADICIONAR XPMS DOS NUMEROS PARA RTC
+#include "xpms/colon.xpm"
+#include "xpms/frame.xpm"
+
+//numbers
 #include "xpms/n0.xpm"
 #include "xpms/n1.xpm"
 #include "xpms/n2.xpm"
@@ -44,15 +48,16 @@
 #include "xpms/n7.xpm"
 #include "xpms/n8.xpm"
 #include "xpms/n9.xpm"
-#include "xpms/colon.xpm"
-#include "xpms/auga.xpm"
-#include "xpms/opp.xpm"
-#include "xpms/your.xpm"
-#include "xpms/boardn.xpm"
-#include "xpms/start.xpm"
-#include "xpms/select.xpm"
-#include "xpms/exit.xpm"
-#include "xpms/exit_selected.xpm"
+
+//words
+#include "xpms/word-Title.xpm"
+#include "xpms/word-opp.xpm"
+#include "xpms/word-your.xpm"
+#include "xpms/word-board.xpm"
+#include "xpms/word-start.xpm"
+#include "xpms/word-start_selected.xpm"
+#include "xpms/word-exit.xpm"
+#include "xpms/word-exit_selected.xpm"
 
 typedef enum {
   RUNNING,
