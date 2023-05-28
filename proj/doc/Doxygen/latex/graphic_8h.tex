@@ -1,0 +1,221 @@
+\doxysection{/\+Users/tonevanda/\+Downloads/\+MINIX-\/\+LCOM/shared/proj/src/controller/graphic/graphic.h File Reference}
+\hypertarget{graphic_8h}{}\label{graphic_8h}\index{/Users/tonevanda/Downloads/MINIX-\/LCOM/shared/proj/src/controller/graphic/graphic.h@{/Users/tonevanda/Downloads/MINIX-\/LCOM/shared/proj/src/controller/graphic/graphic.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \"{}VBE.\+h\"{}}\newline
+Include dependency graph for graphic.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{graphic_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{graphic_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{graphic_8h_a967432a6c8128a907b937b0f3f4b4472}{set\+\_\+graphic\+\_\+mode}} (uint16\+\_\+t submode)
+\begin{DoxyCompactList}\small\item\em Sets graphic mode. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{graphic_8h_ac50005645b76a08eff8126607633420f}{set\+\_\+frame\+\_\+buffer}} (uint16\+\_\+t mode, uint8\+\_\+t \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}frame\+\_\+buffer)
+\begin{DoxyCompactList}\small\item\em Creates the main frame buffer and allocates VRAM to it. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{graphic_8h_a950e17209d152e8a40ec064a0b201b25}{draw\+\_\+pixel}} (uint16\+\_\+t \mbox{\hyperlink{model_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint16\+\_\+t \mbox{\hyperlink{model_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, uint32\+\_\+t color, uint8\+\_\+t \texorpdfstring{$\ast$}{*}frame\+\_\+buffer)
+\begin{DoxyCompactList}\small\item\em Draws a pixel of a certain color onto a frame buffer. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{graphic_8h_a499a8230e82b3eece0d87e83daa4a419}{draw\+\_\+hline}} (uint16\+\_\+t \mbox{\hyperlink{model_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint16\+\_\+t \mbox{\hyperlink{model_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, uint16\+\_\+t len, uint32\+\_\+t color, uint8\+\_\+t \texorpdfstring{$\ast$}{*}frame\+\_\+buffer)
+\begin{DoxyCompactList}\small\item\em Draws a horizontal line of a certain color onto a frame buffer. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{graphic_8h_a985c2ca86c8f87d6dbc5956e34f45faa}{draw\+\_\+rectangle}} (uint16\+\_\+t \mbox{\hyperlink{model_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint16\+\_\+t \mbox{\hyperlink{model_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, uint16\+\_\+t width, uint16\+\_\+t height, uint32\+\_\+t color, uint8\+\_\+t \texorpdfstring{$\ast$}{*}frame\+\_\+buffer)
+\begin{DoxyCompactList}\small\item\em Draws a rectangle of a certain color onto a frame buffer. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{graphic_8h_a93e621ce4c7944f2d0b68ffde5fd913f}{print\+\_\+xpm}} (xpm\+\_\+map\+\_\+t xpm, uint16\+\_\+t \mbox{\hyperlink{model_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}}, uint16\+\_\+t \mbox{\hyperlink{model_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}}, uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer)
+\begin{DoxyCompactList}\small\item\em Draws a xpm onto a frame buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+vbe\+\_\+mode\+\_\+info\+\_\+t \mbox{\hyperlink{graphic_8h_a9fcc2243068f8e628648febc0909c509}{mode\+\_\+info}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{graphic_8h_a499a8230e82b3eece0d87e83daa4a419}\label{graphic_8h_a499a8230e82b3eece0d87e83daa4a419} 
+\index{graphic.h@{graphic.h}!draw\_hline@{draw\_hline}}
+\index{draw\_hline@{draw\_hline}!graphic.h@{graphic.h}}
+\doxysubsubsection{\texorpdfstring{draw\_hline()}{draw\_hline()}}
+{\footnotesize\ttfamily int() draw\+\_\+hline (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{len,  }\item[{uint32\+\_\+t}]{color,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{frame\+\_\+buffer }\end{DoxyParamCaption})}
+
+
+
+Draws a horizontal line of a certain color onto a frame buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Leftmost pixel X coordinate \\
+\hline
+{\em y} & Line Y coordinate \\
+\hline
+{\em color} & Color hex value. Will be interpreted differently depending on the color encoding \\
+\hline
+{\em frame\+\_\+buffer} & The frame buffer that will be drawn onto \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{graphic_8h_a499a8230e82b3eece0d87e83daa4a419_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{graphic_8h_a950e17209d152e8a40ec064a0b201b25}\label{graphic_8h_a950e17209d152e8a40ec064a0b201b25} 
+\index{graphic.h@{graphic.h}!draw\_pixel@{draw\_pixel}}
+\index{draw\_pixel@{draw\_pixel}!graphic.h@{graphic.h}}
+\doxysubsubsection{\texorpdfstring{draw\_pixel()}{draw\_pixel()}}
+{\footnotesize\ttfamily int() draw\+\_\+pixel (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint32\+\_\+t}]{color,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{frame\+\_\+buffer }\end{DoxyParamCaption})}
+
+
+
+Draws a pixel of a certain color onto a frame buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Pixel X coordinate \\
+\hline
+{\em y} & Pixel Y coordinate \\
+\hline
+{\em color} & Color hex value. Will be interpreted differently depending on the color encoding \\
+\hline
+{\em frame\+\_\+buffer} & The frame buffer that will be drawn onto \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{graphic_8h_a950e17209d152e8a40ec064a0b201b25_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{graphic_8h_a985c2ca86c8f87d6dbc5956e34f45faa}\label{graphic_8h_a985c2ca86c8f87d6dbc5956e34f45faa} 
+\index{graphic.h@{graphic.h}!draw\_rectangle@{draw\_rectangle}}
+\index{draw\_rectangle@{draw\_rectangle}!graphic.h@{graphic.h}}
+\doxysubsubsection{\texorpdfstring{draw\_rectangle()}{draw\_rectangle()}}
+{\footnotesize\ttfamily int() draw\+\_\+rectangle (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height,  }\item[{uint32\+\_\+t}]{color,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{frame\+\_\+buffer }\end{DoxyParamCaption})}
+
+
+
+Draws a rectangle of a certain color onto a frame buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Leftmost X pixel \\
+\hline
+{\em y} & Top Y pixel \\
+\hline
+{\em color} & Color hex value. Will be interpreted differently depending on the color encoding \\
+\hline
+{\em frame\+\_\+buffer} & The frame buffer that will be drawn onto \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{graphic_8h_a985c2ca86c8f87d6dbc5956e34f45faa_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{graphic_8h_a93e621ce4c7944f2d0b68ffde5fd913f}\label{graphic_8h_a93e621ce4c7944f2d0b68ffde5fd913f} 
+\index{graphic.h@{graphic.h}!print\_xpm@{print\_xpm}}
+\index{print\_xpm@{print\_xpm}!graphic.h@{graphic.h}}
+\doxysubsubsection{\texorpdfstring{print\_xpm()}{print\_xpm()}}
+{\footnotesize\ttfamily int() print\+\_\+xpm (\begin{DoxyParamCaption}\item[{xpm\+\_\+map\+\_\+t}]{xpm,  }\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Draws a xpm onto a frame buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xpm} & The xpm to draw \\
+\hline
+{\em x} & Leftmost X pixel \\
+\hline
+{\em y} & Top Y pixel \\
+\hline
+{\em frame\+\_\+buffer} & The frame buffer that will be drawn onto \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{graphic_8h_a93e621ce4c7944f2d0b68ffde5fd913f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{graphic_8h_ac50005645b76a08eff8126607633420f}\label{graphic_8h_ac50005645b76a08eff8126607633420f} 
+\index{graphic.h@{graphic.h}!set\_frame\_buffer@{set\_frame\_buffer}}
+\index{set\_frame\_buffer@{set\_frame\_buffer}!graphic.h@{graphic.h}}
+\doxysubsubsection{\texorpdfstring{set\_frame\_buffer()}{set\_frame\_buffer()}}
+{\footnotesize\ttfamily int() set\+\_\+frame\+\_\+buffer (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mode,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{frame\+\_\+buffer }\end{DoxyParamCaption})}
+
+
+
+Creates the main frame buffer and allocates VRAM to it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & hex value of the graphic mode \\
+\hline
+{\em frame\+\_\+buffer} & This buffer will be assigned to physical memory in this method. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{graphic_8h_ac50005645b76a08eff8126607633420f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{graphic_8h_a967432a6c8128a907b937b0f3f4b4472}\label{graphic_8h_a967432a6c8128a907b937b0f3f4b4472} 
+\index{graphic.h@{graphic.h}!set\_graphic\_mode@{set\_graphic\_mode}}
+\index{set\_graphic\_mode@{set\_graphic\_mode}!graphic.h@{graphic.h}}
+\doxysubsubsection{\texorpdfstring{set\_graphic\_mode()}{set\_graphic\_mode()}}
+{\footnotesize\ttfamily int() set\+\_\+graphic\+\_\+mode (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{submode }\end{DoxyParamCaption})}
+
+
+
+Sets graphic mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em submode} & hex value of the graphic mode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{graphic_8h_a9fcc2243068f8e628648febc0909c509}\label{graphic_8h_a9fcc2243068f8e628648febc0909c509} 
+\index{graphic.h@{graphic.h}!mode\_info@{mode\_info}}
+\index{mode\_info@{mode\_info}!graphic.h@{graphic.h}}
+\doxysubsubsection{\texorpdfstring{mode\_info}{mode\_info}}
+{\footnotesize\ttfamily vbe\+\_\+mode\+\_\+info\+\_\+t mode\+\_\+info}
+

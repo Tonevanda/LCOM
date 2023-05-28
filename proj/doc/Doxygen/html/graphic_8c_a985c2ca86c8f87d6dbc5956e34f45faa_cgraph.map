@@ -1,0 +1,9 @@
+<map id="draw_rectangle" name="draw_rectangle">
+<area shape="rect" id="Node000001" title="Draws a rectangle of a certain color onto a frame buffer." alt="" coords="5,5,115,31"/>
+<area shape="rect" id="Node000002" href="$graphic_8c.html#a499a8230e82b3eece0d87e83daa4a419" title="Draws a horizontal line of a certain color onto a frame buffer." alt="" coords="163,5,246,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,16,148,16,148,21,115,21"/>
+<area shape="rect" id="Node000003" href="$graphic_8c.html#a950e17209d152e8a40ec064a0b201b25" title="Draws a pixel of a certain color onto a frame buffer." alt="" coords="294,5,377,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="246,16,279,16,279,21,246,21"/>
+<area shape="rect" id="Node000004" href="$graphic_8c.html#a74940314543182800b2ec867fc0116f2" title=" " alt="" coords="425,5,563,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="378,16,411,16,411,21,378,21"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="ai_actions" name="ai_actions">
+<area shape="rect" id="Node000001" title="Randomizes board movement and attacks to act as AI." alt="" coords="5,5,86,31"/>
+<area shape="rect" id="Node000002" href="$model_8c.html#a22b7380d6f047abaa450a0151dbcb726" title="Updates the player_board&#39;s and enemy_board&#39;s individual slot structs to reflect on attacks." alt="" coords="134,5,191,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,16,119,16,119,21,86,21"/>
+</map>

@@ -1,9 +1,0 @@
-<map id="draw_selected" name="draw_selected">
-<area shape="rect" id="Node000001" title="Draws the current_boat that follows the mouse position or the selected reticle icon in the case of ke..." alt="" coords="5,5,111,31"/>
-<area shape="rect" id="Node000002" href="$draw_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Given a sprite object, draws its contents onto the drawing_frame_buffer." alt="" coords="159,5,279,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,16,144,16,144,21,111,21"/>
-<area shape="rect" id="Node000003" href="$graphic_8c.html#a950e17209d152e8a40ec064a0b201b25" title="Draws a pixel of a certain color onto a frame buffer." alt="" coords="327,5,410,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="280,16,312,16,312,21,280,21"/>
-<area shape="rect" id="Node000004" href="$graphic_8c.html#a74940314543182800b2ec867fc0116f2" title=" " alt="" coords="458,5,596,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="411,16,444,16,444,21,411,21"/>
-</map>

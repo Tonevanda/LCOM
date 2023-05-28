@@ -1,0 +1,86 @@
+\doxysection{draw.\+h}
+\hypertarget{draw_8h_source}{}\label{draw_8h_source}\index{/Users/tonevanda/Downloads/MINIX-\/LCOM/shared/proj/src/draw/draw.h@{/Users/tonevanda/Downloads/MINIX-\/LCOM/shared/proj/src/draw/draw.h}}
+\mbox{\hyperlink{draw_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_DRAW\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_DRAW\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <minix/sysutil.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{config_8h}{config.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{graphic_8h}{controller/graphic/graphic.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mouse_8h}{controller/mouse/mouse.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sprite_8h}{model/sprite.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293}{part}}\{}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293afc021bb9bb99d928e81ed9595d530411}{left\_p}},}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293a1508e3dc87714cf6d24e410f3fa38c79}{middle\_horizontal\_p}},}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293a3ec80b90e99faa64c3186edec4b91202}{right\_p}},}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293af511a8d31b119764400bfd8f24b24e65}{up\_p}},}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293a171662ebb4ec6ada527e319cd8b51116}{middle\_vertical\_p}},}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293abddeec68ef82a2cc5627e60dc27e1296}{down\_p}}}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structslot}{slot}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structslot_ab622ad3a4bf2caeccdcce99186630898}{hasBoat}};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structslot_a42d6313df3cedea5ad8342953ebf60bd}{probed}};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structslot_a2beae21693bfd56e2144e4645a6306b9}{sinked}};}
+\DoxyCodeLine{00027\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structslot_a358a63b00cd8d83d3437ec24f7f80274}{len}};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293}{part}}\ \mbox{\hyperlink{structslot_a98cce3301961a40fc9cf70aea389e6e4}{pos}};}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structgame_info}{gameInfo}}\{}
+\DoxyCodeLine{00032\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structgame_info_af9bd7b0b54f954476bea2f79d694902f}{doublesBoatsLeft}};}
+\DoxyCodeLine{00033\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structgame_info_a5a60826a896365085bf788da473a8b5c}{triplesBoatsLeft}};}
+\DoxyCodeLine{00034\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structgame_info_a2783967987e9136cfea64172cc4e4daa}{quadsBoatsLeft}};}
+\DoxyCodeLine{00035\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structgame_info_a010f5686d428a58b56d2bd66bd97cef5}{doublesAiBoatsLeft}};}
+\DoxyCodeLine{00036\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structgame_info_a9a4e821450d3012aedcbdeeb62ab2ae0}{triplesAiBoatsLeft}};}
+\DoxyCodeLine{00037\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structgame_info_a0d919038b3b918ad8ceb6da35a9a1310}{quadsAiBoatsLeft}};}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{draw_8h_a3ad9f04212e7602618a0dd7ad4afbd4e}{set\_frame\_buffers}}(uint16\_t\ mode);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw_8h_a0d157d997329169f936545f9985e334b}{swap\_buffers}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{draw_8h_a6db4230a0003a09515d78b790d8ec52d}{draw\_sprite\_xpm}}(\mbox{\hyperlink{struct_sprite}{Sprite}}\ *sprite,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{model_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{model_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}});}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{draw_8h_a35c124c4a26fe73a2aee1de1ec1696fd}{prepare\_backround}}(\mbox{\hyperlink{struct_sprite}{Sprite}}\ *sprite,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{model_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{model_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}},uint8\_t*\ buffer);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{draw_8h_a63a9d7ba55d16da86edd1226876619bd}{draw\_number\_xpm}}(\textcolor{keywordtype}{int}\ number,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{model_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{model_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}});}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw_8h_a6b57bfa4c560c707cce131388467a095}{draw\_title\_screen}}();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw_8h_a6900cd99d092fbc46ca20a03b8af972f}{draw\_placement}}();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00093\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw_8h_ab10abe02ad8d53b900bfe74fece9a02d}{draw\_attack}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00098\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw_8h_a09468f68b47c4d3348c9380a40819f59}{draw\_defend}}();}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw_8h_a9496e4380bbed6f786f33fa7edfeb0cf}{draw\_victory}}();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw_8h_a8f93d09f2a59b8a6d236974d7426f5ed}{draw\_title\_selection}}();}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00113\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw_8h_a951fe8504ee3ff80dd18aff5b83aea2b}{draw\_reticle}}();}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00118\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw_8h_aa34db13623534c37e72c5dfc263b2964}{draw\_selected}}();}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00123\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw_8h_a42f4903ab89aff9e3ee0206c52cf710a}{draw\_mouse}}();}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00128\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw_8h_a0944e45dab2b95345c29e01b548eb1ab}{draw\_rtc}}();}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00133\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw_8h_ab6d3efc0c2ecaf7a9be52b5635cbf0ae}{draw\_round\_time}}();}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00138\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw_8h_aab4c51b87b5edd290e54c82f7d174af4}{draw\_end\_time}}();}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00143\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw_8h_a60fec87dff640c2928684dc0b8b5da1d}{draw\_player\_board\_icons}}();}
+\DoxyCodeLine{00147\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw_8h_a8d3c99662ef69827cd0475179f399da4}{draw\_AI\_board\_icons}}();}
+\DoxyCodeLine{00154\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw_8h_acd3c448323a6fa8c250915eb0cf8eb3b}{pos\_switch}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{model_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{model_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}},\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{draw_8h_ac30cc3ceb47f9c2a6217e6b731d27293}{part}}\ pos);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00162\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{draw_8h_a78c8e4ac1be02eefdeaee6891ecf5de3}{draw\_on\_board}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{model_8c_a0f561e77fa0f040b637f4e04f6cd8078}{x}},\textcolor{keywordtype}{int}\ \mbox{\hyperlink{model_8c_a17f97f62d93bc8cfb4a2b5d273a2aa72}{y}},\mbox{\hyperlink{struct_sprite}{Sprite}}\ *sprite);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

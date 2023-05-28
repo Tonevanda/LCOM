@@ -1,0 +1,16 @@
+<map id="/Users/tonevanda/Downloads/MINIX&#45;LCOM/shared/proj/src/controller/timer/timer.c" name="/Users/tonevanda/Downloads/MINIX&#45;LCOM/shared/proj/src/controller/timer/timer.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,199,61"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="62,256,140,282"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,63,70,85,61,110,57,146,63,182,75,215,88,242,83,245,70,217,58,183,52,146,55,108,66,83,79,60"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="70,109,134,135"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,61,105,94,99,94,99,61"/>
+<area shape="rect" id="Node000004" href="$timer_8h.html" title=" " alt="" coords="159,109,219,135"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="131,59,168,96,164,100,127,63"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="174,137,150,157,128,184,115,213,107,242,102,241,110,211,124,181,146,154,170,133"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="175,256,280,282"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="197,134,217,182,228,241,222,242,211,183,192,136"/>
+<area shape="rect" id="Node000006" href="$i8254_8h.html" title=" " alt="" coords="138,183,202,208"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="188,136,179,169,174,167,183,134"/>
+<area shape="poly" id="edge8_Node000006_Node000002" title=" " alt="" coords="160,210,124,247,121,244,157,207"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="182,207,211,243,207,246,177,210"/>
+</map>

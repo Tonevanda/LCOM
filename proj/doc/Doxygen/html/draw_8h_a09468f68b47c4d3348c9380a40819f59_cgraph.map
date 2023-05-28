@@ -1,0 +1,35 @@
+<map id="draw_defend" name="draw_defend">
+<area shape="rect" id="Node000001" title="Copies the game_board_background_buffer onto the drawing_frame_buffer and draws other sprites necessa..." alt="" coords="5,208,101,234"/>
+<area shape="rect" id="Node000002" href="$draw_8c.html#a42f4903ab89aff9e3ee0206c52cf710a" title="Draws the mouse sprite on its current position." alt="" coords="551,31,647,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,205,148,168,252,128,359,95,536,53,538,58,361,100,254,133,150,173,78,210"/>
+<area shape="rect" id="Node000003" href="$draw_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Given a sprite object, draws its contents onto the drawing_frame_buffer." alt="" coords="702,208,822,234"/>
+<area shape="poly" id="edge21_Node000001_Node000003" title=" " alt="" coords="62,206,96,164,120,141,147,121,202,91,250,68,294,52,337,41,428,28,544,16,601,4,626,4,655,16,678,33,697,54,727,102,747,152,758,193,753,194,742,153,722,105,693,57,674,37,652,21,625,10,602,9,545,21,429,33,338,46,296,57,252,73,204,95,150,126,124,145,100,168,66,209"/>
+<area shape="rect" id="Node000006" href="$draw_8c.html#a60fec87dff640c2928684dc0b8b5da1d" title="Draws the sprites that need to be visible when the player board is visible." alt="" coords="149,183,317,209"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="101,212,133,207,134,212,101,217"/>
+<area shape="rect" id="Node000010" href="$draw_8c.html#a951fe8504ee3ff80dd18aff5b83aea2b" title="Draws a reticle onto the selected board slot." alt="" coords="385,386,476,411"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="65,233,99,276,123,300,150,320,205,347,264,367,321,381,371,389,370,395,320,386,262,372,203,352,147,325,119,304,95,280,61,236"/>
+<area shape="rect" id="Node000011" href="$draw_8c.html#ab6d3efc0c2ecaf7a9be52b5635cbf0ae" title="Draws the elapsed time since the start of the round in the bottom of the screen." alt="" coords="173,234,293,259"/>
+<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="101,225,159,233,158,239,101,230"/>
+<area shape="rect" id="Node000012" href="$draw_8c.html#a0944e45dab2b95345c29e01b548eb1ab" title="Draws the current time in the bottom left corner." alt="" coords="197,284,269,310"/>
+<area shape="poly" id="edge18_Node000001_Node000012" title=" " alt="" coords="77,232,150,269,184,281,182,286,148,274,75,237"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="629,55,655,74,684,103,710,136,748,193,744,196,705,139,680,107,652,78,626,59"/>
+<area shape="rect" id="Node000004" href="$graphic_8c.html#a950e17209d152e8a40ec064a0b201b25" title="Draws a pixel of a certain color onto a frame buffer." alt="" coords="870,208,953,234"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="823,218,855,218,855,224,823,224"/>
+<area shape="rect" id="Node000005" href="$graphic_8c.html#a74940314543182800b2ec867fc0116f2" title=" " alt="" coords="1001,208,1139,234"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="954,218,987,218,987,224,954,224"/>
+<area shape="poly" id="edge10_Node000006_Node000003" title=" " alt="" coords="249,180,298,146,330,130,364,117,416,109,468,109,521,116,571,129,661,164,728,198,725,203,659,169,569,134,519,122,468,114,416,114,366,122,332,134,301,151,252,184"/>
+<area shape="rect" id="Node000007" href="$draw_8c.html#a63a9d7ba55d16da86edd1226876619bd" title="Given user input will draw a number sprite onto the drawing_frame_buffer." alt="" coords="365,284,496,310"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="288,207,318,219,364,245,404,273,401,277,362,250,316,223,286,212"/>
+<area shape="rect" id="Node000008" href="$draw_8c.html#a78c8e4ac1be02eefdeaee6891ecf5de3" title="Draws on a board slot (determined by the input x and y coordinates) the inputted Sprite...." alt="" coords="544,183,654,209"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="318,193,529,193,529,198,318,198"/>
+<area shape="rect" id="Node000009" href="$draw_8c.html#acd3c448323a6fa8c250915eb0cf8eb3b" title="Decides which boat sprite to draw depending on the current slot pos enum." alt="" coords="387,132,474,158"/>
+<area shape="poly" id="edge11_Node000006_Node000009" title=" " alt="" coords="285,180,372,157,373,162,287,185"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="497,289,572,279,653,262,720,238,722,243,654,268,573,285,497,295"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="655,202,687,207,686,212,654,207"/>
+<area shape="poly" id="edge12_Node000009_Node000008" title=" " alt="" coords="475,156,541,176,539,181,474,161"/>
+<area shape="poly" id="edge14_Node000010_Node000003" title=" " alt="" coords="477,399,517,399,562,394,609,383,652,364,684,339,711,307,747,246,751,249,715,311,688,343,655,369,611,388,563,399,517,404,477,404"/>
+<area shape="poly" id="edge17_Node000011_Node000003" title=" " alt="" coords="293,241,687,222,687,227,294,246"/>
+<area shape="poly" id="edge16_Node000011_Node000007" title=" " alt="" coords="287,257,364,277,363,283,285,262"/>
+<area shape="poly" id="edge20_Node000012_Node000003" title=" " alt="" coords="269,303,365,320,448,327,512,327,576,315,653,288,695,266,732,241,735,245,698,270,655,293,577,320,513,332,447,332,365,325,268,308"/>
+<area shape="poly" id="edge19_Node000012_Node000007" title=" " alt="" coords="269,294,350,294,350,300,269,300"/>
+</map>

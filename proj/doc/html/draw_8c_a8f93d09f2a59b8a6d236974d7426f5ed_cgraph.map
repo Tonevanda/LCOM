@@ -1,9 +1,0 @@
-<map id="draw_title_selection" name="draw_title_selection">
-<area shape="rect" id="Node000001" title="Draws onto the drawing_frame_buffer the highlighted portions of the title screen." alt="" coords="5,5,142,31"/>
-<area shape="rect" id="Node000002" href="$draw_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Given a sprite object, draws its contents onto the drawing_frame_buffer." alt="" coords="190,5,310,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,16,175,16,175,21,142,21"/>
-<area shape="rect" id="Node000003" href="$graphic_8c.html#a950e17209d152e8a40ec064a0b201b25" title="Draws a pixel of a certain color onto a frame buffer." alt="" coords="358,5,441,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="311,16,343,16,343,21,311,21"/>
-<area shape="rect" id="Node000004" href="$graphic_8c.html#a74940314543182800b2ec867fc0116f2" title=" " alt="" coords="489,5,627,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="442,16,475,16,475,21,442,21"/>
-</map>

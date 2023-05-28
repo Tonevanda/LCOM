@@ -1,0 +1,9 @@
+<map id="rtc_ih" name="rtc_ih">
+<area shape="rect" id="Node000001" title="RTC interrupt handler. Reads every field of the RTC." alt="" coords="5,31,59,56"/>
+<area shape="rect" id="Node000002" href="$rtc_8c.html#a697f49cff7a35feddc8f1647f50c7aa0" title="Reads the values in the RTC and updated the rtc_data array with said values." alt="" coords="107,31,175,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,41,92,41,92,46,59,46"/>
+<area shape="rect" id="Node000003" href="$rtc_8c.html#a6c983a8570a08157595eb84bef4e8d6d" title="Converts BCD to decimal." alt="" coords="223,5,293,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="175,34,208,26,209,31,176,39"/>
+<area shape="rect" id="Node000004" href="$rtc_8c.html#a9736c80df4fb645659ccb752108f910f" title="Waits for the RTC to update its values so it doesn&#39;t read the values during an update." alt="" coords="225,55,292,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="176,48,210,55,209,60,175,53"/>
+</map>

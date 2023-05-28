@@ -1,0 +1,5 @@
+<map id="disable_rtc" name="disable_rtc">
+<area shape="rect" id="Node000001" title="Disables the RTC interrupt updates." alt="" coords="5,5,90,31"/>
+<area shape="rect" id="Node000002" href="$rtc_8c.html#a8e180a02874218607d15759835805a31" title="Enables/Disables the interrupt updates for the RTC." alt="" coords="138,5,264,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,16,123,16,123,21,90,21"/>
+</map>

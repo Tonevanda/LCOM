@@ -1,0 +1,24 @@
+<map id="/Users/tonevanda/Downloads/MINIX&#45;LCOM/shared/proj/src/controller/graphic/graphic.h" name="/Users/tonevanda/Downloads/MINIX&#45;LCOM/shared/proj/src/controller/graphic/graphic.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="279,5,482,61"/>
+<area shape="rect" id="Node000002" href="$graphic_8c.html" title=" " alt="" coords="5,109,209,165"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="294,69,181,111,180,106,293,64"/>
+<area shape="rect" id="Node000003" href="$draw_8h.html" title=" " alt="" coords="284,213,477,268"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="383,76,383,212,378,212,378,76"/>
+<area shape="rect" id="Node000005" href="$main_8c.html" title=" " alt="" coords="377,420,570,476"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="350,74,307,135,285,172,267,212,255,253,250,294,256,334,273,371,294,393,319,410,348,423,378,433,376,438,346,428,317,415,290,397,269,373,251,335,245,294,250,252,262,210,281,170,302,132,346,71"/>
+<area shape="rect" id="Node000006" href="$model_8h.html" title=" " alt="" coords="553,316,746,372"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="497,48,571,68,646,100,681,121,713,147,740,177,761,212,770,241,761,270,740,297,712,318,709,314,736,293,757,267,765,241,757,214,736,180,709,151,678,126,643,105,569,73,496,53"/>
+<area shape="rect" id="Node000008" href="$sprite_8h.html" title=" " alt="" coords="418,109,612,165"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="429,68,480,106,477,110,426,72"/>
+<area shape="rect" id="Node000004" href="$draw_8c.html" title=" " alt="" coords="284,316,477,372"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="383,283,383,316,378,316,378,283"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="455,275,476,293,492,315,500,342,501,370,488,420,483,419,495,369,495,343,487,318,472,296,451,279"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="467,271,578,313,576,318,465,276"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="592,382,522,422,520,417,589,377"/>
+<area shape="rect" id="Node000007" href="$model_8c.html" title=" " alt="" coords="594,420,788,476"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="669,385,682,418,677,420,664,387"/>
+<area shape="poly" id="edge11_Node000008_Node000003" title=" " alt="" coords="469,176,418,214,415,210,466,172"/>
+<area shape="poly" id="edge12_Node000008_Node000006" title=" " alt="" coords="518,179,526,224,533,246,544,267,567,293,595,314,592,318,564,297,539,270,528,248,520,225,513,180"/>
+<area shape="rect" id="Node000009" href="$sprite_8c.html" title=" " alt="" coords="553,213,746,268"/>
+<area shape="poly" id="edge13_Node000008_Node000009" title=" " alt="" coords="564,172,615,210,612,214,561,176"/>
+</map>

@@ -1,8 +1,0 @@
-<map id="read_KBC_Mouse_output" name="read_KBC_Mouse_output">
-<area shape="rect" id="Node000001" title="Reads the content of the KBC in the port passed as parameter and stores it in the output variable." alt="" coords="5,31,176,56"/>
-<area shape="rect" id="Node000002" href="$_k_b_c___mouse_8c.html#a8963a43127c850f8b2ee9ca72b675c39" title="Reads the status of the KBC and stores it in the variable passed as parameter." alt="" coords="224,5,394,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,31,208,27,209,32,176,36"/>
-<area shape="rect" id="Node000003" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="442,31,532,56"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="176,41,427,41,427,46,176,46"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="395,28,428,32,427,38,394,33"/>
-</map>

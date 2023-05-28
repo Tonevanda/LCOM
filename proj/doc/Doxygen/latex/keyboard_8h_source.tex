@@ -1,0 +1,25 @@
+\doxysection{keyboard.\+h}
+\hypertarget{keyboard_8h_source}{}\label{keyboard_8h_source}\index{/Users/tonevanda/Downloads/MINIX-\/LCOM/shared/proj/src/controller/keyboard/keyboard.h@{/Users/tonevanda/Downloads/MINIX-\/LCOM/shared/proj/src/controller/keyboard/keyboard.h}}
+\mbox{\hyperlink{keyboard_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_keyboard\_h\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_keyboard\_h\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <minix/sysutil.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mouse_2i8042_8h}{i8042.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_k_b_c___keyboard_8h}{KBC\_Keyboard.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ KEYBOARD\_INTERRUPT\ BIT(1)}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ int\ (\mbox{\hyperlink{keyboard_8h_a4f3036dc383cb3264414c231f2ca11e4}{keyboard\_subscribe\_interrupts}})();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00021\ int\ (\mbox{\hyperlink{keyboard_8h_a97f07efdc4bf5955236db1b8f111daf6}{keyboard\_unsubscribe\_interrupts}})();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ void\ (\mbox{\hyperlink{keyboard_8h_aea970a154161a35f6894898a092ed70a}{kbc\_ih}})();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00032\ int\ (\mbox{\hyperlink{keyboard_8h_a58017421d19bb2004825d339ebb600fa}{keyboard\_restore}})();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

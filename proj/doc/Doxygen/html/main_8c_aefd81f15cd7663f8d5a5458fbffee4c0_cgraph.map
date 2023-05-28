@@ -1,0 +1,35 @@
+<map id="turnoff" name="turnoff">
+<area shape="rect" id="Node000001" title="Prepares everything to shut down the program, such as reverting to text mode, destroying the sprites,..." alt="" coords="5,80,64,106"/>
+<area shape="rect" id="Node000002" href="$model_8c.html#a8fdbc6c7bfca3ef4a8800a3cdc19d932" title="Destroys all sprite objects to clear memory." alt="" coords="133,5,243,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,78,78,58,110,40,123,34,125,39,113,45,81,63,54,82"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a22e7aa936a38417be07fc29cf34cfd05" title="Disables the data report for the mouse." alt="" coords="134,55,242,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="64,85,119,76,120,81,65,91"/>
+<area shape="rect" id="Node000010" href="$main_8c.html#acbc03c5dd9b7f037d9d1dc5d3eb4dbf5" title="Disables the RTC interrupt updates." alt="" coords="146,104,230,130"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="65,95,131,105,130,111,64,100"/>
+<area shape="rect" id="Node000012" href="$main_8c.html#a39ca4da537e3c0062ada871f99b91b8d" title="Unsubscribes the interrupts for all the previously subscribed devices." alt="" coords="112,219,264,244"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="52,104,163,206,159,210,48,108"/>
+<area shape="rect" id="Node000003" href="$sprite_8c.html#a607cfeb4f019a84c346eb3bce9da0420" title="Frees the space occupied by the sprite passed as parameter." alt="" coords="340,5,443,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="243,16,324,16,324,21,243,21"/>
+<area shape="rect" id="Node000005" href="$mouse_8c.html#a1703c3c5b61eef30d724b15cafd1d75e" title="Writes the command passed as parameter to the according port to configure the mouse." alt="" coords="344,55,439,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="242,65,329,65,329,70,242,70"/>
+<area shape="rect" id="Node000006" href="$_k_b_c___mouse_8c.html#af1cdca97cdbb084f1815b656e88cd7ab" title="Reads the content of the KBC in the port passed as parameter and stores it in the output variable." alt="" coords="530,79,701,104"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="439,70,516,78,515,83,439,75"/>
+<area shape="rect" id="Node000009" href="$_k_b_c___mouse_8c.html#abb5ad6d256472ba6740fd57f8e28181e" title="Writes the command passed as parameter to the desired port." alt="" coords="518,29,713,55"/>
+<area shape="poly" id="edge9_Node000005_Node000009" title=" " alt="" coords="439,60,503,52,504,57,439,65"/>
+<area shape="rect" id="Node000007" href="$_k_b_c___mouse_8c.html#a8963a43127c850f8b2ee9ca72b675c39" title="Reads the status of the KBC and stores it in the variable passed as parameter." alt="" coords="761,29,931,55"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="678,75,767,56,769,61,680,81"/>
+<area shape="rect" id="Node000008" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="979,55,1069,80"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="701,84,964,68,964,74,701,89"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="932,52,965,56,964,62,931,57"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="713,40,746,40,746,45,713,45"/>
+<area shape="rect" id="Node000011" href="$rtc_8c.html#a8e180a02874218607d15759835805a31" title="Enables/Disables the interrupt updates for the RTC." alt="" coords="328,104,454,130"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="230,114,313,114,313,120,230,120"/>
+<area shape="rect" id="Node000013" href="$keyboard_8c.html#a97f07efdc4bf5955236db1b8f111daf6" title="Unsubscribes the keyboard interrupts." alt="" coords="316,154,467,195"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="235,215,302,197,303,202,237,221"/>
+<area shape="rect" id="Node000014" href="$mouse_8c.html#a3ecf823d80520009ae5e0d76ae40a3c3" title="Unsubscribes mouse interrupts." alt="" coords="312,219,470,244"/>
+<area shape="poly" id="edge15_Node000012_Node000014" title=" " alt="" coords="264,229,297,229,297,234,264,234"/>
+<area shape="rect" id="Node000015" href="$rtc_8c.html#a9d4850bb2a488644672d43287f160622" title="Unsubscribes interrupts for the RTC." alt="" coords="324,268,458,294"/>
+<area shape="poly" id="edge16_Node000012_Node000015" title=" " alt="" coords="245,242,322,261,320,267,243,248"/>
+<area shape="rect" id="Node000016" href="$timer_8c.html#afabd21de449be154dd65d5fdb2d8045d" title=" " alt="" coords="317,317,465,343"/>
+<area shape="poly" id="edge17_Node000012_Node000016" title=" " alt="" coords="209,243,256,273,313,304,327,309,325,314,311,309,253,277,206,247"/>
+</map>

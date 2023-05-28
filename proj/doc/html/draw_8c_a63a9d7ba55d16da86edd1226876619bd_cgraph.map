@@ -1,9 +1,0 @@
-<map id="draw_number_xpm" name="draw_number_xpm">
-<area shape="rect" id="Node000001" title="Given user input will draw a number sprite onto the drawing_frame_buffer." alt="" coords="5,5,137,31"/>
-<area shape="rect" id="Node000002" href="$draw_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Given a sprite object, draws its contents onto the drawing_frame_buffer." alt="" coords="185,5,305,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,16,170,16,170,21,137,21"/>
-<area shape="rect" id="Node000003" href="$graphic_8c.html#a950e17209d152e8a40ec064a0b201b25" title="Draws a pixel of a certain color onto a frame buffer." alt="" coords="353,5,436,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="306,16,338,16,338,21,306,21"/>
-<area shape="rect" id="Node000004" href="$graphic_8c.html#a74940314543182800b2ec867fc0116f2" title=" " alt="" coords="484,5,622,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="437,16,470,16,470,21,437,21"/>
-</map>

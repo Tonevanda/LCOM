@@ -1,0 +1,5 @@
+<map id="destroy_sprites" name="destroy_sprites">
+<area shape="rect" id="Node000001" title="Destroys all sprite objects to clear memory." alt="" coords="5,5,116,31"/>
+<area shape="rect" id="Node000002" href="$sprite_8c.html#a607cfeb4f019a84c346eb3bce9da0420" title="Frees the space occupied by the sprite passed as parameter." alt="" coords="164,5,267,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,16,149,16,149,21,116,21"/>
+</map>

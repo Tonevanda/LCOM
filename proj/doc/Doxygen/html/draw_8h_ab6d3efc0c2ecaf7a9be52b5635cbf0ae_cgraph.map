@@ -1,0 +1,12 @@
+<map id="draw_round_time" name="draw_round_time">
+<area shape="rect" id="Node000001" title="Draws the elapsed time since the start of the round in the bottom of the screen." alt="" coords="5,31,126,56"/>
+<area shape="rect" id="Node000002" href="$draw_8c.html#a63a9d7ba55d16da86edd1226876619bd" title="Given user input will draw a number sprite onto the drawing_frame_buffer." alt="" coords="174,5,305,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,32,159,27,159,32,127,37"/>
+<area shape="rect" id="Node000003" href="$draw_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Given a sprite object, draws its contents onto the drawing_frame_buffer." alt="" coords="353,31,473,56"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="126,41,338,41,338,46,126,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="306,25,339,30,338,35,305,30"/>
+<area shape="rect" id="Node000004" href="$graphic_8c.html#a950e17209d152e8a40ec064a0b201b25" title="Draws a pixel of a certain color onto a frame buffer." alt="" coords="521,31,605,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="474,41,506,41,506,46,474,46"/>
+<area shape="rect" id="Node000005" href="$graphic_8c.html#a74940314543182800b2ec867fc0116f2" title=" " alt="" coords="653,31,790,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="605,41,638,41,638,46,605,46"/>
+</map>

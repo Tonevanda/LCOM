@@ -1,5 +1,0 @@
-<map id="timer_get_conf" name="timer_get_conf">
-<area shape="rect" id="Node000001" title="Reads the configuration of the timer and stores it in the st parameter." alt="" coords="5,5,113,31"/>
-<area shape="rect" id="Node000002" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="161,5,251,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,16,146,16,146,21,113,21"/>
-</map>

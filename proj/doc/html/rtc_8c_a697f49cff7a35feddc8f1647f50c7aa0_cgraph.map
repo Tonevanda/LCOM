@@ -1,7 +1,0 @@
-<map id="rtc_read" name="rtc_read">
-<area shape="rect" id="Node000001" title="Reads the values in the RTC and updated the rtc_data array with said values." alt="" coords="5,31,74,56"/>
-<area shape="rect" id="Node000002" href="$rtc_8c.html#a6c983a8570a08157595eb84bef4e8d6d" title="Converts BCD to decimal." alt="" coords="122,5,192,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,34,106,26,108,31,75,39"/>
-<area shape="rect" id="Node000003" href="$rtc_8c.html#a9736c80df4fb645659ccb752108f910f" title="Waits for the RTC to update its values so it doesn&#39;t read the values during an update." alt="" coords="123,55,191,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="75,48,109,55,108,60,73,53"/>
-</map>

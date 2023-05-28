@@ -1,0 +1,15 @@
+<map id="disable_mouse" name="disable_mouse">
+<area shape="rect" id="Node000001" title="Disables the data report for the mouse." alt="" coords="5,31,114,56"/>
+<area shape="rect" id="Node000002" href="$mouse_8c.html#a1703c3c5b61eef30d724b15cafd1d75e" title="Writes the command passed as parameter to the according port to configure the mouse." alt="" coords="162,31,257,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,41,147,41,147,46,114,46"/>
+<area shape="rect" id="Node000003" href="$_k_b_c___mouse_8c.html#af1cdca97cdbb084f1815b656e88cd7ab" title="Reads the content of the KBC in the port passed as parameter and stores it in the output variable." alt="" coords="317,55,487,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="258,47,303,52,302,58,257,52"/>
+<area shape="rect" id="Node000006" href="$_k_b_c___mouse_8c.html#abb5ad6d256472ba6740fd57f8e28181e" title="Writes the command passed as parameter to the desired port." alt="" coords="305,5,499,31"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="257,35,290,30,291,36,258,40"/>
+<area shape="rect" id="Node000004" href="$_k_b_c___mouse_8c.html#a8963a43127c850f8b2ee9ca72b675c39" title="Reads the status of the KBC and stores it in the variable passed as parameter." alt="" coords="547,5,718,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="465,51,554,32,555,37,466,57"/>
+<area shape="rect" id="Node000005" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="766,31,856,56"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="487,60,750,44,751,50,488,65"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="718,28,751,32,751,38,718,33"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="499,16,533,16,533,21,499,21"/>
+</map>

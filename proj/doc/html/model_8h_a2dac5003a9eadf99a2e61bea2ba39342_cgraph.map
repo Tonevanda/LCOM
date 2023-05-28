@@ -1,8 +1,0 @@
-<map id="placeBoat" name="placeBoat">
-<area shape="rect" id="Node000001" title="Places boats in the player_board given the current board_index,current_boat and the vert value." alt="" coords="5,5,85,31"/>
-<area shape="rect" id="Node000002" href="$model_8c.html#a573bcebb29cc9a7e7cb08c693fa43aa9" title="Updates the player_board&#39;s and enemy_board&#39;s individual slot structs to reflect on placed boats...." alt="" coords="279,5,348,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,16,264,16,264,21,85,21"/>
-<area shape="rect" id="Node000003" href="$model_8c.html#a76e826f01d887adc7f29e599352bc88d" title="Places all the boats in the enemy_board randomly." alt="" coords="133,31,231,56"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="86,23,119,29,118,34,85,28"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="231,31,264,25,265,30,232,37"/>
-</map>

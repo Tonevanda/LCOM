@@ -1,5 +1,0 @@
-<map id="update_mouse_actions_attack" name="update_mouse_actions_attack">
-<area shape="rect" id="Node000001" title="Handles mouse packets while on the Attack state." alt="" coords="5,5,161,46"/>
-<area shape="rect" id="Node000002" href="$model_8c.html#a22b7380d6f047abaa450a0151dbcb726" title="Updates the player_board&#39;s and enemy_board&#39;s individual slot structs to reflect on attacks." alt="" coords="209,13,266,39"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,23,194,23,194,28,161,28"/>
-</map>

@@ -1,0 +1,9 @@
+<map id="draw_on_board" name="draw_on_board">
+<area shape="rect" id="Node000001" title="Draws on a board slot (determined by the input x and y coordinates) the inputted Sprite...." alt="" coords="5,5,115,31"/>
+<area shape="rect" id="Node000002" href="$draw_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Given a sprite object, draws its contents onto the drawing_frame_buffer." alt="" coords="163,5,283,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,16,148,16,148,21,115,21"/>
+<area shape="rect" id="Node000003" href="$graphic_8c.html#a950e17209d152e8a40ec064a0b201b25" title="Draws a pixel of a certain color onto a frame buffer." alt="" coords="331,5,414,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="284,16,316,16,316,21,284,21"/>
+<area shape="rect" id="Node000004" href="$graphic_8c.html#a74940314543182800b2ec867fc0116f2" title=" " alt="" coords="462,5,600,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="415,16,448,16,448,21,415,21"/>
+</map>

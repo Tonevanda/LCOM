@@ -1,0 +1,9 @@
+<map id="draw_mouse" name="draw_mouse">
+<area shape="rect" id="Node000001" title="Draws the mouse sprite on its current position." alt="" coords="5,5,101,31"/>
+<area shape="rect" id="Node000002" href="$draw_8c.html#a6db4230a0003a09515d78b790d8ec52d" title="Given a sprite object, draws its contents onto the drawing_frame_buffer." alt="" coords="149,5,269,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,16,134,16,134,21,101,21"/>
+<area shape="rect" id="Node000003" href="$graphic_8c.html#a950e17209d152e8a40ec064a0b201b25" title="Draws a pixel of a certain color onto a frame buffer." alt="" coords="317,5,400,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="270,16,302,16,302,21,270,21"/>
+<area shape="rect" id="Node000004" href="$graphic_8c.html#a74940314543182800b2ec867fc0116f2" title=" " alt="" coords="448,5,586,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="401,16,434,16,434,21,401,21"/>
+</map>

@@ -1,0 +1,285 @@
+\doxysection{/\+Users/tonevanda/\+Downloads/\+MINIX-\/\+LCOM/shared/proj/src/main.c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{/Users/tonevanda/Downloads/MINIX-\/LCOM/shared/proj/src/main.c@{/Users/tonevanda/Downloads/MINIX-\/LCOM/shared/proj/src/main.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \"{}controller/timer/timer.\+h\"{}}\newline
+{\ttfamily \#include \"{}controller/graphic/graphic.\+h\"{}}\newline
+{\ttfamily \#include \"{}controller/keyboard/keyboard.\+h\"{}}\newline
+{\ttfamily \#include \"{}controller/mouse/mouse.\+h\"{}}\newline
+{\ttfamily \#include \"{}controller/rtc/rtc.\+h\"{}}\newline
+{\ttfamily \#include \"{}model/model.\+h\"{}}\newline
+{\ttfamily \#include \"{}draw/draw.\+h\"{}}\newline
+{\ttfamily \#include \"{}config.\+h\"{}}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\item 
+int \mbox{\hyperlink{main_8c_a7c590d09f454b9be9ec117818d3e5671}{setup\+\_\+graphic}} ()
+\begin{DoxyCompactList}\small\item\em Sets up the graphic configurations such as the frames per second, frame buffers and the graphic mode. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_ab570339ba658dea7f08a99b9374e605f}{subscribe\+\_\+interrupts}} ()
+\begin{DoxyCompactList}\small\item\em Subscribes the interrupts for all the used devices, except the video card. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_aa72c84997063db2be7cd9bd1020c57d6}{enable\+\_\+rtc}} ()
+\begin{DoxyCompactList}\small\item\em Enables the RTC interrupt updates. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_ad8f082d47fa7bde0306eb3b82b6127e9}{enable\+\_\+mouse}} ()
+\begin{DoxyCompactList}\small\item\em Enables the stream mode and data report for the mouse. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a02edc1937d94655d8c57e817e34b21d1}{setup\+\_\+minix}} ()
+\begin{DoxyCompactList}\small\item\em Sets everything up such as the graphic configurations, sprites and background, interrupts, rtc and mouse. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a39ca4da537e3c0062ada871f99b91b8d}{unsubscribe\+\_\+interrupts}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes the interrupts for all the previously subscribed devices. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_acbc03c5dd9b7f037d9d1dc5d3eb4dbf5}{disable\+\_\+rtc}} ()
+\begin{DoxyCompactList}\small\item\em Disables the RTC interrupt updates. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a22e7aa936a38417be07fc29cf34cfd05}{disable\+\_\+mouse}} ()
+\begin{DoxyCompactList}\small\item\em Disables the data report for the mouse. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_aefd81f15cd7663f8d5a5458fbffee4c0}{turnoff}} ()
+\begin{DoxyCompactList}\small\item\em Prepares everything to shut down the program, such as reverting to text mode, destroying the sprites, unsubscribing the interrupts and disabling the rtc and mouse. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{main_8c_a2a16f651eccbd248e1ad3b3b924b143b}{proj\+\_\+main\+\_\+loop}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{model_8h_aa51313be2faacb739a18fdeecefbac75}{System\+State}} \mbox{\hyperlink{main_8c_ac705089b22877f6322d09a9f0f5bdb1d}{system\+State}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{main_8c_aa1de7a5557e9d96b83cf03f73c92163f}{scancode}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{main_8c_a22259d9fbf697c6e0d093fcf4a49da75}{mouse\+Bytes}} \mbox{[}3\mbox{]}
+\item 
+\mbox{\hyperlink{struct_mouse_info}{Mouse\+Info}} \mbox{\hyperlink{main_8c_a343e4f854a0c3e5001228e209c5f025e}{mouse\+\_\+info}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_a22e7aa936a38417be07fc29cf34cfd05}\label{main_8c_a22e7aa936a38417be07fc29cf34cfd05} 
+\index{main.c@{main.c}!disable\_mouse@{disable\_mouse}}
+\index{disable\_mouse@{disable\_mouse}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{disable\_mouse()}{disable\_mouse()}}
+{\footnotesize\ttfamily int disable\+\_\+mouse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disables the data report for the mouse. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a22e7aa936a38417be07fc29cf34cfd05_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_acbc03c5dd9b7f037d9d1dc5d3eb4dbf5}\label{main_8c_acbc03c5dd9b7f037d9d1dc5d3eb4dbf5} 
+\index{main.c@{main.c}!disable\_rtc@{disable\_rtc}}
+\index{disable\_rtc@{disable\_rtc}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{disable\_rtc()}{disable\_rtc()}}
+{\footnotesize\ttfamily int disable\+\_\+rtc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disables the RTC interrupt updates. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{main_8c_acbc03c5dd9b7f037d9d1dc5d3eb4dbf5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_ad8f082d47fa7bde0306eb3b82b6127e9}\label{main_8c_ad8f082d47fa7bde0306eb3b82b6127e9} 
+\index{main.c@{main.c}!enable\_mouse@{enable\_mouse}}
+\index{enable\_mouse@{enable\_mouse}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{enable\_mouse()}{enable\_mouse()}}
+{\footnotesize\ttfamily int enable\+\_\+mouse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Enables the stream mode and data report for the mouse. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_ad8f082d47fa7bde0306eb3b82b6127e9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_aa72c84997063db2be7cd9bd1020c57d6}\label{main_8c_aa72c84997063db2be7cd9bd1020c57d6} 
+\index{main.c@{main.c}!enable\_rtc@{enable\_rtc}}
+\index{enable\_rtc@{enable\_rtc}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{enable\_rtc()}{enable\_rtc()}}
+{\footnotesize\ttfamily int enable\+\_\+rtc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Enables the RTC interrupt updates. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{main_8c_aa72c84997063db2be7cd9bd1020c57d6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8c_a0ddf1224851353fc92bfbff6f499fa97} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{main_8c_a2a16f651eccbd248e1ad3b3b924b143b}\label{main_8c_a2a16f651eccbd248e1ad3b3b924b143b} 
+\index{main.c@{main.c}!proj\_main\_loop@{proj\_main\_loop}}
+\index{proj\_main\_loop@{proj\_main\_loop}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{proj\_main\_loop()}{proj\_main\_loop()}}
+{\footnotesize\ttfamily int() proj\+\_\+main\+\_\+loop (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{main_8c_a2a16f651eccbd248e1ad3b3b924b143b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a7c590d09f454b9be9ec117818d3e5671}\label{main_8c_a7c590d09f454b9be9ec117818d3e5671} 
+\index{main.c@{main.c}!setup\_graphic@{setup\_graphic}}
+\index{setup\_graphic@{setup\_graphic}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{setup\_graphic()}{setup\_graphic()}}
+{\footnotesize\ttfamily int setup\+\_\+graphic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets up the graphic configurations such as the frames per second, frame buffers and the graphic mode. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a7c590d09f454b9be9ec117818d3e5671_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a02edc1937d94655d8c57e817e34b21d1}\label{main_8c_a02edc1937d94655d8c57e817e34b21d1} 
+\index{main.c@{main.c}!setup\_minix@{setup\_minix}}
+\index{setup\_minix@{setup\_minix}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{setup\_minix()}{setup\_minix()}}
+{\footnotesize\ttfamily int setup\+\_\+minix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets everything up such as the graphic configurations, sprites and background, interrupts, rtc and mouse. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a02edc1937d94655d8c57e817e34b21d1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_ab570339ba658dea7f08a99b9374e605f}\label{main_8c_ab570339ba658dea7f08a99b9374e605f} 
+\index{main.c@{main.c}!subscribe\_interrupts@{subscribe\_interrupts}}
+\index{subscribe\_interrupts@{subscribe\_interrupts}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{subscribe\_interrupts()}{subscribe\_interrupts()}}
+{\footnotesize\ttfamily int subscribe\+\_\+interrupts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Subscribes the interrupts for all the used devices, except the video card. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_ab570339ba658dea7f08a99b9374e605f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_aefd81f15cd7663f8d5a5458fbffee4c0}\label{main_8c_aefd81f15cd7663f8d5a5458fbffee4c0} 
+\index{main.c@{main.c}!turnoff@{turnoff}}
+\index{turnoff@{turnoff}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{turnoff()}{turnoff()}}
+{\footnotesize\ttfamily int turnoff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prepares everything to shut down the program, such as reverting to text mode, destroying the sprites, unsubscribing the interrupts and disabling the rtc and mouse. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_aefd81f15cd7663f8d5a5458fbffee4c0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a39ca4da537e3c0062ada871f99b91b8d}\label{main_8c_a39ca4da537e3c0062ada871f99b91b8d} 
+\index{main.c@{main.c}!unsubscribe\_interrupts@{unsubscribe\_interrupts}}
+\index{unsubscribe\_interrupts@{unsubscribe\_interrupts}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{unsubscribe\_interrupts()}{unsubscribe\_interrupts()}}
+{\footnotesize\ttfamily int unsubscribe\+\_\+interrupts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unsubscribes the interrupts for all the previously subscribed devices. 
+
+\begin{DoxyReturn}{Returns}
+0 if successful, 1 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{main_8c_a39ca4da537e3c0062ada871f99b91b8d_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8c_a343e4f854a0c3e5001228e209c5f025e}\label{main_8c_a343e4f854a0c3e5001228e209c5f025e} 
+\index{main.c@{main.c}!mouse\_info@{mouse\_info}}
+\index{mouse\_info@{mouse\_info}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_info}{mouse\_info}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_mouse_info}{Mouse\+Info}} mouse\+\_\+info\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{main_8c_a22259d9fbf697c6e0d093fcf4a49da75}\label{main_8c_a22259d9fbf697c6e0d093fcf4a49da75} 
+\index{main.c@{main.c}!mouseBytes@{mouseBytes}}
+\index{mouseBytes@{mouseBytes}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{mouseBytes}{mouseBytes}}
+{\footnotesize\ttfamily uint8\+\_\+t mouse\+Bytes\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{main_8c_aa1de7a5557e9d96b83cf03f73c92163f}\label{main_8c_aa1de7a5557e9d96b83cf03f73c92163f} 
+\index{main.c@{main.c}!scancode@{scancode}}
+\index{scancode@{scancode}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{scancode}{scancode}}
+{\footnotesize\ttfamily uint8\+\_\+t scancode\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{main_8c_ac705089b22877f6322d09a9f0f5bdb1d}\label{main_8c_ac705089b22877f6322d09a9f0f5bdb1d} 
+\index{main.c@{main.c}!systemState@{systemState}}
+\index{systemState@{systemState}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{systemState}{systemState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{model_8h_aa51313be2faacb739a18fdeecefbac75}{System\+State}} system\+State\hspace{0.3cm}{\ttfamily [extern]}}
+

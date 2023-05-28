@@ -1,0 +1,5 @@
+<map id="draw_pixel" name="draw_pixel">
+<area shape="rect" id="Node000001" title="Draws a pixel of a certain color onto a frame buffer." alt="" coords="5,5,89,31"/>
+<area shape="rect" id="Node000002" href="$graphic_8c.html#a74940314543182800b2ec867fc0116f2" title=" " alt="" coords="137,5,274,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,16,122,16,122,21,89,21"/>
+</map>
